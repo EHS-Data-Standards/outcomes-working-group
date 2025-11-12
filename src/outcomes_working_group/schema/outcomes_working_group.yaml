@@ -67,15 +67,12 @@ classes:
   MeasurementProcess:
     description: |
       A generic class representing the process of measuring a biological endpoint.
-      Includes information about input samples, methods, outputs, and contextual metadata.
+      Includes information about input samples, methods, and contextual metadata.
     is_a: NamedEntity
     slots:
       - input_sample
       - method_assay
-      - output_measurement
-      - context_fields
       - protocol_notes
-      - ontology_mappings
 
   InputSample:
     description: Description of the biological sample or experimental manipulation used as input
@@ -104,22 +101,6 @@ classes:
       - has_minimum_numeric_value
       - has_maximum_numeric_value
 
-  OutputMeasurement:
-    description: The quantitative or qualitative output from a measurement process
-    is_a: NamedEntity
-    slots:
-      - measurement_type
-      - has_quantity_value
-
-  ContextField:
-    description: |
-      Metadata fields that capture important contextual information for reproducibility
-      and cross-study comparison
-    is_a: NamedEntity
-    slots:
-      - field_name
-      - field_value
-      - field_category
 
   # Specific Measurement Process Subclasses
   CFTRFunctionMeasurement:
@@ -163,13 +144,13 @@ classes:
       - ligand_expression_levels
       - pathway_biomarkers
 
-  FoxJExpressionMeasurement:
-    description: Measurement of FoxJ transcription factor expression
+  TranscriptionFactorExpressionMeasurement:
+    description: Measurement of transcription factor expression
     is_a: MeasurementProcess
     slots:
-      - foxj_mrna_level
-      - foxj_protein_level
-      - percentage_foxj_positive_cells
+      - mrna_level
+      - protein_level
+      - percentage_positive_cells
       - staining_protocol
       - gene_expression_analysis
 
@@ -382,6 +363,14 @@ classes:
       - viability_percentage
       - apoptosis_markers
 
+  EnvironmentalCondition:
+    description: Environmental parameters during measurement
+    is_a: NamedEntity
+    slots:
+      - temperature
+      - humidity
+      - co2_percentage
+
 slots:
 
   # Identifier and core slots
@@ -408,24 +397,9 @@ slots:
     description: The method or assay used
     range: Assay
 
-  output_measurement:
-    description: The output or measurement obtained
-    range: OutputMeasurement
-
-  context_fields:
-    description: Contextual metadata fields for reproducibility
-    range: ContextField
-    multivalued: true
-    inlined: true
-
   protocol_notes:
     description: Protocol or SOP notes
     range: string
-
-  ontology_mappings:
-    description: Mappings to ontology terms (Biolink, OBI, etc.)
-    range: string
-    multivalued: true
 
   # InputSample slots
   sample_type:
@@ -454,21 +428,14 @@ slots:
 
   environmental_conditions:
     description: Environmental conditions during measurement
-    range: string
+    range: EnvironmentalCondition
+    multivalued: true
+    inlined: true
 
   sop_reference:
     description: Reference to standard operating procedure
     range: string
 
-  # OutputMeasurement slots
-  measurement_type:
-    description: Type of measurement or readout
-    range: string
-
-  has_quantity_value:
-    description: The quantity value associated with this measurement
-    range: QuantityValue
-    inlined: true
 
   # QuantityValue slots
   has_numeric_value:
@@ -492,18 +459,6 @@ slots:
     description: The maximum value in a range
     range: float
 
-  # ContextField slots
-  field_name:
-    description: Name of the context field
-    range: string
-
-  field_value:
-    description: Value of the context field
-    range: string
-
-  field_category:
-    description: Category or grouping for the context field
-    range: string
 
   # Specific measurement slots
   cftr_specific_current:
@@ -709,11 +664,12 @@ slots:
     description: Detection method details
     range: DetectionMethod
     inlined: true
+    multivalued: true
 
   protein_oxidation_markers:
     description: Protein oxidation markers (carbonyls, nitrotyrosine)
-    range: QuantityValue
     inlined: true
+    multivalued: true
 
   dna_damage_markers:
     description: DNA damage markers (8-OHdG)
@@ -823,18 +779,18 @@ slots:
     range: string
     multivalued: true
 
-  foxj_mrna_level:
-    description: FoxJ mRNA expression level
+  mrna_level:
+    description: mRNA expression level
     range: QuantityValue
     inlined: true
 
-  foxj_protein_level:
-    description: FoxJ protein level
+  protein_level:
+    description: Protein expression level
     range: QuantityValue
     inlined: true
 
-  percentage_foxj_positive_cells:
-    description: Percentage of FoxJ-positive cells
+  percentage_positive_cells:
+    description: Percentage of positive cells
     range: QuantityValue
     inlined: true
 
