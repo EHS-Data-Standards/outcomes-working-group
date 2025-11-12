@@ -259,7 +259,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-measurementprocess">Class: MeasurementProcess</h1>
 <p><em>A generic class representing the process of measuring a biological endpoint.</em></p>
-<p><em>Includes information about input samples, methods, outputs, and contextual metadata.</em></p>
+<p><em>Includes information about input samples, methods, and contextual metadata.</em></p>
 <p>__</p>
 <p>URI: <a href="https://w3id.org/EHS-Data-Standards/outcomes-model/MeasurementProcess">outcomes_model:MeasurementProcess</a></p>
 <div class="mermaid"> classDiagram
@@ -277,8 +277,8 @@
         click LungFunctionMeasurement href "../LungFunctionMeasurement/"
       MeasurementProcess &lt;|-- EGFRSignalingMeasurement
         click EGFRSignalingMeasurement href "../EGFRSignalingMeasurement/"
-      MeasurementProcess &lt;|-- FoxJExpressionMeasurement
-        click FoxJExpressionMeasurement href "../FoxJExpressionMeasurement/"
+      MeasurementProcess &lt;|-- TranscriptionFactorExpressionMeasurement
+        click TranscriptionFactorExpressionMeasurement href "../TranscriptionFactorExpressionMeasurement/"
       MeasurementProcess &lt;|-- CiliaBeatFrequencyMeasurement
         click CiliaBeatFrequencyMeasurement href "../CiliaBeatFrequencyMeasurement/"
       MeasurementProcess &lt;|-- ASLHeightMeasurement
@@ -289,17 +289,6 @@
         click GobletCellMeasurement href "../GobletCellMeasurement/"
       MeasurementProcess &lt;|-- OxidativeStressMeasurement
         click OxidativeStressMeasurement href "../OxidativeStressMeasurement/"
-
-
-      MeasurementProcess : context_fields
-
-
-
-
-
-        MeasurementProcess --&gt; "*" ContextField : context_fields
-        click ContextField href "../ContextField/"
-
 
 
       MeasurementProcess : description
@@ -330,19 +319,6 @@
 
       MeasurementProcess : name
 
-      MeasurementProcess : ontology_mappings
-
-      MeasurementProcess : output_measurement
-
-
-
-
-
-        MeasurementProcess --&gt; "0..1" OutputMeasurement : output_measurement
-        click OutputMeasurement href "../OutputMeasurement/"
-
-
-
       MeasurementProcess : protocol_notes
 
 
@@ -355,7 +331,7 @@
 <li><a href="../BALFSputumMeasurement/">BALFSputumMeasurement</a></li>
 <li><a href="../LungFunctionMeasurement/">LungFunctionMeasurement</a></li>
 <li><a href="../EGFRSignalingMeasurement/">EGFRSignalingMeasurement</a></li>
-<li><a href="../FoxJExpressionMeasurement/">FoxJExpressionMeasurement</a></li>
+<li><a href="../TranscriptionFactorExpressionMeasurement/">TranscriptionFactorExpressionMeasurement</a></li>
 <li><a href="../CiliaBeatFrequencyMeasurement/">CiliaBeatFrequencyMeasurement</a></li>
 <li><a href="../ASLHeightMeasurement/">ASLHeightMeasurement</a></li>
 <li><a href="../MucociliaryClearanceMeasurement/">MucociliaryClearanceMeasurement</a></li>
@@ -390,27 +366,9 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../output_measurement/">output_measurement</a></td>
-<td>0..1 <br/> <a href="../OutputMeasurement/">OutputMeasurement</a></td>
-<td>The output or measurement obtained</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../context_fields/">context_fields</a></td>
-<td>* <br/> <a href="../ContextField/">ContextField</a></td>
-<td>Contextual metadata fields for reproducibility</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../protocol_notes/">protocol_notes</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Protocol or SOP notes</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../ontology_mappings/">ontology_mappings</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>Mappings to ontology terms (Biolink, OBI, etc</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -464,7 +422,7 @@
 <pre><code class="language-yaml">name: MeasurementProcess
 description: 'A generic class representing the process of measuring a biological endpoint.
 
-  Includes information about input samples, methods, outputs, and contextual metadata.
+  Includes information about input samples, methods, and contextual metadata.
 
   '
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
@@ -472,10 +430,7 @@ is_a: NamedEntity
 slots:
 - input_sample
 - method_assay
-- output_measurement
-- context_fields
 - protocol_notes
-- ontology_mappings
 
 </code></pre>
 </details>
@@ -484,7 +439,7 @@ slots:
 <pre><code class="language-yaml">name: MeasurementProcess
 description: 'A generic class representing the process of measuring a biological endpoint.
 
-  Includes information about input samples, methods, outputs, and contextual metadata.
+  Includes information about input samples, methods, and contextual metadata.
 
   '
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
@@ -510,28 +465,6 @@ attributes:
     domain_of:
     - MeasurementProcess
     range: Assay
-  output_measurement:
-    name: output_measurement
-    description: The output or measurement obtained
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    rank: 1000
-    alias: output_measurement
-    owner: MeasurementProcess
-    domain_of:
-    - MeasurementProcess
-    range: OutputMeasurement
-  context_fields:
-    name: context_fields
-    description: Contextual metadata fields for reproducibility
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    rank: 1000
-    alias: context_fields
-    owner: MeasurementProcess
-    domain_of:
-    - MeasurementProcess
-    range: ContextField
-    multivalued: true
-    inlined: true
   protocol_notes:
     name: protocol_notes
     description: Protocol or SOP notes
@@ -542,17 +475,6 @@ attributes:
     domain_of:
     - MeasurementProcess
     range: string
-  ontology_mappings:
-    name: ontology_mappings
-    description: Mappings to ontology terms (Biolink, OBI, etc.)
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    rank: 1000
-    alias: ontology_mappings
-    owner: MeasurementProcess
-    domain_of:
-    - MeasurementProcess
-    range: string
-    multivalued: true
   id:
     name: id
     description: A unique identifier

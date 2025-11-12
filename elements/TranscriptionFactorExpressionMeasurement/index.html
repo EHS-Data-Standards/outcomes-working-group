@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://EHS-Data-Standards.github.io/outcomes-working-group/elements/ContextField/" rel="canonical"/>
+<link href="https://EHS-Data-Standards.github.io/outcomes-working-group/elements/TranscriptionFactorExpressionMeasurement/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
-<title>Class: ContextField - outcomes-working-group</title>
+<title>Class: TranscriptionFactorExpressionMeasurement - outcomes-working-group</title>
 <link href="../../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -23,7 +23,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-contextfield">
+<a class="md-skip" href="#class-transcriptionfactorexpressionmeasurement">
           Skip to content
         </a>
 </div>
@@ -47,7 +47,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: ContextField
+              Class: TranscriptionFactorExpressionMeasurement
             
           </span>
 </div>
@@ -189,15 +189,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#usages">
-<span class="md-ellipsis">
-      
-        Usages
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#identifier-and-mapping-information">
 <span class="md-ellipsis">
       
@@ -266,35 +257,109 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-contextfield">Class: ContextField</h1>
-<p><em>Metadata fields that capture important contextual information for reproducibility</em></p>
-<p><em>and cross-study comparison</em></p>
-<p>__</p>
-<p>URI: <a href="https://w3id.org/EHS-Data-Standards/outcomes-model/ContextField">outcomes_model:ContextField</a></p>
+<h1 id="class-transcriptionfactorexpressionmeasurement">Class: TranscriptionFactorExpressionMeasurement</h1>
+<p><em>Measurement of transcription factor expression</em></p>
+<p>URI: <a href="https://w3id.org/EHS-Data-Standards/outcomes-model/TranscriptionFactorExpressionMeasurement">outcomes_model:TranscriptionFactorExpressionMeasurement</a></p>
 <div class="mermaid"> classDiagram
-    class ContextField
-    click ContextField href "../ContextField/"
-      NamedEntity &lt;|-- ContextField
-        click NamedEntity href "../NamedEntity/"
+    class TranscriptionFactorExpressionMeasurement
+    click TranscriptionFactorExpressionMeasurement href "../TranscriptionFactorExpressionMeasurement/"
+      MeasurementProcess &lt;|-- TranscriptionFactorExpressionMeasurement
+        click MeasurementProcess href "../MeasurementProcess/"
 
-      ContextField : description
+      TranscriptionFactorExpressionMeasurement : description
 
-      ContextField : field_category
+      TranscriptionFactorExpressionMeasurement : gene_expression_analysis
 
-      ContextField : field_name
 
-      ContextField : field_value
 
-      ContextField : id
 
-      ContextField : name
+
+        TranscriptionFactorExpressionMeasurement --&gt; "0..1" GeneExpressionAnalysis : gene_expression_analysis
+        click GeneExpressionAnalysis href "../GeneExpressionAnalysis/"
+
+
+
+      TranscriptionFactorExpressionMeasurement : id
+
+      TranscriptionFactorExpressionMeasurement : input_sample
+
+
+
+
+
+        TranscriptionFactorExpressionMeasurement --&gt; "0..1" InputSample : input_sample
+        click InputSample href "../InputSample/"
+
+
+
+      TranscriptionFactorExpressionMeasurement : method_assay
+
+
+
+
+
+        TranscriptionFactorExpressionMeasurement --&gt; "0..1" Assay : method_assay
+        click Assay href "../Assay/"
+
+
+
+      TranscriptionFactorExpressionMeasurement : mrna_level
+
+
+
+
+
+        TranscriptionFactorExpressionMeasurement --&gt; "0..1" QuantityValue : mrna_level
+        click QuantityValue href "../QuantityValue/"
+
+
+
+      TranscriptionFactorExpressionMeasurement : name
+
+      TranscriptionFactorExpressionMeasurement : percentage_positive_cells
+
+
+
+
+
+        TranscriptionFactorExpressionMeasurement --&gt; "0..1" QuantityValue : percentage_positive_cells
+        click QuantityValue href "../QuantityValue/"
+
+
+
+      TranscriptionFactorExpressionMeasurement : protein_level
+
+
+
+
+
+        TranscriptionFactorExpressionMeasurement --&gt; "0..1" QuantityValue : protein_level
+        click QuantityValue href "../QuantityValue/"
+
+
+
+      TranscriptionFactorExpressionMeasurement : protocol_notes
+
+      TranscriptionFactorExpressionMeasurement : staining_protocol
+
+
+
+
+
+        TranscriptionFactorExpressionMeasurement --&gt; "0..1" StainingProtocol : staining_protocol
+        click StainingProtocol href "../StainingProtocol/"
+
+
 
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../NamedEntity/">NamedEntity</a><ul>
-<li><strong>ContextField</strong></li>
+<li><a href="../MeasurementProcess/">MeasurementProcess</a><ul>
+<li><strong>TranscriptionFactorExpressionMeasurement</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -310,22 +375,52 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../field_name/">field_name</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Name of the context field</td>
+<td><a href="../mrna_level/">mrna_level</a></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>mRNA expression level</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../field_value/">field_value</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Value of the context field</td>
+<td><a href="../protein_level/">protein_level</a></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>Protein expression level</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../field_category/">field_category</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Category or grouping for the context field</td>
+<td><a href="../percentage_positive_cells/">percentage_positive_cells</a></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>Percentage of positive cells</td>
 <td>direct</td>
+</tr>
+<tr>
+<td><a href="../staining_protocol/">staining_protocol</a></td>
+<td>0..1 <br/> <a href="../StainingProtocol/">StainingProtocol</a></td>
+<td>Staining protocol details</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../gene_expression_analysis/">gene_expression_analysis</a></td>
+<td>0..1 <br/> <a href="../GeneExpressionAnalysis/">GeneExpressionAnalysis</a></td>
+<td>Gene expression analysis methodology</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../input_sample/">input_sample</a></td>
+<td>0..1 <br/> <a href="../InputSample/">InputSample</a></td>
+<td>Description of input samples and manipulations</td>
+<td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
+</tr>
+<tr>
+<td><a href="../method_assay/">method_assay</a></td>
+<td>0..1 <br/> <a href="../Assay/">Assay</a></td>
+<td>The method or assay used</td>
+<td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
+</tr>
+<tr>
+<td><a href="../protocol_notes/">protocol_notes</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Protocol or SOP notes</td>
+<td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
@@ -347,85 +442,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="usages">Usages</h2>
-<table>
-<thead>
-<tr>
-<th>used by</th>
-<th>used in</th>
-<th>type</th>
-<th>used</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
-<td><a href="../context_fields/">context_fields</a></td>
-<td>range</td>
-<td><a href="./">ContextField</a></td>
-</tr>
-<tr>
-<td><a href="../CFTRFunctionMeasurement/">CFTRFunctionMeasurement</a></td>
-<td><a href="../context_fields/">context_fields</a></td>
-<td>range</td>
-<td><a href="./">ContextField</a></td>
-</tr>
-<tr>
-<td><a href="../BALFSputumMeasurement/">BALFSputumMeasurement</a></td>
-<td><a href="../context_fields/">context_fields</a></td>
-<td>range</td>
-<td><a href="./">ContextField</a></td>
-</tr>
-<tr>
-<td><a href="../LungFunctionMeasurement/">LungFunctionMeasurement</a></td>
-<td><a href="../context_fields/">context_fields</a></td>
-<td>range</td>
-<td><a href="./">ContextField</a></td>
-</tr>
-<tr>
-<td><a href="../EGFRSignalingMeasurement/">EGFRSignalingMeasurement</a></td>
-<td><a href="../context_fields/">context_fields</a></td>
-<td>range</td>
-<td><a href="./">ContextField</a></td>
-</tr>
-<tr>
-<td><a href="../FoxJExpressionMeasurement/">FoxJExpressionMeasurement</a></td>
-<td><a href="../context_fields/">context_fields</a></td>
-<td>range</td>
-<td><a href="./">ContextField</a></td>
-</tr>
-<tr>
-<td><a href="../CiliaBeatFrequencyMeasurement/">CiliaBeatFrequencyMeasurement</a></td>
-<td><a href="../context_fields/">context_fields</a></td>
-<td>range</td>
-<td><a href="./">ContextField</a></td>
-</tr>
-<tr>
-<td><a href="../ASLHeightMeasurement/">ASLHeightMeasurement</a></td>
-<td><a href="../context_fields/">context_fields</a></td>
-<td>range</td>
-<td><a href="./">ContextField</a></td>
-</tr>
-<tr>
-<td><a href="../MucociliaryClearanceMeasurement/">MucociliaryClearanceMeasurement</a></td>
-<td><a href="../context_fields/">context_fields</a></td>
-<td>range</td>
-<td><a href="./">ContextField</a></td>
-</tr>
-<tr>
-<td><a href="../GobletCellMeasurement/">GobletCellMeasurement</a></td>
-<td><a href="../context_fields/">context_fields</a></td>
-<td>range</td>
-<td><a href="./">ContextField</a></td>
-</tr>
-<tr>
-<td><a href="../OxidativeStressMeasurement/">OxidativeStressMeasurement</a></td>
-<td><a href="../context_fields/">context_fields</a></td>
-<td>range</td>
-<td><a href="./">ContextField</a></td>
-</tr>
-</tbody>
-</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -442,11 +458,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>outcomes_model:ContextField</td>
+<td>outcomes_model:TranscriptionFactorExpressionMeasurement</td>
 </tr>
 <tr>
 <td>native</td>
-<td>outcomes_model:ContextField</td>
+<td>outcomes_model:TranscriptionFactorExpressionMeasurement</td>
 </tr>
 </tbody>
 </table>
@@ -454,61 +470,112 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: ContextField
-description: 'Metadata fields that capture important contextual information for reproducibility
-
-  and cross-study comparison
-
-  '
+<pre><code class="language-yaml">name: TranscriptionFactorExpressionMeasurement
+description: Measurement of transcription factor expression
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-is_a: NamedEntity
+is_a: MeasurementProcess
 slots:
-- field_name
-- field_value
-- field_category
+- mrna_level
+- protein_level
+- percentage_positive_cells
+- staining_protocol
+- gene_expression_analysis
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: ContextField
-description: 'Metadata fields that capture important contextual information for reproducibility
-
-  and cross-study comparison
-
-  '
+<pre><code class="language-yaml">name: TranscriptionFactorExpressionMeasurement
+description: Measurement of transcription factor expression
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-is_a: NamedEntity
+is_a: MeasurementProcess
 attributes:
-  field_name:
-    name: field_name
-    description: Name of the context field
+  mrna_level:
+    name: mrna_level
+    description: mRNA expression level
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
-    alias: field_name
-    owner: ContextField
+    alias: mrna_level
+    owner: TranscriptionFactorExpressionMeasurement
     domain_of:
-    - ContextField
-    range: string
-  field_value:
-    name: field_value
-    description: Value of the context field
+    - TranscriptionFactorExpressionMeasurement
+    range: QuantityValue
+    inlined: true
+  protein_level:
+    name: protein_level
+    description: Protein expression level
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
-    alias: field_value
-    owner: ContextField
+    alias: protein_level
+    owner: TranscriptionFactorExpressionMeasurement
     domain_of:
-    - ContextField
-    range: string
-  field_category:
-    name: field_category
-    description: Category or grouping for the context field
+    - TranscriptionFactorExpressionMeasurement
+    range: QuantityValue
+    inlined: true
+  percentage_positive_cells:
+    name: percentage_positive_cells
+    description: Percentage of positive cells
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
-    alias: field_category
-    owner: ContextField
+    alias: percentage_positive_cells
+    owner: TranscriptionFactorExpressionMeasurement
     domain_of:
-    - ContextField
+    - TranscriptionFactorExpressionMeasurement
+    range: QuantityValue
+    inlined: true
+  staining_protocol:
+    name: staining_protocol
+    description: Staining protocol details
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: staining_protocol
+    owner: TranscriptionFactorExpressionMeasurement
+    domain_of:
+    - TranscriptionFactorExpressionMeasurement
+    - GobletCellMeasurement
+    range: StainingProtocol
+    inlined: true
+  gene_expression_analysis:
+    name: gene_expression_analysis
+    description: Gene expression analysis methodology
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: gene_expression_analysis
+    owner: TranscriptionFactorExpressionMeasurement
+    domain_of:
+    - TranscriptionFactorExpressionMeasurement
+    - GobletCellMeasurement
+    range: GeneExpressionAnalysis
+    inlined: true
+  input_sample:
+    name: input_sample
+    description: Description of input samples and manipulations
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: input_sample
+    owner: TranscriptionFactorExpressionMeasurement
+    domain_of:
+    - MeasurementProcess
+    range: InputSample
+  method_assay:
+    name: method_assay
+    description: The method or assay used
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: method_assay
+    owner: TranscriptionFactorExpressionMeasurement
+    domain_of:
+    - MeasurementProcess
+    range: Assay
+  protocol_notes:
+    name: protocol_notes
+    description: Protocol or SOP notes
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: protocol_notes
+    owner: TranscriptionFactorExpressionMeasurement
+    domain_of:
+    - MeasurementProcess
     range: string
   id:
     name: id
@@ -517,7 +584,7 @@ attributes:
     rank: 1000
     identifier: true
     alias: id
-    owner: ContextField
+    owner: TranscriptionFactorExpressionMeasurement
     domain_of:
     - NamedEntity
     range: uriorcurie
@@ -528,7 +595,7 @@ attributes:
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: name
-    owner: ContextField
+    owner: TranscriptionFactorExpressionMeasurement
     domain_of:
     - NamedEntity
     range: string
@@ -538,7 +605,7 @@ attributes:
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: description
-    owner: ContextField
+    owner: TranscriptionFactorExpressionMeasurement
     domain_of:
     - NamedEntity
     range: string

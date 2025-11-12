@@ -49,10 +49,6 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/ContextField/</loc>
-         <lastmod>2025-11-12</lastmod>
-    </url>
-    <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/Curie/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
@@ -89,6 +85,10 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/EnvironmentalCondition/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/EvaporationControl/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
@@ -98,10 +98,6 @@
     </url>
     <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/FluorescentLabel/</loc>
-         <lastmod>2025-11-12</lastmod>
-    </url>
-    <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/FoxJExpressionMeasurement/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
@@ -169,10 +165,6 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/OutputMeasurement/</loc>
-         <lastmod>2025-11-12</lastmod>
-    </url>
-    <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/OxidativeStressMeasurement/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
@@ -206,6 +198,10 @@
     </url>
     <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/Time/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/TranscriptionFactorExpressionMeasurement/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
@@ -329,10 +325,6 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/context_fields/</loc>
-         <lastmod>2025-11-12</lastmod>
-    </url>
-    <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/control_method/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
@@ -437,18 +429,6 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/field_category/</loc>
-         <lastmod>2025-11-12</lastmod>
-    </url>
-    <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/field_name/</loc>
-         <lastmod>2025-11-12</lastmod>
-    </url>
-    <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/field_value/</loc>
-         <lastmod>2025-11-12</lastmod>
-    </url>
-    <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/fixation_method/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
@@ -462,14 +442,6 @@
     </url>
     <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/fluorophore_type/</loc>
-         <lastmod>2025-11-12</lastmod>
-    </url>
-    <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/foxj_mrna_level/</loc>
-         <lastmod>2025-11-12</lastmod>
-    </url>
-    <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/foxj_protein_level/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
@@ -502,10 +474,6 @@
     </url>
     <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/has_numeric_value/</loc>
-         <lastmod>2025-11-12</lastmod>
-    </url>
-    <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/has_quantity_value/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
@@ -605,10 +573,6 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/measurement_type/</loc>
-         <lastmod>2025-11-12</lastmod>
-    </url>
-    <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/mesh_terms/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
@@ -618,6 +582,10 @@
     </url>
     <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/microbiome_analysis/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/mrna_level/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
@@ -649,15 +617,7 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/ontology_mappings/</loc>
-         <lastmod>2025-11-12</lastmod>
-    </url>
-    <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/outcomes-model/</loc>
-         <lastmod>2025-11-12</lastmod>
-    </url>
-    <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/output_measurement/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
@@ -685,7 +645,7 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/percentage_foxj_positive_cells/</loc>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/percentage_positive_cells/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
@@ -714,6 +674,10 @@
     </url>
     <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/protein_concentration/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/protein_level/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>

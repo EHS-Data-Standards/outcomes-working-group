@@ -290,6 +290,15 @@
 
       Assay : environmental_conditions
 
+
+
+
+
+        Assay --&gt; "*" EnvironmentalCondition : environmental_conditions
+        click EnvironmentalCondition href "../EnvironmentalCondition/"
+
+
+
       Assay : id
 
       Assay : instrumentation
@@ -332,7 +341,7 @@
 </tr>
 <tr>
 <td><a href="../environmental_conditions/">environmental_conditions</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../EnvironmentalCondition/">EnvironmentalCondition</a></td>
 <td>Environmental conditions during measurement</td>
 <td>direct</td>
 </tr>
@@ -404,7 +413,7 @@
 <td><a href="./">Assay</a></td>
 </tr>
 <tr>
-<td><a href="../FoxJExpressionMeasurement/">FoxJExpressionMeasurement</a></td>
+<td><a href="../TranscriptionFactorExpressionMeasurement/">TranscriptionFactorExpressionMeasurement</a></td>
 <td><a href="../method_assay/">method_assay</a></td>
 <td>range</td>
 <td><a href="./">Assay</a></td>
@@ -518,7 +527,9 @@ attributes:
     owner: Assay
     domain_of:
     - Assay
-    range: string
+    range: EnvironmentalCondition
+    multivalued: true
+    inlined: true
   sop_reference:
     name: sop_reference
     description: Reference to standard operating procedure

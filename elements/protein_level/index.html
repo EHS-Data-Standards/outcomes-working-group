@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://EHS-Data-Standards.github.io/outcomes-working-group/elements/field_value/">
+        <link rel="canonical" href="https://EHS-Data-Standards.github.io/outcomes-working-group/elements/protein_level/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: field_value - outcomes-working-group</title>
+        <title>Slot: protein_level - outcomes-working-group</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-field_value" class="md-skip">
+        <a href="#slot-protein_level" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: field_value
+              Slot: protein_level
             
           </span>
         </div>
@@ -416,10 +416,10 @@
   
 
 
-<h1 id="slot-field_value">Slot: field_value</h1>
-<p><em>Value of the context field</em></p>
-<p>URI: <a href="https://w3id.org/EHS-Data-Standards/outcomes-model/field_value">outcomes_model:field_value</a>
-Alias: field_value</p>
+<h1 id="slot-protein_level">Slot: protein_level</h1>
+<p><em>Protein expression level</em></p>
+<p>URI: <a href="https://w3id.org/EHS-Data-Standards/outcomes-model/protein_level">outcomes_model:protein_level</a>
+Alias: protein_level</p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -433,15 +433,15 @@ Alias: field_value</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../ContextField/">ContextField</a></td>
-<td>Metadata fields that capture important contextual information for reproducibi...</td>
+<td><a href="../TranscriptionFactorExpressionMeasurement/">TranscriptionFactorExpressionMeasurement</a></td>
+<td>Measurement of transcription factor expression</td>
 <td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../QuantityValue/">QuantityValue</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -459,25 +459,26 @@ Alias: field_value</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>outcomes_model:field_value</td>
+<td>outcomes_model:protein_level</td>
 </tr>
 <tr>
 <td>native</td>
-<td>outcomes_model:field_value</td>
+<td>outcomes_model:protein_level</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: field_value
-description: Value of the context field
+<pre><code class="language-yaml">name: protein_level
+description: Protein expression level
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
 rank: 1000
-alias: field_value
+alias: protein_level
 domain_of:
-- ContextField
-range: string
+- TranscriptionFactorExpressionMeasurement
+range: QuantityValue
+inlined: true
 
 </code></pre>
 

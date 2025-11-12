@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://EHS-Data-Standards.github.io/outcomes-working-group/elements/measurement_type/">
+        <link rel="canonical" href="https://EHS-Data-Standards.github.io/outcomes-working-group/elements/percentage_positive_cells/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: measurement_type - outcomes-working-group</title>
+        <title>Slot: percentage_positive_cells - outcomes-working-group</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-measurement_type" class="md-skip">
+        <a href="#slot-percentage_positive_cells" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: measurement_type
+              Slot: percentage_positive_cells
             
           </span>
         </div>
@@ -416,10 +416,10 @@
   
 
 
-<h1 id="slot-measurement_type">Slot: measurement_type</h1>
-<p><em>Type of measurement or readout</em></p>
-<p>URI: <a href="https://w3id.org/EHS-Data-Standards/outcomes-model/measurement_type">outcomes_model:measurement_type</a>
-Alias: measurement_type</p>
+<h1 id="slot-percentage_positive_cells">Slot: percentage_positive_cells</h1>
+<p><em>Percentage of positive cells</em></p>
+<p>URI: <a href="https://w3id.org/EHS-Data-Standards/outcomes-model/percentage_positive_cells">outcomes_model:percentage_positive_cells</a>
+Alias: percentage_positive_cells</p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -433,15 +433,15 @@ Alias: measurement_type</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../OutputMeasurement/">OutputMeasurement</a></td>
-<td>The quantitative or qualitative output from a measurement process</td>
+<td><a href="../TranscriptionFactorExpressionMeasurement/">TranscriptionFactorExpressionMeasurement</a></td>
+<td>Measurement of transcription factor expression</td>
 <td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../QuantityValue/">QuantityValue</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -459,25 +459,26 @@ Alias: measurement_type</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>outcomes_model:measurement_type</td>
+<td>outcomes_model:percentage_positive_cells</td>
 </tr>
 <tr>
 <td>native</td>
-<td>outcomes_model:measurement_type</td>
+<td>outcomes_model:percentage_positive_cells</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: measurement_type
-description: Type of measurement or readout
+<pre><code class="language-yaml">name: percentage_positive_cells
+description: Percentage of positive cells
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
 rank: 1000
-alias: measurement_type
+alias: percentage_positive_cells
 domain_of:
-- OutputMeasurement
-range: string
+- TranscriptionFactorExpressionMeasurement
+range: QuantityValue
+inlined: true
 
 </code></pre>
 

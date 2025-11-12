@@ -277,17 +277,6 @@
 
 
 
-      ASLHeightMeasurement : context_fields
-
-
-
-
-
-        ASLHeightMeasurement --&gt; "*" ContextField : context_fields
-        click ContextField href "../ContextField/"
-
-
-
       ASLHeightMeasurement : description
 
       ASLHeightMeasurement : evaporation_prevention
@@ -350,19 +339,6 @@
 
 
       ASLHeightMeasurement : name
-
-      ASLHeightMeasurement : ontology_mappings
-
-      ASLHeightMeasurement : output_measurement
-
-
-
-
-
-        ASLHeightMeasurement --&gt; "0..1" OutputMeasurement : output_measurement
-        click OutputMeasurement href "../OutputMeasurement/"
-
-
 
       ASLHeightMeasurement : periciliary_layer_depth
 
@@ -449,27 +425,9 @@
 <td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
 </tr>
 <tr>
-<td><a href="../output_measurement/">output_measurement</a></td>
-<td>0..1 <br/> <a href="../OutputMeasurement/">OutputMeasurement</a></td>
-<td>The output or measurement obtained</td>
-<td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
-</tr>
-<tr>
-<td><a href="../context_fields/">context_fields</a></td>
-<td>* <br/> <a href="../ContextField/">ContextField</a></td>
-<td>Contextual metadata fields for reproducibility</td>
-<td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
-</tr>
-<tr>
 <td><a href="../protocol_notes/">protocol_notes</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Protocol or SOP notes</td>
-<td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
-</tr>
-<tr>
-<td><a href="../ontology_mappings/">ontology_mappings</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>Mappings to ontology terms (Biolink, OBI, etc</td>
 <td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
 </tr>
 <tr>
@@ -627,28 +585,6 @@ attributes:
     domain_of:
     - MeasurementProcess
     range: Assay
-  output_measurement:
-    name: output_measurement
-    description: The output or measurement obtained
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    rank: 1000
-    alias: output_measurement
-    owner: ASLHeightMeasurement
-    domain_of:
-    - MeasurementProcess
-    range: OutputMeasurement
-  context_fields:
-    name: context_fields
-    description: Contextual metadata fields for reproducibility
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    rank: 1000
-    alias: context_fields
-    owner: ASLHeightMeasurement
-    domain_of:
-    - MeasurementProcess
-    range: ContextField
-    multivalued: true
-    inlined: true
   protocol_notes:
     name: protocol_notes
     description: Protocol or SOP notes
@@ -659,17 +595,6 @@ attributes:
     domain_of:
     - MeasurementProcess
     range: string
-  ontology_mappings:
-    name: ontology_mappings
-    description: Mappings to ontology terms (Biolink, OBI, etc.)
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    rank: 1000
-    alias: ontology_mappings
-    owner: ASLHeightMeasurement
-    domain_of:
-    - MeasurementProcess
-    range: string
-    multivalued: true
   id:
     name: id
     description: A unique identifier

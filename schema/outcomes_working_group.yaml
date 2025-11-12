@@ -378,29 +378,6 @@ slots:
     domain_of:
     - MeasurementProcess
     range: Assay
-  output_measurement:
-    name: output_measurement
-    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/output_measurement
-    description: The output or measurement obtained
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    slot_uri: outcomes_model:output_measurement
-    owner: MeasurementProcess
-    domain_of:
-    - MeasurementProcess
-    range: OutputMeasurement
-  context_fields:
-    name: context_fields
-    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/context_fields
-    description: Contextual metadata fields for reproducibility
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    slot_uri: outcomes_model:context_fields
-    owner: MeasurementProcess
-    domain_of:
-    - MeasurementProcess
-    range: ContextField
-    multivalued: true
-    inlined: true
-    inlined_as_list: false
   protocol_notes:
     name: protocol_notes
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/protocol_notes
@@ -411,17 +388,6 @@ slots:
     domain_of:
     - MeasurementProcess
     range: string
-  ontology_mappings:
-    name: ontology_mappings
-    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/ontology_mappings
-    description: Mappings to ontology terms (Biolink, OBI, etc.)
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    slot_uri: outcomes_model:ontology_mappings
-    owner: MeasurementProcess
-    domain_of:
-    - MeasurementProcess
-    range: string
-    multivalued: true
   sample_type:
     name: sample_type
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/sample_type
@@ -485,7 +451,10 @@ slots:
     owner: Assay
     domain_of:
     - Assay
-    range: string
+    range: EnvironmentalCondition
+    multivalued: true
+    inlined: true
+    inlined_as_list: false
   sop_reference:
     name: sop_reference
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/sop_reference
@@ -496,28 +465,6 @@ slots:
     domain_of:
     - Assay
     range: string
-  measurement_type:
-    name: measurement_type
-    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/measurement_type
-    description: Type of measurement or readout
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    slot_uri: outcomes_model:measurement_type
-    owner: OutputMeasurement
-    domain_of:
-    - OutputMeasurement
-    range: string
-  has_quantity_value:
-    name: has_quantity_value
-    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/has_quantity_value
-    description: The quantity value associated with this measurement
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    slot_uri: outcomes_model:has_quantity_value
-    owner: OutputMeasurement
-    domain_of:
-    - OutputMeasurement
-    range: QuantityValue
-    inlined: true
-    inlined_as_list: true
   has_numeric_value:
     name: has_numeric_value
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/has_numeric_value
@@ -563,36 +510,6 @@ slots:
     domain_of:
     - QuantityValue
     range: float
-  field_name:
-    name: field_name
-    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/field_name
-    description: Name of the context field
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    slot_uri: outcomes_model:field_name
-    owner: ContextField
-    domain_of:
-    - ContextField
-    range: string
-  field_value:
-    name: field_value
-    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/field_value
-    description: Value of the context field
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    slot_uri: outcomes_model:field_value
-    owner: ContextField
-    domain_of:
-    - ContextField
-    range: string
-  field_category:
-    name: field_category
-    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/field_category
-    description: Category or grouping for the context field
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    slot_uri: outcomes_model:field_category
-    owner: ContextField
-    domain_of:
-    - ContextField
-    range: string
   cftr_specific_current:
     name: cftr_specific_current
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/cftr_specific_current
@@ -980,7 +897,7 @@ slots:
     slot_uri: outcomes_model:staining_protocol
     owner: GobletCellMeasurement
     domain_of:
-    - FoxJExpressionMeasurement
+    - TranscriptionFactorExpressionMeasurement
     - GobletCellMeasurement
     range: StainingProtocol
     inlined: true
@@ -993,7 +910,7 @@ slots:
     slot_uri: outcomes_model:gene_expression_analysis
     owner: GobletCellMeasurement
     domain_of:
-    - FoxJExpressionMeasurement
+    - TranscriptionFactorExpressionMeasurement
     - GobletCellMeasurement
     range: GeneExpressionAnalysis
     inlined: true
@@ -1077,6 +994,7 @@ slots:
     domain_of:
     - OxidativeStressMeasurement
     range: DetectionMethod
+    multivalued: true
     inlined: true
     inlined_as_list: false
   protein_oxidation_markers:
@@ -1088,9 +1006,9 @@ slots:
     owner: OxidativeStressMeasurement
     domain_of:
     - OxidativeStressMeasurement
-    range: QuantityValue
+    range: string
+    multivalued: true
     inlined: true
-    inlined_as_list: true
   dna_damage_markers:
     name: dna_damage_markers
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/dna_damage_markers
@@ -1348,39 +1266,39 @@ slots:
     - EGFRSignalingMeasurement
     range: string
     multivalued: true
-  foxj_mrna_level:
-    name: foxj_mrna_level
-    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/foxj_mrna_level
-    description: FoxJ mRNA expression level
+  mrna_level:
+    name: mrna_level
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/mrna_level
+    description: mRNA expression level
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    slot_uri: outcomes_model:foxj_mrna_level
-    owner: FoxJExpressionMeasurement
+    slot_uri: outcomes_model:mrna_level
+    owner: TranscriptionFactorExpressionMeasurement
     domain_of:
-    - FoxJExpressionMeasurement
+    - TranscriptionFactorExpressionMeasurement
     range: QuantityValue
     inlined: true
     inlined_as_list: true
-  foxj_protein_level:
-    name: foxj_protein_level
-    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/foxj_protein_level
-    description: FoxJ protein level
+  protein_level:
+    name: protein_level
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/protein_level
+    description: Protein expression level
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    slot_uri: outcomes_model:foxj_protein_level
-    owner: FoxJExpressionMeasurement
+    slot_uri: outcomes_model:protein_level
+    owner: TranscriptionFactorExpressionMeasurement
     domain_of:
-    - FoxJExpressionMeasurement
+    - TranscriptionFactorExpressionMeasurement
     range: QuantityValue
     inlined: true
     inlined_as_list: true
-  percentage_foxj_positive_cells:
-    name: percentage_foxj_positive_cells
-    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/percentage_foxj_positive_cells
-    description: Percentage of FoxJ-positive cells
+  percentage_positive_cells:
+    name: percentage_positive_cells
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/percentage_positive_cells
+    description: Percentage of positive cells
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    slot_uri: outcomes_model:percentage_foxj_positive_cells
-    owner: FoxJExpressionMeasurement
+    slot_uri: outcomes_model:percentage_positive_cells
+    owner: TranscriptionFactorExpressionMeasurement
     domain_of:
-    - FoxJExpressionMeasurement
+    - TranscriptionFactorExpressionMeasurement
     range: QuantityValue
     inlined: true
     inlined_as_list: true
@@ -1646,9 +1564,10 @@ slots:
     description: Temperature setting
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     slot_uri: outcomes_model:temperature
-    owner: CellCultureConditions
+    owner: EnvironmentalCondition
     domain_of:
     - CellCultureConditions
+    - EnvironmentalCondition
     range: QuantityValue
     inlined: true
     inlined_as_list: true
@@ -1658,9 +1577,10 @@ slots:
     description: Humidity level
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     slot_uri: outcomes_model:humidity
-    owner: CellCultureConditions
+    owner: EnvironmentalCondition
     domain_of:
     - CellCultureConditions
+    - EnvironmentalCondition
     range: QuantityValue
     inlined: true
     inlined_as_list: true
@@ -1670,9 +1590,10 @@ slots:
     description: CO2 percentage in incubator
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     slot_uri: outcomes_model:co2_percentage
-    owner: CellCultureConditions
+    owner: EnvironmentalCondition
     domain_of:
     - CellCultureConditions
+    - EnvironmentalCondition
     range: QuantityValue
     inlined: true
     inlined_as_list: true
@@ -2099,7 +2020,7 @@ classes:
     description: 'A generic class representing the process of measuring a biological
       endpoint.
 
-      Includes information about input samples, methods, outputs, and contextual metadata.
+      Includes information about input samples, methods, and contextual metadata.
 
       '
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
@@ -2110,10 +2031,7 @@ classes:
     - description
     - input_sample
     - method_assay
-    - output_measurement
-    - context_fields
     - protocol_notes
-    - ontology_mappings
     class_uri: outcomes_model:MeasurementProcess
   InputSample:
     name: InputSample
@@ -2161,38 +2079,6 @@ classes:
     - has_minimum_numeric_value
     - has_maximum_numeric_value
     class_uri: outcomes_model:QuantityValue
-  OutputMeasurement:
-    name: OutputMeasurement
-    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/OutputMeasurement
-    description: The quantitative or qualitative output from a measurement process
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    is_a: NamedEntity
-    slots:
-    - id
-    - name
-    - description
-    - measurement_type
-    - has_quantity_value
-    class_uri: outcomes_model:OutputMeasurement
-  ContextField:
-    name: ContextField
-    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/ContextField
-    description: 'Metadata fields that capture important contextual information for
-      reproducibility
-
-      and cross-study comparison
-
-      '
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    is_a: NamedEntity
-    slots:
-    - id
-    - name
-    - description
-    - field_name
-    - field_value
-    - field_category
-    class_uri: outcomes_model:ContextField
   CFTRFunctionMeasurement:
     name: CFTRFunctionMeasurement
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/CFTRFunctionMeasurement
@@ -2205,10 +2091,7 @@ classes:
     - description
     - input_sample
     - method_assay
-    - output_measurement
-    - context_fields
     - protocol_notes
-    - ontology_mappings
     - cftr_specific_current
     - inhibitor_sensitive_current
     - cell_culture_details
@@ -2225,10 +2108,7 @@ classes:
     - description
     - input_sample
     - method_assay
-    - output_measurement
-    - context_fields
     - protocol_notes
-    - ontology_mappings
     - sample_collection_details
     - inflammatory_cell_profile
     - microbiome_analysis
@@ -2248,10 +2128,7 @@ classes:
     - description
     - input_sample
     - method_assay
-    - output_measurement
-    - context_fields
     - protocol_notes
-    - ontology_mappings
     - fev1
     - fvc
     - fev1_fvc_ratio
@@ -2273,19 +2150,16 @@ classes:
     - description
     - input_sample
     - method_assay
-    - output_measurement
-    - context_fields
     - protocol_notes
-    - ontology_mappings
     - egfr_phosphorylation
     - downstream_kinase_activation
     - ligand_expression_levels
     - pathway_biomarkers
     class_uri: outcomes_model:EGFRSignalingMeasurement
-  FoxJExpressionMeasurement:
-    name: FoxJExpressionMeasurement
-    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/FoxJExpressionMeasurement
-    description: Measurement of FoxJ transcription factor expression
+  TranscriptionFactorExpressionMeasurement:
+    name: TranscriptionFactorExpressionMeasurement
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/TranscriptionFactorExpressionMeasurement
+    description: Measurement of transcription factor expression
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     is_a: MeasurementProcess
     slots:
@@ -2294,16 +2168,13 @@ classes:
     - description
     - input_sample
     - method_assay
-    - output_measurement
-    - context_fields
     - protocol_notes
-    - ontology_mappings
-    - foxj_mrna_level
-    - foxj_protein_level
-    - percentage_foxj_positive_cells
+    - mrna_level
+    - protein_level
+    - percentage_positive_cells
     - staining_protocol
     - gene_expression_analysis
-    class_uri: outcomes_model:FoxJExpressionMeasurement
+    class_uri: outcomes_model:TranscriptionFactorExpressionMeasurement
   CiliaBeatFrequencyMeasurement:
     name: CiliaBeatFrequencyMeasurement
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/CiliaBeatFrequencyMeasurement
@@ -2316,10 +2187,7 @@ classes:
     - description
     - input_sample
     - method_assay
-    - output_measurement
-    - context_fields
     - protocol_notes
-    - ontology_mappings
     - beat_frequency_hz
     - active_area_percentage
     - imaging_protocol
@@ -2341,10 +2209,7 @@ classes:
     - description
     - input_sample
     - method_assay
-    - output_measurement
-    - context_fields
     - protocol_notes
-    - ontology_mappings
     - asl_height_um
     - periciliary_layer_depth
     - imaging_protocol
@@ -2364,10 +2229,7 @@ classes:
     - description
     - input_sample
     - method_assay
-    - output_measurement
-    - context_fields
     - protocol_notes
-    - ontology_mappings
     - transport_rate
     - directionality
     - particle_tracking_method
@@ -2391,10 +2253,7 @@ classes:
     - description
     - input_sample
     - method_assay
-    - output_measurement
-    - context_fields
     - protocol_notes
-    - ontology_mappings
     - goblet_cell_count
     - mucin_expression_level
     - staining_protocol
@@ -2416,10 +2275,7 @@ classes:
     - description
     - input_sample
     - method_assay
-    - output_measurement
-    - context_fields
     - protocol_notes
-    - ontology_mappings
     - ros_level
     - lipid_peroxidation
     - antioxidant_capacity
@@ -2661,9 +2517,23 @@ classes:
     - viability_percentage
     - apoptosis_markers
     class_uri: outcomes_model:CytotoxicityMetrics
+  EnvironmentalCondition:
+    name: EnvironmentalCondition
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/EnvironmentalCondition
+    description: Environmental parameters during measurement
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    is_a: NamedEntity
+    slots:
+    - id
+    - name
+    - description
+    - temperature
+    - humidity
+    - co2_percentage
+    class_uri: outcomes_model:EnvironmentalCondition
 metamodel_version: 1.7.0
 source_file: outcomes_working_group.yaml
-source_file_date: '2025-11-12T22:46:07'
-source_file_size: 26914
-generation_date: '2025-11-12T22:46:17'
+source_file_date: '2025-11-12T22:55:20'
+source_file_size: 25720
+generation_date: '2025-11-12T22:55:29'
 

@@ -290,17 +290,6 @@
 
 
 
-      OxidativeStressMeasurement : context_fields
-
-
-
-
-
-        OxidativeStressMeasurement --&gt; "*" ContextField : context_fields
-        click ContextField href "../ContextField/"
-
-
-
       OxidativeStressMeasurement : cytotoxicity_metrics
 
 
@@ -320,7 +309,7 @@
 
 
 
-        OxidativeStressMeasurement --&gt; "0..1" DetectionMethod : detection_method_details
+        OxidativeStressMeasurement --&gt; "*" DetectionMethod : detection_method_details
         click DetectionMethod href "../DetectionMethod/"
 
 
@@ -373,29 +362,7 @@
 
       OxidativeStressMeasurement : name
 
-      OxidativeStressMeasurement : ontology_mappings
-
-      OxidativeStressMeasurement : output_measurement
-
-
-
-
-
-        OxidativeStressMeasurement --&gt; "0..1" OutputMeasurement : output_measurement
-        click OutputMeasurement href "../OutputMeasurement/"
-
-
-
       OxidativeStressMeasurement : protein_oxidation_markers
-
-
-
-
-
-        OxidativeStressMeasurement --&gt; "0..1" QuantityValue : protein_oxidation_markers
-        click QuantityValue href "../QuantityValue/"
-
-
 
       OxidativeStressMeasurement : protocol_notes
 
@@ -470,13 +437,13 @@
 </tr>
 <tr>
 <td><a href="../detection_method_details/">detection_method_details</a></td>
-<td>0..1 <br/> <a href="../DetectionMethod/">DetectionMethod</a></td>
+<td>* <br/> <a href="../DetectionMethod/">DetectionMethod</a></td>
 <td>Detection method details</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../protein_oxidation_markers/">protein_oxidation_markers</a></td>
-<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td>Protein oxidation markers (carbonyls, nitrotyrosine)</td>
 <td>direct</td>
 </tr>
@@ -517,27 +484,9 @@
 <td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
 </tr>
 <tr>
-<td><a href="../output_measurement/">output_measurement</a></td>
-<td>0..1 <br/> <a href="../OutputMeasurement/">OutputMeasurement</a></td>
-<td>The output or measurement obtained</td>
-<td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
-</tr>
-<tr>
-<td><a href="../context_fields/">context_fields</a></td>
-<td>* <br/> <a href="../ContextField/">ContextField</a></td>
-<td>Contextual metadata fields for reproducibility</td>
-<td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
-</tr>
-<tr>
 <td><a href="../protocol_notes/">protocol_notes</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Protocol or SOP notes</td>
-<td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
-</tr>
-<tr>
-<td><a href="../ontology_mappings/">ontology_mappings</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>Mappings to ontology terms (Biolink, OBI, etc</td>
 <td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
 </tr>
 <tr>
@@ -667,6 +616,7 @@ attributes:
     domain_of:
     - OxidativeStressMeasurement
     range: DetectionMethod
+    multivalued: true
     inlined: true
   protein_oxidation_markers:
     name: protein_oxidation_markers
@@ -677,7 +627,8 @@ attributes:
     owner: OxidativeStressMeasurement
     domain_of:
     - OxidativeStressMeasurement
-    range: QuantityValue
+    range: string
+    multivalued: true
     inlined: true
   dna_damage_markers:
     name: dna_damage_markers
@@ -742,28 +693,6 @@ attributes:
     domain_of:
     - MeasurementProcess
     range: Assay
-  output_measurement:
-    name: output_measurement
-    description: The output or measurement obtained
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    rank: 1000
-    alias: output_measurement
-    owner: OxidativeStressMeasurement
-    domain_of:
-    - MeasurementProcess
-    range: OutputMeasurement
-  context_fields:
-    name: context_fields
-    description: Contextual metadata fields for reproducibility
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    rank: 1000
-    alias: context_fields
-    owner: OxidativeStressMeasurement
-    domain_of:
-    - MeasurementProcess
-    range: ContextField
-    multivalued: true
-    inlined: true
   protocol_notes:
     name: protocol_notes
     description: Protocol or SOP notes
@@ -774,17 +703,6 @@ attributes:
     domain_of:
     - MeasurementProcess
     range: string
-  ontology_mappings:
-    name: ontology_mappings
-    description: Mappings to ontology terms (Biolink, OBI, etc.)
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    rank: 1000
-    alias: ontology_mappings
-    owner: OxidativeStressMeasurement
-    domain_of:
-    - MeasurementProcess
-    range: string
-    multivalued: true
   id:
     name: id
     description: A unique identifier
