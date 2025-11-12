@@ -364,9 +364,9 @@ slots:
     description: Description of input samples and manipulations
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     slot_uri: outcomes_model:input_sample
-    owner: MeasurementProcess
+    owner: Measurement
     domain_of:
-    - MeasurementProcess
+    - Measurement
     range: InputSample
   method_assay:
     name: method_assay
@@ -374,9 +374,9 @@ slots:
     description: The method or assay used
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     slot_uri: outcomes_model:method_assay
-    owner: MeasurementProcess
+    owner: Measurement
     domain_of:
-    - MeasurementProcess
+    - Measurement
     range: Assay
   protocol_notes:
     name: protocol_notes
@@ -384,9 +384,9 @@ slots:
     description: Protocol or SOP notes
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     slot_uri: outcomes_model:protocol_notes
-    owner: MeasurementProcess
+    owner: Measurement
     domain_of:
-    - MeasurementProcess
+    - Measurement
     range: string
   sample_type:
     name: sample_type
@@ -2014,9 +2014,9 @@ classes:
     - name
     - description
     class_uri: outcomes_model:NamedEntity
-  MeasurementProcess:
-    name: MeasurementProcess
-    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/MeasurementProcess
+  Measurement:
+    name: Measurement
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/Measurement
     description: 'A generic class representing the process of measuring a biological
       endpoint.
 
@@ -2032,7 +2032,7 @@ classes:
     - input_sample
     - method_assay
     - protocol_notes
-    class_uri: outcomes_model:MeasurementProcess
+    class_uri: outcomes_model:Measurement
   InputSample:
     name: InputSample
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/InputSample
@@ -2084,7 +2084,7 @@ classes:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/CFTRFunctionMeasurement
     description: Measurement of CFTR-mediated ion transport function
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
     - id
     - name
@@ -2101,7 +2101,7 @@ classes:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/BALFSputumMeasurement
     description: Measurement of bronchoalveolar lavage fluid or sputum components
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
     - id
     - name
@@ -2121,7 +2121,7 @@ classes:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/LungFunctionMeasurement
     description: Measurement of lung function parameters
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
     - id
     - name
@@ -2143,7 +2143,7 @@ classes:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/EGFRSignalingMeasurement
     description: Measurement of EGFR pathway activation and signaling
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
     - id
     - name
@@ -2161,7 +2161,7 @@ classes:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/TranscriptionFactorExpressionMeasurement
     description: Measurement of transcription factor expression
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
     - id
     - name
@@ -2180,7 +2180,7 @@ classes:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/CiliaBeatFrequencyMeasurement
     description: Measurement of ciliary beat frequency
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
     - id
     - name
@@ -2202,7 +2202,7 @@ classes:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/ASLHeightMeasurement
     description: Measurement of airway surface liquid height
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
     - id
     - name
@@ -2222,7 +2222,7 @@ classes:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/MucociliaryClearanceMeasurement
     description: Measurement of mucociliary clearance/transport
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
     - id
     - name
@@ -2246,7 +2246,7 @@ classes:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/GobletCellMeasurement
     description: Measurement of goblet cell number or mucin production
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
     - id
     - name
@@ -2268,7 +2268,7 @@ classes:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/OxidativeStressMeasurement
     description: Measurement of oxidative stress markers
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
     - id
     - name
@@ -2533,7 +2533,7 @@ classes:
     class_uri: outcomes_model:EnvironmentalCondition
 metamodel_version: 1.7.0
 source_file: outcomes_working_group.yaml
-source_file_date: '2025-11-12T22:55:20'
-source_file_size: 25720
-generation_date: '2025-11-12T22:55:29'
+source_file_date: '2025-11-12T22:56:57'
+source_file_size: 25636
+generation_date: '2025-11-12T22:57:06'
 

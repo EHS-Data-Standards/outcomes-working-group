@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://EHS-Data-Standards.github.io/outcomes-working-group/elements/MeasurementProcess/" rel="canonical"/>
+<link href="https://EHS-Data-Standards.github.io/outcomes-working-group/elements/Measurement/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
-<title>Class: MeasurementProcess - outcomes-working-group</title>
+<title>Class: Measurement - outcomes-working-group</title>
 <link href="../../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -23,7 +23,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-measurementprocess">
+<a class="md-skip" href="#class-measurement">
           Skip to content
         </a>
 </div>
@@ -47,7 +47,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: MeasurementProcess
+              Class: Measurement
             
           </span>
 </div>
@@ -257,76 +257,76 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-measurementprocess">Class: MeasurementProcess</h1>
+<h1 id="class-measurement">Class: Measurement</h1>
 <p><em>A generic class representing the process of measuring a biological endpoint.</em></p>
 <p><em>Includes information about input samples, methods, and contextual metadata.</em></p>
 <p>__</p>
-<p>URI: <a href="https://w3id.org/EHS-Data-Standards/outcomes-model/MeasurementProcess">outcomes_model:MeasurementProcess</a></p>
+<p>URI: <a href="https://w3id.org/EHS-Data-Standards/outcomes-model/Measurement">outcomes_model:Measurement</a></p>
 <div class="mermaid"> classDiagram
-    class MeasurementProcess
-    click MeasurementProcess href "../MeasurementProcess/"
-      NamedEntity &lt;|-- MeasurementProcess
+    class Measurement
+    click Measurement href "../Measurement/"
+      NamedEntity &lt;|-- Measurement
         click NamedEntity href "../NamedEntity/"
 
 
-      MeasurementProcess &lt;|-- CFTRFunctionMeasurement
+      Measurement &lt;|-- CFTRFunctionMeasurement
         click CFTRFunctionMeasurement href "../CFTRFunctionMeasurement/"
-      MeasurementProcess &lt;|-- BALFSputumMeasurement
+      Measurement &lt;|-- BALFSputumMeasurement
         click BALFSputumMeasurement href "../BALFSputumMeasurement/"
-      MeasurementProcess &lt;|-- LungFunctionMeasurement
+      Measurement &lt;|-- LungFunctionMeasurement
         click LungFunctionMeasurement href "../LungFunctionMeasurement/"
-      MeasurementProcess &lt;|-- EGFRSignalingMeasurement
+      Measurement &lt;|-- EGFRSignalingMeasurement
         click EGFRSignalingMeasurement href "../EGFRSignalingMeasurement/"
-      MeasurementProcess &lt;|-- TranscriptionFactorExpressionMeasurement
+      Measurement &lt;|-- TranscriptionFactorExpressionMeasurement
         click TranscriptionFactorExpressionMeasurement href "../TranscriptionFactorExpressionMeasurement/"
-      MeasurementProcess &lt;|-- CiliaBeatFrequencyMeasurement
+      Measurement &lt;|-- CiliaBeatFrequencyMeasurement
         click CiliaBeatFrequencyMeasurement href "../CiliaBeatFrequencyMeasurement/"
-      MeasurementProcess &lt;|-- ASLHeightMeasurement
+      Measurement &lt;|-- ASLHeightMeasurement
         click ASLHeightMeasurement href "../ASLHeightMeasurement/"
-      MeasurementProcess &lt;|-- MucociliaryClearanceMeasurement
+      Measurement &lt;|-- MucociliaryClearanceMeasurement
         click MucociliaryClearanceMeasurement href "../MucociliaryClearanceMeasurement/"
-      MeasurementProcess &lt;|-- GobletCellMeasurement
+      Measurement &lt;|-- GobletCellMeasurement
         click GobletCellMeasurement href "../GobletCellMeasurement/"
-      MeasurementProcess &lt;|-- OxidativeStressMeasurement
+      Measurement &lt;|-- OxidativeStressMeasurement
         click OxidativeStressMeasurement href "../OxidativeStressMeasurement/"
 
 
-      MeasurementProcess : description
+      Measurement : description
 
-      MeasurementProcess : id
+      Measurement : id
 
-      MeasurementProcess : input_sample
-
-
+      Measurement : input_sample
 
 
 
-        MeasurementProcess --&gt; "0..1" InputSample : input_sample
+
+
+        Measurement --&gt; "0..1" InputSample : input_sample
         click InputSample href "../InputSample/"
 
 
 
-      MeasurementProcess : method_assay
+      Measurement : method_assay
 
 
 
 
 
-        MeasurementProcess --&gt; "0..1" Assay : method_assay
+        Measurement --&gt; "0..1" Assay : method_assay
         click Assay href "../Assay/"
 
 
 
-      MeasurementProcess : name
+      Measurement : name
 
-      MeasurementProcess : protocol_notes
+      Measurement : protocol_notes
 
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../NamedEntity/">NamedEntity</a><ul>
-<li><strong>MeasurementProcess</strong><ul>
+<li><strong>Measurement</strong><ul>
 <li><a href="../CFTRFunctionMeasurement/">CFTRFunctionMeasurement</a></li>
 <li><a href="../BALFSputumMeasurement/">BALFSputumMeasurement</a></li>
 <li><a href="../LungFunctionMeasurement/">LungFunctionMeasurement</a></li>
@@ -407,11 +407,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>outcomes_model:MeasurementProcess</td>
+<td>outcomes_model:Measurement</td>
 </tr>
 <tr>
 <td>native</td>
-<td>outcomes_model:MeasurementProcess</td>
+<td>outcomes_model:Measurement</td>
 </tr>
 </tbody>
 </table>
@@ -419,7 +419,7 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: MeasurementProcess
+<pre><code class="language-yaml">name: Measurement
 description: 'A generic class representing the process of measuring a biological endpoint.
 
   Includes information about input samples, methods, and contextual metadata.
@@ -436,7 +436,7 @@ slots:
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: MeasurementProcess
+<pre><code class="language-yaml">name: Measurement
 description: 'A generic class representing the process of measuring a biological endpoint.
 
   Includes information about input samples, methods, and contextual metadata.
@@ -451,9 +451,9 @@ attributes:
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: input_sample
-    owner: MeasurementProcess
+    owner: Measurement
     domain_of:
-    - MeasurementProcess
+    - Measurement
     range: InputSample
   method_assay:
     name: method_assay
@@ -461,9 +461,9 @@ attributes:
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: method_assay
-    owner: MeasurementProcess
+    owner: Measurement
     domain_of:
-    - MeasurementProcess
+    - Measurement
     range: Assay
   protocol_notes:
     name: protocol_notes
@@ -471,9 +471,9 @@ attributes:
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: protocol_notes
-    owner: MeasurementProcess
+    owner: Measurement
     domain_of:
-    - MeasurementProcess
+    - Measurement
     range: string
   id:
     name: id
@@ -482,7 +482,7 @@ attributes:
     rank: 1000
     identifier: true
     alias: id
-    owner: MeasurementProcess
+    owner: Measurement
     domain_of:
     - NamedEntity
     range: uriorcurie
@@ -493,7 +493,7 @@ attributes:
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: name
-    owner: MeasurementProcess
+    owner: Measurement
     domain_of:
     - NamedEntity
     range: string
@@ -503,7 +503,7 @@ attributes:
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: description
-    owner: MeasurementProcess
+    owner: Measurement
     domain_of:
     - NamedEntity
     range: string

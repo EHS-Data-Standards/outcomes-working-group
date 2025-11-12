@@ -263,8 +263,8 @@
 <div class="mermaid"> classDiagram
     class TranscriptionFactorExpressionMeasurement
     click TranscriptionFactorExpressionMeasurement href "../TranscriptionFactorExpressionMeasurement/"
-      MeasurementProcess &lt;|-- TranscriptionFactorExpressionMeasurement
-        click MeasurementProcess href "../MeasurementProcess/"
+      Measurement &lt;|-- TranscriptionFactorExpressionMeasurement
+        click Measurement href "../Measurement/"
 
       TranscriptionFactorExpressionMeasurement : description
 
@@ -356,7 +356,7 @@
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../NamedEntity/">NamedEntity</a><ul>
-<li><a href="../MeasurementProcess/">MeasurementProcess</a><ul>
+<li><a href="../Measurement/">Measurement</a><ul>
 <li><strong>TranscriptionFactorExpressionMeasurement</strong></li>
 </ul>
 </li>
@@ -408,19 +408,19 @@
 <td><a href="../input_sample/">input_sample</a></td>
 <td>0..1 <br/> <a href="../InputSample/">InputSample</a></td>
 <td>Description of input samples and manipulations</td>
-<td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
+<td><a href="../Measurement/">Measurement</a></td>
 </tr>
 <tr>
 <td><a href="../method_assay/">method_assay</a></td>
 <td>0..1 <br/> <a href="../Assay/">Assay</a></td>
 <td>The method or assay used</td>
-<td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
+<td><a href="../Measurement/">Measurement</a></td>
 </tr>
 <tr>
 <td><a href="../protocol_notes/">protocol_notes</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Protocol or SOP notes</td>
-<td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
+<td><a href="../Measurement/">Measurement</a></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
@@ -473,7 +473,7 @@
 <pre><code class="language-yaml">name: TranscriptionFactorExpressionMeasurement
 description: Measurement of transcription factor expression
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-is_a: MeasurementProcess
+is_a: Measurement
 slots:
 - mrna_level
 - protein_level
@@ -488,7 +488,7 @@ slots:
 <pre><code class="language-yaml">name: TranscriptionFactorExpressionMeasurement
 description: Measurement of transcription factor expression
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-is_a: MeasurementProcess
+is_a: Measurement
 attributes:
   mrna_level:
     name: mrna_level
@@ -555,7 +555,7 @@ attributes:
     alias: input_sample
     owner: TranscriptionFactorExpressionMeasurement
     domain_of:
-    - MeasurementProcess
+    - Measurement
     range: InputSample
   method_assay:
     name: method_assay
@@ -565,7 +565,7 @@ attributes:
     alias: method_assay
     owner: TranscriptionFactorExpressionMeasurement
     domain_of:
-    - MeasurementProcess
+    - Measurement
     range: Assay
   protocol_notes:
     name: protocol_notes
@@ -575,7 +575,7 @@ attributes:
     alias: protocol_notes
     owner: TranscriptionFactorExpressionMeasurement
     domain_of:
-    - MeasurementProcess
+    - Measurement
     range: string
   id:
     name: id

@@ -263,8 +263,8 @@
 <div class="mermaid"> classDiagram
     class LungFunctionMeasurement
     click LungFunctionMeasurement href "../LungFunctionMeasurement/"
-      MeasurementProcess &lt;|-- LungFunctionMeasurement
-        click MeasurementProcess href "../MeasurementProcess/"
+      Measurement &lt;|-- LungFunctionMeasurement
+        click Measurement href "../Measurement/"
 
       LungFunctionMeasurement : bronchodilator_response
 
@@ -389,7 +389,7 @@
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../NamedEntity/">NamedEntity</a><ul>
-<li><a href="../MeasurementProcess/">MeasurementProcess</a><ul>
+<li><a href="../Measurement/">Measurement</a><ul>
 <li><strong>LungFunctionMeasurement</strong></li>
 </ul>
 </li>
@@ -459,19 +459,19 @@
 <td><a href="../input_sample/">input_sample</a></td>
 <td>0..1 <br/> <a href="../InputSample/">InputSample</a></td>
 <td>Description of input samples and manipulations</td>
-<td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
+<td><a href="../Measurement/">Measurement</a></td>
 </tr>
 <tr>
 <td><a href="../method_assay/">method_assay</a></td>
 <td>0..1 <br/> <a href="../Assay/">Assay</a></td>
 <td>The method or assay used</td>
-<td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
+<td><a href="../Measurement/">Measurement</a></td>
 </tr>
 <tr>
 <td><a href="../protocol_notes/">protocol_notes</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Protocol or SOP notes</td>
-<td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
+<td><a href="../Measurement/">Measurement</a></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
@@ -524,7 +524,7 @@
 <pre><code class="language-yaml">name: LungFunctionMeasurement
 description: Measurement of lung function parameters
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-is_a: MeasurementProcess
+is_a: Measurement
 slots:
 - fev1
 - fvc
@@ -542,7 +542,7 @@ slots:
 <pre><code class="language-yaml">name: LungFunctionMeasurement
 description: Measurement of lung function parameters
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-is_a: MeasurementProcess
+is_a: Measurement
 attributes:
   fev1:
     name: fev1
@@ -640,7 +640,7 @@ attributes:
     alias: input_sample
     owner: LungFunctionMeasurement
     domain_of:
-    - MeasurementProcess
+    - Measurement
     range: InputSample
   method_assay:
     name: method_assay
@@ -650,7 +650,7 @@ attributes:
     alias: method_assay
     owner: LungFunctionMeasurement
     domain_of:
-    - MeasurementProcess
+    - Measurement
     range: Assay
   protocol_notes:
     name: protocol_notes
@@ -660,7 +660,7 @@ attributes:
     alias: protocol_notes
     owner: LungFunctionMeasurement
     domain_of:
-    - MeasurementProcess
+    - Measurement
     range: string
   id:
     name: id
