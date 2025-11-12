@@ -92,12 +92,12 @@ enums:
   KeyEventPredicateEnum:
     description: Types of relationships between key events in an AOP
     permissible_values:
-      input:
-        description: The subject key event serves as input to the object key event
-        meaning: aop_model:input
-      output:
-        description: The subject key event produces the object key event as output
-        meaning: aop_model:output
+      has_input:
+        description: The subject key event has the object key event as input
+        meaning: biolink:has_input
+      has_output:
+        description: The subject key event has the object key event as output
+        meaning: biolink:has_output
       leads_to:
         description: The subject key event leads to the object key event
         meaning: biolink:causes
@@ -116,6 +116,19 @@ enums:
       contributes_to:
         description: The subject key event contributes to the object key event
         meaning: biolink:contributes_to
+
+  AssayTypeEnum:
+    description: Types of assays from the Ontology for Biomedical Investigations (OBI)
+    reachable_from:
+      source_ontology: obo:obi
+      source_nodes:
+        - OBI:0000070
+      relationship_types:
+        - rdfs:subClassOf
+    permissible_values:
+      OBI:0000070:
+        description: assay
+        meaning: OBI:0000070
 
 classes:
 
@@ -152,6 +165,7 @@ classes:
       a molecular initiating event to an adverse outcome. Key Events can represent molecular,
       cellular, tissue, organ, or organism-level changes.
     is_a: NamedEntity
+    abstract: true
     slots:
       - event_type
       - biological_level
@@ -167,6 +181,137 @@ classes:
           - value: "MIE:1"
           - value: "KE:1906"
           - value: "AO:11"
+
+  # Molecular Initiating Events (MIEs)
+  OxidativeStressEvent:
+    description: Molecular initiating event involving oxidative stress
+    is_a: KeyEvent
+    slot_usage:
+      event_type:
+        equals_string: MIE
+      biological_level:
+        equals_string: MOLECULAR
+      id:
+        pattern: "^MIE:1$"
+
+  EGFRActivationEvent:
+    description: Molecular initiating event involving EGFR activation
+    is_a: KeyEvent
+    slot_usage:
+      event_type:
+        equals_string: MIE
+      biological_level:
+        equals_string: MOLECULAR
+      id:
+        pattern: "^MIE:2$"
+
+  # Cellular Key Events
+  CFTRFunctionEvent:
+    description: Key event representing changes in CFTR function
+    is_a: KeyEvent
+    slot_usage:
+      event_type:
+        equals_string: KE
+      biological_level:
+        equals_string: CELLULAR
+      id:
+        pattern: "^KE:3$"
+
+  FoxJ1ExpressionEvent:
+    description: Key event representing changes in FoxJ1 expression
+    is_a: KeyEvent
+    slot_usage:
+      event_type:
+        equals_string: KE
+      biological_level:
+        equals_string: CELLULAR
+      id:
+        pattern: "^KE:4$"
+
+  CiliaNumberEvent:
+    description: Key event representing changes in cilia number or length
+    is_a: KeyEvent
+    slot_usage:
+      event_type:
+        equals_string: KE
+      biological_level:
+        equals_string: CELLULAR
+      id:
+        pattern: "^KE:5$"
+
+  GobletCellEvent:
+    description: Key event representing changes in goblet cell number
+    is_a: KeyEvent
+    slot_usage:
+      event_type:
+        equals_string: KE
+      biological_level:
+        equals_string: CELLULAR
+      direction_of_change:
+        equals_string: INCREASED
+      id:
+        pattern: "^KE:6$"
+
+  # Organ Key Events
+  ASLHeightEvent:
+    description: Key event representing changes in airway surface liquid height
+    is_a: KeyEvent
+    slot_usage:
+      event_type:
+        equals_string: KE
+      biological_level:
+        equals_string: ORGAN
+      id:
+        pattern: "^KE:7$"
+
+  CiliaryBeatFrequencyEvent:
+    description: Key event representing changes in ciliary beat frequency
+    is_a: KeyEvent
+    slot_usage:
+      event_type:
+        equals_string: KE
+      biological_level:
+        equals_string: ORGAN
+      id:
+        pattern: "^KE:8$"
+
+  MucinProductionEvent:
+    description: Key event representing changes in mucin production
+    is_a: KeyEvent
+    slot_usage:
+      event_type:
+        equals_string: KE
+      biological_level:
+        equals_string: ORGAN
+      direction_of_change:
+        equals_string: INCREASED
+      id:
+        pattern: "^KE:9$"
+
+  MucociliaryClearanceEvent:
+    description: Key event representing changes in mucociliary clearance
+    is_a: KeyEvent
+    slot_usage:
+      event_type:
+        equals_string: KE
+      biological_level:
+        equals_string: ORGAN
+      id:
+        pattern: "^KE:10$"
+
+  # Adverse Outcome
+  LungFunctionEvent:
+    description: Adverse outcome representing decreased lung function
+    is_a: KeyEvent
+    slot_usage:
+      event_type:
+        equals_string: AO
+      biological_level:
+        equals_string: ORGANISM
+      direction_of_change:
+        equals_string: DECREASED
+      id:
+        pattern: "^AO:11$"
 
   Association:
     description: |
@@ -228,7 +373,7 @@ classes:
       - manipulation
       - exposure_conditions
 
-  MethodAssay:
+  Assay:
     description: The specific method or assay used to measure a key event
     is_a: NamedEntity
     slots:
@@ -237,13 +382,22 @@ classes:
       - environmental_conditions
       - sop_reference
 
+  QuantityValue:
+    description: |
+      A quantity value expresses a measurement with a numeric value and a unit.
+      Based on NMDC Schema QuantityValue pattern.
+    slots:
+      - has_numeric_value
+      - has_unit
+      - has_minimum_numeric_value
+      - has_maximum_numeric_value
+
   OutputMeasurement:
     description: The quantitative or qualitative output from a measurement process
     is_a: NamedEntity
     slots:
       - measurement_type
-      - units
-      - value_range
+      - has_quantity_value
 
   ContextField:
     description: |
@@ -428,7 +582,7 @@ slots:
 
   method_assay:
     description: The method or assay used
-    range: MethodAssay
+    range: Assay
 
   output_measurement:
     description: The output or measurement obtained
@@ -473,12 +627,8 @@ slots:
 
   # MethodAssay slots
   assay_type:
-    description: Type of assay or method
-    range: string
-    examples:
-      - value: "Ussing chamber"
-      - value: "Confocal microscopy"
-      - value: "Flow cytometry"
+    description: Type of assay or method, constrained to OBI assay terms
+    range: AssayTypeEnum
 
   instrumentation:
     description: Specific instruments or equipment used
@@ -497,13 +647,32 @@ slots:
     description: Type of measurement or readout
     range: string
 
-  units:
-    description: Units of measurement
-    range: string
+  has_quantity_value:
+    description: The quantity value associated with this measurement
+    range: QuantityValue
+    inlined: true
 
-  value_range:
-    description: Typical or expected range of values
+  # QuantityValue slots
+  has_numeric_value:
+    description: The numeric value of a quantity
+    range: float
+
+  has_unit:
+    description: The unit of measurement for the quantity
     range: string
+    examples:
+      - value: "Hz"
+      - value: "µm"
+      - value: "mm/min"
+      - value: "%"
+
+  has_minimum_numeric_value:
+    description: The minimum value in a range
+    range: float
+
+  has_maximum_numeric_value:
+    description: The maximum value in a range
+    range: float
 
   # ContextField slots
   field_name:
@@ -521,11 +690,13 @@ slots:
   # Specific measurement slots
   cftr_specific_current:
     description: CFTR-mediated chloride secretory current
-    range: string
+    range: QuantityValue
+    inlined: true
 
   inhibitor_sensitive_current:
     description: Inhibitor-sensitive current measurement
-    range: string
+    range: QuantityValue
+    inlined: true
 
   cell_culture_conditions:
     description: Conditions for cell culture (ALI days, medium, etc.)
@@ -533,11 +704,13 @@ slots:
 
   beat_frequency_hz:
     description: Ciliary beat frequency in Hz
-    range: float
+    range: QuantityValue
+    inlined: true
 
   active_area_percentage:
     description: Percentage of active ciliated area
-    range: float
+    range: QuantityValue
+    inlined: true
 
   imaging_conditions:
     description: Imaging parameters and conditions
@@ -545,11 +718,13 @@ slots:
 
   asl_height_um:
     description: Airway surface liquid height in micrometers
-    range: float
+    range: QuantityValue
+    inlined: true
 
   periciliary_layer_depth:
     description: Depth of periciliary layer in micrometers
-    range: float
+    range: QuantityValue
+    inlined: true
 
   imaging_modality:
     description: Imaging modality used (confocal, OCT, etc.)
@@ -557,7 +732,8 @@ slots:
 
   transport_rate:
     description: Mucociliary transport rate
-    range: string
+    range: QuantityValue
+    inlined: true
 
   directionality:
     description: Directionality of mucociliary transport
@@ -569,11 +745,13 @@ slots:
 
   goblet_cell_count:
     description: Number or percentage of goblet cells
-    range: string
+    range: QuantityValue
+    inlined: true
 
   mucin_expression_level:
     description: Level of mucin gene or protein expression
-    range: string
+    range: QuantityValue
+    inlined: true
 
   staining_method:
     description: Histological staining method used
@@ -581,15 +759,18 @@ slots:
 
   ros_level:
     description: Reactive oxygen species level
-    range: string
+    range: QuantityValue
+    inlined: true
 
   lipid_peroxidation:
     description: Lipid peroxidation markers (MDA, 8-isoprostane, etc.)
-    range: string
+    range: QuantityValue
+    inlined: true
 
   antioxidant_capacity:
     description: Antioxidant capacity (GSH/GSSG ratio, enzyme activity)
-    range: string
+    range: QuantityValue
+    inlined: true
 
   # Evidence slots
   publication_reference:
