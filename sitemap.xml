@@ -201,11 +201,11 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/QuantityValue/</loc>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/Publication/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/ScientificEvidence/</loc>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/QuantityValue/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
@@ -254,6 +254,10 @@
     </url>
     <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/assay_type/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/authors/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
@@ -306,10 +310,6 @@
     </url>
     <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/evidence_strength/</loc>
-         <lastmod>2025-11-12</lastmod>
-    </url>
-    <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/evidence_type/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
@@ -385,6 +385,10 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/keywords/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/lipid_peroxidation/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
@@ -398,6 +402,10 @@
     </url>
     <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/measurement_type/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/mesh_terms/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
@@ -429,6 +437,10 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/pages/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/particle_tracking_method/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
@@ -445,7 +457,7 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/publication_reference/</loc>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/publication_type/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
@@ -465,11 +477,11 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/study_design/</loc>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/subject/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/subject/</loc>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/summary/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
@@ -482,6 +494,10 @@
     </url>
     <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/upstream_events/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/xref/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
 </urlset>

@@ -662,13 +662,13 @@ slots:
   supporting_evidence:
     name: supporting_evidence
     definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/supporting_evidence
-    description: Scientific evidence supporting this relationship
+    description: Scientific publications supporting this relationship
     from_schema: https://w3id.org/EHS-Data-Standards/aop-model
     slot_uri: aop_model:supporting_evidence
     owner: KeyEventAssociation
     domain_of:
     - KeyEventAssociation
-    range: ScientificEvidence
+    range: Publication
     multivalued: true
     inlined: true
     inlined_as_list: false
@@ -1110,36 +1110,83 @@ slots:
     range: QuantityValue
     inlined: true
     inlined_as_list: true
-  publication_reference:
-    name: publication_reference
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/publication_reference
-    description: Citation or reference to publication
+  authors:
+    name: authors
+    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/authors
+    description: Connects publications to contributor lists, formatted as comma-delimited
+      names
     from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:publication_reference
-    owner: ScientificEvidence
+    slot_uri: aop_model:authors
+    owner: Publication
     domain_of:
-    - ScientificEvidence
+    - Publication
     range: string
-  evidence_type:
-    name: evidence_type
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/evidence_type
-    description: Type of evidence (experimental, observational, computational)
+    multivalued: true
+  pages:
+    name: pages
+    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/pages
+    description: Page numbers (start and end) or total pages
     from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:evidence_type
-    owner: ScientificEvidence
+    slot_uri: aop_model:pages
+    owner: Publication
     domain_of:
-    - ScientificEvidence
+    - Publication
     range: string
-  study_design:
-    name: study_design
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/study_design
-    description: Study design or experimental approach
+  summary:
+    name: summary
+    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/summary
+    description: Executive summary or abstract of the publication
     from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:study_design
-    owner: ScientificEvidence
+    slot_uri: aop_model:summary
+    owner: Publication
     domain_of:
-    - ScientificEvidence
+    - Publication
     range: string
+  keywords:
+    name: keywords
+    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/keywords
+    description: Keywords or tags for the publication
+    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    slot_uri: aop_model:keywords
+    owner: Publication
+    domain_of:
+    - Publication
+    range: string
+    multivalued: true
+  mesh_terms:
+    name: mesh_terms
+    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/mesh_terms
+    description: Medical Subject Headings (MeSH) terms for indexing
+    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    slot_uri: aop_model:mesh_terms
+    owner: Publication
+    domain_of:
+    - Publication
+    range: string
+    multivalued: true
+  publication_type:
+    name: publication_type
+    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/publication_type
+    description: Ontology term for categorizing publication format (e.g., journal
+      article, book chapter, review)
+    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    slot_uri: aop_model:publication_type
+    owner: Publication
+    domain_of:
+    - Publication
+    range: string
+    required: false
+  xref:
+    name: xref
+    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/xref
+    description: Cross-references to supporting databases or webpages
+    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    slot_uri: aop_model:xref
+    owner: Publication
+    domain_of:
+    - Publication
+    range: uriorcurie
+    multivalued: true
   AdverseOutcomePathway_id:
     name: AdverseOutcomePathway_id
     definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/id
@@ -1256,6 +1303,27 @@ slots:
     is_usage_slot: true
     usage_slot_name: object
     range: KeyEvent
+    required: true
+  Publication_id:
+    name: Publication_id
+    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/id
+    description: Preferentially a PMID, DOI, or industry-standard identifier (ISBN,
+      ISSN)
+    examples:
+    - value: PMID:12345678
+    - value: DOI:10.1234/example
+    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    is_a: id
+    domain: Publication
+    slot_uri: aop_model:id
+    identifier: true
+    alias: id
+    owner: Publication
+    domain_of:
+    - Publication
+    is_usage_slot: true
+    usage_slot_name: id
+    range: uriorcurie
     required: true
 classes:
   NamedEntity:
@@ -1810,23 +1878,39 @@ classes:
     - lipid_peroxidation
     - antioxidant_capacity
     class_uri: aop_model:OxidativeStressMeasurement
-  ScientificEvidence:
-    name: ScientificEvidence
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/ScientificEvidence
-    description: Published scientific evidence supporting an AOP component
+  Publication:
+    name: Publication
+    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/Publication
+    description: 'Any published piece of information, following Biolink model.
+
+      Represents scientific evidence supporting AOP components.
+
+      '
     from_schema: https://w3id.org/EHS-Data-Standards/aop-model
     is_a: NamedEntity
     slots:
-    - id
     - name
     - description
-    - publication_reference
-    - evidence_type
-    - study_design
-    class_uri: aop_model:ScientificEvidence
+    - authors
+    - pages
+    - summary
+    - keywords
+    - mesh_terms
+    - publication_type
+    - xref
+    - Publication_id
+    slot_usage:
+      id:
+        name: id
+        description: Preferentially a PMID, DOI, or industry-standard identifier (ISBN,
+          ISSN)
+        examples:
+        - value: PMID:12345678
+        - value: DOI:10.1234/example
+    class_uri: aop_model:Publication
 metamodel_version: 1.7.0
 source_file: outcomes_working_group.yaml
-source_file_date: '2025-11-12T02:25:35'
-source_file_size: 19223
-generation_date: '2025-11-12T02:25:43'
+source_file_date: '2025-11-12T02:29:05'
+source_file_size: 20078
+generation_date: '2025-11-12T02:29:14'
 

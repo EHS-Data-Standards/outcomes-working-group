@@ -333,8 +333,8 @@
 
 
 
-        KeyEventAssociation --&gt; "*" ScientificEvidence : supporting_evidence
-        click ScientificEvidence href "../ScientificEvidence/"
+        KeyEventAssociation --&gt; "*" Publication : supporting_evidence
+        click Publication href "../Publication/"
 
 
 
@@ -369,8 +369,8 @@
 </tr>
 <tr>
 <td><a href="../supporting_evidence/">supporting_evidence</a></td>
-<td>* <br/> <a href="../ScientificEvidence/">ScientificEvidence</a></td>
-<td>Scientific evidence supporting this relationship</td>
+<td>* <br/> <a href="../Publication/">Publication</a></td>
+<td>Scientific publications supporting this relationship</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -539,14 +539,14 @@ attributes:
     range: EvidenceStrengthEnum
   supporting_evidence:
     name: supporting_evidence
-    description: Scientific evidence supporting this relationship
+    description: Scientific publications supporting this relationship
     from_schema: https://w3id.org/EHS-Data-Standards/aop-model
     rank: 1000
     alias: supporting_evidence
     owner: KeyEventAssociation
     domain_of:
     - KeyEventAssociation
-    range: ScientificEvidence
+    range: Publication
     multivalued: true
     inlined: true
   subject:

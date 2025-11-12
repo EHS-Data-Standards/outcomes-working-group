@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://EHS-Data-Standards.github.io/outcomes-working-group/elements/ScientificEvidence/" rel="canonical"/>
+<link href="https://EHS-Data-Standards.github.io/outcomes-working-group/elements/Publication/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
-<title>Class: ScientificEvidence - outcomes-working-group</title>
+<title>Class: Publication - outcomes-working-group</title>
 <link href="../../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -23,7 +23,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-scientificevidence">
+<a class="md-skip" href="#class-publication">
           Skip to content
         </a>
 </div>
@@ -47,7 +47,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: ScientificEvidence
+              Class: Publication
             
           </span>
 </div>
@@ -266,33 +266,43 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-scientificevidence">Class: ScientificEvidence</h1>
-<p><em>Published scientific evidence supporting an AOP component</em></p>
-<p>URI: <a href="https://w3id.org/EHS-Data-Standards/aop-model/ScientificEvidence">aop_model:ScientificEvidence</a></p>
+<h1 id="class-publication">Class: Publication</h1>
+<p><em>Any published piece of information, following Biolink model.</em></p>
+<p><em>Represents scientific evidence supporting AOP components.</em></p>
+<p>__</p>
+<p>URI: <a href="https://w3id.org/EHS-Data-Standards/aop-model/Publication">aop_model:Publication</a></p>
 <div class="mermaid"> classDiagram
-    class ScientificEvidence
-    click ScientificEvidence href "../ScientificEvidence/"
-      NamedEntity &lt;|-- ScientificEvidence
+    class Publication
+    click Publication href "../Publication/"
+      NamedEntity &lt;|-- Publication
         click NamedEntity href "../NamedEntity/"
 
-      ScientificEvidence : description
+      Publication : authors
 
-      ScientificEvidence : evidence_type
+      Publication : description
 
-      ScientificEvidence : id
+      Publication : id
 
-      ScientificEvidence : name
+      Publication : keywords
 
-      ScientificEvidence : publication_reference
+      Publication : mesh_terms
 
-      ScientificEvidence : study_design
+      Publication : name
+
+      Publication : pages
+
+      Publication : publication_type
+
+      Publication : summary
+
+      Publication : xref
 
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../NamedEntity/">NamedEntity</a><ul>
-<li><strong>ScientificEvidence</strong></li>
+<li><strong>Publication</strong></li>
 </ul>
 </li>
 </ul>
@@ -308,27 +318,51 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../publication_reference/">publication_reference</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Citation or reference to publication</td>
+<td><a href="../authors/">authors</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Connects publications to contributor lists, formatted as comma-delimited name...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../evidence_type/">evidence_type</a></td>
+<td><a href="../pages/">pages</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Type of evidence (experimental, observational, computational)</td>
+<td>Page numbers (start and end) or total pages</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../study_design/">study_design</a></td>
+<td><a href="../summary/">summary</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Study design or experimental approach</td>
+<td>Executive summary or abstract of the publication</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../keywords/">keywords</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Keywords or tags for the publication</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../mesh_terms/">mesh_terms</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Medical Subject Headings (MeSH) terms for indexing</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../publication_type/">publication_type</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Ontology term for categorizing publication format (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../xref/">xref</a></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>Cross-references to supporting databases or webpages</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
 <td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>A unique identifier</td>
+<td>Preferentially a PMID, DOI, or industry-standard identifier (ISBN, ISSN)</td>
 <td><a href="../NamedEntity/">NamedEntity</a></td>
 </tr>
 <tr>
@@ -360,7 +394,7 @@
 <td><a href="../KeyEventAssociation/">KeyEventAssociation</a></td>
 <td><a href="../supporting_evidence/">supporting_evidence</a></td>
 <td>range</td>
-<td><a href="./">ScientificEvidence</a></td>
+<td><a href="./">Publication</a></td>
 </tr>
 </tbody>
 </table>
@@ -380,11 +414,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>aop_model:ScientificEvidence</td>
+<td>aop_model:Publication</td>
 </tr>
 <tr>
 <td>native</td>
-<td>aop_model:ScientificEvidence</td>
+<td>aop_model:Publication</td>
 </tr>
 </tbody>
 </table>
@@ -392,62 +426,141 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: ScientificEvidence
-description: Published scientific evidence supporting an AOP component
+<pre><code class="language-yaml">name: Publication
+description: 'Any published piece of information, following Biolink model.
+
+  Represents scientific evidence supporting AOP components.
+
+  '
 from_schema: https://w3id.org/EHS-Data-Standards/aop-model
 is_a: NamedEntity
 slots:
-- publication_reference
-- evidence_type
-- study_design
+- authors
+- pages
+- summary
+- keywords
+- mesh_terms
+- publication_type
+- xref
+slot_usage:
+  id:
+    name: id
+    description: Preferentially a PMID, DOI, or industry-standard identifier (ISBN,
+      ISSN)
+    examples:
+    - value: PMID:12345678
+    - value: DOI:10.1234/example
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: ScientificEvidence
-description: Published scientific evidence supporting an AOP component
+<pre><code class="language-yaml">name: Publication
+description: 'Any published piece of information, following Biolink model.
+
+  Represents scientific evidence supporting AOP components.
+
+  '
 from_schema: https://w3id.org/EHS-Data-Standards/aop-model
 is_a: NamedEntity
-attributes:
-  publication_reference:
-    name: publication_reference
-    description: Citation or reference to publication
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    rank: 1000
-    alias: publication_reference
-    owner: ScientificEvidence
-    domain_of:
-    - ScientificEvidence
-    range: string
-  evidence_type:
-    name: evidence_type
-    description: Type of evidence (experimental, observational, computational)
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    rank: 1000
-    alias: evidence_type
-    owner: ScientificEvidence
-    domain_of:
-    - ScientificEvidence
-    range: string
-  study_design:
-    name: study_design
-    description: Study design or experimental approach
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    rank: 1000
-    alias: study_design
-    owner: ScientificEvidence
-    domain_of:
-    - ScientificEvidence
-    range: string
+slot_usage:
   id:
     name: id
-    description: A unique identifier
+    description: Preferentially a PMID, DOI, or industry-standard identifier (ISBN,
+      ISSN)
+    examples:
+    - value: PMID:12345678
+    - value: DOI:10.1234/example
+attributes:
+  authors:
+    name: authors
+    description: Connects publications to contributor lists, formatted as comma-delimited
+      names
+    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    rank: 1000
+    alias: authors
+    owner: Publication
+    domain_of:
+    - Publication
+    range: string
+    multivalued: true
+  pages:
+    name: pages
+    description: Page numbers (start and end) or total pages
+    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    rank: 1000
+    alias: pages
+    owner: Publication
+    domain_of:
+    - Publication
+    range: string
+  summary:
+    name: summary
+    description: Executive summary or abstract of the publication
+    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    rank: 1000
+    alias: summary
+    owner: Publication
+    domain_of:
+    - Publication
+    range: string
+  keywords:
+    name: keywords
+    description: Keywords or tags for the publication
+    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    rank: 1000
+    alias: keywords
+    owner: Publication
+    domain_of:
+    - Publication
+    range: string
+    multivalued: true
+  mesh_terms:
+    name: mesh_terms
+    description: Medical Subject Headings (MeSH) terms for indexing
+    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    rank: 1000
+    alias: mesh_terms
+    owner: Publication
+    domain_of:
+    - Publication
+    range: string
+    multivalued: true
+  publication_type:
+    name: publication_type
+    description: Ontology term for categorizing publication format (e.g., journal
+      article, book chapter, review)
+    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    rank: 1000
+    alias: publication_type
+    owner: Publication
+    domain_of:
+    - Publication
+    range: string
+    required: false
+  xref:
+    name: xref
+    description: Cross-references to supporting databases or webpages
+    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    rank: 1000
+    alias: xref
+    owner: Publication
+    domain_of:
+    - Publication
+    range: uriorcurie
+    multivalued: true
+  id:
+    name: id
+    description: Preferentially a PMID, DOI, or industry-standard identifier (ISBN,
+      ISSN)
+    examples:
+    - value: PMID:12345678
+    - value: DOI:10.1234/example
     from_schema: https://w3id.org/EHS-Data-Standards/aop-model
     rank: 1000
     identifier: true
     alias: id
-    owner: ScientificEvidence
+    owner: Publication
     domain_of:
     - NamedEntity
     range: uriorcurie
@@ -458,7 +571,7 @@ attributes:
     from_schema: https://w3id.org/EHS-Data-Standards/aop-model
     rank: 1000
     alias: name
-    owner: ScientificEvidence
+    owner: Publication
     domain_of:
     - NamedEntity
     range: string
@@ -468,7 +581,7 @@ attributes:
     from_schema: https://w3id.org/EHS-Data-Standards/aop-model
     rank: 1000
     alias: description
-    owner: ScientificEvidence
+    owner: Publication
     domain_of:
     - NamedEntity
     range: string
