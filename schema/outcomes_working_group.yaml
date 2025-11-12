@@ -1826,7 +1826,7 @@ classes:
     class_uri: aop_model:ScientificEvidence
 metamodel_version: 1.7.0
 source_file: outcomes_working_group.yaml
-source_file_date: '2025-11-12T02:18:18'
+source_file_date: '2025-11-12T02:25:35'
 source_file_size: 19223
-generation_date: '2025-11-12T02:18:29'
+generation_date: '2025-11-12T02:25:43'
 
