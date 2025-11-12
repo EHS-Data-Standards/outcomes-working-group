@@ -60,7 +60,6 @@ classes:
     description: Base class for all named entities in the model
     slots:
       - id
-      - name
       - description
 
   # Measurement and Assay Classes
@@ -380,9 +379,6 @@ slots:
     range: uriorcurie
     required: true
 
-  name:
-    description: A human-readable name
-    range: string
 
   description:
     description: A detailed description
