@@ -1,20 +1,19 @@
-name: aop-model
+name: outcomes-model
 description: |
-  A LinkML data model for representing Adverse Outcome Pathways (AOPs),
-  Key Events (KEs), and Key Event Relationships (KERs) in the context of
-  the Source-to-Outcome (S2O) continuum.
-title: AOP Data Model
+  A LinkML data model for representing biological measurements, assays, and experimental protocols
+  in the context of outcomes research.
+title: Outcomes Data Model
 see_also:
   - https://EHS-Data-Standards.github.io/outcomes-working-group
-id: https://w3id.org/EHS-Data-Standards/aop-model
+id: https://w3id.org/EHS-Data-Standards/outcomes-model
 imports:
   - linkml:types
 license: MIT
 
 prefixes:
-  aop_model:
-    prefix_prefix: aop_model
-    prefix_reference: https://w3id.org/EHS-Data-Standards/aop-model/
+  outcomes_model:
+    prefix_prefix: outcomes_model
+    prefix_reference: https://w3id.org/EHS-Data-Standards/outcomes-model/
   linkml:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
@@ -37,86 +36,10 @@ prefixes:
     prefix_prefix: schema
     prefix_reference: http://schema.org/
 
-default_prefix: aop_model
+default_prefix: outcomes_model
 default_range: string
 
 enums:
-  BiologicalLevelEnum:
-    description: The level of biological organization at which an event occurs
-    permissible_values:
-      MOLECULAR:
-        description: Macro-molecular interactions (e.g., receptor binding, protein modification)
-      CELLULAR:
-        description: Cellular response (e.g., cell signaling, gene expression, cell death)
-      TISSUE:
-        description: Tissue-level response (e.g., inflammation, tissue damage)
-      ORGAN:
-        description: Organ-level response (e.g., impaired organ function)
-      ORGANISM:
-        description: Organism-level outcome (e.g., disease, mortality)
-      POPULATION:
-        description: Population-level outcome (e.g., disease incidence, public health impact)
-
-  KeyEventTypeEnum:
-    description: Classification of key events in an AOP
-    permissible_values:
-      MIE:
-        description: Molecular Initiating Event - the initial interaction between a stressor and a biological target
-      KE:
-        description: Key Event - a measurable change in biological state along the pathway
-      AO:
-        description: Adverse Outcome - the endpoint of regulatory concern
-
-  DirectionEnum:
-    description: Direction of change for a key event
-    permissible_values:
-      INCREASED:
-        description: The measured parameter is increased
-      DECREASED:
-        description: The measured parameter is decreased
-      ALTERED:
-        description: The measured parameter is changed in either direction
-
-  EvidenceStrengthEnum:
-    description: Strength of evidence supporting a relationship
-    permissible_values:
-      STRONG:
-        description: Strong empirical evidence from multiple independent studies
-      MODERATE:
-        description: Moderate evidence with some consistency
-      WEAK:
-        description: Limited or inconsistent evidence
-      NOT_SPECIFIED:
-        description: Evidence strength not specified
-
-  KeyEventPredicateEnum:
-    description: Types of relationships between key events in an AOP
-    permissible_values:
-      has_input:
-        description: The subject key event has the object key event as input
-        meaning: biolink:has_input
-      has_output:
-        description: The subject key event has the object key event as output
-        meaning: biolink:has_output
-      leads_to:
-        description: The subject key event leads to the object key event
-        meaning: biolink:causes
-      regulates:
-        description: The subject key event regulates the object key event
-        meaning: biolink:regulates
-      positively_regulates:
-        description: The subject key event positively regulates the object key event
-        meaning: biolink:positively_regulates
-      negatively_regulates:
-        description: The subject key event negatively regulates the object key event
-        meaning: biolink:negatively_regulates
-      causes:
-        description: The subject key event directly causes the object key event
-        meaning: biolink:causes
-      contributes_to:
-        description: The subject key event contributes to the object key event
-        meaning: biolink:contributes_to
-
   AssayTypeEnum:
     description: Types of assays from the Ontology for Biomedical Investigations (OBI)
     reachable_from:
@@ -140,137 +63,10 @@ classes:
       - name
       - description
 
-  # AOP Core Classes
-  AdverseOutcomePathway:
-    description: |
-      A structured representation of biological events linking a molecular initiating event (MIE)
-      to an adverse outcome through a series of key events.
-    is_a: NamedEntity
-    slots:
-      - molecular_initiating_events
-      - key_events
-      - adverse_outcome
-      - key_event_relationships
-      - aop_network_members
-    slot_usage:
-      id:
-        pattern: "^AOP:\\d+$"
-        examples:
-          - value: "AOP:424"
-            description: Example AOP identifier
-
-  KeyEvent:
-    description: |
-      A measurable change in biological state that is a necessary step in a pathway from
-      a molecular initiating event to an adverse outcome. Key Events can represent molecular,
-      cellular, tissue, organ, or organism-level changes.
-    is_a: NamedEntity
-    abstract: true
-    slots:
-      - event_type
-      - biological_level
-      - direction_of_change
-      - measurement_processes
-      - biomarkers
-      - upstream_events
-      - downstream_events
-    slot_usage:
-      id:
-        pattern: "^(MIE|KE|AO):\\d+$"
-        examples:
-          - value: "MIE:1"
-          - value: "KE:1906"
-          - value: "AO:11"
-
-  # Molecular Initiating Events (MIEs)
-  OxidativeStressEvent:
-    description: Molecular initiating event involving oxidative stress
-    is_a: KeyEvent
-
-  EGFRActivationEvent:
-    description: Molecular initiating event involving EGFR activation
-    is_a: KeyEvent
-
-  # Cellular Key Events
-  CFTRFunctionEvent:
-    description: Key event representing changes in CFTR function
-    is_a: KeyEvent
-
-  FoxJ1ExpressionEvent:
-    description: Key event representing changes in FoxJ1 expression
-    is_a: KeyEvent
-
-  CiliaNumberEvent:
-    description: Key event representing changes in cilia number or length
-    is_a: KeyEvent
-
-  GobletCellEvent:
-    description: Key event representing changes in goblet cell number
-    is_a: KeyEvent
-
-  # Organ Key Events
-  ASLHeightEvent:
-    description: Key event representing changes in airway surface liquid height
-    is_a: KeyEvent
-
-  CiliaryBeatFrequencyEvent:
-    description: Key event representing changes in ciliary beat frequency
-    is_a: KeyEvent
-
-  MucinProductionEvent:
-    description: Key event representing changes in mucin production
-    is_a: KeyEvent
-
-  MucociliaryClearanceEvent:
-    description: Key event representing changes in mucociliary clearance
-    is_a: KeyEvent
-
-  # Adverse Outcome
-  LungFunctionEvent:
-    description: Adverse outcome representing decreased lung function
-    is_a: KeyEvent
-
-  Association:
-    description: |
-      Base class for associations/relationships in the model.
-      Uses subject-predicate-object pattern similar to Biolink model.
-    is_a: NamedEntity
-    abstract: true
-    slots:
-      - subject
-      - predicate
-      - object
-
-  KeyEventAssociation:
-    description: |
-      A causal or associative relationship between two key events in an adverse outcome pathway.
-      Represents the connection showing how one event leads to another.
-    is_a: Association
-    slots:
-      - evidence_strength
-      - supporting_evidence
-    slot_usage:
-      id:
-        pattern: "^KER:\\d+$"
-        examples:
-          - value: "KER:1907"
-      subject:
-        description: The upstream key event (input to the relationship)
-        range: KeyEvent
-        required: true
-      predicate:
-        description: The type of relationship
-        range: KeyEventPredicateEnum
-        required: true
-      object:
-        description: The downstream key event (output from the relationship)
-        range: KeyEvent
-        required: true
-
   # Measurement and Assay Classes
   MeasurementProcess:
     description: |
-      A generic class representing the process of measuring a biological key event.
+      A generic class representing the process of measuring a biological endpoint.
       Includes information about input samples, methods, outputs, and contextual metadata.
     is_a: NamedEntity
     slots:
@@ -290,7 +86,7 @@ classes:
       - exposure_conditions
 
   Assay:
-    description: The specific method or assay used to measure a key event
+    description: The specific method or assay used to measure an endpoint
     is_a: NamedEntity
     slots:
       - assay_type
@@ -377,7 +173,7 @@ classes:
   Publication:
     description: |
       Any published piece of information, following Biolink model.
-      Represents scientific evidence supporting AOP components.
+      Represents scientific evidence supporting research.
     is_a: NamedEntity
     slots:
       - authors
@@ -410,97 +206,6 @@ slots:
   description:
     description: A detailed description
     range: string
-
-  # AOP-specific slots
-  molecular_initiating_events:
-    description: The molecular initiating event(s) that start this AOP
-    range: KeyEvent
-    multivalued: true
-    inlined: true
-
-  key_events:
-    description: All key events in this AOP
-    range: KeyEvent
-    multivalued: true
-    inlined: true
-
-  adverse_outcome:
-    description: The adverse outcome of regulatory concern
-    range: KeyEvent
-    required: true
-
-  key_event_relationships:
-    description: Relationships between key events in this AOP
-    range: KeyEventAssociation
-    multivalued: true
-    inlined: true
-
-  aop_network_members:
-    description: Other AOPs that are part of the same network
-    range: AdverseOutcomePathway
-    multivalued: true
-
-  # KeyEvent slots
-  event_type:
-    description: Classification of the key event (MIE, KE, or AO)
-    range: KeyEventTypeEnum
-    required: true
-
-  biological_level:
-    description: The level of biological organization
-    range: BiologicalLevelEnum
-    required: true
-
-  direction_of_change:
-    description: Direction of change for this key event
-    range: DirectionEnum
-
-  measurement_processes:
-    description: Measurement processes used to assess this key event
-    range: MeasurementProcess
-    multivalued: true
-    inlined: true
-
-  biomarkers:
-    description: Biomarkers associated with this key event
-    range: string
-    multivalued: true
-
-  upstream_events:
-    description: Key events that occur before this one in the pathway
-    range: KeyEvent
-    multivalued: true
-
-  downstream_events:
-    description: Key events that occur after this one in the pathway
-    range: KeyEvent
-    multivalued: true
-
-  # KeyEventRelationship slots (subject-predicate-object pattern)
-  subject:
-    description: The subject of a relationship (e.g., upstream key event)
-    range: KeyEvent
-    slot_uri: rdf:subject
-
-  predicate:
-    description: The predicate/relationship type (e.g., leads_to, causes, regulates)
-    range: uriorcurie
-    slot_uri: rdf:predicate
-
-  object:
-    description: The object of a relationship (e.g., downstream key event)
-    range: KeyEvent
-    slot_uri: rdf:object
-
-  evidence_strength:
-    description: Strength of evidence supporting this relationship
-    range: EvidenceStrengthEnum
-
-  supporting_evidence:
-    description: Scientific publications supporting this relationship
-    range: Publication
-    multivalued: true
-    inlined: true
 
   # MeasurementProcess slots
   input_sample:
