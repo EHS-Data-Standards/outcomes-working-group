@@ -64,7 +64,7 @@ classes:
       - description
 
   # Measurement and Assay Classes
-  MeasurementProcess:
+  Measurement:
     description: |
       A generic class representing the process of measuring a biological endpoint.
       Includes information about input samples, methods, and contextual metadata.
@@ -105,7 +105,7 @@ classes:
   # Specific Measurement Process Subclasses
   CFTRFunctionMeasurement:
     description: Measurement of CFTR-mediated ion transport function
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
       - cftr_specific_current
       - inhibitor_sensitive_current
@@ -113,7 +113,7 @@ classes:
 
   BALFSputumMeasurement:
     description: Measurement of bronchoalveolar lavage fluid or sputum components
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
       - sample_collection_details
       - inflammatory_cell_profile
@@ -124,7 +124,7 @@ classes:
 
   LungFunctionMeasurement:
     description: Measurement of lung function parameters
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
       - fev1
       - fvc
@@ -137,7 +137,7 @@ classes:
 
   EGFRSignalingMeasurement:
     description: Measurement of EGFR pathway activation and signaling
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
       - egfr_phosphorylation
       - downstream_kinase_activation
@@ -146,7 +146,7 @@ classes:
 
   TranscriptionFactorExpressionMeasurement:
     description: Measurement of transcription factor expression
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
       - mrna_level
       - protein_level
@@ -156,7 +156,7 @@ classes:
 
   CiliaBeatFrequencyMeasurement:
     description: Measurement of ciliary beat frequency
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
       - beat_frequency_hz
       - active_area_percentage
@@ -169,7 +169,7 @@ classes:
 
   ASLHeightMeasurement:
     description: Measurement of airway surface liquid height
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
       - asl_height_um
       - periciliary_layer_depth
@@ -180,7 +180,7 @@ classes:
 
   MucociliaryClearanceMeasurement:
     description: Measurement of mucociliary clearance/transport
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
       - transport_rate
       - directionality
@@ -195,7 +195,7 @@ classes:
 
   GobletCellMeasurement:
     description: Measurement of goblet cell number or mucin production
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
       - goblet_cell_count
       - mucin_expression_level
@@ -208,7 +208,7 @@ classes:
 
   OxidativeStressMeasurement:
     description: Measurement of oxidative stress markers
-    is_a: MeasurementProcess
+    is_a: Measurement
     slots:
       - ros_level
       - lipid_peroxidation
@@ -388,7 +388,7 @@ slots:
     description: A detailed description
     range: string
 
-  # MeasurementProcess slots
+  # Measurement slots
   input_sample:
     description: Description of input samples and manipulations
     range: InputSample
