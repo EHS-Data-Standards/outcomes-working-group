@@ -1,0 +1,4 @@
+Parameter_Type	Parameters
+Common_Inputs	Cell type (human airway epithelial cells); patient characteristics (age, disease diagnosis and severity); 3D culture model type (MucilAir, EpiAirway); days at differentiation; disease diagnosis (asthma, COPD); medication use
+Common_Exposure	Oxidants (H₂O₂, cigarette smoke extract, PM2.5, acrolein, ozone, diesel exhaust particles); environmental exposures (air pollution, smoking); antioxidant treatments
+Common_Outputs	ROS levels (fluorescence intensity, fold change); Lipid peroxidation products (MDA, 4-HNE, 8-isoprostane); Protein oxidation markers (protein carbonyls, nitrotyrosine); DNA damage (8-OHdG); Antioxidant capacity (GSH/GSSG ratio, SOD, catalase, GPx activities); Mitophagy marker expression (LC3, PINK1, Parkin); Inflammatory cytokine secretion (IL-6, IL-8); EGFR and MAPK activation; NRF2 and NF-κB activation; Exhaled breath condensate biomarkers

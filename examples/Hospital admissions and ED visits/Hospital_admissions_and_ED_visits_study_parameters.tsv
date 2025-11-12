@@ -1,0 +1,4 @@
+Parameter_Type	Parameters
+Common_Inputs	Study population characteristics (age, sex, race/ethnicity, SES); geographic region; respiratory diagnoses (asthma, COPD, pneumonia); disease severity; medication use; smoking status; pre-existing conditions
+Common_Exposure	Environmental exposures (air pollution, wildfire smoke, PM2.5, PM10); allergens; weather conditions; wildfire events
+Common_Outputs	Hospital admission rates (per 100,000 population); ED visit rates; Respiratory diagnosis-specific admissions (ICD codes); Exacerbation severity metrics; Relative risk or odds ratio per unit increase in PM2.5; Population-attributable risk; Temporal trends; Association measures (risk ratios, odds ratios)

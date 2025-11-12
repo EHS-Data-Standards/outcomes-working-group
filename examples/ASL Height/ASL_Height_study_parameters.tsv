@@ -1,0 +1,4 @@
+Parameter_Type	Parameters
+Common_Inputs	Donor anatomical region (nose, large airway, small airway, alveolus); donor ID and passage number; donor genotype/phenotype; CF genotype (F508del homozygous); cell type (primary HAEC); days at ALI; differentiation medium formulation; substrate type; subject characteristics (age, sex); disease state (cystic fibrosis vs healthy); culture conditions; environmental conditions (humidity, temperature)
+Common_Exposure	Fluorescent dextran labeling (Texas Red-dextran); perfluorocarbon overlay (FC-77) for evaporation prevention; oil overlay; CFTR modulators (VX-770/ivacaftor); humidified chamber; imaging intervals
+Common_Outputs	ASL height (µm) over time; Ion composition (Cl⁻, Na⁺, K⁺) by X-ray microanalysis; Periciliary layer depth (µm); Mucus transport rate; Ciliary beat frequency (Hz); Mucociliary transport rate (mm/min); Tissue microstructure; CFTR-mediated current (µA/cm²); ASL height changes in response to modulator treatment

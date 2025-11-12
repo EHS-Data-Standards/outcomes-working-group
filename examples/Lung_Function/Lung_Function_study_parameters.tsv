@@ -1,0 +1,4 @@
+Parameter_Type	Parameters
+Common_Inputs	Subject demographics (age, sex, height, weight, ethnicity); smoking status; respiratory diagnoses (asthma, COPD, CF, IPF); disease severity; medication use and adherence; exposure history
+Common_Exposure	Environmental or occupational exposures; bronchodilator administration; CFTR modulators;
+Common_Outputs	FEV1 (liters and % predicted); FVC (liters and % predicted); FEV1/FVC ratio; FEF25-75; Bronchodilator response; Longitudinal decline rate (mL/year); Plethysmography (TLC, RV, FRC); DLCO (diffusing capacity); FeNO (fractional exhaled nitric oxide); Bronchial hyperresponsiveness (PC20 or PD20); Exacerbation rates
