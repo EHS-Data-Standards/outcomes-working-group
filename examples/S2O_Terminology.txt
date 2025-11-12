@@ -1,0 +1,124 @@
+﻿Source 2 Outcome Continuum Glossary and Terminology 
+ 
+Introduction 
+The Source to Outcome (S2O) project supports the development of data infrastructure and modelling approaches to better characterize how environmental exposures lead to health outcomes. Central to this effort is the use of standardized terminology to promote clarity, consistency, and interoperability across disciplines and data systems. 
+ 
+This document establishes a shared vocabulary for the S2O project which will enable team members to:  
+* Communicate complex concepts  
+* Reduce ambiguity in data interpretation 
+* Support semantic interoperability and data integration 
+* Facilitate cross-domain/cross-WG collaboration 
+
+
+This document will be shared with those working on the project to facilitate communication across the different disciplines. 
+
+
+Source 2 Outcome Continuum Project Terminology
+Modeling or data exchange across the S2O continuum refers to the ability to connect, translate or share information between different steps of the continuum that start with the source of an exposure to a given outcome that results from the exposure.
+
+
+* Source 2 Outcome (S2O) Continuum: a framework for conceptualizing how environmental sources lead to outcomes through various stages (e.g., emission → exposure → internal dose → biological response → health effect), and that your work uses this as a structuring device for organizing data, not as a predictive model. See Figure 1.
+* Environmental Health Sciences (EHS): the science of identifying and understanding the impacts of environmental exposures to hazardous physical, chemical and biological agents in air, water, soil, food, as well as social stressors that may adversely affect human health.  The goal of environmental health is to prevent human injury and illness and promote well-being
+* Aggregate Exposure Pathway (AEP): a structured framework that organizes exposure data by tracing a chemical from its environmental source through transport, fate, and exposure steps to the target site in the body. AEPs serve as a companion to Adverse Outcome Pathways (AOPs), providing an organized way to connect exposure science and toxicology
+* Adverse Outcome Pathway (AOP): a structured, conceptual framework that links a chemical-induced molecular initiating event (MIE) through a series of causally connected key events (KEs) to an adverse health effect at the organism or population level. AOPs help organize mechanistic knowledge to support predictive modeling, risk assessment and regulatory decision-making
+ Image describing the movement between the AEP and AOP broken into 3 sections. Exposure which spans Fate and Transport to External Exposure; Dosimetry connecting External Exposure to Pathway Response; and Outcomes which starts at Pathway Response and extends through Population Outcomes 
+
+Figure 1. Conceptual diagram of the S2O continuum
+
+
+
+
+
+
+Steps in the Source to Outcome Continuum:
+See Figure 1 for visual 
+1. Fate and Transport: the movement and transformation of a substance in the environment after it is released from a source; this step in the continuum captures how chemicals disperse, degrade or accumulate in air, water, soil and other media
+2. Environmental Receptor: the target in the environment that may come into contact with the chemical - such as humans, animals or ecosystems; this step focuses on identifying who or what is potentially exposed based on location, behavior and context
+3. External Exposure: the contact between a chemical and the outer boundary of an environmental receptor (e.g. skin, lungs); this step quantifies the amount and duration of contact through various exposure routes 
+4. Dosimetry: the estimation or measurement of the amount of a chemical that is absorbed into the body; this step begins the transition from external to internal processes, linking exposure with internal dose
+5. Target Site Exposure: the concentration of a substance at the specific biological site where it can cause an effect; this step defines the internal distribution and potential for biological interaction 
+6. Pathway Response: the sequence of molecular, cellular or physiological changes that occur in response to a chemical at the target site; this step includes mechanistic processes, often represented using AOPs
+7. Biological Outcomes: the individual-level health effects that result from pathway responses (e.g. inflammation, tissue damage, altered function); this step links internal responses to diagnosable or measurable effects in an organism 
+8. Population Outcomes: the observable effects of chemical exposures at the population level (e.g. increased disease incidence, mortality rates); this step connects individual health outcomes to broader public health trends
+
+
+
+
+Model/modeling
+* Computational/predictive model: Used to generate forecasts or simulate outcomes.  S2O uses these models to represent exposure dynamics or biological responses
+* Conceptual model: a simplified representation of a system that identifies the main elements and relationships involved.  Used in S2O to frame how chemicals move through the environment and affect health
+* Model inputs: the data or assumptions fed into a model; may include pollutant levels, exposure duration or physiological parameters
+* Model outputs: the results generated by a model after processing inputs; outputs may include exposure estimates or risk probabilities 
+* Pilot Project: A project completed using real-world data with a restricted scope to test feasibility, effectiveness, and potential outcomes.
+   * Note that for the S2O project, the pilot is focused on PM2.5 exposure leading to decreased respiratory function.
+* Uncertainty: The degree to which model predictions may vary due to unknowns or variability in input data; uncertainty analysis is used to evaluate the reliability of model results
+* Validation: The process of checking how well a model’s outputs match observed data or expected behavior; helps ensures models are fit for their intended use 
+
+
+FAIR Data Principles 
+
+
+See also: https://pmc.ncbi.nlm.nih.gov/articles/PMC6018669/
+ 
+* FAIR Data Principles: A set of guidelines designed to improve the stewardship and reuse of scientific data by ensuring data and metadata are Findable, Accessible, Interoperable, and Reusable. The principles are widely regarded as foundational in scholarly data management and data stewardship.
+* Project Data: Refers to the primary data generated or used in a research experiment, including both epidemiological studies and experimental results; these would form the foundation for modeling relationships between environmental exposures, biological responses, and health outcomes 
+
+
+Data Standards and Metadata  
+  
+
+Figure 2. Diagram of data elements in a LinkML (Biolink) schema
+
+
+* Data Element: A particular feature of a schema or data standard.  
+   * Some examples include classes, tables, objects, slots, attributes, columns, or fields. 
+   * In Biolink syntax, data elements include: schemas, classes, slots, enumerations, and permissible values.
+* Data and Metadata Standards: Formalized agreements about how information should be structured, formatted, described, and exchanged.
+   * Common examples of standards include: 
+      * Dublin Core - general-purpose metadata elements 
+      * MIAME - minimum information for microarray experiments
+      * ISA-Tab - metadata structure for describing biological and environmental experiments 
+      * Biolink-Model - A structured schema that defines how biological data is organized, including what data elements are expected, what formats they follow, and how they relate to each other.
+      * OboFoundry Ontologies - sets of concepts and categories in a subject area or domain that show their properties and the relations between them.
+   * Data Standards are blueprints by which data producers can ensure their data is reusable by other groups and methods.
+
+
+Aggregate Exposure Pathway (AEP)
+References
+Types of Exposures: AEPs consider all sources of exposure to a given chemical or mixture through various exposure pathways such as inhalation, dermal exposure, etc. For the S20 project, the type of exposure is inhalation of PM2.5.
+Exposure Pathways and Scenarios: AEPs link fate and transport to environmental receptors to external exposure, with some partial overlap with dosimetry (where the AEP ends) and target site exposure ( stressor which leads to an MIE is present at an amount which initiates an AOP). For the S2O project, an exposure scenario might be that PM2.5 is released into the atmosphere via a manufacturing process, it travels through the air until a human is exposed to it in their house for a period of 60 days, 24hr/day, the human inhales the PM2.5, where it penetrates into the lung, reaching the bronchioles at a dose sufficient to initiate an MIE. 
+Adverse Outcome Pathways (AOP) 
+References
+Overlap between AEPs and AOPs: KEs take over from where AEPs end, e.g., PM2.5 reaches the bronchioles at a dose high enough to cause an MIE such as the activation of the epidermal growth factor receptor (EGFR). 
+KEs and Biomarkers: KEs are measurable changes in biological state, and as such, may include biomarkers such as altered serum levels of MUC5AC, where the change in MUC5AC is the KE in an AOP as well as being a biomarker of lung function in general.
+Mechanistic vs Phenotypic Outcomes: Some KEs are phenotypic in nature, for example, Key Event Relationship number 1034 describes that the phenotype of “reduced, anterior swim bladder inflation”, a reduction of a crucial milestone for fish larvae, leads to the phenotype “reduced, swimming performance”. While these are both observable effects, they do not convey any information about the mechanisms responsible. Other KEs, such as “oxidative stress”, are mechanistic,because they detail an observable biological event that leads to additional events. 
+ 
+ 
+
+
+
+
+Developing Data Models
+Approach to Computational Modeling
+Integration and Interoperability:  Integration enables systems to share data, however, while data may be accessible between for example, a patient record system and an exposure database, that does not mean that data from both systems can be used to perform analyses without considerable human intervention. Interoperability means that data and metadata standards have been applied and harmonized such that data from both systems can be shared and combined. 
+Semantic harmonization:  The process of parsing and defining concepts within and across datasets to allow for integration and interoperability. 
+Ontology mapping: Describes the relationship between entities in different ontologies, facilitating the integration of knowledge from different sources. For example, if one wanted to map data for MUC5AC between the Hugo Gene Nomenclature for gene information, and the Comparative Toxicogenomics Database (to evaluate Smoke and MUC5AC), one would first need to map out “gene symbol” (HGNC) to “symbol” (CTD).
+Concept alignment: The process of harmonizing data from different data sources by creating a correspondence between data fields in different systems, for example, “pulmonary depression”, “lung disorder”, and “difficulty breathing” may potentially all be mapped to “pulmonary dysfunction”. Standardization involves ensuring that all data adheres to a common set of formats and values, e.g., all animal weights may be standardized across experiments to kg. 
+Crosswalks: Data cross[a]walking is the process of mapping and transforming data from one format or structure to another. It involves aligning data elements across different data sets to facilitate interoperability, enable standardization, support data integration, and promote reusability. 
+Terminology
+* Assay: a test or experiment used to measure a specific biological or chemical activity; assays generate data on how a substance affects cells, tissues, or systems
+* Common Data Element: is the combination of a defined question with a set of responses which may be used across data sets or studies (https://pmc.ncbi.nlm.nih.gov/articles/PMC5133155/pdf/nihms787290.pdf, https://heal.nih.gov/data/common-data-elements)
+* Contextualizing information: Background details that explain how, where, or why data were collected or used; this could include study location, population characteristics or experimental conditions
+* Input: information used to start or run a model or process (e.g., chemical amounts, exposure levels)
+* Method: a general approach or technique used to collect, measure, or analyze data (e.g., modelling techniques, lab procedures)
+* Output: the result or answer produced by a model or process (e.g., internal dose, biological response)
+* Pilot [study/project/model exercise]: to help identify needs, gaps and challenges in Standard and Terminology that focuses on modelling the impacts on human health from an initial exposure to pm2.5 through the continuum, concluding with predicted outcomes on respiratory function.
+* Protocol: a detailed set of steps for how to perform a test or collect data; protocols ensure consistency across laboratories or studies when generating exposure or biological data
+* Summary Content: structured, domain-informed content about the data characteristics and operation needs of the specific phase 
+
+
+ 
+ 
+
+
+[a]https://direct.mit.edu/dint/article/5/1/100/113281/An-Analysis-of-Crosswalks-from-Research-Data
