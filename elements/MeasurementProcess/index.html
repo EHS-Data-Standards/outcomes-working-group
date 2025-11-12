@@ -305,17 +305,6 @@
 
       MeasurementProcess : description
 
-      MeasurementProcess : exemplar_manuscripts
-
-
-
-
-
-        MeasurementProcess --&gt; "*" ScientificEvidence : exemplar_manuscripts
-        click ScientificEvidence href "../ScientificEvidence/"
-
-
-
       MeasurementProcess : id
 
       MeasurementProcess : input_sample
@@ -419,12 +408,6 @@
 <td><a href="../ontology_mappings/">ontology_mappings</a></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td>Mappings to ontology terms (Biolink, OBI, etc</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../exemplar_manuscripts/">exemplar_manuscripts</a></td>
-<td>* <br/> <a href="../ScientificEvidence/">ScientificEvidence</a></td>
-<td>Key peer-reviewed publications</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -576,7 +559,6 @@ slots:
 - context_fields
 - protocol_notes
 - ontology_mappings
-- exemplar_manuscripts
 
 </code></pre>
 </details>
@@ -655,18 +637,6 @@ attributes:
     - MeasurementProcess
     range: string
     multivalued: true
-  exemplar_manuscripts:
-    name: exemplar_manuscripts
-    description: Key peer-reviewed publications
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    rank: 1000
-    alias: exemplar_manuscripts
-    owner: MeasurementProcess
-    domain_of:
-    - MeasurementProcess
-    range: ScientificEvidence
-    multivalued: true
-    inlined: true
   id:
     name: id
     description: A unique identifier

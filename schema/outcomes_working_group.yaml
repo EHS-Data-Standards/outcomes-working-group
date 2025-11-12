@@ -736,19 +736,6 @@ slots:
     - MeasurementProcess
     range: string
     multivalued: true
-  exemplar_manuscripts:
-    name: exemplar_manuscripts
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/exemplar_manuscripts
-    description: Key peer-reviewed publications
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:exemplar_manuscripts
-    owner: MeasurementProcess
-    domain_of:
-    - MeasurementProcess
-    range: ScientificEvidence
-    multivalued: true
-    inlined: true
-    inlined_as_list: false
   sample_type:
     name: sample_type
     definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/sample_type
@@ -1624,7 +1611,6 @@ classes:
     - context_fields
     - protocol_notes
     - ontology_mappings
-    - exemplar_manuscripts
     class_uri: aop_model:MeasurementProcess
   InputSample:
     name: InputSample
@@ -1720,7 +1706,6 @@ classes:
     - context_fields
     - protocol_notes
     - ontology_mappings
-    - exemplar_manuscripts
     - cftr_specific_current
     - inhibitor_sensitive_current
     - cell_culture_conditions
@@ -1741,7 +1726,6 @@ classes:
     - context_fields
     - protocol_notes
     - ontology_mappings
-    - exemplar_manuscripts
     - beat_frequency_hz
     - active_area_percentage
     - imaging_conditions
@@ -1762,7 +1746,6 @@ classes:
     - context_fields
     - protocol_notes
     - ontology_mappings
-    - exemplar_manuscripts
     - asl_height_um
     - periciliary_layer_depth
     - imaging_modality
@@ -1783,7 +1766,6 @@ classes:
     - context_fields
     - protocol_notes
     - ontology_mappings
-    - exemplar_manuscripts
     - transport_rate
     - directionality
     - particle_tracking_method
@@ -1804,7 +1786,6 @@ classes:
     - context_fields
     - protocol_notes
     - ontology_mappings
-    - exemplar_manuscripts
     - goblet_cell_count
     - mucin_expression_level
     - staining_method
@@ -1825,7 +1806,6 @@ classes:
     - context_fields
     - protocol_notes
     - ontology_mappings
-    - exemplar_manuscripts
     - ros_level
     - lipid_peroxidation
     - antioxidant_capacity
@@ -1846,7 +1826,7 @@ classes:
     class_uri: aop_model:ScientificEvidence
 metamodel_version: 1.7.0
 source_file: outcomes_working_group.yaml
-source_file_date: '2025-11-12T02:17:30'
-source_file_size: 19395
-generation_date: '2025-11-12T02:17:40'
+source_file_date: '2025-11-12T02:18:18'
+source_file_size: 19223
+generation_date: '2025-11-12T02:18:29'
 
