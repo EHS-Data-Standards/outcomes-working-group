@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#outcomes-working-group" class="md-skip">
+        <a href="#aop-data-model" class="md-skip">
           Skip to content
         </a>
       
@@ -505,10 +505,12 @@
   
 
 
-<h1 id="outcomes-working-group">outcomes-working-group</h1>
-<p>This is the project description.</p>
-<p>URI: https://w3id.org/EHS-Data-Standards/outcomes-working-group</p>
-<p>Name: outcomes-working-group</p>
+<h1 id="aop-data-model">AOP Data Model</h1>
+<p>A LinkML data model for representing Adverse Outcome Pathways (AOPs),
+Key Events (KEs), and Key Event Relationships (KERs) in the context of
+the Source-to-Outcome (S2O) continuum.</p>
+<p>URI: https://w3id.org/EHS-Data-Standards/aop-model</p>
+<p>Name: aop-model</p>
 <h2 id="classes">Classes</h2>
 <table>
 <thead>
@@ -519,16 +521,120 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="NamedThing/">NamedThing</a></td>
-<td>A generic grouping for any identifiable entity</td>
+<td><a href="NamedEntity/">NamedEntity</a></td>
+<td>Base class for all named entities in the model</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Person/">Person</a></td>
-<td>Represents a Person</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="AdverseOutcomePathway/">AdverseOutcomePathway</a></td>
+<td>A structured representation of biological events linking a molecular initiati...</td>
 </tr>
 <tr>
-<td><a href="PersonCollection/">PersonCollection</a></td>
-<td>A holder for Person objects</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Assay/">Assay</a></td>
+<td>The specific method or assay used to measure a key event</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Association/">Association</a></td>
+<td>Base class for associations/relationships in the model</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="KeyEventAssociation/">KeyEventAssociation</a></td>
+<td>A causal or associative relationship between two key events in an adverse out...</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ContextField/">ContextField</a></td>
+<td>Metadata fields that capture important contextual information for reproducibi...</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="InputSample/">InputSample</a></td>
+<td>Description of the biological sample or experimental manipulation used as inp...</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="KeyEvent/">KeyEvent</a></td>
+<td>A measurable change in biological state that is a necessary step in a pathway...</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ASLHeightEvent/">ASLHeightEvent</a></td>
+<td>Key event representing changes in airway surface liquid height</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CFTRFunctionEvent/">CFTRFunctionEvent</a></td>
+<td>Key event representing changes in CFTR function</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CiliaNumberEvent/">CiliaNumberEvent</a></td>
+<td>Key event representing changes in cilia number or length</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CiliaryBeatFrequencyEvent/">CiliaryBeatFrequencyEvent</a></td>
+<td>Key event representing changes in ciliary beat frequency</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="EGFRActivationEvent/">EGFRActivationEvent</a></td>
+<td>Molecular initiating event involving EGFR activation</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="FoxJ1ExpressionEvent/">FoxJ1ExpressionEvent</a></td>
+<td>Key event representing changes in FoxJ1 expression</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="GobletCellEvent/">GobletCellEvent</a></td>
+<td>Key event representing changes in goblet cell number</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="LungFunctionEvent/">LungFunctionEvent</a></td>
+<td>Adverse outcome representing decreased lung function</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MucinProductionEvent/">MucinProductionEvent</a></td>
+<td>Key event representing changes in mucin production</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MucociliaryClearanceEvent/">MucociliaryClearanceEvent</a></td>
+<td>Key event representing changes in mucociliary clearance</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="OxidativeStressEvent/">OxidativeStressEvent</a></td>
+<td>Molecular initiating event involving oxidative stress</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MeasurementProcess/">MeasurementProcess</a></td>
+<td>A generic class representing the process of measuring a biological key event</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ASLHeightMeasurement/">ASLHeightMeasurement</a></td>
+<td>Measurement of airway surface liquid height</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CFTRFunctionMeasurement/">CFTRFunctionMeasurement</a></td>
+<td>Measurement of CFTR-mediated ion transport function</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CiliaBeatFrequencyMeasurement/">CiliaBeatFrequencyMeasurement</a></td>
+<td>Measurement of ciliary beat frequency</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="GobletCellMeasurement/">GobletCellMeasurement</a></td>
+<td>Measurement of goblet cell number or mucin production</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MucociliaryClearanceMeasurement/">MucociliaryClearanceMeasurement</a></td>
+<td>Measurement of mucociliary clearance/transport</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="OxidativeStressMeasurement/">OxidativeStressMeasurement</a></td>
+<td>Measurement of oxidative stress markers</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="OutputMeasurement/">OutputMeasurement</a></td>
+<td>The quantitative or qualitative output from a measurement process</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ScientificEvidence/">ScientificEvidence</a></td>
+<td>Published scientific evidence supporting an AOP component</td>
+</tr>
+<tr>
+<td><a href="QuantityValue/">QuantityValue</a></td>
+<td>A quantity value expresses a measurement with a numeric value and a unit</td>
 </tr>
 </tbody>
 </table>
@@ -542,36 +648,260 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="age_in_years/">age_in_years</a></td>
-<td>Number of years since birth</td>
+<td><a href="active_area_percentage/">active_area_percentage</a></td>
+<td>Percentage of active ciliated area</td>
 </tr>
 <tr>
-<td><a href="birth_date/">birth_date</a></td>
-<td>Date on which a person is born</td>
+<td><a href="adverse_outcome/">adverse_outcome</a></td>
+<td>The adverse outcome of regulatory concern</td>
+</tr>
+<tr>
+<td><a href="antioxidant_capacity/">antioxidant_capacity</a></td>
+<td>Antioxidant capacity (GSH/GSSG ratio, enzyme activity)</td>
+</tr>
+<tr>
+<td><a href="aop_network_members/">aop_network_members</a></td>
+<td>Other AOPs that are part of the same network</td>
+</tr>
+<tr>
+<td><a href="asl_height_um/">asl_height_um</a></td>
+<td>Airway surface liquid height in micrometers</td>
+</tr>
+<tr>
+<td><a href="assay_type/">assay_type</a></td>
+<td>Type of assay or method, constrained to OBI assay terms</td>
+</tr>
+<tr>
+<td><a href="beat_frequency_hz/">beat_frequency_hz</a></td>
+<td>Ciliary beat frequency in Hz</td>
+</tr>
+<tr>
+<td><a href="biological_level/">biological_level</a></td>
+<td>The level of biological organization</td>
+</tr>
+<tr>
+<td><a href="biomarkers/">biomarkers</a></td>
+<td>Biomarkers associated with this key event</td>
+</tr>
+<tr>
+<td><a href="cell_culture_conditions/">cell_culture_conditions</a></td>
+<td>Conditions for cell culture (ALI days, medium, etc</td>
+</tr>
+<tr>
+<td><a href="cftr_specific_current/">cftr_specific_current</a></td>
+<td>CFTR-mediated chloride secretory current</td>
+</tr>
+<tr>
+<td><a href="context_fields/">context_fields</a></td>
+<td>Contextual metadata fields for reproducibility</td>
 </tr>
 <tr>
 <td><a href="description/">description</a></td>
-<td>A human-readable description for a thing</td>
+<td>A detailed description</td>
 </tr>
 <tr>
-<td><a href="entries/">entries</a></td>
-<td></td>
+<td><a href="direction_of_change/">direction_of_change</a></td>
+<td>Direction of change for this key event</td>
+</tr>
+<tr>
+<td><a href="directionality/">directionality</a></td>
+<td>Directionality of mucociliary transport</td>
+</tr>
+<tr>
+<td><a href="downstream_events/">downstream_events</a></td>
+<td>Key events that occur after this one in the pathway</td>
+</tr>
+<tr>
+<td><a href="environmental_conditions/">environmental_conditions</a></td>
+<td>Environmental conditions during measurement</td>
+</tr>
+<tr>
+<td><a href="event_type/">event_type</a></td>
+<td>Classification of the key event (MIE, KE, or AO)</td>
+</tr>
+<tr>
+<td><a href="evidence_strength/">evidence_strength</a></td>
+<td>Strength of evidence supporting this relationship</td>
+</tr>
+<tr>
+<td><a href="evidence_type/">evidence_type</a></td>
+<td>Type of evidence (experimental, observational, computational)</td>
+</tr>
+<tr>
+<td><a href="exemplar_manuscripts/">exemplar_manuscripts</a></td>
+<td>Key peer-reviewed publications</td>
+</tr>
+<tr>
+<td><a href="exposure_conditions/">exposure_conditions</a></td>
+<td>Exposure or treatment conditions</td>
+</tr>
+<tr>
+<td><a href="field_category/">field_category</a></td>
+<td>Category or grouping for the context field</td>
+</tr>
+<tr>
+<td><a href="field_name/">field_name</a></td>
+<td>Name of the context field</td>
+</tr>
+<tr>
+<td><a href="field_value/">field_value</a></td>
+<td>Value of the context field</td>
+</tr>
+<tr>
+<td><a href="goblet_cell_count/">goblet_cell_count</a></td>
+<td>Number or percentage of goblet cells</td>
+</tr>
+<tr>
+<td><a href="has_maximum_numeric_value/">has_maximum_numeric_value</a></td>
+<td>The maximum value in a range</td>
+</tr>
+<tr>
+<td><a href="has_minimum_numeric_value/">has_minimum_numeric_value</a></td>
+<td>The minimum value in a range</td>
+</tr>
+<tr>
+<td><a href="has_numeric_value/">has_numeric_value</a></td>
+<td>The numeric value of a quantity</td>
+</tr>
+<tr>
+<td><a href="has_quantity_value/">has_quantity_value</a></td>
+<td>The quantity value associated with this measurement</td>
+</tr>
+<tr>
+<td><a href="has_unit/">has_unit</a></td>
+<td>The unit of measurement for the quantity</td>
 </tr>
 <tr>
 <td><a href="id/">id</a></td>
-<td>A unique identifier for a thing</td>
+<td>A unique identifier</td>
+</tr>
+<tr>
+<td><a href="imaging_conditions/">imaging_conditions</a></td>
+<td>Imaging parameters and conditions</td>
+</tr>
+<tr>
+<td><a href="imaging_modality/">imaging_modality</a></td>
+<td>Imaging modality used (confocal, OCT, etc</td>
+</tr>
+<tr>
+<td><a href="inhibitor_sensitive_current/">inhibitor_sensitive_current</a></td>
+<td>Inhibitor-sensitive current measurement</td>
+</tr>
+<tr>
+<td><a href="input_sample/">input_sample</a></td>
+<td>Description of input samples and manipulations</td>
+</tr>
+<tr>
+<td><a href="instrumentation/">instrumentation</a></td>
+<td>Specific instruments or equipment used</td>
+</tr>
+<tr>
+<td><a href="key_event_relationships/">key_event_relationships</a></td>
+<td>Relationships between key events in this AOP</td>
+</tr>
+<tr>
+<td><a href="key_events/">key_events</a></td>
+<td>All key events in this AOP</td>
+</tr>
+<tr>
+<td><a href="lipid_peroxidation/">lipid_peroxidation</a></td>
+<td>Lipid peroxidation markers (MDA, 8-isoprostane, etc</td>
+</tr>
+<tr>
+<td><a href="manipulation/">manipulation</a></td>
+<td>Experimental manipulation applied</td>
+</tr>
+<tr>
+<td><a href="measurement_processes/">measurement_processes</a></td>
+<td>Measurement processes used to assess this key event</td>
+</tr>
+<tr>
+<td><a href="measurement_type/">measurement_type</a></td>
+<td>Type of measurement or readout</td>
+</tr>
+<tr>
+<td><a href="method_assay/">method_assay</a></td>
+<td>The method or assay used</td>
+</tr>
+<tr>
+<td><a href="molecular_initiating_events/">molecular_initiating_events</a></td>
+<td>The molecular initiating event(s) that start this AOP</td>
+</tr>
+<tr>
+<td><a href="mucin_expression_level/">mucin_expression_level</a></td>
+<td>Level of mucin gene or protein expression</td>
 </tr>
 <tr>
 <td><a href="name/">name</a></td>
-<td>A human-readable name for a thing</td>
+<td>A human-readable name</td>
 </tr>
 <tr>
-<td><a href="primary_email/">primary_email</a></td>
-<td>The main email address of a person</td>
+<td><a href="object/">object</a></td>
+<td>The object of a relationship (e</td>
 </tr>
 <tr>
-<td><a href="vital_status/">vital_status</a></td>
-<td>living or dead status</td>
+<td><a href="ontology_mappings/">ontology_mappings</a></td>
+<td>Mappings to ontology terms (Biolink, OBI, etc</td>
+</tr>
+<tr>
+<td><a href="output_measurement/">output_measurement</a></td>
+<td>The output or measurement obtained</td>
+</tr>
+<tr>
+<td><a href="particle_tracking_method/">particle_tracking_method</a></td>
+<td>Method used for tracking particles or mucus</td>
+</tr>
+<tr>
+<td><a href="periciliary_layer_depth/">periciliary_layer_depth</a></td>
+<td>Depth of periciliary layer in micrometers</td>
+</tr>
+<tr>
+<td><a href="predicate/">predicate</a></td>
+<td>The predicate/relationship type (e</td>
+</tr>
+<tr>
+<td><a href="protocol_notes/">protocol_notes</a></td>
+<td>Protocol or SOP notes</td>
+</tr>
+<tr>
+<td><a href="publication_reference/">publication_reference</a></td>
+<td>Citation or reference to publication</td>
+</tr>
+<tr>
+<td><a href="ros_level/">ros_level</a></td>
+<td>Reactive oxygen species level</td>
+</tr>
+<tr>
+<td><a href="sample_type/">sample_type</a></td>
+<td>Type of biological sample</td>
+</tr>
+<tr>
+<td><a href="sop_reference/">sop_reference</a></td>
+<td>Reference to standard operating procedure</td>
+</tr>
+<tr>
+<td><a href="staining_method/">staining_method</a></td>
+<td>Histological staining method used</td>
+</tr>
+<tr>
+<td><a href="study_design/">study_design</a></td>
+<td>Study design or experimental approach</td>
+</tr>
+<tr>
+<td><a href="subject/">subject</a></td>
+<td>The subject of a relationship (e</td>
+</tr>
+<tr>
+<td><a href="supporting_evidence/">supporting_evidence</a></td>
+<td>Scientific evidence supporting this relationship</td>
+</tr>
+<tr>
+<td><a href="transport_rate/">transport_rate</a></td>
+<td>Mucociliary transport rate</td>
+</tr>
+<tr>
+<td><a href="upstream_events/">upstream_events</a></td>
+<td>Key events that occur before this one in the pathway</td>
 </tr>
 </tbody>
 </table>
@@ -585,8 +915,28 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="PersonStatus/">PersonStatus</a></td>
-<td></td>
+<td><a href="AssayTypeEnum/">AssayTypeEnum</a></td>
+<td>Types of assays from the Ontology for Biomedical Investigations (OBI)</td>
+</tr>
+<tr>
+<td><a href="BiologicalLevelEnum/">BiologicalLevelEnum</a></td>
+<td>The level of biological organization at which an event occurs</td>
+</tr>
+<tr>
+<td><a href="DirectionEnum/">DirectionEnum</a></td>
+<td>Direction of change for a key event</td>
+</tr>
+<tr>
+<td><a href="EvidenceStrengthEnum/">EvidenceStrengthEnum</a></td>
+<td>Strength of evidence supporting a relationship</td>
+</tr>
+<tr>
+<td><a href="KeyEventPredicateEnum/">KeyEventPredicateEnum</a></td>
+<td>Types of relationships between key events in an AOP</td>
+</tr>
+<tr>
+<td><a href="KeyEventTypeEnum/">KeyEventTypeEnum</a></td>
+<td>Classification of key events in an AOP</td>
 </tr>
 </tbody>
 </table>

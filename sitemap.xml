@@ -13,7 +13,59 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/ASLHeightEvent/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/ASLHeightMeasurement/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/AdverseOutcomePathway/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/Assay/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/AssayTypeEnum/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/Association/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/BiologicalLevelEnum/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/Boolean/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/CFTRFunctionEvent/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/CFTRFunctionMeasurement/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/CiliaBeatFrequencyMeasurement/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/CiliaNumberEvent/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/CiliaryBeatFrequencyEvent/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/ContextField/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
@@ -37,11 +89,39 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/DirectionEnum/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/Double/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/EGFRActivationEvent/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/EvidenceStrengthEnum/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/Float/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/FoxJ1ExpressionEvent/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/GobletCellEvent/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/GobletCellMeasurement/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/InputSample/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
@@ -57,7 +137,43 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/NamedThing/</loc>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/KeyEvent/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/KeyEventAssociation/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/KeyEventPredicateEnum/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/KeyEventTypeEnum/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/LungFunctionEvent/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/MeasurementProcess/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/MucinProductionEvent/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/MucociliaryClearanceEvent/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/MucociliaryClearanceMeasurement/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/NamedEntity/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
@@ -73,15 +189,23 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/Person/</loc>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/OutputMeasurement/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/PersonCollection/</loc>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/OxidativeStressEvent/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/PersonStatus/</loc>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/OxidativeStressMeasurement/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/QuantityValue/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/ScientificEvidence/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
@@ -105,11 +229,55 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/age_in_years/</loc>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/active_area_percentage/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/birth_date/</loc>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/adverse_outcome/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/antioxidant_capacity/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/aop-model/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/aop_network_members/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/asl_height_um/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/assay_type/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/beat_frequency_hz/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/biological_level/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/biomarkers/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/cell_culture_conditions/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/cftr_specific_current/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/context_fields/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
@@ -117,7 +285,75 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/entries/</loc>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/direction_of_change/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/directionality/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/downstream_events/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/environmental_conditions/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/event_type/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/evidence_strength/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/evidence_type/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/exemplar_manuscripts/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/exposure_conditions/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/field_category/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/field_name/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/field_value/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/goblet_cell_count/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/has_maximum_numeric_value/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/has_minimum_numeric_value/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/has_numeric_value/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/has_quantity_value/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/has_unit/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
@@ -125,19 +361,131 @@
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/imaging_conditions/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/imaging_modality/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/inhibitor_sensitive_current/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/input_sample/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/instrumentation/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/key_event_relationships/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/key_events/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/lipid_peroxidation/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/manipulation/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/measurement_processes/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/measurement_type/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/method_assay/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/molecular_initiating_events/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/mucin_expression_level/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
          <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/name/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/outcomes-working-group/</loc>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/object/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/primary_email/</loc>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/ontology_mappings/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
     <url>
-         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/vital_status/</loc>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/output_measurement/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/particle_tracking_method/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/periciliary_layer_depth/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/predicate/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/protocol_notes/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/publication_reference/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/ros_level/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/sample_type/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/sop_reference/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/staining_method/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/study_design/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/subject/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/supporting_evidence/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/transport_rate/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://EHS-Data-Standards.github.io/outcomes-working-group/elements/upstream_events/</loc>
          <lastmod>2025-11-12</lastmod>
     </url>
 </urlset>
