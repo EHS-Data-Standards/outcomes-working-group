@@ -280,7 +280,6 @@ classes:
       - context_fields
       - protocol_notes
       - ontology_mappings
-      - exemplar_manuscripts
 
   InputSample:
     description: Description of the biological sample or experimental manipulation used as input
@@ -519,12 +518,6 @@ slots:
     description: Mappings to ontology terms (Biolink, OBI, etc.)
     range: string
     multivalued: true
-
-  exemplar_manuscripts:
-    description: Key peer-reviewed publications
-    range: ScientificEvidence
-    multivalued: true
-    inlined: true
 
   # InputSample slots
   sample_type:
