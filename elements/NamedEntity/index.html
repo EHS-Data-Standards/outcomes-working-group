@@ -304,8 +304,6 @@
 
       NamedEntity : id
 
-      NamedEntity : name
-
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -350,12 +348,6 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../name/">name</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable name</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../description/">description</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A detailed description</td>
@@ -396,7 +388,6 @@ description: Base class for all named entities in the model
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
 slots:
 - id
-- name
 - description
 
 </code></pre>
@@ -419,16 +410,6 @@ attributes:
     - NamedEntity
     range: uriorcurie
     required: true
-  name:
-    name: name
-    description: A human-readable name
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    rank: 1000
-    alias: name
-    owner: NamedEntity
-    domain_of:
-    - NamedEntity
-    range: string
   description:
     name: description
     description: A detailed description

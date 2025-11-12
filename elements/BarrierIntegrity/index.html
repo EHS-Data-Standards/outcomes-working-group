@@ -281,8 +281,6 @@
 
       BarrierIntegrity : measurement_timepoint
 
-      BarrierIntegrity : name
-
       BarrierIntegrity : permeability_coefficient
 
 
@@ -347,12 +345,6 @@
 <td><a href="../id/">id</a></td>
 <td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A unique identifier</td>
-<td><a href="../NamedEntity/">NamedEntity</a></td>
-</tr>
-<tr>
-<td><a href="../name/">name</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable name</td>
 <td><a href="../NamedEntity/">NamedEntity</a></td>
 </tr>
 <tr>
@@ -472,16 +464,6 @@ attributes:
     - NamedEntity
     range: uriorcurie
     required: true
-  name:
-    name: name
-    description: A human-readable name
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    rank: 1000
-    alias: name
-    owner: BarrierIntegrity
-    domain_of:
-    - NamedEntity
-    range: string
   description:
     name: description
     description: A detailed description

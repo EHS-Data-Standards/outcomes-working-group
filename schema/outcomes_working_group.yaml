@@ -338,16 +338,6 @@ slots:
     - NamedEntity
     range: uriorcurie
     required: true
-  name:
-    name: name
-    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/name
-    description: A human-readable name
-    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
-    slot_uri: outcomes_model:name
-    owner: NamedEntity
-    domain_of:
-    - NamedEntity
-    range: string
   description:
     name: description
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/description
@@ -2011,7 +2001,6 @@ classes:
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     slots:
     - id
-    - name
     - description
     class_uri: outcomes_model:NamedEntity
   Measurement:
@@ -2027,7 +2016,6 @@ classes:
     is_a: NamedEntity
     slots:
     - id
-    - name
     - description
     - input_sample
     - method_assay
@@ -2042,7 +2030,6 @@ classes:
     is_a: NamedEntity
     slots:
     - id
-    - name
     - description
     - sample_type
     - manipulation
@@ -2056,7 +2043,6 @@ classes:
     is_a: NamedEntity
     slots:
     - id
-    - name
     - description
     - assay_type
     - instrumentation
@@ -2087,7 +2073,6 @@ classes:
     is_a: Measurement
     slots:
     - id
-    - name
     - description
     - input_sample
     - method_assay
@@ -2104,7 +2089,6 @@ classes:
     is_a: Measurement
     slots:
     - id
-    - name
     - description
     - input_sample
     - method_assay
@@ -2124,7 +2108,6 @@ classes:
     is_a: Measurement
     slots:
     - id
-    - name
     - description
     - input_sample
     - method_assay
@@ -2146,7 +2129,6 @@ classes:
     is_a: Measurement
     slots:
     - id
-    - name
     - description
     - input_sample
     - method_assay
@@ -2164,7 +2146,6 @@ classes:
     is_a: Measurement
     slots:
     - id
-    - name
     - description
     - input_sample
     - method_assay
@@ -2183,7 +2164,6 @@ classes:
     is_a: Measurement
     slots:
     - id
-    - name
     - description
     - input_sample
     - method_assay
@@ -2205,7 +2185,6 @@ classes:
     is_a: Measurement
     slots:
     - id
-    - name
     - description
     - input_sample
     - method_assay
@@ -2225,7 +2204,6 @@ classes:
     is_a: Measurement
     slots:
     - id
-    - name
     - description
     - input_sample
     - method_assay
@@ -2249,7 +2227,6 @@ classes:
     is_a: Measurement
     slots:
     - id
-    - name
     - description
     - input_sample
     - method_assay
@@ -2271,7 +2248,6 @@ classes:
     is_a: Measurement
     slots:
     - id
-    - name
     - description
     - input_sample
     - method_assay
@@ -2298,7 +2274,6 @@ classes:
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     is_a: NamedEntity
     slots:
-    - name
     - description
     - authors
     - pages
@@ -2325,7 +2300,6 @@ classes:
     is_a: NamedEntity
     slots:
     - id
-    - name
     - description
     - imaging_modality
     - frame_rate
@@ -2342,7 +2316,6 @@ classes:
     is_a: NamedEntity
     slots:
     - id
-    - name
     - description
     - fluorophore_type
     - concentration
@@ -2356,7 +2329,6 @@ classes:
     is_a: NamedEntity
     slots:
     - id
-    - name
     - description
     - control_method
     - material_used
@@ -2369,7 +2341,6 @@ classes:
     is_a: NamedEntity
     slots:
     - id
-    - name
     - description
     - probe_type
     - loading_conditions
@@ -2383,7 +2354,6 @@ classes:
     is_a: NamedEntity
     slots:
     - id
-    - name
     - description
     - detection_type
     - instrumentation
@@ -2398,7 +2368,6 @@ classes:
     is_a: NamedEntity
     slots:
     - id
-    - name
     - description
     - collection_method
     - processing_time
@@ -2413,7 +2382,6 @@ classes:
     is_a: NamedEntity
     slots:
     - id
-    - name
     - description
     - culture_medium
     - days_at_ali
@@ -2433,7 +2401,6 @@ classes:
     is_a: NamedEntity
     slots:
     - id
-    - name
     - description
     - staining_type
     - antibodies_used
@@ -2448,7 +2415,6 @@ classes:
     is_a: NamedEntity
     slots:
     - id
-    - name
     - description
     - analysis_method
     - normalization_genes
@@ -2464,7 +2430,6 @@ classes:
     is_a: NamedEntity
     slots:
     - id
-    - name
     - description
     - neutrophil_percentage
     - eosinophil_percentage
@@ -2480,7 +2445,6 @@ classes:
     is_a: NamedEntity
     slots:
     - id
-    - name
     - description
     - alpha_diversity
     - beta_diversity
@@ -2496,7 +2460,6 @@ classes:
     is_a: NamedEntity
     slots:
     - id
-    - name
     - description
     - teer_value
     - permeability_coefficient
@@ -2510,7 +2473,6 @@ classes:
     is_a: NamedEntity
     slots:
     - id
-    - name
     - description
     - ldh_release
     - mtt_reduction
@@ -2525,7 +2487,6 @@ classes:
     is_a: NamedEntity
     slots:
     - id
-    - name
     - description
     - temperature
     - humidity
@@ -2533,7 +2494,7 @@ classes:
     class_uri: outcomes_model:EnvironmentalCondition
 metamodel_version: 1.7.0
 source_file: outcomes_working_group.yaml
-source_file_date: '2025-11-12T22:56:57'
-source_file_size: 25636
-generation_date: '2025-11-12T22:57:06'
+source_file_date: '2025-11-12T22:57:18'
+source_file_size: 25558
+generation_date: '2025-11-12T22:57:28'
 
