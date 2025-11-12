@@ -1,96 +1,703 @@
----
-id: https://w3id.org/EHS-Data-Standards/outcomes-working-group
-name: outcomes-working-group
-title: outcomes-working-group
-description: |-
-  This is the project description.
-license: MIT
+name: aop-model
+description: |
+  A LinkML data model for representing Adverse Outcome Pathways (AOPs),
+  Key Events (KEs), and Key Event Relationships (KERs) in the context of
+  the Source-to-Outcome (S2O) continuum.
+title: AOP Data Model
 see_also:
   - https://EHS-Data-Standards.github.io/outcomes-working-group
-
-prefixes:
-  outcomes_working_group: https://w3id.org/EHS-Data-Standards/outcomes-working-group/
-  linkml: https://w3id.org/linkml/
-  biolink: https://w3id.org/biolink/
-  schema: http://schema.org/
-  PATO: http://purl.obolibrary.org/obo/PATO_
-  example: https://example.org/
-default_prefix: outcomes_working_group
-default_range: string
-
+id: https://w3id.org/EHS-Data-Standards/aop-model
 imports:
   - linkml:types
+license: MIT
+
+prefixes:
+  aop_model:
+    prefix_prefix: aop_model
+    prefix_reference: https://w3id.org/EHS-Data-Standards/aop-model/
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  biolink:
+    prefix_prefix: biolink
+    prefix_reference: https://w3id.org/biolink/
+  rdf:
+    prefix_prefix: rdf
+    prefix_reference: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  OBI:
+    prefix_prefix: OBI
+    prefix_reference: http://purl.obolibrary.org/obo/OBI_
+  CHEBI:
+    prefix_prefix: CHEBI
+    prefix_reference: http://purl.obolibrary.org/obo/CHEBI_
+  ENVO:
+    prefix_prefix: ENVO
+    prefix_reference: http://purl.obolibrary.org/obo/ENVO_
+  schema:
+    prefix_prefix: schema
+    prefix_reference: http://schema.org/
+
+default_prefix: aop_model
+default_range: string
+
+enums:
+  BiologicalLevelEnum:
+    description: The level of biological organization at which an event occurs
+    permissible_values:
+      MOLECULAR:
+        description: Macro-molecular interactions (e.g., receptor binding, protein modification)
+      CELLULAR:
+        description: Cellular response (e.g., cell signaling, gene expression, cell death)
+      TISSUE:
+        description: Tissue-level response (e.g., inflammation, tissue damage)
+      ORGAN:
+        description: Organ-level response (e.g., impaired organ function)
+      ORGANISM:
+        description: Organism-level outcome (e.g., disease, mortality)
+      POPULATION:
+        description: Population-level outcome (e.g., disease incidence, public health impact)
+
+  KeyEventTypeEnum:
+    description: Classification of key events in an AOP
+    permissible_values:
+      MIE:
+        description: Molecular Initiating Event - the initial interaction between a stressor and a biological target
+      KE:
+        description: Key Event - a measurable change in biological state along the pathway
+      AO:
+        description: Adverse Outcome - the endpoint of regulatory concern
+
+  DirectionEnum:
+    description: Direction of change for a key event
+    permissible_values:
+      INCREASED:
+        description: The measured parameter is increased
+      DECREASED:
+        description: The measured parameter is decreased
+      ALTERED:
+        description: The measured parameter is changed in either direction
+
+  EvidenceStrengthEnum:
+    description: Strength of evidence supporting a relationship
+    permissible_values:
+      STRONG:
+        description: Strong empirical evidence from multiple independent studies
+      MODERATE:
+        description: Moderate evidence with some consistency
+      WEAK:
+        description: Limited or inconsistent evidence
+      NOT_SPECIFIED:
+        description: Evidence strength not specified
+
+  KeyEventPredicateEnum:
+    description: Types of relationships between key events in an AOP
+    permissible_values:
+      has_input:
+        description: The subject key event has the object key event as input
+        meaning: biolink:has_input
+      has_output:
+        description: The subject key event has the object key event as output
+        meaning: biolink:has_output
+      leads_to:
+        description: The subject key event leads to the object key event
+        meaning: biolink:causes
+      regulates:
+        description: The subject key event regulates the object key event
+        meaning: biolink:regulates
+      positively_regulates:
+        description: The subject key event positively regulates the object key event
+        meaning: biolink:positively_regulates
+      negatively_regulates:
+        description: The subject key event negatively regulates the object key event
+        meaning: biolink:negatively_regulates
+      causes:
+        description: The subject key event directly causes the object key event
+        meaning: biolink:causes
+      contributes_to:
+        description: The subject key event contributes to the object key event
+        meaning: biolink:contributes_to
+
+  AssayTypeEnum:
+    description: Types of assays from the Ontology for Biomedical Investigations (OBI)
+    reachable_from:
+      source_ontology: obo:obi
+      source_nodes:
+        - OBI:0000070
+      relationship_types:
+        - rdfs:subClassOf
+    permissible_values:
+      OBI:0000070:
+        description: assay
+        meaning: OBI:0000070
 
 classes:
 
-  NamedThing:
-    description: >-
-      A generic grouping for any identifiable entity
+  # Core Entity
+  NamedEntity:
+    description: Base class for all named entities in the model
     slots:
       - id
       - name
       - description
-    class_uri: schema:Thing
 
-  Person:
-    is_a: NamedThing
-    description: >-
-      Represents a Person
+  # AOP Core Classes
+  AdverseOutcomePathway:
+    description: |
+      A structured representation of biological events linking a molecular initiating event (MIE)
+      to an adverse outcome through a series of key events.
+    is_a: NamedEntity
     slots:
-      - primary_email
-      - birth_date
-      - age_in_years
-      - vital_status
+      - molecular_initiating_events
+      - key_events
+      - adverse_outcome
+      - key_event_relationships
+      - aop_network_members
     slot_usage:
-      primary_email:
-        pattern: "^\\S+@[\\S+\\.]+\\S+"
+      id:
+        pattern: "^AOP:\\d+$"
+        examples:
+          - value: "AOP:424"
+            description: Example AOP identifier
 
-  PersonCollection:
-    tree_root: true
-    description: >-
-      A holder for Person objects
-    attributes:
-      entries:
-        range: Person
-        multivalued: true
-        inlined_as_list: true
+  KeyEvent:
+    description: |
+      A measurable change in biological state that is a necessary step in a pathway from
+      a molecular initiating event to an adverse outcome. Key Events can represent molecular,
+      cellular, tissue, organ, or organism-level changes.
+    is_a: NamedEntity
+    abstract: true
+    slots:
+      - event_type
+      - biological_level
+      - direction_of_change
+      - measurement_processes
+      - biomarkers
+      - upstream_events
+      - downstream_events
+    slot_usage:
+      id:
+        pattern: "^(MIE|KE|AO):\\d+$"
+        examples:
+          - value: "MIE:1"
+          - value: "KE:1906"
+          - value: "AO:11"
+
+  # Molecular Initiating Events (MIEs)
+  OxidativeStressEvent:
+    description: Molecular initiating event involving oxidative stress
+    is_a: KeyEvent
+
+  EGFRActivationEvent:
+    description: Molecular initiating event involving EGFR activation
+    is_a: KeyEvent
+
+  # Cellular Key Events
+  CFTRFunctionEvent:
+    description: Key event representing changes in CFTR function
+    is_a: KeyEvent
+
+  FoxJ1ExpressionEvent:
+    description: Key event representing changes in FoxJ1 expression
+    is_a: KeyEvent
+
+  CiliaNumberEvent:
+    description: Key event representing changes in cilia number or length
+    is_a: KeyEvent
+
+  GobletCellEvent:
+    description: Key event representing changes in goblet cell number
+    is_a: KeyEvent
+
+  # Organ Key Events
+  ASLHeightEvent:
+    description: Key event representing changes in airway surface liquid height
+    is_a: KeyEvent
+
+  CiliaryBeatFrequencyEvent:
+    description: Key event representing changes in ciliary beat frequency
+    is_a: KeyEvent
+
+  MucinProductionEvent:
+    description: Key event representing changes in mucin production
+    is_a: KeyEvent
+
+  MucociliaryClearanceEvent:
+    description: Key event representing changes in mucociliary clearance
+    is_a: KeyEvent
+
+  # Adverse Outcome
+  LungFunctionEvent:
+    description: Adverse outcome representing decreased lung function
+    is_a: KeyEvent
+
+  Association:
+    description: |
+      Base class for associations/relationships in the model.
+      Uses subject-predicate-object pattern similar to Biolink model.
+    is_a: NamedEntity
+    abstract: true
+    slots:
+      - subject
+      - predicate
+      - object
+
+  KeyEventAssociation:
+    description: |
+      A causal or associative relationship between two key events in an adverse outcome pathway.
+      Represents the connection showing how one event leads to another.
+    is_a: Association
+    slots:
+      - evidence_strength
+      - supporting_evidence
+    slot_usage:
+      id:
+        pattern: "^KER:\\d+$"
+        examples:
+          - value: "KER:1907"
+      subject:
+        description: The upstream key event (input to the relationship)
+        range: KeyEvent
+        required: true
+      predicate:
+        description: The type of relationship
+        range: KeyEventPredicateEnum
+        required: true
+      object:
+        description: The downstream key event (output from the relationship)
+        range: KeyEvent
+        required: true
+
+  # Measurement and Assay Classes
+  MeasurementProcess:
+    description: |
+      A generic class representing the process of measuring a biological key event.
+      Includes information about input samples, methods, outputs, and contextual metadata.
+    is_a: NamedEntity
+    slots:
+      - input_sample
+      - method_assay
+      - output_measurement
+      - context_fields
+      - protocol_notes
+      - ontology_mappings
+      - exemplar_manuscripts
+
+  InputSample:
+    description: Description of the biological sample or experimental manipulation used as input
+    is_a: NamedEntity
+    slots:
+      - sample_type
+      - manipulation
+      - exposure_conditions
+
+  Assay:
+    description: The specific method or assay used to measure a key event
+    is_a: NamedEntity
+    slots:
+      - assay_type
+      - instrumentation
+      - environmental_conditions
+      - sop_reference
+
+  QuantityValue:
+    description: |
+      A quantity value expresses a measurement with a numeric value and a unit.
+      Based on NMDC Schema QuantityValue pattern.
+    slots:
+      - has_numeric_value
+      - has_unit
+      - has_minimum_numeric_value
+      - has_maximum_numeric_value
+
+  OutputMeasurement:
+    description: The quantitative or qualitative output from a measurement process
+    is_a: NamedEntity
+    slots:
+      - measurement_type
+      - has_quantity_value
+
+  ContextField:
+    description: |
+      Metadata fields that capture important contextual information for reproducibility
+      and cross-study comparison
+    is_a: NamedEntity
+    slots:
+      - field_name
+      - field_value
+      - field_category
+
+  # Specific Measurement Process Subclasses
+  CFTRFunctionMeasurement:
+    description: Measurement of CFTR-mediated ion transport function
+    is_a: MeasurementProcess
+    slots:
+      - cftr_specific_current
+      - inhibitor_sensitive_current
+      - cell_culture_conditions
+
+  CiliaBeatFrequencyMeasurement:
+    description: Measurement of ciliary beat frequency
+    is_a: MeasurementProcess
+    slots:
+      - beat_frequency_hz
+      - active_area_percentage
+      - imaging_conditions
+
+  ASLHeightMeasurement:
+    description: Measurement of airway surface liquid height
+    is_a: MeasurementProcess
+    slots:
+      - asl_height_um
+      - periciliary_layer_depth
+      - imaging_modality
+
+  MucociliaryClearanceMeasurement:
+    description: Measurement of mucociliary clearance/transport
+    is_a: MeasurementProcess
+    slots:
+      - transport_rate
+      - directionality
+      - particle_tracking_method
+
+  GobletCellMeasurement:
+    description: Measurement of goblet cell number or mucin production
+    is_a: MeasurementProcess
+    slots:
+      - goblet_cell_count
+      - mucin_expression_level
+      - staining_method
+
+  OxidativeStressMeasurement:
+    description: Measurement of oxidative stress markers
+    is_a: MeasurementProcess
+    slots:
+      - ros_level
+      - lipid_peroxidation
+      - antioxidant_capacity
+
+  # Evidence and Publication
+  ScientificEvidence:
+    description: Published scientific evidence supporting an AOP component
+    is_a: NamedEntity
+    slots:
+      - publication_reference
+      - evidence_type
+      - study_design
 
 slots:
-  id:
-    identifier: true
-    slot_uri: schema:identifier
-    range: uriorcurie
-    description: A unique identifier for a thing
-  name:
-    slot_uri: schema:name
-    description: A human-readable name for a thing
-  description:
-    slot_uri: schema:description
-    description: A human-readable description for a thing
-  primary_email:
-    slot_uri: schema:email
-    description: The main email address of a person
-  birth_date:
-    slot_uri: schema:birthDate
-    range: date
-    description: Date on which a person is born
-  age_in_years:
-    range: integer
-    description: Number of years since birth
-  vital_status:
-    range: PersonStatus
-    description: living or dead status
 
-enums:
-  PersonStatus:
-    permissible_values:
-      ALIVE:
-        description: the person is living
-        meaning: PATO:0001421
-      DEAD:
-        description: the person is deceased
-        meaning: PATO:0001422
-      UNKNOWN:
-        description: the vital status is not known
-        todos:
-          - map this to an ontology
+  # Identifier and core slots
+  id:
+    description: A unique identifier
+    identifier: true
+    range: uriorcurie
+    required: true
+
+  name:
+    description: A human-readable name
+    range: string
+
+  description:
+    description: A detailed description
+    range: string
+
+  # AOP-specific slots
+  molecular_initiating_events:
+    description: The molecular initiating event(s) that start this AOP
+    range: KeyEvent
+    multivalued: true
+    inlined: true
+
+  key_events:
+    description: All key events in this AOP
+    range: KeyEvent
+    multivalued: true
+    inlined: true
+
+  adverse_outcome:
+    description: The adverse outcome of regulatory concern
+    range: KeyEvent
+    required: true
+
+  key_event_relationships:
+    description: Relationships between key events in this AOP
+    range: KeyEventAssociation
+    multivalued: true
+    inlined: true
+
+  aop_network_members:
+    description: Other AOPs that are part of the same network
+    range: AdverseOutcomePathway
+    multivalued: true
+
+  # KeyEvent slots
+  event_type:
+    description: Classification of the key event (MIE, KE, or AO)
+    range: KeyEventTypeEnum
+    required: true
+
+  biological_level:
+    description: The level of biological organization
+    range: BiologicalLevelEnum
+    required: true
+
+  direction_of_change:
+    description: Direction of change for this key event
+    range: DirectionEnum
+
+  measurement_processes:
+    description: Measurement processes used to assess this key event
+    range: MeasurementProcess
+    multivalued: true
+    inlined: true
+
+  biomarkers:
+    description: Biomarkers associated with this key event
+    range: string
+    multivalued: true
+
+  upstream_events:
+    description: Key events that occur before this one in the pathway
+    range: KeyEvent
+    multivalued: true
+
+  downstream_events:
+    description: Key events that occur after this one in the pathway
+    range: KeyEvent
+    multivalued: true
+
+  # KeyEventRelationship slots (subject-predicate-object pattern)
+  subject:
+    description: The subject of a relationship (e.g., upstream key event)
+    range: KeyEvent
+    slot_uri: rdf:subject
+
+  predicate:
+    description: The predicate/relationship type (e.g., leads_to, causes, regulates)
+    range: uriorcurie
+    slot_uri: rdf:predicate
+
+  object:
+    description: The object of a relationship (e.g., downstream key event)
+    range: KeyEvent
+    slot_uri: rdf:object
+
+  evidence_strength:
+    description: Strength of evidence supporting this relationship
+    range: EvidenceStrengthEnum
+
+  supporting_evidence:
+    description: Scientific evidence supporting this relationship
+    range: ScientificEvidence
+    multivalued: true
+    inlined: true
+
+  # MeasurementProcess slots
+  input_sample:
+    description: Description of input samples and manipulations
+    range: InputSample
+
+  method_assay:
+    description: The method or assay used
+    range: Assay
+
+  output_measurement:
+    description: The output or measurement obtained
+    range: OutputMeasurement
+
+  context_fields:
+    description: Contextual metadata fields for reproducibility
+    range: ContextField
+    multivalued: true
+    inlined: true
+
+  protocol_notes:
+    description: Protocol or SOP notes
+    range: string
+
+  ontology_mappings:
+    description: Mappings to ontology terms (Biolink, OBI, etc.)
+    range: string
+    multivalued: true
+
+  exemplar_manuscripts:
+    description: Key peer-reviewed publications
+    range: ScientificEvidence
+    multivalued: true
+    inlined: true
+
+  # InputSample slots
+  sample_type:
+    description: Type of biological sample
+    range: string
+    examples:
+      - value: "Primary human airway epithelial cells at ALI"
+      - value: "MucilAir 3D tissue model"
+
+  manipulation:
+    description: Experimental manipulation applied
+    range: string
+
+  exposure_conditions:
+    description: Exposure or treatment conditions
+    range: string
+
+  # MethodAssay slots
+  assay_type:
+    description: Type of assay or method, constrained to OBI assay terms
+    range: AssayTypeEnum
+
+  instrumentation:
+    description: Specific instruments or equipment used
+    range: string
+
+  environmental_conditions:
+    description: Environmental conditions during measurement
+    range: string
+
+  sop_reference:
+    description: Reference to standard operating procedure
+    range: string
+
+  # OutputMeasurement slots
+  measurement_type:
+    description: Type of measurement or readout
+    range: string
+
+  has_quantity_value:
+    description: The quantity value associated with this measurement
+    range: QuantityValue
+    inlined: true
+
+  # QuantityValue slots
+  has_numeric_value:
+    description: The numeric value of a quantity
+    range: float
+
+  has_unit:
+    description: The unit of measurement for the quantity
+    range: string
+    examples:
+      - value: "Hz"
+      - value: "µm"
+      - value: "mm/min"
+      - value: "%"
+
+  has_minimum_numeric_value:
+    description: The minimum value in a range
+    range: float
+
+  has_maximum_numeric_value:
+    description: The maximum value in a range
+    range: float
+
+  # ContextField slots
+  field_name:
+    description: Name of the context field
+    range: string
+
+  field_value:
+    description: Value of the context field
+    range: string
+
+  field_category:
+    description: Category or grouping for the context field
+    range: string
+
+  # Specific measurement slots
+  cftr_specific_current:
+    description: CFTR-mediated chloride secretory current
+    range: QuantityValue
+    inlined: true
+
+  inhibitor_sensitive_current:
+    description: Inhibitor-sensitive current measurement
+    range: QuantityValue
+    inlined: true
+
+  cell_culture_conditions:
+    description: Conditions for cell culture (ALI days, medium, etc.)
+    range: string
+
+  beat_frequency_hz:
+    description: Ciliary beat frequency in Hz
+    range: QuantityValue
+    inlined: true
+
+  active_area_percentage:
+    description: Percentage of active ciliated area
+    range: QuantityValue
+    inlined: true
+
+  imaging_conditions:
+    description: Imaging parameters and conditions
+    range: string
+
+  asl_height_um:
+    description: Airway surface liquid height in micrometers
+    range: QuantityValue
+    inlined: true
+
+  periciliary_layer_depth:
+    description: Depth of periciliary layer in micrometers
+    range: QuantityValue
+    inlined: true
+
+  imaging_modality:
+    description: Imaging modality used (confocal, OCT, etc.)
+    range: string
+
+  transport_rate:
+    description: Mucociliary transport rate
+    range: QuantityValue
+    inlined: true
+
+  directionality:
+    description: Directionality of mucociliary transport
+    range: string
+
+  particle_tracking_method:
+    description: Method used for tracking particles or mucus
+    range: string
+
+  goblet_cell_count:
+    description: Number or percentage of goblet cells
+    range: QuantityValue
+    inlined: true
+
+  mucin_expression_level:
+    description: Level of mucin gene or protein expression
+    range: QuantityValue
+    inlined: true
+
+  staining_method:
+    description: Histological staining method used
+    range: string
+
+  ros_level:
+    description: Reactive oxygen species level
+    range: QuantityValue
+    inlined: true
+
+  lipid_peroxidation:
+    description: Lipid peroxidation markers (MDA, 8-isoprostane, etc.)
+    range: QuantityValue
+    inlined: true
+
+  antioxidant_capacity:
+    description: Antioxidant capacity (GSH/GSSG ratio, enzyme activity)
+    range: QuantityValue
+    inlined: true
+
+  # Evidence slots
+  publication_reference:
+    description: Citation or reference to publication
+    range: string
+
+  evidence_type:
+    description: Type of evidence (experimental, observational, computational)
+    range: string
+
+  study_design:
+    description: Study design or experimental approach
+    range: string

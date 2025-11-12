@@ -1,0 +1,96 @@
+---
+id: https://w3id.org/EHS-Data-Standards/outcomes-working-group
+name: outcomes-working-group
+title: outcomes-working-group
+description: |-
+  This is the project description.
+license: MIT
+see_also:
+  - https://EHS-Data-Standards.github.io/outcomes-working-group
+
+prefixes:
+  outcomes_working_group: https://w3id.org/EHS-Data-Standards/outcomes-working-group/
+  linkml: https://w3id.org/linkml/
+  biolink: https://w3id.org/biolink/
+  schema: http://schema.org/
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  example: https://example.org/
+default_prefix: outcomes_working_group
+default_range: string
+
+imports:
+  - linkml:types
+
+classes:
+
+  NamedThing:
+    description: >-
+      A generic grouping for any identifiable entity
+    slots:
+      - id
+      - name
+      - description
+    class_uri: schema:Thing
+
+  Person:
+    is_a: NamedThing
+    description: >-
+      Represents a Person
+    slots:
+      - primary_email
+      - birth_date
+      - age_in_years
+      - vital_status
+    slot_usage:
+      primary_email:
+        pattern: "^\\S+@[\\S+\\.]+\\S+"
+
+  PersonCollection:
+    tree_root: true
+    description: >-
+      A holder for Person objects
+    attributes:
+      entries:
+        range: Person
+        multivalued: true
+        inlined_as_list: true
+
+slots:
+  id:
+    identifier: true
+    slot_uri: schema:identifier
+    range: uriorcurie
+    description: A unique identifier for a thing
+  name:
+    slot_uri: schema:name
+    description: A human-readable name for a thing
+  description:
+    slot_uri: schema:description
+    description: A human-readable description for a thing
+  primary_email:
+    slot_uri: schema:email
+    description: The main email address of a person
+  birth_date:
+    slot_uri: schema:birthDate
+    range: date
+    description: Date on which a person is born
+  age_in_years:
+    range: integer
+    description: Number of years since birth
+  vital_status:
+    range: PersonStatus
+    description: living or dead status
+
+enums:
+  PersonStatus:
+    permissible_values:
+      ALIVE:
+        description: the person is living
+        meaning: PATO:0001421
+      DEAD:
+        description: the person is deceased
+        meaning: PATO:0001422
+      UNKNOWN:
+        description: the vital status is not known
+        todos:
+          - map this to an ontology
