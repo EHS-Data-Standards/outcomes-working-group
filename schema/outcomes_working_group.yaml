@@ -1,22 +1,21 @@
-name: aop-model
-description: 'A LinkML data model for representing Adverse Outcome Pathways (AOPs),
+name: outcomes-model
+description: 'A LinkML data model for representing biological measurements, assays,
+  and experimental protocols
 
-  Key Events (KEs), and Key Event Relationships (KERs) in the context of
-
-  the Source-to-Outcome (S2O) continuum.
+  in the context of outcomes research.
 
   '
-title: AOP Data Model
+title: Outcomes Data Model
 see_also:
 - https://EHS-Data-Standards.github.io/outcomes-working-group
-id: https://w3id.org/EHS-Data-Standards/aop-model
+id: https://w3id.org/EHS-Data-Standards/outcomes-model
 imports:
 - linkml:types
 license: MIT
 prefixes:
-  aop_model:
-    prefix_prefix: aop_model
-    prefix_reference: https://w3id.org/EHS-Data-Standards/aop-model/
+  outcomes_model:
+    prefix_prefix: outcomes_model
+    prefix_reference: https://w3id.org/EHS-Data-Standards/outcomes-model/
   linkml:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
@@ -38,7 +37,7 @@ prefixes:
   schema:
     prefix_prefix: schema
     prefix_reference: http://schema.org/
-default_prefix: aop_model
+default_prefix: outcomes_model
 default_range: string
 types:
   string:
@@ -310,126 +309,11 @@ types:
     uri: xsd:string
     repr: str
 enums:
-  BiologicalLevelEnum:
-    name: BiologicalLevelEnum
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/BiologicalLevelEnum
-    description: The level of biological organization at which an event occurs
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    permissible_values:
-      MOLECULAR:
-        text: MOLECULAR
-        description: Macro-molecular interactions (e.g., receptor binding, protein
-          modification)
-      CELLULAR:
-        text: CELLULAR
-        description: Cellular response (e.g., cell signaling, gene expression, cell
-          death)
-      TISSUE:
-        text: TISSUE
-        description: Tissue-level response (e.g., inflammation, tissue damage)
-      ORGAN:
-        text: ORGAN
-        description: Organ-level response (e.g., impaired organ function)
-      ORGANISM:
-        text: ORGANISM
-        description: Organism-level outcome (e.g., disease, mortality)
-      POPULATION:
-        text: POPULATION
-        description: Population-level outcome (e.g., disease incidence, public health
-          impact)
-  KeyEventTypeEnum:
-    name: KeyEventTypeEnum
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/KeyEventTypeEnum
-    description: Classification of key events in an AOP
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    permissible_values:
-      MIE:
-        text: MIE
-        description: Molecular Initiating Event - the initial interaction between
-          a stressor and a biological target
-      KE:
-        text: KE
-        description: Key Event - a measurable change in biological state along the
-          pathway
-      AO:
-        text: AO
-        description: Adverse Outcome - the endpoint of regulatory concern
-  DirectionEnum:
-    name: DirectionEnum
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/DirectionEnum
-    description: Direction of change for a key event
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    permissible_values:
-      INCREASED:
-        text: INCREASED
-        description: The measured parameter is increased
-      DECREASED:
-        text: DECREASED
-        description: The measured parameter is decreased
-      ALTERED:
-        text: ALTERED
-        description: The measured parameter is changed in either direction
-  EvidenceStrengthEnum:
-    name: EvidenceStrengthEnum
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/EvidenceStrengthEnum
-    description: Strength of evidence supporting a relationship
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    permissible_values:
-      STRONG:
-        text: STRONG
-        description: Strong empirical evidence from multiple independent studies
-      MODERATE:
-        text: MODERATE
-        description: Moderate evidence with some consistency
-      WEAK:
-        text: WEAK
-        description: Limited or inconsistent evidence
-      NOT_SPECIFIED:
-        text: NOT_SPECIFIED
-        description: Evidence strength not specified
-  KeyEventPredicateEnum:
-    name: KeyEventPredicateEnum
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/KeyEventPredicateEnum
-    description: Types of relationships between key events in an AOP
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    permissible_values:
-      has_input:
-        text: has_input
-        description: The subject key event has the object key event as input
-        meaning: biolink:has_input
-      has_output:
-        text: has_output
-        description: The subject key event has the object key event as output
-        meaning: biolink:has_output
-      leads_to:
-        text: leads_to
-        description: The subject key event leads to the object key event
-        meaning: biolink:causes
-      regulates:
-        text: regulates
-        description: The subject key event regulates the object key event
-        meaning: biolink:regulates
-      positively_regulates:
-        text: positively_regulates
-        description: The subject key event positively regulates the object key event
-        meaning: biolink:positively_regulates
-      negatively_regulates:
-        text: negatively_regulates
-        description: The subject key event negatively regulates the object key event
-        meaning: biolink:negatively_regulates
-      causes:
-        text: causes
-        description: The subject key event directly causes the object key event
-        meaning: biolink:causes
-      contributes_to:
-        text: contributes_to
-        description: The subject key event contributes to the object key event
-        meaning: biolink:contributes_to
   AssayTypeEnum:
     name: AssayTypeEnum
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/AssayTypeEnum
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/AssayTypeEnum
     description: Types of assays from the Ontology for Biomedical Investigations (OBI)
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     permissible_values:
       OBI:0000070:
         text: OBI:0000070
@@ -444,10 +328,10 @@ enums:
 slots:
   id:
     name: id
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/id
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/id
     description: A unique identifier
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:id
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:id
     identifier: true
     owner: NamedEntity
     domain_of:
@@ -456,258 +340,60 @@ slots:
     required: true
   name:
     name: name
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/name
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/name
     description: A human-readable name
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:name
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:name
     owner: NamedEntity
     domain_of:
     - NamedEntity
     range: string
   description:
     name: description
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/description
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/description
     description: A detailed description
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:description
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:description
     owner: NamedEntity
     domain_of:
     - NamedEntity
     range: string
-  molecular_initiating_events:
-    name: molecular_initiating_events
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/molecular_initiating_events
-    description: The molecular initiating event(s) that start this AOP
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:molecular_initiating_events
-    owner: AdverseOutcomePathway
-    domain_of:
-    - AdverseOutcomePathway
-    range: KeyEvent
-    multivalued: true
-    inlined: true
-    inlined_as_list: false
-  key_events:
-    name: key_events
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/key_events
-    description: All key events in this AOP
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:key_events
-    owner: AdverseOutcomePathway
-    domain_of:
-    - AdverseOutcomePathway
-    range: KeyEvent
-    multivalued: true
-    inlined: true
-    inlined_as_list: false
-  adverse_outcome:
-    name: adverse_outcome
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/adverse_outcome
-    description: The adverse outcome of regulatory concern
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:adverse_outcome
-    owner: AdverseOutcomePathway
-    domain_of:
-    - AdverseOutcomePathway
-    range: KeyEvent
-    required: true
-  key_event_relationships:
-    name: key_event_relationships
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/key_event_relationships
-    description: Relationships between key events in this AOP
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:key_event_relationships
-    owner: AdverseOutcomePathway
-    domain_of:
-    - AdverseOutcomePathway
-    range: KeyEventAssociation
-    multivalued: true
-    inlined: true
-    inlined_as_list: false
-  aop_network_members:
-    name: aop_network_members
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/aop_network_members
-    description: Other AOPs that are part of the same network
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:aop_network_members
-    owner: AdverseOutcomePathway
-    domain_of:
-    - AdverseOutcomePathway
-    range: AdverseOutcomePathway
-    multivalued: true
-  event_type:
-    name: event_type
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/event_type
-    description: Classification of the key event (MIE, KE, or AO)
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:event_type
-    owner: KeyEvent
-    domain_of:
-    - KeyEvent
-    range: KeyEventTypeEnum
-    required: true
-  biological_level:
-    name: biological_level
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/biological_level
-    description: The level of biological organization
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:biological_level
-    owner: KeyEvent
-    domain_of:
-    - KeyEvent
-    range: BiologicalLevelEnum
-    required: true
-  direction_of_change:
-    name: direction_of_change
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/direction_of_change
-    description: Direction of change for this key event
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:direction_of_change
-    owner: KeyEvent
-    domain_of:
-    - KeyEvent
-    range: DirectionEnum
-  measurement_processes:
-    name: measurement_processes
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/measurement_processes
-    description: Measurement processes used to assess this key event
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:measurement_processes
-    owner: KeyEvent
-    domain_of:
-    - KeyEvent
-    range: MeasurementProcess
-    multivalued: true
-    inlined: true
-    inlined_as_list: false
-  biomarkers:
-    name: biomarkers
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/biomarkers
-    description: Biomarkers associated with this key event
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:biomarkers
-    owner: KeyEvent
-    domain_of:
-    - KeyEvent
-    range: string
-    multivalued: true
-  upstream_events:
-    name: upstream_events
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/upstream_events
-    description: Key events that occur before this one in the pathway
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:upstream_events
-    owner: KeyEvent
-    domain_of:
-    - KeyEvent
-    range: KeyEvent
-    multivalued: true
-  downstream_events:
-    name: downstream_events
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/downstream_events
-    description: Key events that occur after this one in the pathway
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:downstream_events
-    owner: KeyEvent
-    domain_of:
-    - KeyEvent
-    range: KeyEvent
-    multivalued: true
-  subject:
-    name: subject
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/subject
-    description: The subject of a relationship (e.g., upstream key event)
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    mappings:
-    - rdf:subject
-    slot_uri: rdf:subject
-    owner: Association
-    domain_of:
-    - Association
-    range: KeyEvent
-  predicate:
-    name: predicate
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/predicate
-    description: The predicate/relationship type (e.g., leads_to, causes, regulates)
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    mappings:
-    - rdf:predicate
-    slot_uri: rdf:predicate
-    owner: Association
-    domain_of:
-    - Association
-    range: uriorcurie
-  object:
-    name: object
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/object
-    description: The object of a relationship (e.g., downstream key event)
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    mappings:
-    - rdf:object
-    slot_uri: rdf:object
-    owner: Association
-    domain_of:
-    - Association
-    range: KeyEvent
-  evidence_strength:
-    name: evidence_strength
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/evidence_strength
-    description: Strength of evidence supporting this relationship
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:evidence_strength
-    owner: KeyEventAssociation
-    domain_of:
-    - KeyEventAssociation
-    range: EvidenceStrengthEnum
-  supporting_evidence:
-    name: supporting_evidence
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/supporting_evidence
-    description: Scientific publications supporting this relationship
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:supporting_evidence
-    owner: KeyEventAssociation
-    domain_of:
-    - KeyEventAssociation
-    range: Publication
-    multivalued: true
-    inlined: true
-    inlined_as_list: false
   input_sample:
     name: input_sample
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/input_sample
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/input_sample
     description: Description of input samples and manipulations
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:input_sample
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:input_sample
     owner: MeasurementProcess
     domain_of:
     - MeasurementProcess
     range: InputSample
   method_assay:
     name: method_assay
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/method_assay
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/method_assay
     description: The method or assay used
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:method_assay
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:method_assay
     owner: MeasurementProcess
     domain_of:
     - MeasurementProcess
     range: Assay
   output_measurement:
     name: output_measurement
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/output_measurement
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/output_measurement
     description: The output or measurement obtained
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:output_measurement
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:output_measurement
     owner: MeasurementProcess
     domain_of:
     - MeasurementProcess
     range: OutputMeasurement
   context_fields:
     name: context_fields
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/context_fields
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/context_fields
     description: Contextual metadata fields for reproducibility
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:context_fields
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:context_fields
     owner: MeasurementProcess
     domain_of:
     - MeasurementProcess
@@ -717,20 +403,20 @@ slots:
     inlined_as_list: false
   protocol_notes:
     name: protocol_notes
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/protocol_notes
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/protocol_notes
     description: Protocol or SOP notes
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:protocol_notes
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:protocol_notes
     owner: MeasurementProcess
     domain_of:
     - MeasurementProcess
     range: string
   ontology_mappings:
     name: ontology_mappings
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/ontology_mappings
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/ontology_mappings
     description: Mappings to ontology terms (Biolink, OBI, etc.)
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:ontology_mappings
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:ontology_mappings
     owner: MeasurementProcess
     domain_of:
     - MeasurementProcess
@@ -738,93 +424,93 @@ slots:
     multivalued: true
   sample_type:
     name: sample_type
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/sample_type
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/sample_type
     description: Type of biological sample
     examples:
     - value: Primary human airway epithelial cells at ALI
     - value: MucilAir 3D tissue model
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:sample_type
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:sample_type
     owner: InputSample
     domain_of:
     - InputSample
     range: string
   manipulation:
     name: manipulation
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/manipulation
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/manipulation
     description: Experimental manipulation applied
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:manipulation
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:manipulation
     owner: InputSample
     domain_of:
     - InputSample
     range: string
   exposure_conditions:
     name: exposure_conditions
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/exposure_conditions
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/exposure_conditions
     description: Exposure or treatment conditions
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:exposure_conditions
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:exposure_conditions
     owner: InputSample
     domain_of:
     - InputSample
     range: string
   assay_type:
     name: assay_type
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/assay_type
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/assay_type
     description: Type of assay or method, constrained to OBI assay terms
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:assay_type
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:assay_type
     owner: Assay
     domain_of:
     - Assay
     range: AssayTypeEnum
   instrumentation:
     name: instrumentation
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/instrumentation
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/instrumentation
     description: Specific instruments or equipment used
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:instrumentation
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:instrumentation
     owner: Assay
     domain_of:
     - Assay
     range: string
   environmental_conditions:
     name: environmental_conditions
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/environmental_conditions
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/environmental_conditions
     description: Environmental conditions during measurement
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:environmental_conditions
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:environmental_conditions
     owner: Assay
     domain_of:
     - Assay
     range: string
   sop_reference:
     name: sop_reference
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/sop_reference
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/sop_reference
     description: Reference to standard operating procedure
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:sop_reference
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:sop_reference
     owner: Assay
     domain_of:
     - Assay
     range: string
   measurement_type:
     name: measurement_type
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/measurement_type
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/measurement_type
     description: Type of measurement or readout
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:measurement_type
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:measurement_type
     owner: OutputMeasurement
     domain_of:
     - OutputMeasurement
     range: string
   has_quantity_value:
     name: has_quantity_value
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/has_quantity_value
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/has_quantity_value
     description: The quantity value associated with this measurement
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:has_quantity_value
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:has_quantity_value
     owner: OutputMeasurement
     domain_of:
     - OutputMeasurement
@@ -833,85 +519,85 @@ slots:
     inlined_as_list: true
   has_numeric_value:
     name: has_numeric_value
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/has_numeric_value
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/has_numeric_value
     description: The numeric value of a quantity
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:has_numeric_value
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:has_numeric_value
     owner: QuantityValue
     domain_of:
     - QuantityValue
     range: float
   has_unit:
     name: has_unit
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/has_unit
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/has_unit
     description: The unit of measurement for the quantity
     examples:
     - value: Hz
     - value: "\xB5m"
     - value: mm/min
     - value: '%'
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:has_unit
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:has_unit
     owner: QuantityValue
     domain_of:
     - QuantityValue
     range: string
   has_minimum_numeric_value:
     name: has_minimum_numeric_value
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/has_minimum_numeric_value
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/has_minimum_numeric_value
     description: The minimum value in a range
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:has_minimum_numeric_value
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:has_minimum_numeric_value
     owner: QuantityValue
     domain_of:
     - QuantityValue
     range: float
   has_maximum_numeric_value:
     name: has_maximum_numeric_value
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/has_maximum_numeric_value
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/has_maximum_numeric_value
     description: The maximum value in a range
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:has_maximum_numeric_value
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:has_maximum_numeric_value
     owner: QuantityValue
     domain_of:
     - QuantityValue
     range: float
   field_name:
     name: field_name
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/field_name
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/field_name
     description: Name of the context field
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:field_name
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:field_name
     owner: ContextField
     domain_of:
     - ContextField
     range: string
   field_value:
     name: field_value
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/field_value
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/field_value
     description: Value of the context field
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:field_value
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:field_value
     owner: ContextField
     domain_of:
     - ContextField
     range: string
   field_category:
     name: field_category
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/field_category
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/field_category
     description: Category or grouping for the context field
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:field_category
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:field_category
     owner: ContextField
     domain_of:
     - ContextField
     range: string
   cftr_specific_current:
     name: cftr_specific_current
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/cftr_specific_current
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/cftr_specific_current
     description: CFTR-mediated chloride secretory current
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:cftr_specific_current
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:cftr_specific_current
     owner: CFTRFunctionMeasurement
     domain_of:
     - CFTRFunctionMeasurement
@@ -920,10 +606,10 @@ slots:
     inlined_as_list: true
   inhibitor_sensitive_current:
     name: inhibitor_sensitive_current
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/inhibitor_sensitive_current
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/inhibitor_sensitive_current
     description: Inhibitor-sensitive current measurement
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:inhibitor_sensitive_current
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:inhibitor_sensitive_current
     owner: CFTRFunctionMeasurement
     domain_of:
     - CFTRFunctionMeasurement
@@ -932,20 +618,20 @@ slots:
     inlined_as_list: true
   cell_culture_conditions:
     name: cell_culture_conditions
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/cell_culture_conditions
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/cell_culture_conditions
     description: Conditions for cell culture (ALI days, medium, etc.)
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:cell_culture_conditions
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:cell_culture_conditions
     owner: CFTRFunctionMeasurement
     domain_of:
     - CFTRFunctionMeasurement
     range: string
   beat_frequency_hz:
     name: beat_frequency_hz
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/beat_frequency_hz
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/beat_frequency_hz
     description: Ciliary beat frequency in Hz
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:beat_frequency_hz
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:beat_frequency_hz
     owner: CiliaBeatFrequencyMeasurement
     domain_of:
     - CiliaBeatFrequencyMeasurement
@@ -954,10 +640,10 @@ slots:
     inlined_as_list: true
   active_area_percentage:
     name: active_area_percentage
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/active_area_percentage
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/active_area_percentage
     description: Percentage of active ciliated area
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:active_area_percentage
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:active_area_percentage
     owner: CiliaBeatFrequencyMeasurement
     domain_of:
     - CiliaBeatFrequencyMeasurement
@@ -966,20 +652,20 @@ slots:
     inlined_as_list: true
   imaging_conditions:
     name: imaging_conditions
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/imaging_conditions
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/imaging_conditions
     description: Imaging parameters and conditions
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:imaging_conditions
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:imaging_conditions
     owner: CiliaBeatFrequencyMeasurement
     domain_of:
     - CiliaBeatFrequencyMeasurement
     range: string
   asl_height_um:
     name: asl_height_um
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/asl_height_um
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/asl_height_um
     description: Airway surface liquid height in micrometers
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:asl_height_um
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:asl_height_um
     owner: ASLHeightMeasurement
     domain_of:
     - ASLHeightMeasurement
@@ -988,10 +674,10 @@ slots:
     inlined_as_list: true
   periciliary_layer_depth:
     name: periciliary_layer_depth
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/periciliary_layer_depth
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/periciliary_layer_depth
     description: Depth of periciliary layer in micrometers
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:periciliary_layer_depth
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:periciliary_layer_depth
     owner: ASLHeightMeasurement
     domain_of:
     - ASLHeightMeasurement
@@ -1000,20 +686,20 @@ slots:
     inlined_as_list: true
   imaging_modality:
     name: imaging_modality
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/imaging_modality
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/imaging_modality
     description: Imaging modality used (confocal, OCT, etc.)
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:imaging_modality
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:imaging_modality
     owner: ASLHeightMeasurement
     domain_of:
     - ASLHeightMeasurement
     range: string
   transport_rate:
     name: transport_rate
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/transport_rate
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/transport_rate
     description: Mucociliary transport rate
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:transport_rate
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:transport_rate
     owner: MucociliaryClearanceMeasurement
     domain_of:
     - MucociliaryClearanceMeasurement
@@ -1022,30 +708,30 @@ slots:
     inlined_as_list: true
   directionality:
     name: directionality
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/directionality
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/directionality
     description: Directionality of mucociliary transport
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:directionality
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:directionality
     owner: MucociliaryClearanceMeasurement
     domain_of:
     - MucociliaryClearanceMeasurement
     range: string
   particle_tracking_method:
     name: particle_tracking_method
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/particle_tracking_method
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/particle_tracking_method
     description: Method used for tracking particles or mucus
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:particle_tracking_method
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:particle_tracking_method
     owner: MucociliaryClearanceMeasurement
     domain_of:
     - MucociliaryClearanceMeasurement
     range: string
   goblet_cell_count:
     name: goblet_cell_count
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/goblet_cell_count
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/goblet_cell_count
     description: Number or percentage of goblet cells
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:goblet_cell_count
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:goblet_cell_count
     owner: GobletCellMeasurement
     domain_of:
     - GobletCellMeasurement
@@ -1054,10 +740,10 @@ slots:
     inlined_as_list: true
   mucin_expression_level:
     name: mucin_expression_level
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/mucin_expression_level
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/mucin_expression_level
     description: Level of mucin gene or protein expression
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:mucin_expression_level
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:mucin_expression_level
     owner: GobletCellMeasurement
     domain_of:
     - GobletCellMeasurement
@@ -1066,20 +752,20 @@ slots:
     inlined_as_list: true
   staining_method:
     name: staining_method
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/staining_method
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/staining_method
     description: Histological staining method used
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:staining_method
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:staining_method
     owner: GobletCellMeasurement
     domain_of:
     - GobletCellMeasurement
     range: string
   ros_level:
     name: ros_level
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/ros_level
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/ros_level
     description: Reactive oxygen species level
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:ros_level
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:ros_level
     owner: OxidativeStressMeasurement
     domain_of:
     - OxidativeStressMeasurement
@@ -1088,10 +774,10 @@ slots:
     inlined_as_list: true
   lipid_peroxidation:
     name: lipid_peroxidation
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/lipid_peroxidation
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/lipid_peroxidation
     description: Lipid peroxidation markers (MDA, 8-isoprostane, etc.)
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:lipid_peroxidation
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:lipid_peroxidation
     owner: OxidativeStressMeasurement
     domain_of:
     - OxidativeStressMeasurement
@@ -1100,10 +786,10 @@ slots:
     inlined_as_list: true
   antioxidant_capacity:
     name: antioxidant_capacity
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/antioxidant_capacity
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/antioxidant_capacity
     description: Antioxidant capacity (GSH/GSSG ratio, enzyme activity)
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:antioxidant_capacity
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:antioxidant_capacity
     owner: OxidativeStressMeasurement
     domain_of:
     - OxidativeStressMeasurement
@@ -1112,11 +798,11 @@ slots:
     inlined_as_list: true
   authors:
     name: authors
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/authors
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/authors
     description: Connects publications to contributor lists, formatted as comma-delimited
       names
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:authors
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:authors
     owner: Publication
     domain_of:
     - Publication
@@ -1124,30 +810,30 @@ slots:
     multivalued: true
   pages:
     name: pages
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/pages
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/pages
     description: Page numbers (start and end) or total pages
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:pages
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:pages
     owner: Publication
     domain_of:
     - Publication
     range: string
   summary:
     name: summary
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/summary
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/summary
     description: Executive summary or abstract of the publication
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:summary
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:summary
     owner: Publication
     domain_of:
     - Publication
     range: string
   keywords:
     name: keywords
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/keywords
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/keywords
     description: Keywords or tags for the publication
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:keywords
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:keywords
     owner: Publication
     domain_of:
     - Publication
@@ -1155,10 +841,10 @@ slots:
     multivalued: true
   mesh_terms:
     name: mesh_terms
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/mesh_terms
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/mesh_terms
     description: Medical Subject Headings (MeSH) terms for indexing
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:mesh_terms
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:mesh_terms
     owner: Publication
     domain_of:
     - Publication
@@ -1166,11 +852,11 @@ slots:
     multivalued: true
   publication_type:
     name: publication_type
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/publication_type
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/publication_type
     description: Ontology term for categorizing publication format (e.g., journal
       article, book chapter, review)
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:publication_type
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:publication_type
     owner: Publication
     domain_of:
     - Publication
@@ -1178,144 +864,27 @@ slots:
     required: false
   xref:
     name: xref
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/xref
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/xref
     description: Cross-references to supporting databases or webpages
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    slot_uri: aop_model:xref
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:xref
     owner: Publication
     domain_of:
     - Publication
     range: uriorcurie
     multivalued: true
-  AdverseOutcomePathway_id:
-    name: AdverseOutcomePathway_id
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/id
-    description: A unique identifier
-    examples:
-    - value: AOP:424
-      description: Example AOP identifier
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    is_a: id
-    domain: AdverseOutcomePathway
-    slot_uri: aop_model:id
-    identifier: true
-    alias: id
-    owner: AdverseOutcomePathway
-    domain_of:
-    - AdverseOutcomePathway
-    is_usage_slot: true
-    usage_slot_name: id
-    range: uriorcurie
-    required: true
-    pattern: ^AOP:\d+$
-  KeyEvent_id:
-    name: KeyEvent_id
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/id
-    description: A unique identifier
-    examples:
-    - value: MIE:1
-    - value: KE:1906
-    - value: AO:11
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    is_a: id
-    domain: KeyEvent
-    slot_uri: aop_model:id
-    identifier: true
-    alias: id
-    owner: KeyEvent
-    domain_of:
-    - KeyEvent
-    is_usage_slot: true
-    usage_slot_name: id
-    range: uriorcurie
-    required: true
-    pattern: ^(MIE|KE|AO):\d+$
-  KeyEventAssociation_id:
-    name: KeyEventAssociation_id
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/id
-    description: A unique identifier
-    examples:
-    - value: KER:1907
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    is_a: id
-    domain: KeyEventAssociation
-    slot_uri: aop_model:id
-    identifier: true
-    alias: id
-    owner: KeyEventAssociation
-    domain_of:
-    - KeyEventAssociation
-    is_usage_slot: true
-    usage_slot_name: id
-    range: uriorcurie
-    required: true
-    pattern: ^KER:\d+$
-  KeyEventAssociation_subject:
-    name: KeyEventAssociation_subject
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/subject
-    description: The upstream key event (input to the relationship)
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    mappings:
-    - rdf:subject
-    is_a: subject
-    domain: KeyEventAssociation
-    slot_uri: rdf:subject
-    alias: subject
-    owner: KeyEventAssociation
-    domain_of:
-    - KeyEventAssociation
-    is_usage_slot: true
-    usage_slot_name: subject
-    range: KeyEvent
-    required: true
-  KeyEventAssociation_predicate:
-    name: KeyEventAssociation_predicate
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/predicate
-    description: The type of relationship
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    mappings:
-    - rdf:predicate
-    is_a: predicate
-    domain: KeyEventAssociation
-    slot_uri: rdf:predicate
-    alias: predicate
-    owner: KeyEventAssociation
-    domain_of:
-    - KeyEventAssociation
-    is_usage_slot: true
-    usage_slot_name: predicate
-    range: KeyEventPredicateEnum
-    required: true
-  KeyEventAssociation_object:
-    name: KeyEventAssociation_object
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/object
-    description: The downstream key event (output from the relationship)
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    mappings:
-    - rdf:object
-    is_a: object
-    domain: KeyEventAssociation
-    slot_uri: rdf:object
-    alias: object
-    owner: KeyEventAssociation
-    domain_of:
-    - KeyEventAssociation
-    is_usage_slot: true
-    usage_slot_name: object
-    range: KeyEvent
-    required: true
   Publication_id:
     name: Publication_id
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/id
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/id
     description: Preferentially a PMID, DOI, or industry-standard identifier (ISBN,
       ISSN)
     examples:
     - value: PMID:12345678
     - value: DOI:10.1234/example
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     is_a: id
     domain: Publication
-    slot_uri: aop_model:id
+    slot_uri: outcomes_model:id
     identifier: true
     alias: id
     owner: Publication
@@ -1328,346 +897,24 @@ slots:
 classes:
   NamedEntity:
     name: NamedEntity
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/NamedEntity
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/NamedEntity
     description: Base class for all named entities in the model
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     slots:
     - id
     - name
     - description
-    class_uri: aop_model:NamedEntity
-  AdverseOutcomePathway:
-    name: AdverseOutcomePathway
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/AdverseOutcomePathway
-    description: 'A structured representation of biological events linking a molecular
-      initiating event (MIE)
-
-      to an adverse outcome through a series of key events.
-
-      '
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    is_a: NamedEntity
-    slots:
-    - name
-    - description
-    - molecular_initiating_events
-    - key_events
-    - adverse_outcome
-    - key_event_relationships
-    - aop_network_members
-    - AdverseOutcomePathway_id
-    slot_usage:
-      id:
-        name: id
-        examples:
-        - value: AOP:424
-          description: Example AOP identifier
-        pattern: ^AOP:\d+$
-    class_uri: aop_model:AdverseOutcomePathway
-  KeyEvent:
-    name: KeyEvent
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/KeyEvent
-    description: 'A measurable change in biological state that is a necessary step
-      in a pathway from
-
-      a molecular initiating event to an adverse outcome. Key Events can represent
-      molecular,
-
-      cellular, tissue, organ, or organism-level changes.
-
-      '
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    is_a: NamedEntity
-    abstract: true
-    slots:
-    - name
-    - description
-    - event_type
-    - biological_level
-    - direction_of_change
-    - measurement_processes
-    - biomarkers
-    - upstream_events
-    - downstream_events
-    - KeyEvent_id
-    slot_usage:
-      id:
-        name: id
-        examples:
-        - value: MIE:1
-        - value: KE:1906
-        - value: AO:11
-        pattern: ^(MIE|KE|AO):\d+$
-    class_uri: aop_model:KeyEvent
-  OxidativeStressEvent:
-    name: OxidativeStressEvent
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/OxidativeStressEvent
-    description: Molecular initiating event involving oxidative stress
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    is_a: KeyEvent
-    slots:
-    - name
-    - description
-    - event_type
-    - biological_level
-    - direction_of_change
-    - measurement_processes
-    - biomarkers
-    - upstream_events
-    - downstream_events
-    - KeyEvent_id
-    class_uri: aop_model:OxidativeStressEvent
-  EGFRActivationEvent:
-    name: EGFRActivationEvent
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/EGFRActivationEvent
-    description: Molecular initiating event involving EGFR activation
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    is_a: KeyEvent
-    slots:
-    - name
-    - description
-    - event_type
-    - biological_level
-    - direction_of_change
-    - measurement_processes
-    - biomarkers
-    - upstream_events
-    - downstream_events
-    - KeyEvent_id
-    class_uri: aop_model:EGFRActivationEvent
-  CFTRFunctionEvent:
-    name: CFTRFunctionEvent
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/CFTRFunctionEvent
-    description: Key event representing changes in CFTR function
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    is_a: KeyEvent
-    slots:
-    - name
-    - description
-    - event_type
-    - biological_level
-    - direction_of_change
-    - measurement_processes
-    - biomarkers
-    - upstream_events
-    - downstream_events
-    - KeyEvent_id
-    class_uri: aop_model:CFTRFunctionEvent
-  FoxJ1ExpressionEvent:
-    name: FoxJ1ExpressionEvent
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/FoxJ1ExpressionEvent
-    description: Key event representing changes in FoxJ1 expression
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    is_a: KeyEvent
-    slots:
-    - name
-    - description
-    - event_type
-    - biological_level
-    - direction_of_change
-    - measurement_processes
-    - biomarkers
-    - upstream_events
-    - downstream_events
-    - KeyEvent_id
-    class_uri: aop_model:FoxJ1ExpressionEvent
-  CiliaNumberEvent:
-    name: CiliaNumberEvent
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/CiliaNumberEvent
-    description: Key event representing changes in cilia number or length
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    is_a: KeyEvent
-    slots:
-    - name
-    - description
-    - event_type
-    - biological_level
-    - direction_of_change
-    - measurement_processes
-    - biomarkers
-    - upstream_events
-    - downstream_events
-    - KeyEvent_id
-    class_uri: aop_model:CiliaNumberEvent
-  GobletCellEvent:
-    name: GobletCellEvent
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/GobletCellEvent
-    description: Key event representing changes in goblet cell number
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    is_a: KeyEvent
-    slots:
-    - name
-    - description
-    - event_type
-    - biological_level
-    - direction_of_change
-    - measurement_processes
-    - biomarkers
-    - upstream_events
-    - downstream_events
-    - KeyEvent_id
-    class_uri: aop_model:GobletCellEvent
-  ASLHeightEvent:
-    name: ASLHeightEvent
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/ASLHeightEvent
-    description: Key event representing changes in airway surface liquid height
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    is_a: KeyEvent
-    slots:
-    - name
-    - description
-    - event_type
-    - biological_level
-    - direction_of_change
-    - measurement_processes
-    - biomarkers
-    - upstream_events
-    - downstream_events
-    - KeyEvent_id
-    class_uri: aop_model:ASLHeightEvent
-  CiliaryBeatFrequencyEvent:
-    name: CiliaryBeatFrequencyEvent
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/CiliaryBeatFrequencyEvent
-    description: Key event representing changes in ciliary beat frequency
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    is_a: KeyEvent
-    slots:
-    - name
-    - description
-    - event_type
-    - biological_level
-    - direction_of_change
-    - measurement_processes
-    - biomarkers
-    - upstream_events
-    - downstream_events
-    - KeyEvent_id
-    class_uri: aop_model:CiliaryBeatFrequencyEvent
-  MucinProductionEvent:
-    name: MucinProductionEvent
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/MucinProductionEvent
-    description: Key event representing changes in mucin production
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    is_a: KeyEvent
-    slots:
-    - name
-    - description
-    - event_type
-    - biological_level
-    - direction_of_change
-    - measurement_processes
-    - biomarkers
-    - upstream_events
-    - downstream_events
-    - KeyEvent_id
-    class_uri: aop_model:MucinProductionEvent
-  MucociliaryClearanceEvent:
-    name: MucociliaryClearanceEvent
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/MucociliaryClearanceEvent
-    description: Key event representing changes in mucociliary clearance
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    is_a: KeyEvent
-    slots:
-    - name
-    - description
-    - event_type
-    - biological_level
-    - direction_of_change
-    - measurement_processes
-    - biomarkers
-    - upstream_events
-    - downstream_events
-    - KeyEvent_id
-    class_uri: aop_model:MucociliaryClearanceEvent
-  LungFunctionEvent:
-    name: LungFunctionEvent
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/LungFunctionEvent
-    description: Adverse outcome representing decreased lung function
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    is_a: KeyEvent
-    slots:
-    - name
-    - description
-    - event_type
-    - biological_level
-    - direction_of_change
-    - measurement_processes
-    - biomarkers
-    - upstream_events
-    - downstream_events
-    - KeyEvent_id
-    class_uri: aop_model:LungFunctionEvent
-  Association:
-    name: Association
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/Association
-    description: 'Base class for associations/relationships in the model.
-
-      Uses subject-predicate-object pattern similar to Biolink model.
-
-      '
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    is_a: NamedEntity
-    abstract: true
-    slots:
-    - id
-    - name
-    - description
-    - subject
-    - predicate
-    - object
-    class_uri: aop_model:Association
-  KeyEventAssociation:
-    name: KeyEventAssociation
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/KeyEventAssociation
-    description: 'A causal or associative relationship between two key events in an
-      adverse outcome pathway.
-
-      Represents the connection showing how one event leads to another.
-
-      '
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
-    is_a: Association
-    slots:
-    - name
-    - description
-    - evidence_strength
-    - supporting_evidence
-    - KeyEventAssociation_id
-    - KeyEventAssociation_subject
-    - KeyEventAssociation_predicate
-    - KeyEventAssociation_object
-    slot_usage:
-      id:
-        name: id
-        examples:
-        - value: KER:1907
-        pattern: ^KER:\d+$
-      subject:
-        name: subject
-        description: The upstream key event (input to the relationship)
-        range: KeyEvent
-        required: true
-      predicate:
-        name: predicate
-        description: The type of relationship
-        range: KeyEventPredicateEnum
-        required: true
-      object:
-        name: object
-        description: The downstream key event (output from the relationship)
-        range: KeyEvent
-        required: true
-    class_uri: aop_model:KeyEventAssociation
+    class_uri: outcomes_model:NamedEntity
   MeasurementProcess:
     name: MeasurementProcess
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/MeasurementProcess
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/MeasurementProcess
     description: 'A generic class representing the process of measuring a biological
-      key event.
+      endpoint.
 
       Includes information about input samples, methods, outputs, and contextual metadata.
 
       '
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     is_a: NamedEntity
     slots:
     - id
@@ -1679,13 +926,13 @@ classes:
     - context_fields
     - protocol_notes
     - ontology_mappings
-    class_uri: aop_model:MeasurementProcess
+    class_uri: outcomes_model:MeasurementProcess
   InputSample:
     name: InputSample
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/InputSample
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/InputSample
     description: Description of the biological sample or experimental manipulation
       used as input
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     is_a: NamedEntity
     slots:
     - id
@@ -1694,12 +941,12 @@ classes:
     - sample_type
     - manipulation
     - exposure_conditions
-    class_uri: aop_model:InputSample
+    class_uri: outcomes_model:InputSample
   Assay:
     name: Assay
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/Assay
-    description: The specific method or assay used to measure a key event
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/Assay
+    description: The specific method or assay used to measure an endpoint
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     is_a: NamedEntity
     slots:
     - id
@@ -1709,28 +956,28 @@ classes:
     - instrumentation
     - environmental_conditions
     - sop_reference
-    class_uri: aop_model:Assay
+    class_uri: outcomes_model:Assay
   QuantityValue:
     name: QuantityValue
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/QuantityValue
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/QuantityValue
     description: 'A quantity value expresses a measurement with a numeric value and
       a unit.
 
       Based on NMDC Schema QuantityValue pattern.
 
       '
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     slots:
     - has_numeric_value
     - has_unit
     - has_minimum_numeric_value
     - has_maximum_numeric_value
-    class_uri: aop_model:QuantityValue
+    class_uri: outcomes_model:QuantityValue
   OutputMeasurement:
     name: OutputMeasurement
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/OutputMeasurement
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/OutputMeasurement
     description: The quantitative or qualitative output from a measurement process
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     is_a: NamedEntity
     slots:
     - id
@@ -1738,17 +985,17 @@ classes:
     - description
     - measurement_type
     - has_quantity_value
-    class_uri: aop_model:OutputMeasurement
+    class_uri: outcomes_model:OutputMeasurement
   ContextField:
     name: ContextField
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/ContextField
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/ContextField
     description: 'Metadata fields that capture important contextual information for
       reproducibility
 
       and cross-study comparison
 
       '
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     is_a: NamedEntity
     slots:
     - id
@@ -1757,12 +1004,12 @@ classes:
     - field_name
     - field_value
     - field_category
-    class_uri: aop_model:ContextField
+    class_uri: outcomes_model:ContextField
   CFTRFunctionMeasurement:
     name: CFTRFunctionMeasurement
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/CFTRFunctionMeasurement
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/CFTRFunctionMeasurement
     description: Measurement of CFTR-mediated ion transport function
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     is_a: MeasurementProcess
     slots:
     - id
@@ -1777,12 +1024,12 @@ classes:
     - cftr_specific_current
     - inhibitor_sensitive_current
     - cell_culture_conditions
-    class_uri: aop_model:CFTRFunctionMeasurement
+    class_uri: outcomes_model:CFTRFunctionMeasurement
   CiliaBeatFrequencyMeasurement:
     name: CiliaBeatFrequencyMeasurement
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/CiliaBeatFrequencyMeasurement
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/CiliaBeatFrequencyMeasurement
     description: Measurement of ciliary beat frequency
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     is_a: MeasurementProcess
     slots:
     - id
@@ -1797,12 +1044,12 @@ classes:
     - beat_frequency_hz
     - active_area_percentage
     - imaging_conditions
-    class_uri: aop_model:CiliaBeatFrequencyMeasurement
+    class_uri: outcomes_model:CiliaBeatFrequencyMeasurement
   ASLHeightMeasurement:
     name: ASLHeightMeasurement
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/ASLHeightMeasurement
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/ASLHeightMeasurement
     description: Measurement of airway surface liquid height
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     is_a: MeasurementProcess
     slots:
     - id
@@ -1817,12 +1064,12 @@ classes:
     - asl_height_um
     - periciliary_layer_depth
     - imaging_modality
-    class_uri: aop_model:ASLHeightMeasurement
+    class_uri: outcomes_model:ASLHeightMeasurement
   MucociliaryClearanceMeasurement:
     name: MucociliaryClearanceMeasurement
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/MucociliaryClearanceMeasurement
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/MucociliaryClearanceMeasurement
     description: Measurement of mucociliary clearance/transport
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     is_a: MeasurementProcess
     slots:
     - id
@@ -1837,12 +1084,12 @@ classes:
     - transport_rate
     - directionality
     - particle_tracking_method
-    class_uri: aop_model:MucociliaryClearanceMeasurement
+    class_uri: outcomes_model:MucociliaryClearanceMeasurement
   GobletCellMeasurement:
     name: GobletCellMeasurement
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/GobletCellMeasurement
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/GobletCellMeasurement
     description: Measurement of goblet cell number or mucin production
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     is_a: MeasurementProcess
     slots:
     - id
@@ -1857,12 +1104,12 @@ classes:
     - goblet_cell_count
     - mucin_expression_level
     - staining_method
-    class_uri: aop_model:GobletCellMeasurement
+    class_uri: outcomes_model:GobletCellMeasurement
   OxidativeStressMeasurement:
     name: OxidativeStressMeasurement
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/OxidativeStressMeasurement
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/OxidativeStressMeasurement
     description: Measurement of oxidative stress markers
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     is_a: MeasurementProcess
     slots:
     - id
@@ -1877,16 +1124,16 @@ classes:
     - ros_level
     - lipid_peroxidation
     - antioxidant_capacity
-    class_uri: aop_model:OxidativeStressMeasurement
+    class_uri: outcomes_model:OxidativeStressMeasurement
   Publication:
     name: Publication
-    definition_uri: https://w3id.org/EHS-Data-Standards/aop-model/Publication
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/Publication
     description: 'Any published piece of information, following Biolink model.
 
-      Represents scientific evidence supporting AOP components.
+      Represents scientific evidence supporting research.
 
       '
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     is_a: NamedEntity
     slots:
     - name
@@ -1907,10 +1154,10 @@ classes:
         examples:
         - value: PMID:12345678
         - value: DOI:10.1234/example
-    class_uri: aop_model:Publication
+    class_uri: outcomes_model:Publication
 metamodel_version: 1.7.0
 source_file: outcomes_working_group.yaml
-source_file_date: '2025-11-12T02:54:59'
-source_file_size: 20078
-generation_date: '2025-11-12T02:55:10'
+source_file_date: '2025-11-12T21:39:00'
+source_file_size: 10912
+generation_date: '2025-11-12T21:39:09'
 

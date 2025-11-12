@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aop-data-model" class="md-skip">
+        <a href="#outcomes-data-model" class="md-skip">
           Skip to content
         </a>
       
@@ -505,12 +505,11 @@
   
 
 
-<h1 id="aop-data-model">AOP Data Model</h1>
-<p>A LinkML data model for representing Adverse Outcome Pathways (AOPs),
-Key Events (KEs), and Key Event Relationships (KERs) in the context of
-the Source-to-Outcome (S2O) continuum.</p>
-<p>URI: https://w3id.org/EHS-Data-Standards/aop-model</p>
-<p>Name: aop-model</p>
+<h1 id="outcomes-data-model">Outcomes Data Model</h1>
+<p>A LinkML data model for representing biological measurements, assays, and experimental protocols
+in the context of outcomes research.</p>
+<p>URI: https://w3id.org/EHS-Data-Standards/outcomes-model</p>
+<p>Name: outcomes-model</p>
 <h2 id="classes">Classes</h2>
 <table>
 <thead>
@@ -525,20 +524,8 @@ the Source-to-Outcome (S2O) continuum.</p>
 <td>Base class for all named entities in the model</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="AdverseOutcomePathway/">AdverseOutcomePathway</a></td>
-<td>A structured representation of biological events linking a molecular initiati...</td>
-</tr>
-<tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Assay/">Assay</a></td>
-<td>The specific method or assay used to measure a key event</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Association/">Association</a></td>
-<td>Base class for associations/relationships in the model</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="KeyEventAssociation/">KeyEventAssociation</a></td>
-<td>A causal or associative relationship between two key events in an adverse out...</td>
+<td>The specific method or assay used to measure an endpoint</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ContextField/">ContextField</a></td>
@@ -549,56 +536,8 @@ the Source-to-Outcome (S2O) continuum.</p>
 <td>Description of the biological sample or experimental manipulation used as inp...</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="KeyEvent/">KeyEvent</a></td>
-<td>A measurable change in biological state that is a necessary step in a pathway...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ASLHeightEvent/">ASLHeightEvent</a></td>
-<td>Key event representing changes in airway surface liquid height</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CFTRFunctionEvent/">CFTRFunctionEvent</a></td>
-<td>Key event representing changes in CFTR function</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CiliaNumberEvent/">CiliaNumberEvent</a></td>
-<td>Key event representing changes in cilia number or length</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CiliaryBeatFrequencyEvent/">CiliaryBeatFrequencyEvent</a></td>
-<td>Key event representing changes in ciliary beat frequency</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="EGFRActivationEvent/">EGFRActivationEvent</a></td>
-<td>Molecular initiating event involving EGFR activation</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="FoxJ1ExpressionEvent/">FoxJ1ExpressionEvent</a></td>
-<td>Key event representing changes in FoxJ1 expression</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="GobletCellEvent/">GobletCellEvent</a></td>
-<td>Key event representing changes in goblet cell number</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="LungFunctionEvent/">LungFunctionEvent</a></td>
-<td>Adverse outcome representing decreased lung function</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MucinProductionEvent/">MucinProductionEvent</a></td>
-<td>Key event representing changes in mucin production</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MucociliaryClearanceEvent/">MucociliaryClearanceEvent</a></td>
-<td>Key event representing changes in mucociliary clearance</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="OxidativeStressEvent/">OxidativeStressEvent</a></td>
-<td>Molecular initiating event involving oxidative stress</td>
-</tr>
-<tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MeasurementProcess/">MeasurementProcess</a></td>
-<td>A generic class representing the process of measuring a biological key event</td>
+<td>A generic class representing the process of measuring a biological endpoint</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ASLHeightMeasurement/">ASLHeightMeasurement</a></td>
@@ -652,16 +591,8 @@ the Source-to-Outcome (S2O) continuum.</p>
 <td>Percentage of active ciliated area</td>
 </tr>
 <tr>
-<td><a href="adverse_outcome/">adverse_outcome</a></td>
-<td>The adverse outcome of regulatory concern</td>
-</tr>
-<tr>
 <td><a href="antioxidant_capacity/">antioxidant_capacity</a></td>
 <td>Antioxidant capacity (GSH/GSSG ratio, enzyme activity)</td>
-</tr>
-<tr>
-<td><a href="aop_network_members/">aop_network_members</a></td>
-<td>Other AOPs that are part of the same network</td>
 </tr>
 <tr>
 <td><a href="asl_height_um/">asl_height_um</a></td>
@@ -680,14 +611,6 @@ the Source-to-Outcome (S2O) continuum.</p>
 <td>Ciliary beat frequency in Hz</td>
 </tr>
 <tr>
-<td><a href="biological_level/">biological_level</a></td>
-<td>The level of biological organization</td>
-</tr>
-<tr>
-<td><a href="biomarkers/">biomarkers</a></td>
-<td>Biomarkers associated with this key event</td>
-</tr>
-<tr>
 <td><a href="cell_culture_conditions/">cell_culture_conditions</a></td>
 <td>Conditions for cell culture (ALI days, medium, etc</td>
 </tr>
@@ -704,28 +627,12 @@ the Source-to-Outcome (S2O) continuum.</p>
 <td>A detailed description</td>
 </tr>
 <tr>
-<td><a href="direction_of_change/">direction_of_change</a></td>
-<td>Direction of change for this key event</td>
-</tr>
-<tr>
 <td><a href="directionality/">directionality</a></td>
 <td>Directionality of mucociliary transport</td>
 </tr>
 <tr>
-<td><a href="downstream_events/">downstream_events</a></td>
-<td>Key events that occur after this one in the pathway</td>
-</tr>
-<tr>
 <td><a href="environmental_conditions/">environmental_conditions</a></td>
 <td>Environmental conditions during measurement</td>
-</tr>
-<tr>
-<td><a href="event_type/">event_type</a></td>
-<td>Classification of the key event (MIE, KE, or AO)</td>
-</tr>
-<tr>
-<td><a href="evidence_strength/">evidence_strength</a></td>
-<td>Strength of evidence supporting this relationship</td>
 </tr>
 <tr>
 <td><a href="exposure_conditions/">exposure_conditions</a></td>
@@ -792,14 +699,6 @@ the Source-to-Outcome (S2O) continuum.</p>
 <td>Specific instruments or equipment used</td>
 </tr>
 <tr>
-<td><a href="key_event_relationships/">key_event_relationships</a></td>
-<td>Relationships between key events in this AOP</td>
-</tr>
-<tr>
-<td><a href="key_events/">key_events</a></td>
-<td>All key events in this AOP</td>
-</tr>
-<tr>
 <td><a href="keywords/">keywords</a></td>
 <td>Keywords or tags for the publication</td>
 </tr>
@@ -810,10 +709,6 @@ the Source-to-Outcome (S2O) continuum.</p>
 <tr>
 <td><a href="manipulation/">manipulation</a></td>
 <td>Experimental manipulation applied</td>
-</tr>
-<tr>
-<td><a href="measurement_processes/">measurement_processes</a></td>
-<td>Measurement processes used to assess this key event</td>
 </tr>
 <tr>
 <td><a href="measurement_type/">measurement_type</a></td>
@@ -828,20 +723,12 @@ the Source-to-Outcome (S2O) continuum.</p>
 <td>The method or assay used</td>
 </tr>
 <tr>
-<td><a href="molecular_initiating_events/">molecular_initiating_events</a></td>
-<td>The molecular initiating event(s) that start this AOP</td>
-</tr>
-<tr>
 <td><a href="mucin_expression_level/">mucin_expression_level</a></td>
 <td>Level of mucin gene or protein expression</td>
 </tr>
 <tr>
 <td><a href="name/">name</a></td>
 <td>A human-readable name</td>
-</tr>
-<tr>
-<td><a href="object/">object</a></td>
-<td>The object of a relationship (e</td>
 </tr>
 <tr>
 <td><a href="ontology_mappings/">ontology_mappings</a></td>
@@ -862,10 +749,6 @@ the Source-to-Outcome (S2O) continuum.</p>
 <tr>
 <td><a href="periciliary_layer_depth/">periciliary_layer_depth</a></td>
 <td>Depth of periciliary layer in micrometers</td>
-</tr>
-<tr>
-<td><a href="predicate/">predicate</a></td>
-<td>The predicate/relationship type (e</td>
 </tr>
 <tr>
 <td><a href="protocol_notes/">protocol_notes</a></td>
@@ -892,24 +775,12 @@ the Source-to-Outcome (S2O) continuum.</p>
 <td>Histological staining method used</td>
 </tr>
 <tr>
-<td><a href="subject/">subject</a></td>
-<td>The subject of a relationship (e</td>
-</tr>
-<tr>
 <td><a href="summary/">summary</a></td>
 <td>Executive summary or abstract of the publication</td>
 </tr>
 <tr>
-<td><a href="supporting_evidence/">supporting_evidence</a></td>
-<td>Scientific publications supporting this relationship</td>
-</tr>
-<tr>
 <td><a href="transport_rate/">transport_rate</a></td>
 <td>Mucociliary transport rate</td>
-</tr>
-<tr>
-<td><a href="upstream_events/">upstream_events</a></td>
-<td>Key events that occur before this one in the pathway</td>
 </tr>
 <tr>
 <td><a href="xref/">xref</a></td>
@@ -929,26 +800,6 @@ the Source-to-Outcome (S2O) continuum.</p>
 <tr>
 <td><a href="AssayTypeEnum/">AssayTypeEnum</a></td>
 <td>Types of assays from the Ontology for Biomedical Investigations (OBI)</td>
-</tr>
-<tr>
-<td><a href="BiologicalLevelEnum/">BiologicalLevelEnum</a></td>
-<td>The level of biological organization at which an event occurs</td>
-</tr>
-<tr>
-<td><a href="DirectionEnum/">DirectionEnum</a></td>
-<td>Direction of change for a key event</td>
-</tr>
-<tr>
-<td><a href="EvidenceStrengthEnum/">EvidenceStrengthEnum</a></td>
-<td>Strength of evidence supporting a relationship</td>
-</tr>
-<tr>
-<td><a href="KeyEventPredicateEnum/">KeyEventPredicateEnum</a></td>
-<td>Types of relationships between key events in an AOP</td>
-</tr>
-<tr>
-<td><a href="KeyEventTypeEnum/">KeyEventTypeEnum</a></td>
-<td>Classification of key events in an AOP</td>
 </tr>
 </tbody>
 </table>

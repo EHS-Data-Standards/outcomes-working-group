@@ -259,16 +259,10 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-namedentity">Class: NamedEntity</h1>
 <p><em>Base class for all named entities in the model</em></p>
-<p>URI: <a href="https://w3id.org/EHS-Data-Standards/aop-model/NamedEntity">aop_model:NamedEntity</a></p>
+<p>URI: <a href="https://w3id.org/EHS-Data-Standards/outcomes-model/NamedEntity">outcomes_model:NamedEntity</a></p>
 <div class="mermaid"> classDiagram
     class NamedEntity
     click NamedEntity href "../NamedEntity/"
-      NamedEntity &lt;|-- AdverseOutcomePathway
-        click AdverseOutcomePathway href "../AdverseOutcomePathway/"
-      NamedEntity &lt;|-- KeyEvent
-        click KeyEvent href "../KeyEvent/"
-      NamedEntity &lt;|-- Association
-        click Association href "../Association/"
       NamedEntity &lt;|-- MeasurementProcess
         click MeasurementProcess href "../MeasurementProcess/"
       NamedEntity &lt;|-- InputSample
@@ -293,9 +287,6 @@
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><strong>NamedEntity</strong><ul>
-<li><a href="../AdverseOutcomePathway/">AdverseOutcomePathway</a></li>
-<li><a href="../KeyEvent/">KeyEvent</a></li>
-<li><a href="../Association/">Association</a></li>
 <li><a href="../MeasurementProcess/">MeasurementProcess</a></li>
 <li><a href="../InputSample/">InputSample</a></li>
 <li><a href="../Assay/">Assay</a></li>
@@ -339,7 +330,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/EHS-Data-Standards/aop-model</li>
+<li>from schema: https://w3id.org/EHS-Data-Standards/outcomes-model</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -352,11 +343,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>aop_model:NamedEntity</td>
+<td>outcomes_model:NamedEntity</td>
 </tr>
 <tr>
 <td>native</td>
-<td>aop_model:NamedEntity</td>
+<td>outcomes_model:NamedEntity</td>
 </tr>
 </tbody>
 </table>
@@ -366,7 +357,7 @@
 <details>
 <pre><code class="language-yaml">name: NamedEntity
 description: Base class for all named entities in the model
-from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
 slots:
 - id
 - name
@@ -378,12 +369,12 @@ slots:
 <details>
 <pre><code class="language-yaml">name: NamedEntity
 description: Base class for all named entities in the model
-from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
 attributes:
   id:
     name: id
     description: A unique identifier
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     identifier: true
     alias: id
@@ -395,7 +386,7 @@ attributes:
   name:
     name: name
     description: A human-readable name
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: name
     owner: NamedEntity
@@ -405,7 +396,7 @@ attributes:
   description:
     name: description
     description: A detailed description
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: description
     owner: NamedEntity

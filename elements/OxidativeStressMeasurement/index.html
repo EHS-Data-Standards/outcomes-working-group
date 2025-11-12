@@ -259,7 +259,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-oxidativestressmeasurement">Class: OxidativeStressMeasurement</h1>
 <p><em>Measurement of oxidative stress markers</em></p>
-<p>URI: <a href="https://w3id.org/EHS-Data-Standards/aop-model/OxidativeStressMeasurement">aop_model:OxidativeStressMeasurement</a></p>
+<p>URI: <a href="https://w3id.org/EHS-Data-Standards/outcomes-model/OxidativeStressMeasurement">outcomes_model:OxidativeStressMeasurement</a></p>
 <div class="mermaid"> classDiagram
     class OxidativeStressMeasurement
     click OxidativeStressMeasurement href "../OxidativeStressMeasurement/"
@@ -453,7 +453,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/EHS-Data-Standards/aop-model</li>
+<li>from schema: https://w3id.org/EHS-Data-Standards/outcomes-model</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -466,11 +466,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>aop_model:OxidativeStressMeasurement</td>
+<td>outcomes_model:OxidativeStressMeasurement</td>
 </tr>
 <tr>
 <td>native</td>
-<td>aop_model:OxidativeStressMeasurement</td>
+<td>outcomes_model:OxidativeStressMeasurement</td>
 </tr>
 </tbody>
 </table>
@@ -480,7 +480,7 @@
 <details>
 <pre><code class="language-yaml">name: OxidativeStressMeasurement
 description: Measurement of oxidative stress markers
-from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
 is_a: MeasurementProcess
 slots:
 - ros_level
@@ -493,13 +493,13 @@ slots:
 <details>
 <pre><code class="language-yaml">name: OxidativeStressMeasurement
 description: Measurement of oxidative stress markers
-from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
 is_a: MeasurementProcess
 attributes:
   ros_level:
     name: ros_level
     description: Reactive oxygen species level
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: ros_level
     owner: OxidativeStressMeasurement
@@ -510,7 +510,7 @@ attributes:
   lipid_peroxidation:
     name: lipid_peroxidation
     description: Lipid peroxidation markers (MDA, 8-isoprostane, etc.)
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: lipid_peroxidation
     owner: OxidativeStressMeasurement
@@ -521,7 +521,7 @@ attributes:
   antioxidant_capacity:
     name: antioxidant_capacity
     description: Antioxidant capacity (GSH/GSSG ratio, enzyme activity)
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: antioxidant_capacity
     owner: OxidativeStressMeasurement
@@ -532,7 +532,7 @@ attributes:
   input_sample:
     name: input_sample
     description: Description of input samples and manipulations
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: input_sample
     owner: OxidativeStressMeasurement
@@ -542,7 +542,7 @@ attributes:
   method_assay:
     name: method_assay
     description: The method or assay used
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: method_assay
     owner: OxidativeStressMeasurement
@@ -552,7 +552,7 @@ attributes:
   output_measurement:
     name: output_measurement
     description: The output or measurement obtained
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: output_measurement
     owner: OxidativeStressMeasurement
@@ -562,7 +562,7 @@ attributes:
   context_fields:
     name: context_fields
     description: Contextual metadata fields for reproducibility
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: context_fields
     owner: OxidativeStressMeasurement
@@ -574,7 +574,7 @@ attributes:
   protocol_notes:
     name: protocol_notes
     description: Protocol or SOP notes
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: protocol_notes
     owner: OxidativeStressMeasurement
@@ -584,7 +584,7 @@ attributes:
   ontology_mappings:
     name: ontology_mappings
     description: Mappings to ontology terms (Biolink, OBI, etc.)
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: ontology_mappings
     owner: OxidativeStressMeasurement
@@ -595,7 +595,7 @@ attributes:
   id:
     name: id
     description: A unique identifier
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     identifier: true
     alias: id
@@ -607,7 +607,7 @@ attributes:
   name:
     name: name
     description: A human-readable name
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: name
     owner: OxidativeStressMeasurement
@@ -617,7 +617,7 @@ attributes:
   description:
     name: description
     description: A detailed description
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: description
     owner: OxidativeStressMeasurement

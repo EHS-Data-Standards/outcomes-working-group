@@ -189,15 +189,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#usages">
-<span class="md-ellipsis">
-      
-        Usages
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#identifier-and-mapping-information">
 <span class="md-ellipsis">
       
@@ -268,9 +259,9 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-publication">Class: Publication</h1>
 <p><em>Any published piece of information, following Biolink model.</em></p>
-<p><em>Represents scientific evidence supporting AOP components.</em></p>
+<p><em>Represents scientific evidence supporting research.</em></p>
 <p>__</p>
-<p>URI: <a href="https://w3id.org/EHS-Data-Standards/aop-model/Publication">aop_model:Publication</a></p>
+<p>URI: <a href="https://w3id.org/EHS-Data-Standards/outcomes-model/Publication">outcomes_model:Publication</a></p>
 <div class="mermaid"> classDiagram
     class Publication
     click Publication href "../Publication/"
@@ -379,29 +370,10 @@
 </tr>
 </tbody>
 </table>
-<h2 id="usages">Usages</h2>
-<table>
-<thead>
-<tr>
-<th>used by</th>
-<th>used in</th>
-<th>type</th>
-<th>used</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../KeyEventAssociation/">KeyEventAssociation</a></td>
-<td><a href="../supporting_evidence/">supporting_evidence</a></td>
-<td>range</td>
-<td><a href="./">Publication</a></td>
-</tr>
-</tbody>
-</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/EHS-Data-Standards/aop-model</li>
+<li>from schema: https://w3id.org/EHS-Data-Standards/outcomes-model</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -414,11 +386,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>aop_model:Publication</td>
+<td>outcomes_model:Publication</td>
 </tr>
 <tr>
 <td>native</td>
-<td>aop_model:Publication</td>
+<td>outcomes_model:Publication</td>
 </tr>
 </tbody>
 </table>
@@ -429,10 +401,10 @@
 <pre><code class="language-yaml">name: Publication
 description: 'Any published piece of information, following Biolink model.
 
-  Represents scientific evidence supporting AOP components.
+  Represents scientific evidence supporting research.
 
   '
-from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
 is_a: NamedEntity
 slots:
 - authors
@@ -458,10 +430,10 @@ slot_usage:
 <pre><code class="language-yaml">name: Publication
 description: 'Any published piece of information, following Biolink model.
 
-  Represents scientific evidence supporting AOP components.
+  Represents scientific evidence supporting research.
 
   '
-from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
 is_a: NamedEntity
 slot_usage:
   id:
@@ -476,7 +448,7 @@ attributes:
     name: authors
     description: Connects publications to contributor lists, formatted as comma-delimited
       names
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: authors
     owner: Publication
@@ -487,7 +459,7 @@ attributes:
   pages:
     name: pages
     description: Page numbers (start and end) or total pages
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: pages
     owner: Publication
@@ -497,7 +469,7 @@ attributes:
   summary:
     name: summary
     description: Executive summary or abstract of the publication
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: summary
     owner: Publication
@@ -507,7 +479,7 @@ attributes:
   keywords:
     name: keywords
     description: Keywords or tags for the publication
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: keywords
     owner: Publication
@@ -518,7 +490,7 @@ attributes:
   mesh_terms:
     name: mesh_terms
     description: Medical Subject Headings (MeSH) terms for indexing
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: mesh_terms
     owner: Publication
@@ -530,7 +502,7 @@ attributes:
     name: publication_type
     description: Ontology term for categorizing publication format (e.g., journal
       article, book chapter, review)
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: publication_type
     owner: Publication
@@ -541,7 +513,7 @@ attributes:
   xref:
     name: xref
     description: Cross-references to supporting databases or webpages
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: xref
     owner: Publication
@@ -556,7 +528,7 @@ attributes:
     examples:
     - value: PMID:12345678
     - value: DOI:10.1234/example
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     identifier: true
     alias: id
@@ -568,7 +540,7 @@ attributes:
   name:
     name: name
     description: A human-readable name
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: name
     owner: Publication
@@ -578,7 +550,7 @@ attributes:
   description:
     name: description
     description: A detailed description
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: description
     owner: Publication

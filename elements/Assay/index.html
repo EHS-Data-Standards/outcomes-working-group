@@ -267,8 +267,8 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-assay">Class: Assay</h1>
-<p><em>The specific method or assay used to measure a key event</em></p>
-<p>URI: <a href="https://w3id.org/EHS-Data-Standards/aop-model/Assay">aop_model:Assay</a></p>
+<p><em>The specific method or assay used to measure an endpoint</em></p>
+<p>URI: <a href="https://w3id.org/EHS-Data-Standards/outcomes-model/Assay">outcomes_model:Assay</a></p>
 <div class="mermaid"> classDiagram
     class Assay
     click Assay href "../Assay/"
@@ -420,7 +420,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/EHS-Data-Standards/aop-model</li>
+<li>from schema: https://w3id.org/EHS-Data-Standards/outcomes-model</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -433,11 +433,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>aop_model:Assay</td>
+<td>outcomes_model:Assay</td>
 </tr>
 <tr>
 <td>native</td>
-<td>aop_model:Assay</td>
+<td>outcomes_model:Assay</td>
 </tr>
 </tbody>
 </table>
@@ -446,8 +446,8 @@
 <h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: Assay
-description: The specific method or assay used to measure a key event
-from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+description: The specific method or assay used to measure an endpoint
+from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
 is_a: NamedEntity
 slots:
 - assay_type
@@ -460,14 +460,14 @@ slots:
 <h3 id="induced">Induced</h3>
 <details>
 <pre><code class="language-yaml">name: Assay
-description: The specific method or assay used to measure a key event
-from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+description: The specific method or assay used to measure an endpoint
+from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
 is_a: NamedEntity
 attributes:
   assay_type:
     name: assay_type
     description: Type of assay or method, constrained to OBI assay terms
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: assay_type
     owner: Assay
@@ -477,7 +477,7 @@ attributes:
   instrumentation:
     name: instrumentation
     description: Specific instruments or equipment used
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: instrumentation
     owner: Assay
@@ -487,7 +487,7 @@ attributes:
   environmental_conditions:
     name: environmental_conditions
     description: Environmental conditions during measurement
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: environmental_conditions
     owner: Assay
@@ -497,7 +497,7 @@ attributes:
   sop_reference:
     name: sop_reference
     description: Reference to standard operating procedure
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: sop_reference
     owner: Assay
@@ -507,7 +507,7 @@ attributes:
   id:
     name: id
     description: A unique identifier
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     identifier: true
     alias: id
@@ -519,7 +519,7 @@ attributes:
   name:
     name: name
     description: A human-readable name
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: name
     owner: Assay
@@ -529,7 +529,7 @@ attributes:
   description:
     name: description
     description: A detailed description
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: description
     owner: Assay

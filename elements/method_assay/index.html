@@ -418,7 +418,7 @@
 
 <h1 id="slot-method_assay">Slot: method_assay</h1>
 <p><em>The method or assay used</em></p>
-<p>URI: <a href="https://w3id.org/EHS-Data-Standards/aop-model/method_assay">aop_model:method_assay</a>
+<p>URI: <a href="https://w3id.org/EHS-Data-Standards/outcomes-model/method_assay">outcomes_model:method_assay</a>
 Alias: method_assay</p>
 <!-- no inheritance hierarchy -->
 
@@ -433,16 +433,6 @@ Alias: method_assay</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../OxidativeStressMeasurement/">OxidativeStressMeasurement</a></td>
-<td>Measurement of oxidative stress markers</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../CiliaBeatFrequencyMeasurement/">CiliaBeatFrequencyMeasurement</a></td>
-<td>Measurement of ciliary beat frequency</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../CFTRFunctionMeasurement/">CFTRFunctionMeasurement</a></td>
 <td>Measurement of CFTR-mediated ion transport function</td>
 <td>no</td>
@@ -453,8 +443,8 @@ Alias: method_assay</p>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../ASLHeightMeasurement/">ASLHeightMeasurement</a></td>
-<td>Measurement of airway surface liquid height</td>
+<td><a href="../OxidativeStressMeasurement/">OxidativeStressMeasurement</a></td>
+<td>Measurement of oxidative stress markers</td>
 <td>no</td>
 </tr>
 <tr>
@@ -463,8 +453,18 @@ Alias: method_assay</p>
 <td>no</td>
 </tr>
 <tr>
+<td><a href="../CiliaBeatFrequencyMeasurement/">CiliaBeatFrequencyMeasurement</a></td>
+<td>Measurement of ciliary beat frequency</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ASLHeightMeasurement/">ASLHeightMeasurement</a></td>
+<td>Measurement of airway surface liquid height</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
-<td>A generic class representing the process of measuring a biological key event</td>
+<td>A generic class representing the process of measuring a biological endpoint</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -476,7 +476,7 @@ Alias: method_assay</p>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/EHS-Data-Standards/aop-model</li>
+<li>from schema: https://w3id.org/EHS-Data-Standards/outcomes-model</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -489,11 +489,11 @@ Alias: method_assay</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>aop_model:method_assay</td>
+<td>outcomes_model:method_assay</td>
 </tr>
 <tr>
 <td>native</td>
-<td>aop_model:method_assay</td>
+<td>outcomes_model:method_assay</td>
 </tr>
 </tbody>
 </table>
@@ -502,7 +502,7 @@ Alias: method_assay</p>
 
 <pre><code class="language-yaml">name: method_assay
 description: The method or assay used
-from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
 rank: 1000
 alias: method_assay
 domain_of:

@@ -418,7 +418,7 @@
 
 <h1 id="slot-input_sample">Slot: input_sample</h1>
 <p><em>Description of input samples and manipulations</em></p>
-<p>URI: <a href="https://w3id.org/EHS-Data-Standards/aop-model/input_sample">aop_model:input_sample</a>
+<p>URI: <a href="https://w3id.org/EHS-Data-Standards/outcomes-model/input_sample">outcomes_model:input_sample</a>
 Alias: input_sample</p>
 <!-- no inheritance hierarchy -->
 
@@ -433,16 +433,6 @@ Alias: input_sample</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../OxidativeStressMeasurement/">OxidativeStressMeasurement</a></td>
-<td>Measurement of oxidative stress markers</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../CiliaBeatFrequencyMeasurement/">CiliaBeatFrequencyMeasurement</a></td>
-<td>Measurement of ciliary beat frequency</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../CFTRFunctionMeasurement/">CFTRFunctionMeasurement</a></td>
 <td>Measurement of CFTR-mediated ion transport function</td>
 <td>no</td>
@@ -453,8 +443,8 @@ Alias: input_sample</p>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../ASLHeightMeasurement/">ASLHeightMeasurement</a></td>
-<td>Measurement of airway surface liquid height</td>
+<td><a href="../OxidativeStressMeasurement/">OxidativeStressMeasurement</a></td>
+<td>Measurement of oxidative stress markers</td>
 <td>no</td>
 </tr>
 <tr>
@@ -463,8 +453,18 @@ Alias: input_sample</p>
 <td>no</td>
 </tr>
 <tr>
+<td><a href="../CiliaBeatFrequencyMeasurement/">CiliaBeatFrequencyMeasurement</a></td>
+<td>Measurement of ciliary beat frequency</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ASLHeightMeasurement/">ASLHeightMeasurement</a></td>
+<td>Measurement of airway surface liquid height</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../MeasurementProcess/">MeasurementProcess</a></td>
-<td>A generic class representing the process of measuring a biological key event</td>
+<td>A generic class representing the process of measuring a biological endpoint</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -476,7 +476,7 @@ Alias: input_sample</p>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/EHS-Data-Standards/aop-model</li>
+<li>from schema: https://w3id.org/EHS-Data-Standards/outcomes-model</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -489,11 +489,11 @@ Alias: input_sample</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>aop_model:input_sample</td>
+<td>outcomes_model:input_sample</td>
 </tr>
 <tr>
 <td>native</td>
-<td>aop_model:input_sample</td>
+<td>outcomes_model:input_sample</td>
 </tr>
 </tbody>
 </table>
@@ -502,7 +502,7 @@ Alias: input_sample</p>
 
 <pre><code class="language-yaml">name: input_sample
 description: Description of input samples and manipulations
-from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
 rank: 1000
 alias: input_sample
 domain_of:

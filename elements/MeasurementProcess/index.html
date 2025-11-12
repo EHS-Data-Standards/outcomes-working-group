@@ -189,15 +189,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#usages">
-<span class="md-ellipsis">
-      
-        Usages
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#identifier-and-mapping-information">
 <span class="md-ellipsis">
       
@@ -267,10 +258,10 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-measurementprocess">Class: MeasurementProcess</h1>
-<p><em>A generic class representing the process of measuring a biological key event.</em></p>
+<p><em>A generic class representing the process of measuring a biological endpoint.</em></p>
 <p><em>Includes information about input samples, methods, outputs, and contextual metadata.</em></p>
 <p>__</p>
-<p>URI: <a href="https://w3id.org/EHS-Data-Standards/aop-model/MeasurementProcess">aop_model:MeasurementProcess</a></p>
+<p>URI: <a href="https://w3id.org/EHS-Data-Standards/outcomes-model/MeasurementProcess">outcomes_model:MeasurementProcess</a></p>
 <div class="mermaid"> classDiagram
     class MeasurementProcess
     click MeasurementProcess href "../MeasurementProcess/"
@@ -430,95 +421,10 @@
 </tr>
 </tbody>
 </table>
-<h2 id="usages">Usages</h2>
-<table>
-<thead>
-<tr>
-<th>used by</th>
-<th>used in</th>
-<th>type</th>
-<th>used</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../KeyEvent/">KeyEvent</a></td>
-<td><a href="../measurement_processes/">measurement_processes</a></td>
-<td>range</td>
-<td><a href="./">MeasurementProcess</a></td>
-</tr>
-<tr>
-<td><a href="../OxidativeStressEvent/">OxidativeStressEvent</a></td>
-<td><a href="../measurement_processes/">measurement_processes</a></td>
-<td>range</td>
-<td><a href="./">MeasurementProcess</a></td>
-</tr>
-<tr>
-<td><a href="../EGFRActivationEvent/">EGFRActivationEvent</a></td>
-<td><a href="../measurement_processes/">measurement_processes</a></td>
-<td>range</td>
-<td><a href="./">MeasurementProcess</a></td>
-</tr>
-<tr>
-<td><a href="../CFTRFunctionEvent/">CFTRFunctionEvent</a></td>
-<td><a href="../measurement_processes/">measurement_processes</a></td>
-<td>range</td>
-<td><a href="./">MeasurementProcess</a></td>
-</tr>
-<tr>
-<td><a href="../FoxJ1ExpressionEvent/">FoxJ1ExpressionEvent</a></td>
-<td><a href="../measurement_processes/">measurement_processes</a></td>
-<td>range</td>
-<td><a href="./">MeasurementProcess</a></td>
-</tr>
-<tr>
-<td><a href="../CiliaNumberEvent/">CiliaNumberEvent</a></td>
-<td><a href="../measurement_processes/">measurement_processes</a></td>
-<td>range</td>
-<td><a href="./">MeasurementProcess</a></td>
-</tr>
-<tr>
-<td><a href="../GobletCellEvent/">GobletCellEvent</a></td>
-<td><a href="../measurement_processes/">measurement_processes</a></td>
-<td>range</td>
-<td><a href="./">MeasurementProcess</a></td>
-</tr>
-<tr>
-<td><a href="../ASLHeightEvent/">ASLHeightEvent</a></td>
-<td><a href="../measurement_processes/">measurement_processes</a></td>
-<td>range</td>
-<td><a href="./">MeasurementProcess</a></td>
-</tr>
-<tr>
-<td><a href="../CiliaryBeatFrequencyEvent/">CiliaryBeatFrequencyEvent</a></td>
-<td><a href="../measurement_processes/">measurement_processes</a></td>
-<td>range</td>
-<td><a href="./">MeasurementProcess</a></td>
-</tr>
-<tr>
-<td><a href="../MucinProductionEvent/">MucinProductionEvent</a></td>
-<td><a href="../measurement_processes/">measurement_processes</a></td>
-<td>range</td>
-<td><a href="./">MeasurementProcess</a></td>
-</tr>
-<tr>
-<td><a href="../MucociliaryClearanceEvent/">MucociliaryClearanceEvent</a></td>
-<td><a href="../measurement_processes/">measurement_processes</a></td>
-<td>range</td>
-<td><a href="./">MeasurementProcess</a></td>
-</tr>
-<tr>
-<td><a href="../LungFunctionEvent/">LungFunctionEvent</a></td>
-<td><a href="../measurement_processes/">measurement_processes</a></td>
-<td>range</td>
-<td><a href="./">MeasurementProcess</a></td>
-</tr>
-</tbody>
-</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/EHS-Data-Standards/aop-model</li>
+<li>from schema: https://w3id.org/EHS-Data-Standards/outcomes-model</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -531,11 +437,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>aop_model:MeasurementProcess</td>
+<td>outcomes_model:MeasurementProcess</td>
 </tr>
 <tr>
 <td>native</td>
-<td>aop_model:MeasurementProcess</td>
+<td>outcomes_model:MeasurementProcess</td>
 </tr>
 </tbody>
 </table>
@@ -544,13 +450,12 @@
 <h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: MeasurementProcess
-description: 'A generic class representing the process of measuring a biological key
-  event.
+description: 'A generic class representing the process of measuring a biological endpoint.
 
   Includes information about input samples, methods, outputs, and contextual metadata.
 
   '
-from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
 is_a: NamedEntity
 slots:
 - input_sample
@@ -565,19 +470,18 @@ slots:
 <h3 id="induced">Induced</h3>
 <details>
 <pre><code class="language-yaml">name: MeasurementProcess
-description: 'A generic class representing the process of measuring a biological key
-  event.
+description: 'A generic class representing the process of measuring a biological endpoint.
 
   Includes information about input samples, methods, outputs, and contextual metadata.
 
   '
-from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
 is_a: NamedEntity
 attributes:
   input_sample:
     name: input_sample
     description: Description of input samples and manipulations
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: input_sample
     owner: MeasurementProcess
@@ -587,7 +491,7 @@ attributes:
   method_assay:
     name: method_assay
     description: The method or assay used
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: method_assay
     owner: MeasurementProcess
@@ -597,7 +501,7 @@ attributes:
   output_measurement:
     name: output_measurement
     description: The output or measurement obtained
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: output_measurement
     owner: MeasurementProcess
@@ -607,7 +511,7 @@ attributes:
   context_fields:
     name: context_fields
     description: Contextual metadata fields for reproducibility
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: context_fields
     owner: MeasurementProcess
@@ -619,7 +523,7 @@ attributes:
   protocol_notes:
     name: protocol_notes
     description: Protocol or SOP notes
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: protocol_notes
     owner: MeasurementProcess
@@ -629,7 +533,7 @@ attributes:
   ontology_mappings:
     name: ontology_mappings
     description: Mappings to ontology terms (Biolink, OBI, etc.)
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: ontology_mappings
     owner: MeasurementProcess
@@ -640,7 +544,7 @@ attributes:
   id:
     name: id
     description: A unique identifier
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     identifier: true
     alias: id
@@ -652,7 +556,7 @@ attributes:
   name:
     name: name
     description: A human-readable name
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: name
     owner: MeasurementProcess
@@ -662,7 +566,7 @@ attributes:
   description:
     name: description
     description: A detailed description
-    from_schema: https://w3id.org/EHS-Data-Standards/aop-model
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
     alias: description
     owner: MeasurementProcess
