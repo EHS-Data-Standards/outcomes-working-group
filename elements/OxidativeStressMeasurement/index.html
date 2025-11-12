@@ -277,6 +277,19 @@
 
 
 
+      OxidativeStressMeasurement : antioxidant_enzyme_activities
+
+      OxidativeStressMeasurement : barrier_integrity
+
+
+
+
+
+        OxidativeStressMeasurement --&gt; "0..1" BarrierIntegrity : barrier_integrity
+        click BarrierIntegrity href "../BarrierIntegrity/"
+
+
+
       OxidativeStressMeasurement : context_fields
 
 
@@ -288,7 +301,40 @@
 
 
 
+      OxidativeStressMeasurement : cytotoxicity_metrics
+
+
+
+
+
+        OxidativeStressMeasurement --&gt; "0..1" CytotoxicityMetrics : cytotoxicity_metrics
+        click CytotoxicityMetrics href "../CytotoxicityMetrics/"
+
+
+
       OxidativeStressMeasurement : description
+
+      OxidativeStressMeasurement : detection_method_details
+
+
+
+
+
+        OxidativeStressMeasurement --&gt; "0..1" DetectionMethod : detection_method_details
+        click DetectionMethod href "../DetectionMethod/"
+
+
+
+      OxidativeStressMeasurement : dna_damage_markers
+
+
+
+
+
+        OxidativeStressMeasurement --&gt; "0..1" QuantityValue : dna_damage_markers
+        click QuantityValue href "../QuantityValue/"
+
+
 
       OxidativeStressMeasurement : id
 
@@ -340,6 +386,17 @@
 
 
 
+      OxidativeStressMeasurement : protein_oxidation_markers
+
+
+
+
+
+        OxidativeStressMeasurement --&gt; "0..1" QuantityValue : protein_oxidation_markers
+        click QuantityValue href "../QuantityValue/"
+
+
+
       OxidativeStressMeasurement : protocol_notes
 
       OxidativeStressMeasurement : ros_level
@@ -350,6 +407,17 @@
 
         OxidativeStressMeasurement --&gt; "0..1" QuantityValue : ros_level
         click QuantityValue href "../QuantityValue/"
+
+
+
+      OxidativeStressMeasurement : ros_probe
+
+
+
+
+
+        OxidativeStressMeasurement --&gt; "0..1" ROSProbe : ros_probe
+        click ROSProbe href "../ROSProbe/"
 
 
 
@@ -392,6 +460,48 @@
 <td><a href="../antioxidant_capacity/">antioxidant_capacity</a></td>
 <td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
 <td>Antioxidant capacity (GSH/GSSG ratio, enzyme activity)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ros_probe/">ros_probe</a></td>
+<td>0..1 <br/> <a href="../ROSProbe/">ROSProbe</a></td>
+<td>ROS probe details</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../detection_method_details/">detection_method_details</a></td>
+<td>0..1 <br/> <a href="../DetectionMethod/">DetectionMethod</a></td>
+<td>Detection method details</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../protein_oxidation_markers/">protein_oxidation_markers</a></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>Protein oxidation markers (carbonyls, nitrotyrosine)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_damage_markers/">dna_damage_markers</a></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>DNA damage markers (8-OHdG)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../antioxidant_enzyme_activities/">antioxidant_enzyme_activities</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Antioxidant enzyme activities (SOD, catalase, GPx)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../barrier_integrity/">barrier_integrity</a></td>
+<td>0..1 <br/> <a href="../BarrierIntegrity/">BarrierIntegrity</a></td>
+<td>Epithelial barrier integrity measurements</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../cytotoxicity_metrics/">cytotoxicity_metrics</a></td>
+<td>0..1 <br/> <a href="../CytotoxicityMetrics/">CytotoxicityMetrics</a></td>
+<td>Cytotoxicity measurements</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -486,6 +596,13 @@ slots:
 - ros_level
 - lipid_peroxidation
 - antioxidant_capacity
+- ros_probe
+- detection_method_details
+- protein_oxidation_markers
+- dna_damage_markers
+- antioxidant_enzyme_activities
+- barrier_integrity
+- cytotoxicity_metrics
 
 </code></pre>
 </details>
@@ -528,6 +645,82 @@ attributes:
     domain_of:
     - OxidativeStressMeasurement
     range: QuantityValue
+    inlined: true
+  ros_probe:
+    name: ros_probe
+    description: ROS probe details
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: ros_probe
+    owner: OxidativeStressMeasurement
+    domain_of:
+    - OxidativeStressMeasurement
+    range: ROSProbe
+    inlined: true
+  detection_method_details:
+    name: detection_method_details
+    description: Detection method details
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: detection_method_details
+    owner: OxidativeStressMeasurement
+    domain_of:
+    - OxidativeStressMeasurement
+    range: DetectionMethod
+    inlined: true
+  protein_oxidation_markers:
+    name: protein_oxidation_markers
+    description: Protein oxidation markers (carbonyls, nitrotyrosine)
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: protein_oxidation_markers
+    owner: OxidativeStressMeasurement
+    domain_of:
+    - OxidativeStressMeasurement
+    range: QuantityValue
+    inlined: true
+  dna_damage_markers:
+    name: dna_damage_markers
+    description: DNA damage markers (8-OHdG)
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: dna_damage_markers
+    owner: OxidativeStressMeasurement
+    domain_of:
+    - OxidativeStressMeasurement
+    range: QuantityValue
+    inlined: true
+  antioxidant_enzyme_activities:
+    name: antioxidant_enzyme_activities
+    description: Antioxidant enzyme activities (SOD, catalase, GPx)
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: antioxidant_enzyme_activities
+    owner: OxidativeStressMeasurement
+    domain_of:
+    - OxidativeStressMeasurement
+    range: string
+  barrier_integrity:
+    name: barrier_integrity
+    description: Epithelial barrier integrity measurements
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: barrier_integrity
+    owner: OxidativeStressMeasurement
+    domain_of:
+    - OxidativeStressMeasurement
+    range: BarrierIntegrity
+    inlined: true
+  cytotoxicity_metrics:
+    name: cytotoxicity_metrics
+    description: Cytotoxicity measurements
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: cytotoxicity_metrics
+    owner: OxidativeStressMeasurement
+    domain_of:
+    - OxidativeStressMeasurement
+    range: CytotoxicityMetrics
     inlined: true
   input_sample:
     name: input_sample

@@ -266,7 +266,16 @@
       MeasurementProcess &lt;|-- CFTRFunctionMeasurement
         click MeasurementProcess href "../MeasurementProcess/"
 
-      CFTRFunctionMeasurement : cell_culture_conditions
+      CFTRFunctionMeasurement : cell_culture_details
+
+
+
+
+
+        CFTRFunctionMeasurement --&gt; "0..1" CellCultureConditions : cell_culture_details
+        click CellCultureConditions href "../CellCultureConditions/"
+
+
 
       CFTRFunctionMeasurement : cftr_specific_current
 
@@ -380,9 +389,9 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../cell_culture_conditions/">cell_culture_conditions</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Conditions for cell culture (ALI days, medium, etc</td>
+<td><a href="../cell_culture_details/">cell_culture_details</a></td>
+<td>0..1 <br/> <a href="../CellCultureConditions/">CellCultureConditions</a></td>
+<td>Detailed cell culture conditions</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -476,7 +485,7 @@ is_a: MeasurementProcess
 slots:
 - cftr_specific_current
 - inhibitor_sensitive_current
-- cell_culture_conditions
+- cell_culture_details
 
 </code></pre>
 </details>
@@ -509,16 +518,17 @@ attributes:
     - CFTRFunctionMeasurement
     range: QuantityValue
     inlined: true
-  cell_culture_conditions:
-    name: cell_culture_conditions
-    description: Conditions for cell culture (ALI days, medium, etc.)
+  cell_culture_details:
+    name: cell_culture_details
+    description: Detailed cell culture conditions
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
-    alias: cell_culture_conditions
+    alias: cell_culture_details
     owner: CFTRFunctionMeasurement
     domain_of:
     - CFTRFunctionMeasurement
-    range: string
+    range: CellCultureConditions
+    inlined: true
   input_sample:
     name: input_sample
     description: Description of input samples and manipulations

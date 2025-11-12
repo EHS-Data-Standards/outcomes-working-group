@@ -471,9 +471,10 @@ slots:
     description: Specific instruments or equipment used
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     slot_uri: outcomes_model:instrumentation
-    owner: Assay
+    owner: DetectionMethod
     domain_of:
     - Assay
+    - DetectionMethod
     range: string
   environmental_conditions:
     name: environmental_conditions
@@ -622,9 +623,6 @@ slots:
     description: Conditions for cell culture (ALI days, medium, etc.)
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     slot_uri: outcomes_model:cell_culture_conditions
-    owner: CFTRFunctionMeasurement
-    domain_of:
-    - CFTRFunctionMeasurement
     range: string
   beat_frequency_hz:
     name: beat_frequency_hz
@@ -656,9 +654,6 @@ slots:
     description: Imaging parameters and conditions
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     slot_uri: outcomes_model:imaging_conditions
-    owner: CiliaBeatFrequencyMeasurement
-    domain_of:
-    - CiliaBeatFrequencyMeasurement
     range: string
   asl_height_um:
     name: asl_height_um
@@ -690,9 +685,9 @@ slots:
     description: Imaging modality used (confocal, OCT, etc.)
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     slot_uri: outcomes_model:imaging_modality
-    owner: ASLHeightMeasurement
+    owner: ImagingProtocol
     domain_of:
-    - ASLHeightMeasurement
+    - ImagingProtocol
     range: string
   transport_rate:
     name: transport_rate
@@ -756,9 +751,6 @@ slots:
     description: Histological staining method used
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     slot_uri: outcomes_model:staining_method
-    owner: GobletCellMeasurement
-    domain_of:
-    - GobletCellMeasurement
     range: string
   ros_level:
     name: ros_level
@@ -796,6 +788,1202 @@ slots:
     range: QuantityValue
     inlined: true
     inlined_as_list: true
+  imaging_protocol:
+    name: imaging_protocol
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/imaging_protocol
+    description: Imaging protocol and parameters
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:imaging_protocol
+    owner: ASLHeightMeasurement
+    domain_of:
+    - CiliaBeatFrequencyMeasurement
+    - ASLHeightMeasurement
+    range: ImagingProtocol
+    inlined: true
+    inlined_as_list: false
+  ion_composition:
+    name: ion_composition
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/ion_composition
+    description: "Ionic composition (Cl\u207B, Na\u207A, K\u207A)"
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:ion_composition
+    owner: ASLHeightMeasurement
+    domain_of:
+    - ASLHeightMeasurement
+    range: string
+  fluorescent_labeling:
+    name: fluorescent_labeling
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/fluorescent_labeling
+    description: Fluorescent label or tracer used
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:fluorescent_labeling
+    owner: ASLHeightMeasurement
+    domain_of:
+    - ASLHeightMeasurement
+    range: FluorescentLabel
+    inlined: true
+    inlined_as_list: false
+  evaporation_prevention:
+    name: evaporation_prevention
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/evaporation_prevention
+    description: Method used to prevent evaporation
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:evaporation_prevention
+    owner: ASLHeightMeasurement
+    domain_of:
+    - ASLHeightMeasurement
+    range: EvaporationControl
+    inlined: true
+    inlined_as_list: false
+  cilia_per_cell:
+    name: cilia_per_cell
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/cilia_per_cell
+    description: Number of cilia per cell
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:cilia_per_cell
+    owner: CiliaBeatFrequencyMeasurement
+    domain_of:
+    - CiliaBeatFrequencyMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  cilia_length:
+    name: cilia_length
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/cilia_length
+    description: Length of cilia
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:cilia_length
+    owner: CiliaBeatFrequencyMeasurement
+    domain_of:
+    - CiliaBeatFrequencyMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  percentage_ciliated_cells:
+    name: percentage_ciliated_cells
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/percentage_ciliated_cells
+    description: Percentage of cells that are ciliated
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:percentage_ciliated_cells
+    owner: CiliaBeatFrequencyMeasurement
+    domain_of:
+    - CiliaBeatFrequencyMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  ciliary_motion_patterns:
+    name: ciliary_motion_patterns
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/ciliary_motion_patterns
+    description: Patterns of ciliary motion
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:ciliary_motion_patterns
+    owner: CiliaBeatFrequencyMeasurement
+    domain_of:
+    - CiliaBeatFrequencyMeasurement
+    range: string
+  cell_type_ratios:
+    name: cell_type_ratios
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/cell_type_ratios
+    description: Ratios between different cell types
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:cell_type_ratios
+    owner: CiliaBeatFrequencyMeasurement
+    domain_of:
+    - CiliaBeatFrequencyMeasurement
+    range: string
+  fluorescent_tracers:
+    name: fluorescent_tracers
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/fluorescent_tracers
+    description: Fluorescent tracers used for tracking
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:fluorescent_tracers
+    owner: MucociliaryClearanceMeasurement
+    domain_of:
+    - MucociliaryClearanceMeasurement
+    range: FluorescentLabel
+    multivalued: true
+    inlined: true
+    inlined_as_list: false
+  mucus_layer_thickness:
+    name: mucus_layer_thickness
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/mucus_layer_thickness
+    description: Thickness of mucus layer
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:mucus_layer_thickness
+    owner: MucociliaryClearanceMeasurement
+    domain_of:
+    - MucociliaryClearanceMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  bacterial_biofilm_details:
+    name: bacterial_biofilm_details
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/bacterial_biofilm_details
+    description: Details about bacterial biofilm preparation and characteristics
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:bacterial_biofilm_details
+    owner: MucociliaryClearanceMeasurement
+    domain_of:
+    - MucociliaryClearanceMeasurement
+    range: string
+  viral_infection_details:
+    name: viral_infection_details
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/viral_infection_details
+    description: Details about viral infection protocol
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:viral_infection_details
+    owner: MucociliaryClearanceMeasurement
+    domain_of:
+    - MucociliaryClearanceMeasurement
+    range: string
+  biofilm_clearance_rate:
+    name: biofilm_clearance_rate
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/biofilm_clearance_rate
+    description: Rate of bacterial biofilm clearance
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:biofilm_clearance_rate
+    owner: MucociliaryClearanceMeasurement
+    domain_of:
+    - MucociliaryClearanceMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  bacterial_load:
+    name: bacterial_load
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/bacterial_load
+    description: Bacterial load (CFU or similar)
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:bacterial_load
+    owner: MucociliaryClearanceMeasurement
+    domain_of:
+    - MucociliaryClearanceMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  viral_spread_rate:
+    name: viral_spread_rate
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/viral_spread_rate
+    description: Rate of viral spread
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:viral_spread_rate
+    owner: MucociliaryClearanceMeasurement
+    domain_of:
+    - MucociliaryClearanceMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  staining_protocol:
+    name: staining_protocol
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/staining_protocol
+    description: Staining protocol details
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:staining_protocol
+    owner: GobletCellMeasurement
+    domain_of:
+    - FoxJExpressionMeasurement
+    - GobletCellMeasurement
+    range: StainingProtocol
+    inlined: true
+    inlined_as_list: false
+  gene_expression_analysis:
+    name: gene_expression_analysis
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/gene_expression_analysis
+    description: Gene expression analysis methodology
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:gene_expression_analysis
+    owner: GobletCellMeasurement
+    domain_of:
+    - FoxJExpressionMeasurement
+    - GobletCellMeasurement
+    range: GeneExpressionAnalysis
+    inlined: true
+    inlined_as_list: false
+  mucin_protein_concentration:
+    name: mucin_protein_concentration
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/mucin_protein_concentration
+    description: Concentration of mucin protein
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:mucin_protein_concentration
+    owner: GobletCellMeasurement
+    domain_of:
+    - GobletCellMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  goblet_to_ciliated_ratio:
+    name: goblet_to_ciliated_ratio
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/goblet_to_ciliated_ratio
+    description: Ratio of goblet cells to ciliated cells
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:goblet_to_ciliated_ratio
+    owner: GobletCellMeasurement
+    domain_of:
+    - GobletCellMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  pathway_enrichment_scores:
+    name: pathway_enrichment_scores
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/pathway_enrichment_scores
+    description: Enrichment scores for biological pathways
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:pathway_enrichment_scores
+    owner: GobletCellMeasurement
+    domain_of:
+    - GobletCellMeasurement
+    range: string
+    multivalued: true
+  dose_response_data:
+    name: dose_response_data
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/dose_response_data
+    description: Dose-response relationship data
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:dose_response_data
+    owner: GobletCellMeasurement
+    domain_of:
+    - GobletCellMeasurement
+    range: string
+  cell_culture_details:
+    name: cell_culture_details
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/cell_culture_details
+    description: Detailed cell culture conditions
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:cell_culture_details
+    owner: CFTRFunctionMeasurement
+    domain_of:
+    - CFTRFunctionMeasurement
+    range: CellCultureConditions
+    inlined: true
+    inlined_as_list: false
+  ros_probe:
+    name: ros_probe
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/ros_probe
+    description: ROS probe details
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:ros_probe
+    owner: OxidativeStressMeasurement
+    domain_of:
+    - OxidativeStressMeasurement
+    range: ROSProbe
+    inlined: true
+    inlined_as_list: false
+  detection_method_details:
+    name: detection_method_details
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/detection_method_details
+    description: Detection method details
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:detection_method_details
+    owner: OxidativeStressMeasurement
+    domain_of:
+    - OxidativeStressMeasurement
+    range: DetectionMethod
+    inlined: true
+    inlined_as_list: false
+  protein_oxidation_markers:
+    name: protein_oxidation_markers
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/protein_oxidation_markers
+    description: Protein oxidation markers (carbonyls, nitrotyrosine)
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:protein_oxidation_markers
+    owner: OxidativeStressMeasurement
+    domain_of:
+    - OxidativeStressMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  dna_damage_markers:
+    name: dna_damage_markers
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/dna_damage_markers
+    description: DNA damage markers (8-OHdG)
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:dna_damage_markers
+    owner: OxidativeStressMeasurement
+    domain_of:
+    - OxidativeStressMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  antioxidant_enzyme_activities:
+    name: antioxidant_enzyme_activities
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/antioxidant_enzyme_activities
+    description: Antioxidant enzyme activities (SOD, catalase, GPx)
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:antioxidant_enzyme_activities
+    owner: OxidativeStressMeasurement
+    domain_of:
+    - OxidativeStressMeasurement
+    range: string
+  barrier_integrity:
+    name: barrier_integrity
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/barrier_integrity
+    description: Epithelial barrier integrity measurements
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:barrier_integrity
+    owner: OxidativeStressMeasurement
+    domain_of:
+    - OxidativeStressMeasurement
+    range: BarrierIntegrity
+    inlined: true
+    inlined_as_list: false
+  cytotoxicity_metrics:
+    name: cytotoxicity_metrics
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/cytotoxicity_metrics
+    description: Cytotoxicity measurements
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:cytotoxicity_metrics
+    owner: OxidativeStressMeasurement
+    domain_of:
+    - OxidativeStressMeasurement
+    range: CytotoxicityMetrics
+    inlined: true
+    inlined_as_list: false
+  sample_collection_details:
+    name: sample_collection_details
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/sample_collection_details
+    description: Sample collection protocol details
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:sample_collection_details
+    owner: BALFSputumMeasurement
+    domain_of:
+    - BALFSputumMeasurement
+    range: SampleCollection
+    inlined: true
+    inlined_as_list: false
+  inflammatory_cell_profile:
+    name: inflammatory_cell_profile
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/inflammatory_cell_profile
+    description: Inflammatory cell type profile
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:inflammatory_cell_profile
+    owner: BALFSputumMeasurement
+    domain_of:
+    - BALFSputumMeasurement
+    range: InflammatoryCellProfile
+    inlined: true
+    inlined_as_list: false
+  microbiome_analysis:
+    name: microbiome_analysis
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/microbiome_analysis
+    description: Microbiome composition analysis
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:microbiome_analysis
+    owner: BALFSputumMeasurement
+    domain_of:
+    - BALFSputumMeasurement
+    range: MicrobiomeAnalysis
+    inlined: true
+    inlined_as_list: false
+  cytokine_levels:
+    name: cytokine_levels
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/cytokine_levels
+    description: Cytokine and chemokine levels
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:cytokine_levels
+    owner: BALFSputumMeasurement
+    domain_of:
+    - BALFSputumMeasurement
+    range: string
+    multivalued: true
+  protein_concentration:
+    name: protein_concentration
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/protein_concentration
+    description: Total protein concentration
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:protein_concentration
+    owner: BALFSputumMeasurement
+    domain_of:
+    - BALFSputumMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  cell_free_dna:
+    name: cell_free_dna
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/cell_free_dna
+    description: Cell-free DNA measurement
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:cell_free_dna
+    owner: BALFSputumMeasurement
+    domain_of:
+    - BALFSputumMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  fev1:
+    name: fev1
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/fev1
+    description: Forced expiratory volume in 1 second
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:fev1
+    owner: LungFunctionMeasurement
+    domain_of:
+    - LungFunctionMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  fvc:
+    name: fvc
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/fvc
+    description: Forced vital capacity
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:fvc
+    owner: LungFunctionMeasurement
+    domain_of:
+    - LungFunctionMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  fev1_fvc_ratio:
+    name: fev1_fvc_ratio
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/fev1_fvc_ratio
+    description: Ratio of FEV1 to FVC
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:fev1_fvc_ratio
+    owner: LungFunctionMeasurement
+    domain_of:
+    - LungFunctionMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  fef25_75:
+    name: fef25_75
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/fef25_75
+    description: Forced expiratory flow 25-75%
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:fef25_75
+    owner: LungFunctionMeasurement
+    domain_of:
+    - LungFunctionMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  bronchodilator_response:
+    name: bronchodilator_response
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/bronchodilator_response
+    description: Response to bronchodilator
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:bronchodilator_response
+    owner: LungFunctionMeasurement
+    domain_of:
+    - LungFunctionMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  decline_rate:
+    name: decline_rate
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/decline_rate
+    description: Longitudinal decline rate
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:decline_rate
+    owner: LungFunctionMeasurement
+    domain_of:
+    - LungFunctionMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  dlco:
+    name: dlco
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/dlco
+    description: Diffusing capacity of the lung for carbon monoxide
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:dlco
+    owner: LungFunctionMeasurement
+    domain_of:
+    - LungFunctionMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  feno:
+    name: feno
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/feno
+    description: Fractional exhaled nitric oxide
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:feno
+    owner: LungFunctionMeasurement
+    domain_of:
+    - LungFunctionMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  egfr_phosphorylation:
+    name: egfr_phosphorylation
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/egfr_phosphorylation
+    description: EGFR phosphorylation levels
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:egfr_phosphorylation
+    owner: EGFRSignalingMeasurement
+    domain_of:
+    - EGFRSignalingMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  downstream_kinase_activation:
+    name: downstream_kinase_activation
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/downstream_kinase_activation
+    description: Activation levels of downstream kinases (ERK, AKT)
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:downstream_kinase_activation
+    owner: EGFRSignalingMeasurement
+    domain_of:
+    - EGFRSignalingMeasurement
+    range: string
+  ligand_expression_levels:
+    name: ligand_expression_levels
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/ligand_expression_levels
+    description: Expression levels of EGFR ligands
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:ligand_expression_levels
+    owner: EGFRSignalingMeasurement
+    domain_of:
+    - EGFRSignalingMeasurement
+    range: string
+    multivalued: true
+  pathway_biomarkers:
+    name: pathway_biomarkers
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/pathway_biomarkers
+    description: Pathway-specific biomarker signatures
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:pathway_biomarkers
+    owner: EGFRSignalingMeasurement
+    domain_of:
+    - EGFRSignalingMeasurement
+    range: string
+    multivalued: true
+  foxj_mrna_level:
+    name: foxj_mrna_level
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/foxj_mrna_level
+    description: FoxJ mRNA expression level
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:foxj_mrna_level
+    owner: FoxJExpressionMeasurement
+    domain_of:
+    - FoxJExpressionMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  foxj_protein_level:
+    name: foxj_protein_level
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/foxj_protein_level
+    description: FoxJ protein level
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:foxj_protein_level
+    owner: FoxJExpressionMeasurement
+    domain_of:
+    - FoxJExpressionMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  percentage_foxj_positive_cells:
+    name: percentage_foxj_positive_cells
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/percentage_foxj_positive_cells
+    description: Percentage of FoxJ-positive cells
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:percentage_foxj_positive_cells
+    owner: FoxJExpressionMeasurement
+    domain_of:
+    - FoxJExpressionMeasurement
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  frame_rate:
+    name: frame_rate
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/frame_rate
+    description: Image acquisition frame rate
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:frame_rate
+    owner: ImagingProtocol
+    domain_of:
+    - ImagingProtocol
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  imaging_duration:
+    name: imaging_duration
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/imaging_duration
+    description: Duration of imaging session
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:imaging_duration
+    owner: ImagingProtocol
+    domain_of:
+    - ImagingProtocol
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  imaging_intervals:
+    name: imaging_intervals
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/imaging_intervals
+    description: Time intervals between image acquisitions
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:imaging_intervals
+    owner: ImagingProtocol
+    domain_of:
+    - ImagingProtocol
+    range: string
+  spatial_resolution:
+    name: spatial_resolution
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/spatial_resolution
+    description: Spatial resolution of imaging
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:spatial_resolution
+    owner: ImagingProtocol
+    domain_of:
+    - ImagingProtocol
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  probe_positioning:
+    name: probe_positioning
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/probe_positioning
+    description: Probe or sensor positioning protocol
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:probe_positioning
+    owner: ImagingProtocol
+    domain_of:
+    - ImagingProtocol
+    range: string
+  fluorophore_type:
+    name: fluorophore_type
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/fluorophore_type
+    description: Type of fluorophore used
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:fluorophore_type
+    owner: FluorescentLabel
+    domain_of:
+    - FluorescentLabel
+    range: string
+  concentration:
+    name: concentration
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/concentration
+    description: Concentration of reagent or compound
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:concentration
+    owner: FluorescentLabel
+    domain_of:
+    - FluorescentLabel
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  wavelength:
+    name: wavelength
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/wavelength
+    description: Wavelength for excitation or emission
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:wavelength
+    owner: FluorescentLabel
+    domain_of:
+    - FluorescentLabel
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  control_method:
+    name: control_method
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/control_method
+    description: Method used for control
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:control_method
+    owner: EvaporationControl
+    domain_of:
+    - EvaporationControl
+    range: string
+  material_used:
+    name: material_used
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/material_used
+    description: Material used in protocol
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:material_used
+    owner: EvaporationControl
+    domain_of:
+    - EvaporationControl
+    range: string
+  probe_type:
+    name: probe_type
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/probe_type
+    description: Type of probe used
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:probe_type
+    owner: ROSProbe
+    domain_of:
+    - ROSProbe
+    range: string
+  loading_conditions:
+    name: loading_conditions
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/loading_conditions
+    description: Conditions for loading probe or dye
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:loading_conditions
+    owner: ROSProbe
+    domain_of:
+    - ROSProbe
+    range: string
+  detection_wavelength:
+    name: detection_wavelength
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/detection_wavelength
+    description: Wavelength for detection
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:detection_wavelength
+    owner: ROSProbe
+    domain_of:
+    - ROSProbe
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  detection_type:
+    name: detection_type
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/detection_type
+    description: Type of detection method
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:detection_type
+    owner: DetectionMethod
+    domain_of:
+    - DetectionMethod
+    range: string
+  sensitivity:
+    name: sensitivity
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/sensitivity
+    description: Sensitivity of detection method
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:sensitivity
+    owner: DetectionMethod
+    domain_of:
+    - DetectionMethod
+    range: string
+  technical_replicates:
+    name: technical_replicates
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/technical_replicates
+    description: Number of technical replicates
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:technical_replicates
+    owner: DetectionMethod
+    domain_of:
+    - DetectionMethod
+    range: integer
+  collection_method:
+    name: collection_method
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/collection_method
+    description: Method for sample collection
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:collection_method
+    owner: SampleCollection
+    domain_of:
+    - SampleCollection
+    range: string
+  processing_time:
+    name: processing_time
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/processing_time
+    description: Time from collection to processing
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:processing_time
+    owner: SampleCollection
+    domain_of:
+    - SampleCollection
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  storage_conditions:
+    name: storage_conditions
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/storage_conditions
+    description: Storage temperature and conditions
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:storage_conditions
+    owner: SampleCollection
+    domain_of:
+    - SampleCollection
+    range: string
+  sample_volume:
+    name: sample_volume
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/sample_volume
+    description: Volume of sample collected
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:sample_volume
+    owner: SampleCollection
+    domain_of:
+    - SampleCollection
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  culture_medium:
+    name: culture_medium
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/culture_medium
+    description: Cell culture medium formulation
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:culture_medium
+    owner: CellCultureConditions
+    domain_of:
+    - CellCultureConditions
+    range: string
+  days_at_ali:
+    name: days_at_ali
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/days_at_ali
+    description: Days at air-liquid interface
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:days_at_ali
+    owner: CellCultureConditions
+    domain_of:
+    - CellCultureConditions
+    range: integer
+  passage_number:
+    name: passage_number
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/passage_number
+    description: Cell passage number
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:passage_number
+    owner: CellCultureConditions
+    domain_of:
+    - CellCultureConditions
+    range: integer
+  substrate_type:
+    name: substrate_type
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/substrate_type
+    description: Type of culture substrate
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:substrate_type
+    owner: CellCultureConditions
+    domain_of:
+    - CellCultureConditions
+    range: string
+  temperature:
+    name: temperature
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/temperature
+    description: Temperature setting
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:temperature
+    owner: CellCultureConditions
+    domain_of:
+    - CellCultureConditions
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  humidity:
+    name: humidity
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/humidity
+    description: Humidity level
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:humidity
+    owner: CellCultureConditions
+    domain_of:
+    - CellCultureConditions
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  co2_percentage:
+    name: co2_percentage
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/co2_percentage
+    description: CO2 percentage in incubator
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:co2_percentage
+    owner: CellCultureConditions
+    domain_of:
+    - CellCultureConditions
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  donor_count:
+    name: donor_count
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/donor_count
+    description: Number of unique donors
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:donor_count
+    owner: CellCultureConditions
+    domain_of:
+    - CellCultureConditions
+    range: integer
+  replicates_per_donor:
+    name: replicates_per_donor
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/replicates_per_donor
+    description: Number of replicates per donor
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:replicates_per_donor
+    owner: CellCultureConditions
+    domain_of:
+    - CellCultureConditions
+    range: integer
+  staining_type:
+    name: staining_type
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/staining_type
+    description: Type of staining (histological, immunofluorescence)
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:staining_type
+    owner: StainingProtocol
+    domain_of:
+    - StainingProtocol
+    range: string
+  antibodies_used:
+    name: antibodies_used
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/antibodies_used
+    description: Antibodies used in staining
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:antibodies_used
+    owner: StainingProtocol
+    domain_of:
+    - StainingProtocol
+    range: string
+    multivalued: true
+  fixation_method:
+    name: fixation_method
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/fixation_method
+    description: Method for tissue/cell fixation
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:fixation_method
+    owner: StainingProtocol
+    domain_of:
+    - StainingProtocol
+    range: string
+  incubation_conditions:
+    name: incubation_conditions
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/incubation_conditions
+    description: Incubation time and temperature
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:incubation_conditions
+    owner: StainingProtocol
+    domain_of:
+    - StainingProtocol
+    range: string
+  analysis_method:
+    name: analysis_method
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/analysis_method
+    description: Method for analysis (qRT-PCR, RNA-seq)
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:analysis_method
+    owner: GeneExpressionAnalysis
+    domain_of:
+    - GeneExpressionAnalysis
+    range: string
+  normalization_genes:
+    name: normalization_genes
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/normalization_genes
+    description: Genes used for normalization
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:normalization_genes
+    owner: GeneExpressionAnalysis
+    domain_of:
+    - GeneExpressionAnalysis
+    range: string
+    multivalued: true
+  primers_used:
+    name: primers_used
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/primers_used
+    description: PCR primers used
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:primers_used
+    owner: GeneExpressionAnalysis
+    domain_of:
+    - GeneExpressionAnalysis
+    range: string
+    multivalued: true
+  sequencing_platform:
+    name: sequencing_platform
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/sequencing_platform
+    description: Platform used for sequencing
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:sequencing_platform
+    owner: GeneExpressionAnalysis
+    domain_of:
+    - GeneExpressionAnalysis
+    range: string
+  sequencing_depth:
+    name: sequencing_depth
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/sequencing_depth
+    description: Sequencing depth or read count
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:sequencing_depth
+    owner: GeneExpressionAnalysis
+    domain_of:
+    - GeneExpressionAnalysis
+    range: integer
+  neutrophil_percentage:
+    name: neutrophil_percentage
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/neutrophil_percentage
+    description: Percentage of neutrophils
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:neutrophil_percentage
+    owner: InflammatoryCellProfile
+    domain_of:
+    - InflammatoryCellProfile
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  eosinophil_percentage:
+    name: eosinophil_percentage
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/eosinophil_percentage
+    description: Percentage of eosinophils
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:eosinophil_percentage
+    owner: InflammatoryCellProfile
+    domain_of:
+    - InflammatoryCellProfile
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  macrophage_percentage:
+    name: macrophage_percentage
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/macrophage_percentage
+    description: Percentage of macrophages
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:macrophage_percentage
+    owner: InflammatoryCellProfile
+    domain_of:
+    - InflammatoryCellProfile
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  lymphocyte_percentage:
+    name: lymphocyte_percentage
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/lymphocyte_percentage
+    description: Percentage of lymphocytes
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:lymphocyte_percentage
+    owner: InflammatoryCellProfile
+    domain_of:
+    - InflammatoryCellProfile
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  total_cell_count:
+    name: total_cell_count
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/total_cell_count
+    description: Total cell count
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:total_cell_count
+    owner: InflammatoryCellProfile
+    domain_of:
+    - InflammatoryCellProfile
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  alpha_diversity:
+    name: alpha_diversity
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/alpha_diversity
+    description: Alpha diversity metric
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:alpha_diversity
+    owner: MicrobiomeAnalysis
+    domain_of:
+    - MicrobiomeAnalysis
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  beta_diversity:
+    name: beta_diversity
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/beta_diversity
+    description: Beta diversity metric
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:beta_diversity
+    owner: MicrobiomeAnalysis
+    domain_of:
+    - MicrobiomeAnalysis
+    range: string
+  taxonomic_abundance:
+    name: taxonomic_abundance
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/taxonomic_abundance
+    description: Taxonomic abundance data
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:taxonomic_abundance
+    owner: MicrobiomeAnalysis
+    domain_of:
+    - MicrobiomeAnalysis
+    range: string
+    multivalued: true
+  sequencing_primers:
+    name: sequencing_primers
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/sequencing_primers
+    description: Primers used for sequencing (16S, ITS)
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:sequencing_primers
+    owner: MicrobiomeAnalysis
+    domain_of:
+    - MicrobiomeAnalysis
+    range: string
+    multivalued: true
+  dna_extraction_method:
+    name: dna_extraction_method
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/dna_extraction_method
+    description: Method for DNA extraction
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:dna_extraction_method
+    owner: MicrobiomeAnalysis
+    domain_of:
+    - MicrobiomeAnalysis
+    range: string
+  teer_value:
+    name: teer_value
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/teer_value
+    description: Transepithelial electrical resistance value
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:teer_value
+    owner: BarrierIntegrity
+    domain_of:
+    - BarrierIntegrity
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  permeability_coefficient:
+    name: permeability_coefficient
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/permeability_coefficient
+    description: Permeability coefficient
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:permeability_coefficient
+    owner: BarrierIntegrity
+    domain_of:
+    - BarrierIntegrity
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  measurement_timepoint:
+    name: measurement_timepoint
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/measurement_timepoint
+    description: Timepoint of measurement
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:measurement_timepoint
+    owner: BarrierIntegrity
+    domain_of:
+    - BarrierIntegrity
+    range: string
+  ldh_release:
+    name: ldh_release
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/ldh_release
+    description: Lactate dehydrogenase release
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:ldh_release
+    owner: CytotoxicityMetrics
+    domain_of:
+    - CytotoxicityMetrics
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  mtt_reduction:
+    name: mtt_reduction
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/mtt_reduction
+    description: MTT reduction assay result
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:mtt_reduction
+    owner: CytotoxicityMetrics
+    domain_of:
+    - CytotoxicityMetrics
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  viability_percentage:
+    name: viability_percentage
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/viability_percentage
+    description: Cell viability percentage
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:viability_percentage
+    owner: CytotoxicityMetrics
+    domain_of:
+    - CytotoxicityMetrics
+    range: QuantityValue
+    inlined: true
+    inlined_as_list: true
+  apoptosis_markers:
+    name: apoptosis_markers
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/apoptosis_markers
+    description: Apoptosis marker levels
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    slot_uri: outcomes_model:apoptosis_markers
+    owner: CytotoxicityMetrics
+    domain_of:
+    - CytotoxicityMetrics
+    range: string
+    multivalued: true
   authors:
     name: authors
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/authors
@@ -1023,8 +2211,99 @@ classes:
     - ontology_mappings
     - cftr_specific_current
     - inhibitor_sensitive_current
-    - cell_culture_conditions
+    - cell_culture_details
     class_uri: outcomes_model:CFTRFunctionMeasurement
+  BALFSputumMeasurement:
+    name: BALFSputumMeasurement
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/BALFSputumMeasurement
+    description: Measurement of bronchoalveolar lavage fluid or sputum components
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    is_a: MeasurementProcess
+    slots:
+    - id
+    - name
+    - description
+    - input_sample
+    - method_assay
+    - output_measurement
+    - context_fields
+    - protocol_notes
+    - ontology_mappings
+    - sample_collection_details
+    - inflammatory_cell_profile
+    - microbiome_analysis
+    - cytokine_levels
+    - protein_concentration
+    - cell_free_dna
+    class_uri: outcomes_model:BALFSputumMeasurement
+  LungFunctionMeasurement:
+    name: LungFunctionMeasurement
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/LungFunctionMeasurement
+    description: Measurement of lung function parameters
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    is_a: MeasurementProcess
+    slots:
+    - id
+    - name
+    - description
+    - input_sample
+    - method_assay
+    - output_measurement
+    - context_fields
+    - protocol_notes
+    - ontology_mappings
+    - fev1
+    - fvc
+    - fev1_fvc_ratio
+    - fef25_75
+    - bronchodilator_response
+    - decline_rate
+    - dlco
+    - feno
+    class_uri: outcomes_model:LungFunctionMeasurement
+  EGFRSignalingMeasurement:
+    name: EGFRSignalingMeasurement
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/EGFRSignalingMeasurement
+    description: Measurement of EGFR pathway activation and signaling
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    is_a: MeasurementProcess
+    slots:
+    - id
+    - name
+    - description
+    - input_sample
+    - method_assay
+    - output_measurement
+    - context_fields
+    - protocol_notes
+    - ontology_mappings
+    - egfr_phosphorylation
+    - downstream_kinase_activation
+    - ligand_expression_levels
+    - pathway_biomarkers
+    class_uri: outcomes_model:EGFRSignalingMeasurement
+  FoxJExpressionMeasurement:
+    name: FoxJExpressionMeasurement
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/FoxJExpressionMeasurement
+    description: Measurement of FoxJ transcription factor expression
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    is_a: MeasurementProcess
+    slots:
+    - id
+    - name
+    - description
+    - input_sample
+    - method_assay
+    - output_measurement
+    - context_fields
+    - protocol_notes
+    - ontology_mappings
+    - foxj_mrna_level
+    - foxj_protein_level
+    - percentage_foxj_positive_cells
+    - staining_protocol
+    - gene_expression_analysis
+    class_uri: outcomes_model:FoxJExpressionMeasurement
   CiliaBeatFrequencyMeasurement:
     name: CiliaBeatFrequencyMeasurement
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/CiliaBeatFrequencyMeasurement
@@ -1043,7 +2322,12 @@ classes:
     - ontology_mappings
     - beat_frequency_hz
     - active_area_percentage
-    - imaging_conditions
+    - imaging_protocol
+    - cilia_per_cell
+    - cilia_length
+    - percentage_ciliated_cells
+    - ciliary_motion_patterns
+    - cell_type_ratios
     class_uri: outcomes_model:CiliaBeatFrequencyMeasurement
   ASLHeightMeasurement:
     name: ASLHeightMeasurement
@@ -1063,7 +2347,10 @@ classes:
     - ontology_mappings
     - asl_height_um
     - periciliary_layer_depth
-    - imaging_modality
+    - imaging_protocol
+    - ion_composition
+    - fluorescent_labeling
+    - evaporation_prevention
     class_uri: outcomes_model:ASLHeightMeasurement
   MucociliaryClearanceMeasurement:
     name: MucociliaryClearanceMeasurement
@@ -1084,6 +2371,13 @@ classes:
     - transport_rate
     - directionality
     - particle_tracking_method
+    - fluorescent_tracers
+    - mucus_layer_thickness
+    - bacterial_biofilm_details
+    - viral_infection_details
+    - biofilm_clearance_rate
+    - bacterial_load
+    - viral_spread_rate
     class_uri: outcomes_model:MucociliaryClearanceMeasurement
   GobletCellMeasurement:
     name: GobletCellMeasurement
@@ -1103,7 +2397,12 @@ classes:
     - ontology_mappings
     - goblet_cell_count
     - mucin_expression_level
-    - staining_method
+    - staining_protocol
+    - gene_expression_analysis
+    - mucin_protein_concentration
+    - goblet_to_ciliated_ratio
+    - pathway_enrichment_scores
+    - dose_response_data
     class_uri: outcomes_model:GobletCellMeasurement
   OxidativeStressMeasurement:
     name: OxidativeStressMeasurement
@@ -1124,6 +2423,13 @@ classes:
     - ros_level
     - lipid_peroxidation
     - antioxidant_capacity
+    - ros_probe
+    - detection_method_details
+    - protein_oxidation_markers
+    - dna_damage_markers
+    - antioxidant_enzyme_activities
+    - barrier_integrity
+    - cytotoxicity_metrics
     class_uri: outcomes_model:OxidativeStressMeasurement
   Publication:
     name: Publication
@@ -1155,9 +2461,209 @@ classes:
         - value: PMID:12345678
         - value: DOI:10.1234/example
     class_uri: outcomes_model:Publication
+  ImagingProtocol:
+    name: ImagingProtocol
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/ImagingProtocol
+    description: Details about imaging parameters and protocols
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    is_a: NamedEntity
+    slots:
+    - id
+    - name
+    - description
+    - imaging_modality
+    - frame_rate
+    - imaging_duration
+    - imaging_intervals
+    - spatial_resolution
+    - probe_positioning
+    class_uri: outcomes_model:ImagingProtocol
+  FluorescentLabel:
+    name: FluorescentLabel
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/FluorescentLabel
+    description: Fluorescent labeling or tracer used in measurement
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    is_a: NamedEntity
+    slots:
+    - id
+    - name
+    - description
+    - fluorophore_type
+    - concentration
+    - wavelength
+    class_uri: outcomes_model:FluorescentLabel
+  EvaporationControl:
+    name: EvaporationControl
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/EvaporationControl
+    description: Method used to prevent evaporation during measurement
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    is_a: NamedEntity
+    slots:
+    - id
+    - name
+    - description
+    - control_method
+    - material_used
+    class_uri: outcomes_model:EvaporationControl
+  ROSProbe:
+    name: ROSProbe
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/ROSProbe
+    description: Reactive oxygen species probe and detection details
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    is_a: NamedEntity
+    slots:
+    - id
+    - name
+    - description
+    - probe_type
+    - loading_conditions
+    - detection_wavelength
+    class_uri: outcomes_model:ROSProbe
+  DetectionMethod:
+    name: DetectionMethod
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/DetectionMethod
+    description: Method used for detecting or measuring analytes
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    is_a: NamedEntity
+    slots:
+    - id
+    - name
+    - description
+    - detection_type
+    - instrumentation
+    - sensitivity
+    - technical_replicates
+    class_uri: outcomes_model:DetectionMethod
+  SampleCollection:
+    name: SampleCollection
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/SampleCollection
+    description: Details about biological sample collection
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    is_a: NamedEntity
+    slots:
+    - id
+    - name
+    - description
+    - collection_method
+    - processing_time
+    - storage_conditions
+    - sample_volume
+    class_uri: outcomes_model:SampleCollection
+  CellCultureConditions:
+    name: CellCultureConditions
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/CellCultureConditions
+    description: Detailed cell culture parameters
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    is_a: NamedEntity
+    slots:
+    - id
+    - name
+    - description
+    - culture_medium
+    - days_at_ali
+    - passage_number
+    - substrate_type
+    - temperature
+    - humidity
+    - co2_percentage
+    - donor_count
+    - replicates_per_donor
+    class_uri: outcomes_model:CellCultureConditions
+  StainingProtocol:
+    name: StainingProtocol
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/StainingProtocol
+    description: Histological or immunofluorescence staining protocol
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    is_a: NamedEntity
+    slots:
+    - id
+    - name
+    - description
+    - staining_type
+    - antibodies_used
+    - fixation_method
+    - incubation_conditions
+    class_uri: outcomes_model:StainingProtocol
+  GeneExpressionAnalysis:
+    name: GeneExpressionAnalysis
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/GeneExpressionAnalysis
+    description: Gene expression measurement methodology
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    is_a: NamedEntity
+    slots:
+    - id
+    - name
+    - description
+    - analysis_method
+    - normalization_genes
+    - primers_used
+    - sequencing_platform
+    - sequencing_depth
+    class_uri: outcomes_model:GeneExpressionAnalysis
+  InflammatoryCellProfile:
+    name: InflammatoryCellProfile
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/InflammatoryCellProfile
+    description: Profile of inflammatory cell types and counts
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    is_a: NamedEntity
+    slots:
+    - id
+    - name
+    - description
+    - neutrophil_percentage
+    - eosinophil_percentage
+    - macrophage_percentage
+    - lymphocyte_percentage
+    - total_cell_count
+    class_uri: outcomes_model:InflammatoryCellProfile
+  MicrobiomeAnalysis:
+    name: MicrobiomeAnalysis
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/MicrobiomeAnalysis
+    description: Microbiome composition analysis
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    is_a: NamedEntity
+    slots:
+    - id
+    - name
+    - description
+    - alpha_diversity
+    - beta_diversity
+    - taxonomic_abundance
+    - sequencing_primers
+    - dna_extraction_method
+    class_uri: outcomes_model:MicrobiomeAnalysis
+  BarrierIntegrity:
+    name: BarrierIntegrity
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/BarrierIntegrity
+    description: Epithelial barrier integrity measurements
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    is_a: NamedEntity
+    slots:
+    - id
+    - name
+    - description
+    - teer_value
+    - permeability_coefficient
+    - measurement_timepoint
+    class_uri: outcomes_model:BarrierIntegrity
+  CytotoxicityMetrics:
+    name: CytotoxicityMetrics
+    definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/CytotoxicityMetrics
+    description: Cell viability and cytotoxicity measurements
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    is_a: NamedEntity
+    slots:
+    - id
+    - name
+    - description
+    - ldh_release
+    - mtt_reduction
+    - viability_percentage
+    - apoptosis_markers
+    class_uri: outcomes_model:CytotoxicityMetrics
 metamodel_version: 1.7.0
 source_file: outcomes_working_group.yaml
-source_file_date: '2025-11-12T21:39:00'
-source_file_size: 10912
-generation_date: '2025-11-12T21:39:09'
+source_file_date: '2025-11-12T22:46:07'
+source_file_size: 26914
+generation_date: '2025-11-12T22:46:17'
 

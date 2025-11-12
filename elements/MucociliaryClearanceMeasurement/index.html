@@ -266,6 +266,30 @@
       MeasurementProcess &lt;|-- MucociliaryClearanceMeasurement
         click MeasurementProcess href "../MeasurementProcess/"
 
+      MucociliaryClearanceMeasurement : bacterial_biofilm_details
+
+      MucociliaryClearanceMeasurement : bacterial_load
+
+
+
+
+
+        MucociliaryClearanceMeasurement --&gt; "0..1" QuantityValue : bacterial_load
+        click QuantityValue href "../QuantityValue/"
+
+
+
+      MucociliaryClearanceMeasurement : biofilm_clearance_rate
+
+
+
+
+
+        MucociliaryClearanceMeasurement --&gt; "0..1" QuantityValue : biofilm_clearance_rate
+        click QuantityValue href "../QuantityValue/"
+
+
+
       MucociliaryClearanceMeasurement : context_fields
 
 
@@ -280,6 +304,17 @@
       MucociliaryClearanceMeasurement : description
 
       MucociliaryClearanceMeasurement : directionality
+
+      MucociliaryClearanceMeasurement : fluorescent_tracers
+
+
+
+
+
+        MucociliaryClearanceMeasurement --&gt; "*" FluorescentLabel : fluorescent_tracers
+        click FluorescentLabel href "../FluorescentLabel/"
+
+
 
       MucociliaryClearanceMeasurement : id
 
@@ -302,6 +337,17 @@
 
         MucociliaryClearanceMeasurement --&gt; "0..1" Assay : method_assay
         click Assay href "../Assay/"
+
+
+
+      MucociliaryClearanceMeasurement : mucus_layer_thickness
+
+
+
+
+
+        MucociliaryClearanceMeasurement --&gt; "0..1" QuantityValue : mucus_layer_thickness
+        click QuantityValue href "../QuantityValue/"
 
 
 
@@ -331,6 +377,19 @@
 
 
         MucociliaryClearanceMeasurement --&gt; "0..1" QuantityValue : transport_rate
+        click QuantityValue href "../QuantityValue/"
+
+
+
+      MucociliaryClearanceMeasurement : viral_infection_details
+
+      MucociliaryClearanceMeasurement : viral_spread_rate
+
+
+
+
+
+        MucociliaryClearanceMeasurement --&gt; "0..1" QuantityValue : viral_spread_rate
         click QuantityValue href "../QuantityValue/"
 
 
@@ -374,6 +433,48 @@
 <td><a href="../particle_tracking_method/">particle_tracking_method</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Method used for tracking particles or mucus</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../fluorescent_tracers/">fluorescent_tracers</a></td>
+<td>* <br/> <a href="../FluorescentLabel/">FluorescentLabel</a></td>
+<td>Fluorescent tracers used for tracking</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../mucus_layer_thickness/">mucus_layer_thickness</a></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>Thickness of mucus layer</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../bacterial_biofilm_details/">bacterial_biofilm_details</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Details about bacterial biofilm preparation and characteristics</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../viral_infection_details/">viral_infection_details</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Details about viral infection protocol</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../biofilm_clearance_rate/">biofilm_clearance_rate</a></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>Rate of bacterial biofilm clearance</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../bacterial_load/">bacterial_load</a></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>Bacterial load (CFU or similar)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../viral_spread_rate/">viral_spread_rate</a></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>Rate of viral spread</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -468,6 +569,13 @@ slots:
 - transport_rate
 - directionality
 - particle_tracking_method
+- fluorescent_tracers
+- mucus_layer_thickness
+- bacterial_biofilm_details
+- viral_infection_details
+- biofilm_clearance_rate
+- bacterial_load
+- viral_spread_rate
 
 </code></pre>
 </details>
@@ -509,6 +617,82 @@ attributes:
     domain_of:
     - MucociliaryClearanceMeasurement
     range: string
+  fluorescent_tracers:
+    name: fluorescent_tracers
+    description: Fluorescent tracers used for tracking
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: fluorescent_tracers
+    owner: MucociliaryClearanceMeasurement
+    domain_of:
+    - MucociliaryClearanceMeasurement
+    range: FluorescentLabel
+    multivalued: true
+    inlined: true
+  mucus_layer_thickness:
+    name: mucus_layer_thickness
+    description: Thickness of mucus layer
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: mucus_layer_thickness
+    owner: MucociliaryClearanceMeasurement
+    domain_of:
+    - MucociliaryClearanceMeasurement
+    range: QuantityValue
+    inlined: true
+  bacterial_biofilm_details:
+    name: bacterial_biofilm_details
+    description: Details about bacterial biofilm preparation and characteristics
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: bacterial_biofilm_details
+    owner: MucociliaryClearanceMeasurement
+    domain_of:
+    - MucociliaryClearanceMeasurement
+    range: string
+  viral_infection_details:
+    name: viral_infection_details
+    description: Details about viral infection protocol
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: viral_infection_details
+    owner: MucociliaryClearanceMeasurement
+    domain_of:
+    - MucociliaryClearanceMeasurement
+    range: string
+  biofilm_clearance_rate:
+    name: biofilm_clearance_rate
+    description: Rate of bacterial biofilm clearance
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: biofilm_clearance_rate
+    owner: MucociliaryClearanceMeasurement
+    domain_of:
+    - MucociliaryClearanceMeasurement
+    range: QuantityValue
+    inlined: true
+  bacterial_load:
+    name: bacterial_load
+    description: Bacterial load (CFU or similar)
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: bacterial_load
+    owner: MucociliaryClearanceMeasurement
+    domain_of:
+    - MucociliaryClearanceMeasurement
+    range: QuantityValue
+    inlined: true
+  viral_spread_rate:
+    name: viral_spread_rate
+    description: Rate of viral spread
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: viral_spread_rate
+    owner: MucociliaryClearanceMeasurement
+    domain_of:
+    - MucociliaryClearanceMeasurement
+    range: QuantityValue
+    inlined: true
   input_sample:
     name: input_sample
     description: Description of input samples and manipulations

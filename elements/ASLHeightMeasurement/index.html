@@ -290,9 +290,40 @@
 
       ASLHeightMeasurement : description
 
+      ASLHeightMeasurement : evaporation_prevention
+
+
+
+
+
+        ASLHeightMeasurement --&gt; "0..1" EvaporationControl : evaporation_prevention
+        click EvaporationControl href "../EvaporationControl/"
+
+
+
+      ASLHeightMeasurement : fluorescent_labeling
+
+
+
+
+
+        ASLHeightMeasurement --&gt; "0..1" FluorescentLabel : fluorescent_labeling
+        click FluorescentLabel href "../FluorescentLabel/"
+
+
+
       ASLHeightMeasurement : id
 
-      ASLHeightMeasurement : imaging_modality
+      ASLHeightMeasurement : imaging_protocol
+
+
+
+
+
+        ASLHeightMeasurement --&gt; "0..1" ImagingProtocol : imaging_protocol
+        click ImagingProtocol href "../ImagingProtocol/"
+
+
 
       ASLHeightMeasurement : input_sample
 
@@ -304,6 +335,8 @@
         click InputSample href "../InputSample/"
 
 
+
+      ASLHeightMeasurement : ion_composition
 
       ASLHeightMeasurement : method_assay
 
@@ -380,9 +413,27 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../imaging_modality/">imaging_modality</a></td>
+<td><a href="../imaging_protocol/">imaging_protocol</a></td>
+<td>0..1 <br/> <a href="../ImagingProtocol/">ImagingProtocol</a></td>
+<td>Imaging protocol and parameters</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ion_composition/">ion_composition</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Imaging modality used (confocal, OCT, etc</td>
+<td>Ionic composition (Cl⁻, Na⁺, K⁺)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../fluorescent_labeling/">fluorescent_labeling</a></td>
+<td>0..1 <br/> <a href="../FluorescentLabel/">FluorescentLabel</a></td>
+<td>Fluorescent label or tracer used</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../evaporation_prevention/">evaporation_prevention</a></td>
+<td>0..1 <br/> <a href="../EvaporationControl/">EvaporationControl</a></td>
+<td>Method used to prevent evaporation</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -476,7 +527,10 @@ is_a: MeasurementProcess
 slots:
 - asl_height_um
 - periciliary_layer_depth
-- imaging_modality
+- imaging_protocol
+- ion_composition
+- fluorescent_labeling
+- evaporation_prevention
 
 </code></pre>
 </details>
@@ -509,16 +563,50 @@ attributes:
     - ASLHeightMeasurement
     range: QuantityValue
     inlined: true
-  imaging_modality:
-    name: imaging_modality
-    description: Imaging modality used (confocal, OCT, etc.)
+  imaging_protocol:
+    name: imaging_protocol
+    description: Imaging protocol and parameters
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
-    alias: imaging_modality
+    alias: imaging_protocol
+    owner: ASLHeightMeasurement
+    domain_of:
+    - CiliaBeatFrequencyMeasurement
+    - ASLHeightMeasurement
+    range: ImagingProtocol
+    inlined: true
+  ion_composition:
+    name: ion_composition
+    description: Ionic composition (Cl⁻, Na⁺, K⁺)
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: ion_composition
     owner: ASLHeightMeasurement
     domain_of:
     - ASLHeightMeasurement
     range: string
+  fluorescent_labeling:
+    name: fluorescent_labeling
+    description: Fluorescent label or tracer used
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: fluorescent_labeling
+    owner: ASLHeightMeasurement
+    domain_of:
+    - ASLHeightMeasurement
+    range: FluorescentLabel
+    inlined: true
+  evaporation_prevention:
+    name: evaporation_prevention
+    description: Method used to prevent evaporation
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: evaporation_prevention
+    owner: ASLHeightMeasurement
+    domain_of:
+    - ASLHeightMeasurement
+    range: EvaporationControl
+    inlined: true
   input_sample:
     name: input_sample
     description: Description of input samples and manipulations

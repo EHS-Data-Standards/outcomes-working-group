@@ -288,6 +288,32 @@
 
 
 
+      CiliaBeatFrequencyMeasurement : cell_type_ratios
+
+      CiliaBeatFrequencyMeasurement : cilia_length
+
+
+
+
+
+        CiliaBeatFrequencyMeasurement --&gt; "0..1" QuantityValue : cilia_length
+        click QuantityValue href "../QuantityValue/"
+
+
+
+      CiliaBeatFrequencyMeasurement : cilia_per_cell
+
+
+
+
+
+        CiliaBeatFrequencyMeasurement --&gt; "0..1" QuantityValue : cilia_per_cell
+        click QuantityValue href "../QuantityValue/"
+
+
+
+      CiliaBeatFrequencyMeasurement : ciliary_motion_patterns
+
       CiliaBeatFrequencyMeasurement : context_fields
 
 
@@ -303,7 +329,16 @@
 
       CiliaBeatFrequencyMeasurement : id
 
-      CiliaBeatFrequencyMeasurement : imaging_conditions
+      CiliaBeatFrequencyMeasurement : imaging_protocol
+
+
+
+
+
+        CiliaBeatFrequencyMeasurement --&gt; "0..1" ImagingProtocol : imaging_protocol
+        click ImagingProtocol href "../ImagingProtocol/"
+
+
 
       CiliaBeatFrequencyMeasurement : input_sample
 
@@ -339,6 +374,17 @@
 
         CiliaBeatFrequencyMeasurement --&gt; "0..1" OutputMeasurement : output_measurement
         click OutputMeasurement href "../OutputMeasurement/"
+
+
+
+      CiliaBeatFrequencyMeasurement : percentage_ciliated_cells
+
+
+
+
+
+        CiliaBeatFrequencyMeasurement --&gt; "0..1" QuantityValue : percentage_ciliated_cells
+        click QuantityValue href "../QuantityValue/"
 
 
 
@@ -380,9 +426,39 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../imaging_conditions/">imaging_conditions</a></td>
+<td><a href="../imaging_protocol/">imaging_protocol</a></td>
+<td>0..1 <br/> <a href="../ImagingProtocol/">ImagingProtocol</a></td>
+<td>Imaging protocol and parameters</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../cilia_per_cell/">cilia_per_cell</a></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>Number of cilia per cell</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../cilia_length/">cilia_length</a></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>Length of cilia</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../percentage_ciliated_cells/">percentage_ciliated_cells</a></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>Percentage of cells that are ciliated</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ciliary_motion_patterns/">ciliary_motion_patterns</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Imaging parameters and conditions</td>
+<td>Patterns of ciliary motion</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../cell_type_ratios/">cell_type_ratios</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Ratios between different cell types</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -476,7 +552,12 @@ is_a: MeasurementProcess
 slots:
 - beat_frequency_hz
 - active_area_percentage
-- imaging_conditions
+- imaging_protocol
+- cilia_per_cell
+- cilia_length
+- percentage_ciliated_cells
+- ciliary_motion_patterns
+- cell_type_ratios
 
 </code></pre>
 </details>
@@ -509,12 +590,67 @@ attributes:
     - CiliaBeatFrequencyMeasurement
     range: QuantityValue
     inlined: true
-  imaging_conditions:
-    name: imaging_conditions
-    description: Imaging parameters and conditions
+  imaging_protocol:
+    name: imaging_protocol
+    description: Imaging protocol and parameters
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
-    alias: imaging_conditions
+    alias: imaging_protocol
+    owner: CiliaBeatFrequencyMeasurement
+    domain_of:
+    - CiliaBeatFrequencyMeasurement
+    - ASLHeightMeasurement
+    range: ImagingProtocol
+    inlined: true
+  cilia_per_cell:
+    name: cilia_per_cell
+    description: Number of cilia per cell
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: cilia_per_cell
+    owner: CiliaBeatFrequencyMeasurement
+    domain_of:
+    - CiliaBeatFrequencyMeasurement
+    range: QuantityValue
+    inlined: true
+  cilia_length:
+    name: cilia_length
+    description: Length of cilia
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: cilia_length
+    owner: CiliaBeatFrequencyMeasurement
+    domain_of:
+    - CiliaBeatFrequencyMeasurement
+    range: QuantityValue
+    inlined: true
+  percentage_ciliated_cells:
+    name: percentage_ciliated_cells
+    description: Percentage of cells that are ciliated
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: percentage_ciliated_cells
+    owner: CiliaBeatFrequencyMeasurement
+    domain_of:
+    - CiliaBeatFrequencyMeasurement
+    range: QuantityValue
+    inlined: true
+  ciliary_motion_patterns:
+    name: ciliary_motion_patterns
+    description: Patterns of ciliary motion
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: ciliary_motion_patterns
+    owner: CiliaBeatFrequencyMeasurement
+    domain_of:
+    - CiliaBeatFrequencyMeasurement
+    range: string
+  cell_type_ratios:
+    name: cell_type_ratios
+    description: Ratios between different cell types
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: cell_type_ratios
     owner: CiliaBeatFrequencyMeasurement
     domain_of:
     - CiliaBeatFrequencyMeasurement

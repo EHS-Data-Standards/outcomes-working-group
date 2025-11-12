@@ -279,6 +279,19 @@
 
       GobletCellMeasurement : description
 
+      GobletCellMeasurement : dose_response_data
+
+      GobletCellMeasurement : gene_expression_analysis
+
+
+
+
+
+        GobletCellMeasurement --&gt; "0..1" GeneExpressionAnalysis : gene_expression_analysis
+        click GeneExpressionAnalysis href "../GeneExpressionAnalysis/"
+
+
+
       GobletCellMeasurement : goblet_cell_count
 
 
@@ -286,6 +299,17 @@
 
 
         GobletCellMeasurement --&gt; "0..1" QuantityValue : goblet_cell_count
+        click QuantityValue href "../QuantityValue/"
+
+
+
+      GobletCellMeasurement : goblet_to_ciliated_ratio
+
+
+
+
+
+        GobletCellMeasurement --&gt; "0..1" QuantityValue : goblet_to_ciliated_ratio
         click QuantityValue href "../QuantityValue/"
 
 
@@ -325,6 +349,17 @@
 
 
 
+      GobletCellMeasurement : mucin_protein_concentration
+
+
+
+
+
+        GobletCellMeasurement --&gt; "0..1" QuantityValue : mucin_protein_concentration
+        click QuantityValue href "../QuantityValue/"
+
+
+
       GobletCellMeasurement : name
 
       GobletCellMeasurement : ontology_mappings
@@ -340,9 +375,20 @@
 
 
 
+      GobletCellMeasurement : pathway_enrichment_scores
+
       GobletCellMeasurement : protocol_notes
 
-      GobletCellMeasurement : staining_method
+      GobletCellMeasurement : staining_protocol
+
+
+
+
+
+        GobletCellMeasurement --&gt; "0..1" StainingProtocol : staining_protocol
+        click StainingProtocol href "../StainingProtocol/"
+
+
 
 
 </div>
@@ -380,9 +426,39 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../staining_method/">staining_method</a></td>
+<td><a href="../staining_protocol/">staining_protocol</a></td>
+<td>0..1 <br/> <a href="../StainingProtocol/">StainingProtocol</a></td>
+<td>Staining protocol details</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../gene_expression_analysis/">gene_expression_analysis</a></td>
+<td>0..1 <br/> <a href="../GeneExpressionAnalysis/">GeneExpressionAnalysis</a></td>
+<td>Gene expression analysis methodology</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../mucin_protein_concentration/">mucin_protein_concentration</a></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>Concentration of mucin protein</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../goblet_to_ciliated_ratio/">goblet_to_ciliated_ratio</a></td>
+<td>0..1 <br/> <a href="../QuantityValue/">QuantityValue</a></td>
+<td>Ratio of goblet cells to ciliated cells</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../pathway_enrichment_scores/">pathway_enrichment_scores</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Enrichment scores for biological pathways</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dose_response_data/">dose_response_data</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Histological staining method used</td>
+<td>Dose-response relationship data</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -476,7 +552,12 @@ is_a: MeasurementProcess
 slots:
 - goblet_cell_count
 - mucin_expression_level
-- staining_method
+- staining_protocol
+- gene_expression_analysis
+- mucin_protein_concentration
+- goblet_to_ciliated_ratio
+- pathway_enrichment_scores
+- dose_response_data
 
 </code></pre>
 </details>
@@ -509,12 +590,69 @@ attributes:
     - GobletCellMeasurement
     range: QuantityValue
     inlined: true
-  staining_method:
-    name: staining_method
-    description: Histological staining method used
+  staining_protocol:
+    name: staining_protocol
+    description: Staining protocol details
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     rank: 1000
-    alias: staining_method
+    alias: staining_protocol
+    owner: GobletCellMeasurement
+    domain_of:
+    - FoxJExpressionMeasurement
+    - GobletCellMeasurement
+    range: StainingProtocol
+    inlined: true
+  gene_expression_analysis:
+    name: gene_expression_analysis
+    description: Gene expression analysis methodology
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: gene_expression_analysis
+    owner: GobletCellMeasurement
+    domain_of:
+    - FoxJExpressionMeasurement
+    - GobletCellMeasurement
+    range: GeneExpressionAnalysis
+    inlined: true
+  mucin_protein_concentration:
+    name: mucin_protein_concentration
+    description: Concentration of mucin protein
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: mucin_protein_concentration
+    owner: GobletCellMeasurement
+    domain_of:
+    - GobletCellMeasurement
+    range: QuantityValue
+    inlined: true
+  goblet_to_ciliated_ratio:
+    name: goblet_to_ciliated_ratio
+    description: Ratio of goblet cells to ciliated cells
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: goblet_to_ciliated_ratio
+    owner: GobletCellMeasurement
+    domain_of:
+    - GobletCellMeasurement
+    range: QuantityValue
+    inlined: true
+  pathway_enrichment_scores:
+    name: pathway_enrichment_scores
+    description: Enrichment scores for biological pathways
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: pathway_enrichment_scores
+    owner: GobletCellMeasurement
+    domain_of:
+    - GobletCellMeasurement
+    range: string
+    multivalued: true
+  dose_response_data:
+    name: dose_response_data
+    description: Dose-response relationship data
+    from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    rank: 1000
+    alias: dose_response_data
     owner: GobletCellMeasurement
     domain_of:
     - GobletCellMeasurement
