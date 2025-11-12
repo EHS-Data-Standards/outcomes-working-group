@@ -374,14 +374,25 @@ classes:
       - lipid_peroxidation
       - antioxidant_capacity
 
-  # Evidence and Publication
-  ScientificEvidence:
-    description: Published scientific evidence supporting an AOP component
+  Publication:
+    description: |
+      Any published piece of information, following Biolink model.
+      Represents scientific evidence supporting AOP components.
     is_a: NamedEntity
     slots:
-      - publication_reference
-      - evidence_type
-      - study_design
+      - authors
+      - pages
+      - summary
+      - keywords
+      - mesh_terms
+      - publication_type
+      - xref
+    slot_usage:
+      id:
+        description: Preferentially a PMID, DOI, or industry-standard identifier (ISBN, ISSN)
+        examples:
+          - value: "PMID:12345678"
+          - value: "DOI:10.1234/example"
 
 slots:
 
@@ -486,8 +497,8 @@ slots:
     range: EvidenceStrengthEnum
 
   supporting_evidence:
-    description: Scientific evidence supporting this relationship
-    range: ScientificEvidence
+    description: Scientific publications supporting this relationship
+    range: Publication
     multivalued: true
     inlined: true
 
@@ -682,15 +693,36 @@ slots:
     range: QuantityValue
     inlined: true
 
-  # Evidence slots
-  publication_reference:
-    description: Citation or reference to publication
+  # Publication slots
+  authors:
+    description: Connects publications to contributor lists, formatted as comma-delimited names
+    range: string
+    multivalued: true
+
+  pages:
+    description: Page numbers (start and end) or total pages
     range: string
 
-  evidence_type:
-    description: Type of evidence (experimental, observational, computational)
+  summary:
+    description: Executive summary or abstract of the publication
     range: string
 
-  study_design:
-    description: Study design or experimental approach
+  keywords:
+    description: Keywords or tags for the publication
     range: string
+    multivalued: true
+
+  mesh_terms:
+    description: Medical Subject Headings (MeSH) terms for indexing
+    range: string
+    multivalued: true
+
+  publication_type:
+    description: Ontology term for categorizing publication format (e.g., journal article, book chapter, review)
+    range: string
+    required: false
+
+  xref:
+    description: Cross-references to supporting databases or webpages
+    range: uriorcurie
+    multivalued: true
