@@ -998,7 +998,6 @@ slots:
     - OxidativeStressMeasurement
     range: string
     multivalued: true
-    inlined: true
   dna_damage_markers:
     name: dna_damage_markers
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/dna_damage_markers
@@ -2494,7 +2493,7 @@ classes:
     class_uri: outcomes_model:EnvironmentalCondition
 metamodel_version: 1.7.0
 source_file: outcomes_working_group.yaml
-source_file_date: '2025-11-12T22:57:18'
-source_file_size: 25558
-generation_date: '2025-11-12T22:57:28'
+source_file_date: '2025-11-13T00:21:06'
+source_file_size: 25557
+generation_date: '2025-11-13T00:21:17'
 
