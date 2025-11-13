@@ -1,0 +1,105 @@
+Slot Name,Mapping Type,Ontology Term ID,Term Label
+active_area_percentage,broad_mappings,PATO:0001555,has number of
+analysis_method,broad_mappings,OBI:0000070,assay
+antioxidant_capacity,broad_mappings,PATO:0000001,quality
+asl_height_um,broad_mappings,PATO:0000119,height
+assay_type,exact_mappings,OBI:0000070,assay
+bacterial_load,broad_mappings,PATO:0000070,amount
+beat_frequency_hz,broad_mappings,PATO:0000044,frequency
+beat_frequency_hz,related_mappings,GO:0003341,cilium movement
+biofilm_clearance_rate,broad_mappings,PATO:0000161,rate
+cell_free_dna,broad_mappings,PATO:0000033,concentration of
+cell_free_dna,related_mappings,CHEBI:16991,deoxyribonucleic acid
+cilia_length,broad_mappings,PATO:0000122,length
+cilia_per_cell,broad_mappings,PATO:0000070,amount
+cilia_per_cell,related_mappings,CL:0000064,ciliated cell
+ciliary_motion_patterns,broad_mappings,PATO:0000001,quality
+ciliary_motion_patterns,related_mappings,GO:0003341,cilium movement
+co2_percentage,broad_mappings,PATO:0000033,concentration of
+co2_percentage,related_mappings,CHEBI:16526,carbon dioxide
+collection_method,broad_mappings,OBI:0000011,planned process
+culture_medium,exact_mappings,OBI:0000079,culture medium
+cytokine_levels,broad_mappings,PATO:0000033,concentration of
+cytokine_levels,related_mappings,CHEBI:23530,cytokinin
+days_at_ali,broad_mappings,IAO:0000109,measurement datum
+days_at_ali,related_mappings,PATO:0000165,time
+detection_method_details,broad_mappings,OBI:0000070,assay
+detection_type,broad_mappings,OBI:0000070,assay
+directionality,broad_mappings,PATO:0001527,quiet
+donor_count,broad_mappings,IAO:0000109,measurement datum
+donor_count,related_mappings,PATO:0000070,amount
+environmental_conditions,related_mappings,ENVO:01000254,environmental system
+environmental_conditions,related_mappings,PATO:0001018,physical quality
+exposure_conditions,related_mappings,ENVO:01000254,environmental system
+exposure_conditions,related_mappings,PATO:0001018,physical quality
+fev1,broad_mappings,PATO:0000918,volume
+fev1_fvc_ratio,broad_mappings,PATO:0001470,ratio
+fixation_method,broad_mappings,OBI:0000011,planned process
+fixation_method,related_mappings,OBI:0302887,staining
+fluorescent_labeling,related_mappings,CHEBI:51217,fluorochrome
+fluorophore_type,broad_mappings,CHEBI:51217,fluorochrome
+frame_rate,broad_mappings,IAO:0000109,measurement datum
+frame_rate,related_mappings,PATO:0000161,rate
+fvc,broad_mappings,PATO:0000918,volume
+gene_expression_analysis,broad_mappings,OBI:0000070,assay
+gene_expression_analysis,related_mappings,OBI:0000424,transcription profiling assay
+goblet_cell_count,broad_mappings,PATO:0000070,amount
+goblet_cell_count,related_mappings,CL:0000160,goblet cell
+goblet_to_ciliated_ratio,broad_mappings,PATO:0001470,ratio
+goblet_to_ciliated_ratio,related_mappings,CL:0000160,goblet cell
+goblet_to_ciliated_ratio,related_mappings,CL:0000064,ciliated cell
+has_maximum_numeric_value,broad_mappings,IAO:0000109,measurement datum
+has_minimum_numeric_value,broad_mappings,IAO:0000109,measurement datum
+has_numeric_value,broad_mappings,IAO:0000109,measurement datum
+has_unit,exact_mappings,UO:0000000,unit
+humidity,exact_mappings,PATO:0015009,humidity
+imaging_duration,broad_mappings,IAO:0000109,measurement datum
+imaging_duration,related_mappings,PATO:0001309,duration
+imaging_modality,broad_mappings,OBI:0000185,imaging assay
+imaging_protocol,exact_mappings,OBI:0000272,protocol
+input_sample,exact_mappings,OBI:0100051,specimen
+input_sample,related_mappings,OBI:0000747,material sample
+instrumentation,broad_mappings,OBI:0000968,device
+ldh_release,broad_mappings,PATO:0000070,amount
+ldh_release,related_mappings,CHEBI:17660,N(6)-dimethylallyladenine
+lipid_peroxidation,broad_mappings,PATO:0000001,quality
+lipid_peroxidation,related_mappings,GO:0016491,oxidoreductase activity
+manipulation,broad_mappings,OBI:0000011,planned process
+method_assay,exact_mappings,OBI:0000070,assay
+mrna_level,broad_mappings,PATO:0000070,amount
+mrna_level,related_mappings,CHEBI:33699,messenger RNA
+mucin_expression_level,broad_mappings,PATO:0000070,amount
+mucin_expression_level,related_mappings,GO:0070254,mucus secretion
+mucin_protein_concentration,broad_mappings,PATO:0000033,concentration of
+mucin_protein_concentration,related_mappings,CHEBI:36080,protein
+mucus_layer_thickness,broad_mappings,PATO:0000915,thickness
+passage_number,broad_mappings,IAO:0000109,measurement datum
+percentage_ciliated_cells,broad_mappings,PATO:0001555,has number of
+percentage_ciliated_cells,related_mappings,CL:0000064,ciliated cell
+percentage_positive_cells,broad_mappings,PATO:0001555,has number of
+periciliary_layer_depth,broad_mappings,PATO:0001595,depth
+permeability_coefficient,broad_mappings,PATO:0000001,quality
+processing_time,broad_mappings,PATO:0000165,time
+protein_concentration,broad_mappings,PATO:0000033,concentration of
+protein_concentration,related_mappings,CHEBI:36080,protein
+protein_level,broad_mappings,PATO:0000070,amount
+protein_level,related_mappings,CHEBI:36080,protein
+protocol_notes,broad_mappings,OBI:0000272,protocol
+protocol_notes,related_mappings,IAO:0000310,document
+ros_level,broad_mappings,PATO:0000070,amount
+ros_level,related_mappings,CHEBI:26523,reactive oxygen species
+sample_type,broad_mappings,OBI:0100051,specimen
+sop_reference,broad_mappings,OBI:0000272,protocol
+sop_reference,related_mappings,IAO:0000310,document
+spatial_resolution,broad_mappings,IAO:0000109,measurement datum
+spatial_resolution,related_mappings,PATO:0001018,physical quality
+staining_protocol,exact_mappings,OBI:0000272,protocol
+staining_type,broad_mappings,OBI:0302887,staining
+storage_conditions,related_mappings,PATO:0000146,temperature
+storage_conditions,related_mappings,PATO:0015009,humidity
+teer_value,broad_mappings,PATO:0001025,pressure
+temperature,exact_mappings,PATO:0000146,temperature
+transport_rate,broad_mappings,PATO:0000161,rate
+transport_rate,related_mappings,GO:0120197,mucociliary clearance
+viability_percentage,broad_mappings,PATO:0001421,alive
+viral_spread_rate,broad_mappings,PATO:0000161,rate

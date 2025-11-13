@@ -1,0 +1,450 @@
+{
+  "input_sample": {
+    "exact_mappings": [
+      "OBI:0100051"
+    ],
+    "related_mappings": [
+      "OBI:0000747"
+    ]
+  },
+  "method_assay": {
+    "exact_mappings": [
+      "OBI:0000070"
+    ]
+  },
+  "protocol_notes": {
+    "broad_mappings": [
+      "OBI:0000272"
+    ],
+    "related_mappings": [
+      "IAO:0000310"
+    ]
+  },
+  "assay_type": {
+    "exact_mappings": [
+      "OBI:0000070"
+    ]
+  },
+  "instrumentation": {
+    "broad_mappings": [
+      "OBI:0000968"
+    ]
+  },
+  "environmental_conditions": {
+    "related_mappings": [
+      "ENVO:01000254",
+      "PATO:0001018"
+    ]
+  },
+  "sop_reference": {
+    "broad_mappings": [
+      "OBI:0000272"
+    ],
+    "related_mappings": [
+      "IAO:0000310"
+    ]
+  },
+  "sample_type": {
+    "broad_mappings": [
+      "OBI:0100051"
+    ]
+  },
+  "manipulation": {
+    "broad_mappings": [
+      "OBI:0000011"
+    ]
+  },
+  "exposure_conditions": {
+    "related_mappings": [
+      "ENVO:01000254",
+      "PATO:0001018"
+    ]
+  },
+  "has_numeric_value": {
+    "broad_mappings": [
+      "IAO:0000109"
+    ]
+  },
+  "has_unit": {
+    "exact_mappings": [
+      "UO:0000000"
+    ]
+  },
+  "has_minimum_numeric_value": {
+    "broad_mappings": [
+      "IAO:0000109"
+    ]
+  },
+  "has_maximum_numeric_value": {
+    "broad_mappings": [
+      "IAO:0000109"
+    ]
+  },
+  "imaging_modality": {
+    "broad_mappings": [
+      "OBI:0000185"
+    ]
+  },
+  "imaging_protocol": {
+    "exact_mappings": [
+      "OBI:0000272"
+    ]
+  },
+  "frame_rate": {
+    "broad_mappings": [
+      "IAO:0000109"
+    ],
+    "related_mappings": [
+      "PATO:0000161"
+    ]
+  },
+  "imaging_duration": {
+    "broad_mappings": [
+      "IAO:0000109"
+    ],
+    "related_mappings": [
+      "PATO:0001309"
+    ]
+  },
+  "spatial_resolution": {
+    "broad_mappings": [
+      "IAO:0000109"
+    ],
+    "related_mappings": [
+      "PATO:0001018"
+    ]
+  },
+  "fluorescent_labeling": {
+    "related_mappings": [
+      "CHEBI:51217"
+    ]
+  },
+  "fluorophore_type": {
+    "broad_mappings": [
+      "CHEBI:51217"
+    ]
+  },
+  "culture_medium": {
+    "exact_mappings": [
+      "OBI:0000079"
+    ]
+  },
+  "days_at_ali": {
+    "broad_mappings": [
+      "IAO:0000109"
+    ],
+    "related_mappings": [
+      "PATO:0000165"
+    ]
+  },
+  "passage_number": {
+    "broad_mappings": [
+      "IAO:0000109"
+    ]
+  },
+  "temperature": {
+    "exact_mappings": [
+      "PATO:0000146"
+    ]
+  },
+  "humidity": {
+    "exact_mappings": [
+      "PATO:0015009"
+    ]
+  },
+  "co2_percentage": {
+    "broad_mappings": [
+      "PATO:0000033"
+    ],
+    "related_mappings": [
+      "CHEBI:16526"
+    ]
+  },
+  "donor_count": {
+    "broad_mappings": [
+      "IAO:0000109"
+    ],
+    "related_mappings": [
+      "PATO:0000070"
+    ]
+  },
+  "staining_type": {
+    "broad_mappings": [
+      "OBI:0302887"
+    ]
+  },
+  "staining_protocol": {
+    "exact_mappings": [
+      "OBI:0000272"
+    ]
+  },
+  "fixation_method": {
+    "broad_mappings": [
+      "OBI:0000011"
+    ],
+    "related_mappings": [
+      "OBI:0302887"
+    ]
+  },
+  "analysis_method": {
+    "broad_mappings": [
+      "OBI:0000070"
+    ]
+  },
+  "gene_expression_analysis": {
+    "broad_mappings": [
+      "OBI:0000070"
+    ],
+    "related_mappings": [
+      "OBI:0000424"
+    ]
+  },
+  "mrna_level": {
+    "broad_mappings": [
+      "PATO:0000070"
+    ],
+    "related_mappings": [
+      "CHEBI:33699"
+    ]
+  },
+  "protein_level": {
+    "broad_mappings": [
+      "PATO:0000070"
+    ],
+    "related_mappings": [
+      "CHEBI:36080"
+    ]
+  },
+  "percentage_positive_cells": {
+    "broad_mappings": [
+      "PATO:0001555"
+    ]
+  },
+  "collection_method": {
+    "broad_mappings": [
+      "OBI:0000011"
+    ]
+  },
+  "storage_conditions": {
+    "related_mappings": [
+      "PATO:0000146",
+      "PATO:0015009"
+    ]
+  },
+  "processing_time": {
+    "broad_mappings": [
+      "PATO:0000165"
+    ]
+  },
+  "detection_type": {
+    "broad_mappings": [
+      "OBI:0000070"
+    ]
+  },
+  "detection_method_details": {
+    "broad_mappings": [
+      "OBI:0000070"
+    ]
+  },
+  "beat_frequency_hz": {
+    "broad_mappings": [
+      "PATO:0000044"
+    ],
+    "related_mappings": [
+      "GO:0003341"
+    ]
+  },
+  "asl_height_um": {
+    "broad_mappings": [
+      "PATO:0000119"
+    ]
+  },
+  "periciliary_layer_depth": {
+    "broad_mappings": [
+      "PATO:0001595"
+    ]
+  },
+  "cilia_length": {
+    "broad_mappings": [
+      "PATO:0000122"
+    ]
+  },
+  "cilia_per_cell": {
+    "broad_mappings": [
+      "PATO:0000070"
+    ],
+    "related_mappings": [
+      "CL:0000064"
+    ]
+  },
+  "transport_rate": {
+    "broad_mappings": [
+      "PATO:0000161"
+    ],
+    "related_mappings": [
+      "GO:0120197"
+    ]
+  },
+  "goblet_cell_count": {
+    "broad_mappings": [
+      "PATO:0000070"
+    ],
+    "related_mappings": [
+      "CL:0000160"
+    ]
+  },
+  "mucin_expression_level": {
+    "broad_mappings": [
+      "PATO:0000070"
+    ],
+    "related_mappings": [
+      "GO:0070254"
+    ]
+  },
+  "mucin_protein_concentration": {
+    "broad_mappings": [
+      "PATO:0000033"
+    ],
+    "related_mappings": [
+      "CHEBI:36080"
+    ]
+  },
+  "ros_level": {
+    "broad_mappings": [
+      "PATO:0000070"
+    ],
+    "related_mappings": [
+      "CHEBI:26523"
+    ]
+  },
+  "lipid_peroxidation": {
+    "broad_mappings": [
+      "PATO:0000001"
+    ],
+    "related_mappings": [
+      "GO:0016491"
+    ]
+  },
+  "antioxidant_capacity": {
+    "broad_mappings": [
+      "PATO:0000001"
+    ]
+  },
+  "percentage_ciliated_cells": {
+    "broad_mappings": [
+      "PATO:0001555"
+    ],
+    "related_mappings": [
+      "CL:0000064"
+    ]
+  },
+  "active_area_percentage": {
+    "broad_mappings": [
+      "PATO:0001555"
+    ]
+  },
+  "goblet_to_ciliated_ratio": {
+    "broad_mappings": [
+      "PATO:0001470"
+    ],
+    "related_mappings": [
+      "CL:0000160",
+      "CL:0000064"
+    ]
+  },
+  "fev1": {
+    "broad_mappings": [
+      "PATO:0000918"
+    ]
+  },
+  "fvc": {
+    "broad_mappings": [
+      "PATO:0000918"
+    ]
+  },
+  "fev1_fvc_ratio": {
+    "broad_mappings": [
+      "PATO:0001470"
+    ]
+  },
+  "viability_percentage": {
+    "broad_mappings": [
+      "PATO:0001421"
+    ]
+  },
+  "cytokine_levels": {
+    "broad_mappings": [
+      "PATO:0000033"
+    ],
+    "related_mappings": [
+      "CHEBI:23530"
+    ]
+  },
+  "protein_concentration": {
+    "broad_mappings": [
+      "PATO:0000033"
+    ],
+    "related_mappings": [
+      "CHEBI:36080"
+    ]
+  },
+  "cell_free_dna": {
+    "broad_mappings": [
+      "PATO:0000033"
+    ],
+    "related_mappings": [
+      "CHEBI:16991"
+    ]
+  },
+  "mucus_layer_thickness": {
+    "broad_mappings": [
+      "PATO:0000915"
+    ]
+  },
+  "bacterial_load": {
+    "broad_mappings": [
+      "PATO:0000070"
+    ]
+  },
+  "biofilm_clearance_rate": {
+    "broad_mappings": [
+      "PATO:0000161"
+    ]
+  },
+  "viral_spread_rate": {
+    "broad_mappings": [
+      "PATO:0000161"
+    ]
+  },
+  "teer_value": {
+    "broad_mappings": [
+      "PATO:0001025"
+    ]
+  },
+  "permeability_coefficient": {
+    "broad_mappings": [
+      "PATO:0000001"
+    ]
+  },
+  "ldh_release": {
+    "broad_mappings": [
+      "PATO:0000070"
+    ],
+    "related_mappings": [
+      "CHEBI:17660"
+    ]
+  },
+  "directionality": {
+    "broad_mappings": [
+      "PATO:0001527"
+    ]
+  },
+  "ciliary_motion_patterns": {
+    "broad_mappings": [
+      "PATO:0000001"
+    ],
+    "related_mappings": [
+      "GO:0003341"
+    ]
+  }
+}
