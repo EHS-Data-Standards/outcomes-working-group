@@ -379,7 +379,6 @@ slots:
     range: uriorcurie
     required: true
 
-
   description:
     description: A detailed description
     range: string
@@ -664,7 +663,7 @@ slots:
 
   protein_oxidation_markers:
     description: Protein oxidation markers (carbonyls, nitrotyrosine)
-    inlined: true
+    range: string
     multivalued: true
 
   dna_damage_markers:
