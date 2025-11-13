@@ -1,5 +1,5 @@
 # Auto generated from outcomes_working_group.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-12T16:19:55
+# Generation date: 2025-11-13T11:17:55
 # Schema: outcomes-model
 #
 # id: https://w3id.org/EHS-Data-Standards/outcomes-model
@@ -66,8 +66,13 @@ version = None
 
 # Namespaces
 CHEBI = CurieNamespace('CHEBI', 'http://purl.obolibrary.org/obo/CHEBI_')
+CL = CurieNamespace('CL', 'http://purl.obolibrary.org/obo/CL_')
 ENVO = CurieNamespace('ENVO', 'http://purl.obolibrary.org/obo/ENVO_')
+GO = CurieNamespace('GO', 'http://purl.obolibrary.org/obo/GO_')
+IAO = CurieNamespace('IAO', 'http://purl.obolibrary.org/obo/IAO_')
 OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
+PATO = CurieNamespace('PATO', 'http://purl.obolibrary.org/obo/PATO_')
+UO = CurieNamespace('UO', 'http://purl.obolibrary.org/obo/UO_')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 OUTCOMES_MODEL = CurieNamespace('outcomes_model', 'https://w3id.org/EHS-Data-Standards/outcomes-model/')
@@ -334,8 +339,8 @@ class Assay(NamedEntity):
 @dataclass(repr=False)
 class QuantityValue(YAMLRoot):
     """
-    A quantity value expresses a measurement with a numeric value and a unit.
-    Based on NMDC Schema QuantityValue pattern.
+    A quantity value expresses a measurement with a numeric value and a unit. Based on NMDC Schema QuantityValue
+    pattern.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
