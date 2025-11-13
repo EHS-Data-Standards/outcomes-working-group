@@ -1,4 +1,4 @@
-MeasurementClassName,AttributeName,Cardinality,Range,Description,Enumeration Restrictions
+MeasurementClassName,AttributeName,Cardinality,Range,Description,SlotRestrictions
 CFTRFunctionMeasurement,id,single,uriorcurie,A unique identifier,
 CFTRFunctionMeasurement,description,single,string,A detailed description,
 CFTRFunctionMeasurement,input_sample,single,InputSample,Description of input samples and manipulations,
