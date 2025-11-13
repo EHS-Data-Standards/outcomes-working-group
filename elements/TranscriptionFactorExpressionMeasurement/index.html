@@ -486,6 +486,8 @@ attributes:
     name: mrna_level
     description: mRNA expression level
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000070
     rank: 1000
     alias: mrna_level
     owner: TranscriptionFactorExpressionMeasurement
@@ -497,6 +499,8 @@ attributes:
     name: protein_level
     description: Protein expression level
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000070
     rank: 1000
     alias: protein_level
     owner: TranscriptionFactorExpressionMeasurement
@@ -519,6 +523,8 @@ attributes:
     name: staining_protocol
     description: Staining protocol details
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0000272
     rank: 1000
     alias: staining_protocol
     owner: TranscriptionFactorExpressionMeasurement
@@ -531,6 +537,10 @@ attributes:
     name: gene_expression_analysis
     description: Gene expression analysis methodology
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - OBI:0000424
+    broad_mappings:
+    - OBI:0000070
     rank: 1000
     alias: gene_expression_analysis
     owner: TranscriptionFactorExpressionMeasurement
@@ -543,6 +553,10 @@ attributes:
     name: input_sample
     description: Description of input samples and manipulations
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0100051
+    related_mappings:
+    - OBI:0000747
     rank: 1000
     alias: input_sample
     owner: TranscriptionFactorExpressionMeasurement
@@ -553,6 +567,8 @@ attributes:
     name: method_assay
     description: The method or assay used
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0000070
     rank: 1000
     alias: method_assay
     owner: TranscriptionFactorExpressionMeasurement
@@ -563,6 +579,10 @@ attributes:
     name: protocol_notes
     description: Protocol or SOP notes
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - IAO:0000310
+    broad_mappings:
+    - OBI:0000272
     rank: 1000
     alias: protocol_notes
     owner: TranscriptionFactorExpressionMeasurement

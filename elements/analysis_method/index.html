@@ -465,6 +465,10 @@ Alias: analysis_method</p>
 <td>native</td>
 <td>outcomes_model:analysis_method</td>
 </tr>
+<tr>
+<td>broad</td>
+<td>OBI:0000070</td>
+</tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
@@ -473,6 +477,8 @@ Alias: analysis_method</p>
 <pre><code class="language-yaml">name: analysis_method
 description: Method for analysis (qRT-PCR, RNA-seq)
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+broad_mappings:
+- OBI:0000070
 rank: 1000
 alias: analysis_method
 domain_of:

@@ -484,6 +484,10 @@ attributes:
     name: input_sample
     description: Description of input samples and manipulations
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0100051
+    related_mappings:
+    - OBI:0000747
     rank: 1000
     alias: input_sample
     owner: EGFRSignalingMeasurement
@@ -494,6 +498,8 @@ attributes:
     name: method_assay
     description: The method or assay used
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0000070
     rank: 1000
     alias: method_assay
     owner: EGFRSignalingMeasurement
@@ -504,6 +510,10 @@ attributes:
     name: protocol_notes
     description: Protocol or SOP notes
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - IAO:0000310
+    broad_mappings:
+    - OBI:0000272
     rank: 1000
     alias: protocol_notes
     owner: EGFRSignalingMeasurement

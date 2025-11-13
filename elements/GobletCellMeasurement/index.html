@@ -522,6 +522,10 @@ attributes:
     name: goblet_cell_count
     description: Number or percentage of goblet cells
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - CL:0000160
+    broad_mappings:
+    - PATO:0000070
     rank: 1000
     alias: goblet_cell_count
     owner: GobletCellMeasurement
@@ -533,6 +537,10 @@ attributes:
     name: mucin_expression_level
     description: Level of mucin gene or protein expression
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - GO:0070254
+    broad_mappings:
+    - PATO:0000070
     rank: 1000
     alias: mucin_expression_level
     owner: GobletCellMeasurement
@@ -544,6 +552,8 @@ attributes:
     name: staining_protocol
     description: Staining protocol details
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0000272
     rank: 1000
     alias: staining_protocol
     owner: GobletCellMeasurement
@@ -556,6 +566,10 @@ attributes:
     name: gene_expression_analysis
     description: Gene expression analysis methodology
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - OBI:0000424
+    broad_mappings:
+    - OBI:0000070
     rank: 1000
     alias: gene_expression_analysis
     owner: GobletCellMeasurement
@@ -568,6 +582,8 @@ attributes:
     name: mucin_protein_concentration
     description: Concentration of mucin protein
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000033
     rank: 1000
     alias: mucin_protein_concentration
     owner: GobletCellMeasurement
@@ -579,6 +595,8 @@ attributes:
     name: goblet_to_ciliated_ratio
     description: Ratio of goblet cells to ciliated cells
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0001470
     rank: 1000
     alias: goblet_to_ciliated_ratio
     owner: GobletCellMeasurement
@@ -611,6 +629,10 @@ attributes:
     name: input_sample
     description: Description of input samples and manipulations
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0100051
+    related_mappings:
+    - OBI:0000747
     rank: 1000
     alias: input_sample
     owner: GobletCellMeasurement
@@ -621,6 +643,8 @@ attributes:
     name: method_assay
     description: The method or assay used
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0000070
     rank: 1000
     alias: method_assay
     owner: GobletCellMeasurement
@@ -631,6 +655,10 @@ attributes:
     name: protocol_notes
     description: Protocol or SOP notes
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - IAO:0000310
+    broad_mappings:
+    - OBI:0000272
     rank: 1000
     alias: protocol_notes
     owner: GobletCellMeasurement

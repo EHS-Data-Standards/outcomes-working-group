@@ -495,6 +495,8 @@ attributes:
     name: asl_height_um
     description: Airway surface liquid height in micrometers
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000119
     rank: 1000
     alias: asl_height_um
     owner: ASLHeightMeasurement
@@ -506,6 +508,8 @@ attributes:
     name: periciliary_layer_depth
     description: Depth of periciliary layer in micrometers
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0001595
     rank: 1000
     alias: periciliary_layer_depth
     owner: ASLHeightMeasurement
@@ -517,6 +521,8 @@ attributes:
     name: imaging_protocol
     description: Imaging protocol and parameters
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0000272
     rank: 1000
     alias: imaging_protocol
     owner: ASLHeightMeasurement
@@ -561,6 +567,10 @@ attributes:
     name: input_sample
     description: Description of input samples and manipulations
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0100051
+    related_mappings:
+    - OBI:0000747
     rank: 1000
     alias: input_sample
     owner: ASLHeightMeasurement
@@ -571,6 +581,8 @@ attributes:
     name: method_assay
     description: The method or assay used
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0000070
     rank: 1000
     alias: method_assay
     owner: ASLHeightMeasurement
@@ -581,6 +593,10 @@ attributes:
     name: protocol_notes
     description: Protocol or SOP notes
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - IAO:0000310
+    broad_mappings:
+    - OBI:0000272
     rank: 1000
     alias: protocol_notes
     owner: ASLHeightMeasurement

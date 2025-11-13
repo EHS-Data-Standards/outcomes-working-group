@@ -433,13 +433,13 @@ Alias: imaging_protocol</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../ASLHeightMeasurement/">ASLHeightMeasurement</a></td>
-<td>Measurement of airway surface liquid height</td>
+<td><a href="../CiliaBeatFrequencyMeasurement/">CiliaBeatFrequencyMeasurement</a></td>
+<td>Measurement of ciliary beat frequency</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../CiliaBeatFrequencyMeasurement/">CiliaBeatFrequencyMeasurement</a></td>
-<td>Measurement of ciliary beat frequency</td>
+<td><a href="../ASLHeightMeasurement/">ASLHeightMeasurement</a></td>
+<td>Measurement of airway surface liquid height</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -470,6 +470,10 @@ Alias: imaging_protocol</p>
 <td>native</td>
 <td>outcomes_model:imaging_protocol</td>
 </tr>
+<tr>
+<td>exact</td>
+<td>OBI:0000272</td>
+</tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
@@ -478,6 +482,8 @@ Alias: imaging_protocol</p>
 <pre><code class="language-yaml">name: imaging_protocol
 description: Imaging protocol and parameters
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+exact_mappings:
+- OBI:0000272
 rank: 1000
 alias: imaging_protocol
 domain_of:

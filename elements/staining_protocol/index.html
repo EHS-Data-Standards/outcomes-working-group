@@ -433,13 +433,13 @@ Alias: staining_protocol</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../TranscriptionFactorExpressionMeasurement/">TranscriptionFactorExpressionMeasurement</a></td>
-<td>Measurement of transcription factor expression</td>
+<td><a href="../GobletCellMeasurement/">GobletCellMeasurement</a></td>
+<td>Measurement of goblet cell number or mucin production</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../GobletCellMeasurement/">GobletCellMeasurement</a></td>
-<td>Measurement of goblet cell number or mucin production</td>
+<td><a href="../TranscriptionFactorExpressionMeasurement/">TranscriptionFactorExpressionMeasurement</a></td>
+<td>Measurement of transcription factor expression</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -470,6 +470,10 @@ Alias: staining_protocol</p>
 <td>native</td>
 <td>outcomes_model:staining_protocol</td>
 </tr>
+<tr>
+<td>exact</td>
+<td>OBI:0000272</td>
+</tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
@@ -478,6 +482,8 @@ Alias: staining_protocol</p>
 <pre><code class="language-yaml">name: staining_protocol
 description: Staining protocol details
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+exact_mappings:
+- OBI:0000272
 rank: 1000
 alias: staining_protocol
 domain_of:

@@ -558,6 +558,10 @@ attributes:
     name: ros_level
     description: Reactive oxygen species level
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - CHEBI:26523
+    broad_mappings:
+    - PATO:0000070
     rank: 1000
     alias: ros_level
     owner: OxidativeStressMeasurement
@@ -569,6 +573,8 @@ attributes:
     name: lipid_peroxidation
     description: Lipid peroxidation markers (MDA, 8-isoprostane, etc.)
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - GO:0016491
     rank: 1000
     alias: lipid_peroxidation
     owner: OxidativeStressMeasurement
@@ -602,6 +608,8 @@ attributes:
     name: detection_method_details
     description: Detection method details
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - OBI:0000070
     rank: 1000
     alias: detection_method_details
     owner: OxidativeStressMeasurement
@@ -668,6 +676,10 @@ attributes:
     name: input_sample
     description: Description of input samples and manipulations
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0100051
+    related_mappings:
+    - OBI:0000747
     rank: 1000
     alias: input_sample
     owner: OxidativeStressMeasurement
@@ -678,6 +690,8 @@ attributes:
     name: method_assay
     description: The method or assay used
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0000070
     rank: 1000
     alias: method_assay
     owner: OxidativeStressMeasurement
@@ -688,6 +702,10 @@ attributes:
     name: protocol_notes
     description: Protocol or SOP notes
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - IAO:0000310
+    broad_mappings:
+    - OBI:0000272
     rank: 1000
     alias: protocol_notes
     owner: OxidativeStressMeasurement

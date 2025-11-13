@@ -34,6 +34,21 @@ prefixes:
   ENVO:
     prefix_prefix: ENVO
     prefix_reference: http://purl.obolibrary.org/obo/ENVO_
+  PATO:
+    prefix_prefix: PATO
+    prefix_reference: http://purl.obolibrary.org/obo/PATO_
+  UO:
+    prefix_prefix: UO
+    prefix_reference: http://purl.obolibrary.org/obo/UO_
+  IAO:
+    prefix_prefix: IAO
+    prefix_reference: http://purl.obolibrary.org/obo/IAO_
+  CL:
+    prefix_prefix: CL
+    prefix_reference: http://purl.obolibrary.org/obo/CL_
+  GO:
+    prefix_prefix: GO
+    prefix_reference: http://purl.obolibrary.org/obo/GO_
   schema:
     prefix_prefix: schema
     prefix_reference: http://schema.org/
@@ -353,6 +368,10 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/input_sample
     description: Description of input samples and manipulations
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0100051
+    related_mappings:
+    - OBI:0000747
     slot_uri: outcomes_model:input_sample
     owner: Measurement
     domain_of:
@@ -363,6 +382,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/method_assay
     description: The method or assay used
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0000070
     slot_uri: outcomes_model:method_assay
     owner: Measurement
     domain_of:
@@ -373,6 +394,10 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/protocol_notes
     description: Protocol or SOP notes
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - IAO:0000310
+    broad_mappings:
+    - OBI:0000272
     slot_uri: outcomes_model:protocol_notes
     owner: Measurement
     domain_of:
@@ -386,6 +411,8 @@ slots:
     - value: Primary human airway epithelial cells at ALI
     - value: MucilAir 3D tissue model
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - OBI:0100051
     slot_uri: outcomes_model:sample_type
     owner: InputSample
     domain_of:
@@ -396,6 +423,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/manipulation
     description: Experimental manipulation applied
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - OBI:0000011
     slot_uri: outcomes_model:manipulation
     owner: InputSample
     domain_of:
@@ -406,6 +435,9 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/exposure_conditions
     description: Exposure or treatment conditions
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - ENVO:01000254
+    - PATO:0001018
     slot_uri: outcomes_model:exposure_conditions
     owner: InputSample
     domain_of:
@@ -416,6 +448,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/assay_type
     description: Type of assay or method, constrained to OBI assay terms
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0000070
     slot_uri: outcomes_model:assay_type
     owner: Assay
     domain_of:
@@ -426,6 +460,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/instrumentation
     description: Specific instruments or equipment used
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - OBI:0000968
     slot_uri: outcomes_model:instrumentation
     owner: DetectionMethod
     domain_of:
@@ -437,6 +473,9 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/environmental_conditions
     description: Environmental conditions during measurement
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - ENVO:01000254
+    - PATO:0001018
     slot_uri: outcomes_model:environmental_conditions
     owner: Assay
     domain_of:
@@ -450,6 +489,10 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/sop_reference
     description: Reference to standard operating procedure
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - IAO:0000310
+    broad_mappings:
+    - OBI:0000272
     slot_uri: outcomes_model:sop_reference
     owner: Assay
     domain_of:
@@ -460,6 +503,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/has_numeric_value
     description: The numeric value of a quantity
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - IAO:0000109
     slot_uri: outcomes_model:has_numeric_value
     owner: QuantityValue
     domain_of:
@@ -475,6 +520,8 @@ slots:
     - value: mm/min
     - value: '%'
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - UO:0000000
     slot_uri: outcomes_model:has_unit
     owner: QuantityValue
     domain_of:
@@ -536,6 +583,10 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/beat_frequency_hz
     description: Ciliary beat frequency in Hz
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - GO:0003341
+    broad_mappings:
+    - PATO:0000044
     slot_uri: outcomes_model:beat_frequency_hz
     owner: CiliaBeatFrequencyMeasurement
     domain_of:
@@ -548,6 +599,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/active_area_percentage
     description: Percentage of active ciliated area
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0001555
     slot_uri: outcomes_model:active_area_percentage
     owner: CiliaBeatFrequencyMeasurement
     domain_of:
@@ -567,6 +620,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/asl_height_um
     description: Airway surface liquid height in micrometers
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000119
     slot_uri: outcomes_model:asl_height_um
     owner: ASLHeightMeasurement
     domain_of:
@@ -579,6 +634,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/periciliary_layer_depth
     description: Depth of periciliary layer in micrometers
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0001595
     slot_uri: outcomes_model:periciliary_layer_depth
     owner: ASLHeightMeasurement
     domain_of:
@@ -591,6 +648,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/imaging_modality
     description: Imaging modality used (confocal, OCT, etc.)
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - OBI:0000185
     slot_uri: outcomes_model:imaging_modality
     owner: ImagingProtocol
     domain_of:
@@ -601,6 +660,10 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/transport_rate
     description: Mucociliary transport rate
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - GO:0120197
+    broad_mappings:
+    - PATO:0000161
     slot_uri: outcomes_model:transport_rate
     owner: MucociliaryClearanceMeasurement
     domain_of:
@@ -613,6 +676,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/directionality
     description: Directionality of mucociliary transport
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0001527
     slot_uri: outcomes_model:directionality
     owner: MucociliaryClearanceMeasurement
     domain_of:
@@ -633,6 +698,10 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/goblet_cell_count
     description: Number or percentage of goblet cells
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - CL:0000160
+    broad_mappings:
+    - PATO:0000070
     slot_uri: outcomes_model:goblet_cell_count
     owner: GobletCellMeasurement
     domain_of:
@@ -645,6 +714,10 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/mucin_expression_level
     description: Level of mucin gene or protein expression
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - GO:0070254
+    broad_mappings:
+    - PATO:0000070
     slot_uri: outcomes_model:mucin_expression_level
     owner: GobletCellMeasurement
     domain_of:
@@ -664,6 +737,10 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/ros_level
     description: Reactive oxygen species level
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - CHEBI:26523
+    broad_mappings:
+    - PATO:0000070
     slot_uri: outcomes_model:ros_level
     owner: OxidativeStressMeasurement
     domain_of:
@@ -676,6 +753,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/lipid_peroxidation
     description: Lipid peroxidation markers (MDA, 8-isoprostane, etc.)
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - GO:0016491
     slot_uri: outcomes_model:lipid_peroxidation
     owner: OxidativeStressMeasurement
     domain_of:
@@ -700,6 +779,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/imaging_protocol
     description: Imaging protocol and parameters
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0000272
     slot_uri: outcomes_model:imaging_protocol
     owner: ASLHeightMeasurement
     domain_of:
@@ -747,6 +828,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/cilia_per_cell
     description: Number of cilia per cell
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000070
     slot_uri: outcomes_model:cilia_per_cell
     owner: CiliaBeatFrequencyMeasurement
     domain_of:
@@ -759,6 +842,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/cilia_length
     description: Length of cilia
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000122
     slot_uri: outcomes_model:cilia_length
     owner: CiliaBeatFrequencyMeasurement
     domain_of:
@@ -771,6 +856,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/percentage_ciliated_cells
     description: Percentage of cells that are ciliated
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0001555
     slot_uri: outcomes_model:percentage_ciliated_cells
     owner: CiliaBeatFrequencyMeasurement
     domain_of:
@@ -783,6 +870,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/ciliary_motion_patterns
     description: Patterns of ciliary motion
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - GO:0003341
     slot_uri: outcomes_model:ciliary_motion_patterns
     owner: CiliaBeatFrequencyMeasurement
     domain_of:
@@ -816,6 +905,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/mucus_layer_thickness
     description: Thickness of mucus layer
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000915
     slot_uri: outcomes_model:mucus_layer_thickness
     owner: MucociliaryClearanceMeasurement
     domain_of:
@@ -848,6 +939,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/biofilm_clearance_rate
     description: Rate of bacterial biofilm clearance
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000161
     slot_uri: outcomes_model:biofilm_clearance_rate
     owner: MucociliaryClearanceMeasurement
     domain_of:
@@ -860,6 +953,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/bacterial_load
     description: Bacterial load (CFU or similar)
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000070
     slot_uri: outcomes_model:bacterial_load
     owner: MucociliaryClearanceMeasurement
     domain_of:
@@ -872,6 +967,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/viral_spread_rate
     description: Rate of viral spread
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000161
     slot_uri: outcomes_model:viral_spread_rate
     owner: MucociliaryClearanceMeasurement
     domain_of:
@@ -884,6 +981,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/staining_protocol
     description: Staining protocol details
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0000272
     slot_uri: outcomes_model:staining_protocol
     owner: GobletCellMeasurement
     domain_of:
@@ -897,6 +996,10 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/gene_expression_analysis
     description: Gene expression analysis methodology
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - OBI:0000424
+    broad_mappings:
+    - OBI:0000070
     slot_uri: outcomes_model:gene_expression_analysis
     owner: GobletCellMeasurement
     domain_of:
@@ -910,6 +1013,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/mucin_protein_concentration
     description: Concentration of mucin protein
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000033
     slot_uri: outcomes_model:mucin_protein_concentration
     owner: GobletCellMeasurement
     domain_of:
@@ -922,6 +1027,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/goblet_to_ciliated_ratio
     description: Ratio of goblet cells to ciliated cells
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0001470
     slot_uri: outcomes_model:goblet_to_ciliated_ratio
     owner: GobletCellMeasurement
     domain_of:
@@ -979,6 +1086,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/detection_method_details
     description: Detection method details
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - OBI:0000070
     slot_uri: outcomes_model:detection_method_details
     owner: OxidativeStressMeasurement
     domain_of:
@@ -1085,6 +1194,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/cytokine_levels
     description: Cytokine and chemokine levels
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000033
     slot_uri: outcomes_model:cytokine_levels
     owner: BALFSputumMeasurement
     domain_of:
@@ -1096,6 +1207,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/protein_concentration
     description: Total protein concentration
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000033
     slot_uri: outcomes_model:protein_concentration
     owner: BALFSputumMeasurement
     domain_of:
@@ -1120,6 +1233,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/fev1
     description: Forced expiratory volume in 1 second
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000918
     slot_uri: outcomes_model:fev1
     owner: LungFunctionMeasurement
     domain_of:
@@ -1132,6 +1247,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/fvc
     description: Forced vital capacity
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000918
     slot_uri: outcomes_model:fvc
     owner: LungFunctionMeasurement
     domain_of:
@@ -1144,6 +1261,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/fev1_fvc_ratio
     description: Ratio of FEV1 to FVC
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0001470
     slot_uri: outcomes_model:fev1_fvc_ratio
     owner: LungFunctionMeasurement
     domain_of:
@@ -1260,6 +1379,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/mrna_level
     description: mRNA expression level
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000070
     slot_uri: outcomes_model:mrna_level
     owner: TranscriptionFactorExpressionMeasurement
     domain_of:
@@ -1272,6 +1393,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/protein_level
     description: Protein expression level
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000070
     slot_uri: outcomes_model:protein_level
     owner: TranscriptionFactorExpressionMeasurement
     domain_of:
@@ -1296,6 +1419,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/frame_rate
     description: Image acquisition frame rate
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - PATO:0000161
     slot_uri: outcomes_model:frame_rate
     owner: ImagingProtocol
     domain_of:
@@ -1308,6 +1433,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/imaging_duration
     description: Duration of imaging session
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - PATO:0001309
     slot_uri: outcomes_model:imaging_duration
     owner: ImagingProtocol
     domain_of:
@@ -1478,6 +1605,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/processing_time
     description: Time from collection to processing
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000165
     slot_uri: outcomes_model:processing_time
     owner: SampleCollection
     domain_of:
@@ -1512,6 +1641,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/culture_medium
     description: Cell culture medium formulation
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0000079
     slot_uri: outcomes_model:culture_medium
     owner: CellCultureConditions
     domain_of:
@@ -1522,6 +1653,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/days_at_ali
     description: Days at air-liquid interface
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - PATO:0000165
     slot_uri: outcomes_model:days_at_ali
     owner: CellCultureConditions
     domain_of:
@@ -1552,6 +1685,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/temperature
     description: Temperature setting
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - PATO:0000146
     slot_uri: outcomes_model:temperature
     owner: EnvironmentalCondition
     domain_of:
@@ -1565,6 +1700,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/humidity
     description: Humidity level
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - PATO:0015009
     slot_uri: outcomes_model:humidity
     owner: EnvironmentalCondition
     domain_of:
@@ -1578,6 +1715,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/co2_percentage
     description: CO2 percentage in incubator
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000033
     slot_uri: outcomes_model:co2_percentage
     owner: EnvironmentalCondition
     domain_of:
@@ -1591,6 +1730,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/donor_count
     description: Number of unique donors
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - PATO:0000070
     slot_uri: outcomes_model:donor_count
     owner: CellCultureConditions
     domain_of:
@@ -1611,6 +1752,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/staining_type
     description: Type of staining (histological, immunofluorescence)
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - OBI:0302887
     slot_uri: outcomes_model:staining_type
     owner: StainingProtocol
     domain_of:
@@ -1632,6 +1775,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/fixation_method
     description: Method for tissue/cell fixation
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - OBI:0302887
     slot_uri: outcomes_model:fixation_method
     owner: StainingProtocol
     domain_of:
@@ -1652,6 +1797,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/analysis_method
     description: Method for analysis (qRT-PCR, RNA-seq)
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - OBI:0000070
     slot_uri: outcomes_model:analysis_method
     owner: GeneExpressionAnalysis
     domain_of:
@@ -1818,6 +1965,8 @@ slots:
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/teer_value
     description: Transepithelial electrical resistance value
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0001025
     slot_uri: outcomes_model:teer_value
     owner: BarrierIntegrity
     domain_of:
@@ -2051,12 +2200,8 @@ classes:
   QuantityValue:
     name: QuantityValue
     definition_uri: https://w3id.org/EHS-Data-Standards/outcomes-model/QuantityValue
-    description: 'A quantity value expresses a measurement with a numeric value and
-      a unit.
-
-      Based on NMDC Schema QuantityValue pattern.
-
-      '
+    description: A quantity value expresses a measurement with a numeric value and
+      a unit. Based on NMDC Schema QuantityValue pattern.
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
     slots:
     - has_numeric_value
@@ -2493,7 +2638,7 @@ classes:
     class_uri: outcomes_model:EnvironmentalCondition
 metamodel_version: 1.7.0
 source_file: outcomes_working_group.yaml
-source_file_date: '2025-11-13T18:58:59'
-source_file_size: 25557
-generation_date: '2025-11-13T18:59:07'
+source_file_date: '2025-11-13T19:25:45'
+source_file_size: 28811
+generation_date: '2025-11-13T19:25:54'
 

@@ -433,13 +433,13 @@ Alias: humidity</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../CellCultureConditions/">CellCultureConditions</a></td>
-<td>Detailed cell culture parameters</td>
+<td><a href="../EnvironmentalCondition/">EnvironmentalCondition</a></td>
+<td>Environmental parameters during measurement</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../EnvironmentalCondition/">EnvironmentalCondition</a></td>
-<td>Environmental parameters during measurement</td>
+<td><a href="../CellCultureConditions/">CellCultureConditions</a></td>
+<td>Detailed cell culture parameters</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -470,6 +470,10 @@ Alias: humidity</p>
 <td>native</td>
 <td>outcomes_model:humidity</td>
 </tr>
+<tr>
+<td>exact</td>
+<td>PATO:0015009</td>
+</tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
@@ -478,6 +482,8 @@ Alias: humidity</p>
 <pre><code class="language-yaml">name: humidity
 description: Humidity level
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+exact_mappings:
+- PATO:0015009
 rank: 1000
 alias: humidity
 domain_of:

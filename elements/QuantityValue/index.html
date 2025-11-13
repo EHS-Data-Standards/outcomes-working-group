@@ -258,9 +258,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-quantityvalue">Class: QuantityValue</h1>
-<p><em>A quantity value expresses a measurement with a numeric value and a unit.</em></p>
-<p><em>Based on NMDC Schema QuantityValue pattern.</em></p>
-<p>__</p>
+<p><em>A quantity value expresses a measurement with a numeric value and a unit. Based on NMDC Schema QuantityValue pattern.</em></p>
 <p>URI: <a href="https://w3id.org/EHS-Data-Standards/outcomes-model/QuantityValue">outcomes_model:QuantityValue</a></p>
 <div class="mermaid"> classDiagram
     class QuantityValue
@@ -721,12 +719,8 @@
 <h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: QuantityValue
-description: 'A quantity value expresses a measurement with a numeric value and a
-  unit.
-
+description: A quantity value expresses a measurement with a numeric value and a unit.
   Based on NMDC Schema QuantityValue pattern.
-
-  '
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
 slots:
 - has_numeric_value
@@ -739,18 +733,16 @@ slots:
 <h3 id="induced">Induced</h3>
 <details>
 <pre><code class="language-yaml">name: QuantityValue
-description: 'A quantity value expresses a measurement with a numeric value and a
-  unit.
-
+description: A quantity value expresses a measurement with a numeric value and a unit.
   Based on NMDC Schema QuantityValue pattern.
-
-  '
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
 attributes:
   has_numeric_value:
     name: has_numeric_value
     description: The numeric value of a quantity
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - IAO:0000109
     rank: 1000
     alias: has_numeric_value
     owner: QuantityValue
@@ -766,6 +758,8 @@ attributes:
     - value: mm/min
     - value: '%'
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - UO:0000000
     rank: 1000
     alias: has_unit
     owner: QuantityValue

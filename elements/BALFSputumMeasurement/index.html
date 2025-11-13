@@ -528,6 +528,8 @@ attributes:
     name: cytokine_levels
     description: Cytokine and chemokine levels
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000033
     rank: 1000
     alias: cytokine_levels
     owner: BALFSputumMeasurement
@@ -539,6 +541,8 @@ attributes:
     name: protein_concentration
     description: Total protein concentration
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000033
     rank: 1000
     alias: protein_concentration
     owner: BALFSputumMeasurement
@@ -561,6 +565,10 @@ attributes:
     name: input_sample
     description: Description of input samples and manipulations
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0100051
+    related_mappings:
+    - OBI:0000747
     rank: 1000
     alias: input_sample
     owner: BALFSputumMeasurement
@@ -571,6 +579,8 @@ attributes:
     name: method_assay
     description: The method or assay used
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0000070
     rank: 1000
     alias: method_assay
     owner: BALFSputumMeasurement
@@ -581,6 +591,10 @@ attributes:
     name: protocol_notes
     description: Protocol or SOP notes
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - IAO:0000310
+    broad_mappings:
+    - OBI:0000272
     rank: 1000
     alias: protocol_notes
     owner: BALFSputumMeasurement

@@ -465,6 +465,14 @@ Alias: sop_reference</p>
 <td>native</td>
 <td>outcomes_model:sop_reference</td>
 </tr>
+<tr>
+<td>broad</td>
+<td>OBI:0000272</td>
+</tr>
+<tr>
+<td>related</td>
+<td>IAO:0000310</td>
+</tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
@@ -473,6 +481,10 @@ Alias: sop_reference</p>
 <pre><code class="language-yaml">name: sop_reference
 description: Reference to standard operating procedure
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+related_mappings:
+- IAO:0000310
+broad_mappings:
+- OBI:0000272
 rank: 1000
 alias: sop_reference
 domain_of:

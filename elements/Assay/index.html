@@ -493,6 +493,8 @@ attributes:
     name: assay_type
     description: Type of assay or method, constrained to OBI assay terms
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0000070
     rank: 1000
     alias: assay_type
     owner: Assay
@@ -503,6 +505,8 @@ attributes:
     name: instrumentation
     description: Specific instruments or equipment used
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - OBI:0000968
     rank: 1000
     alias: instrumentation
     owner: Assay
@@ -514,6 +518,9 @@ attributes:
     name: environmental_conditions
     description: Environmental conditions during measurement
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - ENVO:01000254
+    - PATO:0001018
     rank: 1000
     alias: environmental_conditions
     owner: Assay
@@ -526,6 +533,10 @@ attributes:
     name: sop_reference
     description: Reference to standard operating procedure
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - IAO:0000310
+    broad_mappings:
+    - OBI:0000272
     rank: 1000
     alias: sop_reference
     owner: Assay

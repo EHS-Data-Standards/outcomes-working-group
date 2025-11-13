@@ -471,6 +471,8 @@ attributes:
     - value: Primary human airway epithelial cells at ALI
     - value: MucilAir 3D tissue model
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - OBI:0100051
     rank: 1000
     alias: sample_type
     owner: InputSample
@@ -481,6 +483,8 @@ attributes:
     name: manipulation
     description: Experimental manipulation applied
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - OBI:0000011
     rank: 1000
     alias: manipulation
     owner: InputSample
@@ -491,6 +495,9 @@ attributes:
     name: exposure_conditions
     description: Exposure or treatment conditions
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - ENVO:01000254
+    - PATO:0001018
     rank: 1000
     alias: exposure_conditions
     owner: InputSample

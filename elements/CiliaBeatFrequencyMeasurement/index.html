@@ -522,6 +522,10 @@ attributes:
     name: beat_frequency_hz
     description: Ciliary beat frequency in Hz
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - GO:0003341
+    broad_mappings:
+    - PATO:0000044
     rank: 1000
     alias: beat_frequency_hz
     owner: CiliaBeatFrequencyMeasurement
@@ -533,6 +537,8 @@ attributes:
     name: active_area_percentage
     description: Percentage of active ciliated area
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0001555
     rank: 1000
     alias: active_area_percentage
     owner: CiliaBeatFrequencyMeasurement
@@ -544,6 +550,8 @@ attributes:
     name: imaging_protocol
     description: Imaging protocol and parameters
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0000272
     rank: 1000
     alias: imaging_protocol
     owner: CiliaBeatFrequencyMeasurement
@@ -556,6 +564,8 @@ attributes:
     name: cilia_per_cell
     description: Number of cilia per cell
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000070
     rank: 1000
     alias: cilia_per_cell
     owner: CiliaBeatFrequencyMeasurement
@@ -567,6 +577,8 @@ attributes:
     name: cilia_length
     description: Length of cilia
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0000122
     rank: 1000
     alias: cilia_length
     owner: CiliaBeatFrequencyMeasurement
@@ -578,6 +590,8 @@ attributes:
     name: percentage_ciliated_cells
     description: Percentage of cells that are ciliated
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    broad_mappings:
+    - PATO:0001555
     rank: 1000
     alias: percentage_ciliated_cells
     owner: CiliaBeatFrequencyMeasurement
@@ -589,6 +603,8 @@ attributes:
     name: ciliary_motion_patterns
     description: Patterns of ciliary motion
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - GO:0003341
     rank: 1000
     alias: ciliary_motion_patterns
     owner: CiliaBeatFrequencyMeasurement
@@ -609,6 +625,10 @@ attributes:
     name: input_sample
     description: Description of input samples and manipulations
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0100051
+    related_mappings:
+    - OBI:0000747
     rank: 1000
     alias: input_sample
     owner: CiliaBeatFrequencyMeasurement
@@ -619,6 +639,8 @@ attributes:
     name: method_assay
     description: The method or assay used
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    exact_mappings:
+    - OBI:0000070
     rank: 1000
     alias: method_assay
     owner: CiliaBeatFrequencyMeasurement
@@ -629,6 +651,10 @@ attributes:
     name: protocol_notes
     description: Protocol or SOP notes
     from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+    related_mappings:
+    - IAO:0000310
+    broad_mappings:
+    - OBI:0000272
     rank: 1000
     alias: protocol_notes
     owner: CiliaBeatFrequencyMeasurement

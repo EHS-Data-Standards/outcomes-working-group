@@ -465,6 +465,14 @@ Alias: transport_rate</p>
 <td>native</td>
 <td>outcomes_model:transport_rate</td>
 </tr>
+<tr>
+<td>broad</td>
+<td>PATO:0000161</td>
+</tr>
+<tr>
+<td>related</td>
+<td>GO:0120197</td>
+</tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
@@ -473,6 +481,10 @@ Alias: transport_rate</p>
 <pre><code class="language-yaml">name: transport_rate
 description: Mucociliary transport rate
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+related_mappings:
+- GO:0120197
+broad_mappings:
+- PATO:0000161
 rank: 1000
 alias: transport_rate
 domain_of:

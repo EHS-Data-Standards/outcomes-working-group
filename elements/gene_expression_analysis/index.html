@@ -433,13 +433,13 @@ Alias: gene_expression_analysis</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../TranscriptionFactorExpressionMeasurement/">TranscriptionFactorExpressionMeasurement</a></td>
-<td>Measurement of transcription factor expression</td>
+<td><a href="../GobletCellMeasurement/">GobletCellMeasurement</a></td>
+<td>Measurement of goblet cell number or mucin production</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../GobletCellMeasurement/">GobletCellMeasurement</a></td>
-<td>Measurement of goblet cell number or mucin production</td>
+<td><a href="../TranscriptionFactorExpressionMeasurement/">TranscriptionFactorExpressionMeasurement</a></td>
+<td>Measurement of transcription factor expression</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -470,6 +470,14 @@ Alias: gene_expression_analysis</p>
 <td>native</td>
 <td>outcomes_model:gene_expression_analysis</td>
 </tr>
+<tr>
+<td>broad</td>
+<td>OBI:0000070</td>
+</tr>
+<tr>
+<td>related</td>
+<td>OBI:0000424</td>
+</tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
@@ -478,6 +486,10 @@ Alias: gene_expression_analysis</p>
 <pre><code class="language-yaml">name: gene_expression_analysis
 description: Gene expression analysis methodology
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+related_mappings:
+- OBI:0000424
+broad_mappings:
+- OBI:0000070
 rank: 1000
 alias: gene_expression_analysis
 domain_of:

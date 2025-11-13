@@ -465,6 +465,14 @@ Alias: ros_level</p>
 <td>native</td>
 <td>outcomes_model:ros_level</td>
 </tr>
+<tr>
+<td>broad</td>
+<td>PATO:0000070</td>
+</tr>
+<tr>
+<td>related</td>
+<td>CHEBI:26523</td>
+</tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
@@ -473,6 +481,10 @@ Alias: ros_level</p>
 <pre><code class="language-yaml">name: ros_level
 description: Reactive oxygen species level
 from_schema: https://w3id.org/EHS-Data-Standards/outcomes-model
+related_mappings:
+- CHEBI:26523
+broad_mappings:
+- PATO:0000070
 rank: 1000
 alias: ros_level
 domain_of:
