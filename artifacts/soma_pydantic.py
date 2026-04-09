@@ -502,7 +502,7 @@ class NamedThing(ConfiguredBaseModel):
 
 class KeyEvent(NamedThing):
     """
-    A measurable change in biological state that is a step in an Adverse Outcome Pathway. Key Events represent the biological perturbations that assays measure to provide evidence for AOP-based mechanistic understanding. Key events can be Molecular Initiating Events (MIEs), intermediate Key Events, or Adverse Outcomes at the organism/population level.
+    A measurable change in biological state that is a step in an Adverse Outcome Pathway. Key Events reflect the measurable and essential biological perturbations that   provide evidence for progression leading to a specific adverse outcome. Key events can be Molecular Initiating Events (MIEs), intermediate Key Events, or Adverse Outcomes at the organism/population level.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'class_uri': 'ECTO:1000000',
          'from_schema': 'https://w3id.org/EHS-Data-Standards/aop_framework'})
@@ -578,7 +578,7 @@ class KeyEventRelationship(NamedThing):
 
 class AdverseOutcome(NamedThing):
     """
-    An adverse health outcome at the organism or population level that represents the apical endpoint of an Adverse Outcome Pathway. This is the final, clinically or ecologically relevant effect.
+    A specialized type of key event that represents the apical endpoint of an Adverse Outcome Pathway. The outcome may be defined at the individual or population level, and is relevant biomedical, clinical, regulator, or ecologically applications.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/EHS-Data-Standards/aop_framework'})
 

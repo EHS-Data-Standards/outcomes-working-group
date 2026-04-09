@@ -1,5 +1,5 @@
 # Auto generated from soma.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-03-13T18:13:50
+# Generation date: 2026-04-09T17:08:39
 # Schema: soma
 #
 # id: https://w3id.org/EHS-Data-Standards/soma
@@ -394,10 +394,10 @@ class NamedThing(YAMLRoot):
 @dataclass(repr=False)
 class KeyEvent(NamedThing):
     """
-    A measurable change in biological state that is a step in an Adverse Outcome Pathway. Key Events represent the
-    biological perturbations that assays measure to provide evidence for AOP-based mechanistic understanding. Key
-    events can be Molecular Initiating Events (MIEs), intermediate Key Events, or Adverse Outcomes at the
-    organism/population level.
+    A measurable change in biological state that is a step in an Adverse Outcome Pathway. Key Events reflect the
+    measurable and essential biological perturbations that provide evidence for progression leading to a specific
+    adverse outcome. Key events can be Molecular Initiating Events (MIEs), intermediate Key Events, or Adverse
+    Outcomes at the organism/population level.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -498,8 +498,9 @@ class KeyEventRelationship(NamedThing):
 @dataclass(repr=False)
 class AdverseOutcome(NamedThing):
     """
-    An adverse health outcome at the organism or population level that represents the apical endpoint of an Adverse
-    Outcome Pathway. This is the final, clinically or ecologically relevant effect.
+    A specialized type of key event that represents the apical endpoint of an Adverse Outcome Pathway. The outcome may
+    be defined at the individual or population level, and is relevant biomedical, clinical, regulator, or ecologically
+    applications.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
