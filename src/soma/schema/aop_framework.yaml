@@ -1,7 +1,7 @@
 name: aop_framework
 description: >-
   AOP (Adverse Outcome Pathway) framework classes for representing mechanistic
-  knowledge linking key events to adverse outcomes. Based on AOP-Wiki structure.
+  knowledge linking key events to adverse outcomes. Based on AOP-Wiki (https://aopwiki.org/) structure.
 title: AOP Framework Schema
 id: https://w3id.org/EHS-Data-Standards/aop_framework
 
@@ -49,8 +49,8 @@ classes:
     class_uri: ECTO:1000000
     description: >-
       A measurable change in biological state that is a step in an Adverse
-      Outcome Pathway. Key Events represent the biological perturbations that
-      assays measure to provide evidence for AOP-based mechanistic understanding.
+      Outcome Pathway. Key Events reflect the measurable and essential biological perturbations that  
+      provide evidence for progression leading to a specific adverse outcome.
       Key events can be Molecular Initiating Events (MIEs), intermediate Key
       Events, or Adverse Outcomes at the organism/population level.
     slots:
@@ -80,9 +80,8 @@ classes:
   AdverseOutcome:
     is_a: NamedThing
     description: >-
-      An adverse health outcome at the organism or population level that
-      represents the apical endpoint of an Adverse Outcome Pathway. This
-      is the final, clinically or ecologically relevant effect.
+      A specialized type of key event that represents the apical endpoint of an Adverse Outcome Pathway.
+      The outcome may be defined at the individual or population level, and is relevant biomedical, clinical, regulator, or ecologically applications.
     slots:
       - outcome_level
       - biological_process
