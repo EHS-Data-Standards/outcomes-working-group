@@ -6,7 +6,8 @@ user_invocable: true
 
 # /pdf-to-yaml - Publication to SOMA YAML
 
-Use this skill to extract structured assay/measurement data from a publication PDF and produce a SOMA-compliant Container YAML file.
+Use this skill to extract structured assay/measurement data from a publication PDF and produce a SOMA-compliant 
+Container YAML file.
 
 ## Pipeline Overview
 
