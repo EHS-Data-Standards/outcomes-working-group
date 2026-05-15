@@ -8,7 +8,7 @@ goblet_cell_assays:
       muc5ac_mrna_expression:
         value: "4.8"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       goblet_cell_percentage:
         value: "28"
@@ -23,17 +23,17 @@ goblet_cell_assays:
       muc5ac_protein_expression:
         value: "3.2"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       muc5b_mrna_expression:
         value: "1.8"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       muc5b_protein_expression:
         value: "1.5"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       muc5ac_muc5b_ratio:
         value: "2.7"

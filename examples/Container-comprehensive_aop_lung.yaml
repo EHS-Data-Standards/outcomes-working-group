@@ -74,7 +74,7 @@ oxidative_stress_assays:
       reactive_oxygen_species:
         value: "1.0"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     ros_probe_type: "DCFDA"
     assay_date: "2024-01-15"
@@ -113,7 +113,7 @@ oxidative_stress_assays:
       reactive_oxygen_species:
         value: "2.8"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     ros_probe_type: "DCFDA"
     assay_date: "2024-01-15"
@@ -165,7 +165,7 @@ oxidative_stress_assays:
       malondialdehyde_level:
         value: "1.9"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2024-01-16"
     has_exposure_condition:
@@ -225,7 +225,7 @@ egfr_signaling_assays:
       egfr_phosphorylation_y1068:
         value: "1.0"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     normalization_reference: "beta-actin"
     phosphorylation_site: "Y1068"
@@ -265,7 +265,7 @@ egfr_signaling_assays:
       egfr_phosphorylation_y1068:
         value: "3.5"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     normalization_reference: "beta-actin"
     phosphorylation_site: "Y1068"
@@ -304,7 +304,7 @@ egfr_signaling_assays:
       total_egfr_protein:
         value: "1.05"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2024-01-15"
     study_subject:
@@ -338,7 +338,7 @@ goblet_cell_assays:
       muc5ac_mrna_expression:
         value: "1.0"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2024-01-16"
     informs_on_key_event:
@@ -373,7 +373,7 @@ goblet_cell_assays:
       muc5ac_mrna_expression:
         value: "4.2"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2024-01-16"
     informs_on_key_event:

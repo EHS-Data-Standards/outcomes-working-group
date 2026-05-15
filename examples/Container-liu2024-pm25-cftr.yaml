@@ -112,7 +112,7 @@ cftr_assays:
       cftr_chloride_secretion:
         value: "1.0"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2024-01-01"
     informs_on_key_event:
@@ -179,7 +179,7 @@ cftr_assays:
       cftr_chloride_secretion:
         value: "0.6"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2024-01-01"
     has_exposure_condition:
@@ -234,7 +234,7 @@ cftr_assays:
       cftr_chloride_secretion:
         value: "1.0"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2024-01-01"
     informs_on_key_event:
@@ -272,7 +272,7 @@ cftr_assays:
       cftr_chloride_secretion:
         value: "0.55"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2024-01-01"
     has_exposure_condition:
@@ -334,7 +334,7 @@ gene_expression_assays:
       mrna_level:
         value: "0.55"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2024-01-01"
     has_exposure_condition:
@@ -394,7 +394,7 @@ gene_expression_assays:
       mrna_level:
         value: "0.40"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2024-01-01"
     has_exposure_condition:
@@ -454,7 +454,7 @@ gene_expression_assays:
       protein_level:
         value: "0.50"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2024-01-01"
     has_exposure_condition:
@@ -514,7 +514,7 @@ gene_expression_assays:
       protein_level:
         value: "0.45"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2024-01-01"
     has_exposure_condition:
@@ -756,7 +756,7 @@ balf_sputum_assays:
       il6_concentration:
         value: "1.8"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2024-01-01"
     has_exposure_condition:
@@ -818,7 +818,7 @@ lung_function_assays:
       lung_resistance:
         value: "2.5"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2024-01-01"
     has_exposure_condition:
@@ -874,7 +874,7 @@ lung_function_assays:
       lung_resistance:
         value: "3.0"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2024-01-01"
     has_exposure_condition:

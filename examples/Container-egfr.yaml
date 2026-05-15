@@ -8,33 +8,33 @@ egfr_signaling_assays:
       egfr_phosphorylation_y1068:
         value: "3.2"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       total_egfr_protein:
         value: "1.0"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       egfr_phosphorylation_y1173:
         value: "2.1"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       downstream_kinase_activation: "ERK1/2 and AKT activated"
       erk_phosphorylation:
         value: "2.8"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       akt_phosphorylation:
         value: "1.5"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       egfr_ligand_expression:
         value: "1.9"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       egfr_membrane_localization:
         value: "78"

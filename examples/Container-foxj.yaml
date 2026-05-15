@@ -10,7 +10,7 @@ foxj_assays:
       foxj1_mrna_expression:
         value: "0.65"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       foxj1_positive_cell_percentage:
         value: "42"
@@ -20,7 +20,7 @@ foxj_assays:
       foxj1_protein_expression:
         value: "0.58"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       foxj1_nuclear_localization:
         value: "35"
