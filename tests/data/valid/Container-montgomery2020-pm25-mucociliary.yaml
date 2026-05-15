@@ -88,7 +88,7 @@ gene_expression_assays:
       mrna_level:
         value: "6.21"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2020-01-01"
     has_exposure_condition:
@@ -152,7 +152,7 @@ gene_expression_assays:
       mrna_level:
         value: "0.91"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2020-01-01"
     has_exposure_condition:
@@ -205,7 +205,7 @@ gene_expression_assays:
       mrna_level:
         value: "1.22"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2020-01-01"
     has_exposure_condition:
@@ -258,12 +258,12 @@ gene_expression_assays:
       mrna_level:
         value: "0.84"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       protein_level:
         value: "1.5"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2020-01-01"
     has_exposure_condition:
@@ -328,7 +328,7 @@ gene_expression_assays:
       mrna_level:
         value: "-1.51"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2020-01-01"
     has_exposure_condition:
@@ -381,7 +381,7 @@ gene_expression_assays:
       mrna_level:
         value: "0.90"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2020-01-01"
     has_exposure_condition:
@@ -434,7 +434,7 @@ gene_expression_assays:
       mrna_level:
         value: "1.34"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2020-01-01"
     has_exposure_condition:
@@ -489,17 +489,17 @@ goblet_cell_assays:
       muc5ac_mrna_expression:
         value: "1.72"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       muc5ac_protein_expression:
         value: "2.88"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       mucin_secretion_rate:
         value: "2.2"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2020-01-01"
     has_exposure_condition:
@@ -567,12 +567,12 @@ goblet_cell_assays:
       muc5b_mrna_expression:
         value: "-0.72"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       muc5b_protein_expression:
         value: "0.74"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2020-01-01"
     has_exposure_condition:
@@ -629,7 +629,7 @@ goblet_cell_assays:
       goblet_cell_percentage:
         value: "2.01"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2020-01-01"
     has_exposure_condition:
@@ -679,12 +679,12 @@ goblet_cell_assays:
       muc5ac_mrna_expression:
         value: "0.90"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       muc5b_mrna_expression:
         value: "-0.79"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2020-01-01"
     has_exposure_condition:
@@ -739,7 +739,7 @@ foxj_assays:
       foxj1_mrna_expression:
         value: "-0.36"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       foxj1_positive_cell_percentage:
         value: "25"
@@ -813,7 +813,7 @@ foxj_assays:
       foxj1_mrna_expression:
         value: "-0.36"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
     assay_date: "2020-01-01"
     has_exposure_condition:

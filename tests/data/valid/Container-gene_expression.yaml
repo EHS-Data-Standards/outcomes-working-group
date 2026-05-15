@@ -11,12 +11,12 @@ gene_expression_assays:
       mrna_level:
         value: "3.5"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       protein_level:
         value: "2.1"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       percentage_positive_cells:
         value: "45"

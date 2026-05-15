@@ -57,7 +57,7 @@ Use `/oaklib` to find and verify CURIEs for:
 - **Species**: NCBITaxon (e.g., NCBITaxon:9606 for Homo sapiens)
 - **Units**: UO (e.g., UO:0000032 for hour)
 - **Anatomy**: UBERON (e.g., UBERON:0001707 for nasal cavity)
-- **Proteins/genes**: PR (e.g., PR:000003411 for CFTR)
+- **Proteins/genes**: PR, NCBIGene (e.g., PR:000003411 for CFTR protein, NCBIGene:1080 for CFTR genes)
 - **Cell lines**: CLO (e.g., CLO:0003679 for Calu-3)
 
 ## Phase 4: Generate YAML
@@ -74,16 +74,15 @@ Examples:
 
 ### Output Location
 
-Write to `tests/data/valid/`
+Write to current working directory.
 
 ### YAML Structure
 
-Follow the structure of existing examples:
+Follow the structure of the existing schema in YAML format.  Examples:
 - `tests/data/valid/Container-liu2024-pm25-cftr.yaml`
 - `tests/data/valid/Container-montgomery2020-pm25-mucociliary.yaml`
 
 Key structural patterns:
-- Header comments with paper metadata (title, DOI, study design, key findings)
 - `protocols:` section with all protocols listed
 - Each assay type as a top-level collection (e.g., `cftr_assays:`, `gene_expression_assays:`)
 - Each assay has inline `has_specified_output:` with the measurement data
@@ -104,10 +103,11 @@ Key structural patterns:
 ## Critical Constraints
 
 1. **ALL numeric values MUST come from the paper** - never hallucinate measurements
-2. **Figure-derived values**: mark as approximate in the description field
+2. **Figure-derived values**: do not derive any specific measurements - never hallucinate measurements
 3. **Missing data**: omit the slot entirely, do not guess values
-4. **Include p-values and sample sizes** in description fields when available
+4. **Include p-values and sample sizes** in description fields when available, but structure the data using more specific slots when available.
 5. **Quote all numeric values** as strings in YAML (e.g., `value: "0.55"`)
+6. **For every ontology id you suggest, validate that the string-value from the paper matches the label of the ontology term, or one of its synonyms using linkml-term-validator"
 
 ## Phase 5: Validate
 

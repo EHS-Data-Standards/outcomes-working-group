@@ -8,12 +8,12 @@ oxidative_stress_assays:
       reactive_oxygen_species:
         value: "2.5"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       lipid_peroxidation:
         value: "1.8"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       malondialdehyde_level:
         value: "3.2"
@@ -38,17 +38,17 @@ oxidative_stress_assays:
       superoxide_dismutase_activity:
         value: "0.75"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       catalase_activity:
         value: "0.82"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       nrf2_activation:
         value: "2.8"
         unit:
-          id: "UO:0000193"
+          id: "STATO:0000169"
           name: "fold change"
       protein_oxidation_markers:
         - "carbonyl"
