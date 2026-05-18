@@ -25,6 +25,7 @@ prefixes:
   CL: http://purl.obolibrary.org/obo/CL_
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   PR: http://purl.obolibrary.org/obo/PR_
+  STATO: http://purl.obolibrary.org/obo/STATO_
   schema: http://schema.org/
   aop_framework: https://w3id.org/EHS-Data-Standards/aop_framework/
   UCUM: http://unitsofmeasure.org/
@@ -227,7 +228,7 @@ classes:
 
   Unit:
     description: >-
-      A unit of measurement from a standard ontology (UO, UCUM, QUDT).
+      A unit of measurement from a standard ontology (UO, UCUM, QUDT, STATO).
     slots:
       - id
       - name
@@ -235,9 +236,10 @@ classes:
       - UO
       - UCUM
       - QUDT
+      - STATO
     slot_usage:
       id:
-        pattern: "^(UO:\\d{7}|UCUM:\\S+|QUDT:\\S+)$"
+        pattern: "^(UO:\\d{7}|UCUM:\\S+|QUDT:\\S+|STATO:\\d{7})$"
 
   NamedEntity:
     description: >-
