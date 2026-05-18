@@ -941,19 +941,19 @@ class QuantityValue(ConfiguredBaseModel):
 
 class Unit(ConfiguredBaseModel):
     """
-    A unit of measurement from a standard ontology (UO, UCUM, QUDT).
+    A unit of measurement from a standard ontology (UO, UCUM, QUDT, STATO).
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/EHS-Data-Standards/assay_base',
-         'id_prefixes': ['UO', 'UCUM', 'QUDT'],
+         'id_prefixes': ['UO', 'UCUM', 'QUDT', 'STATO'],
          'slot_usage': {'id': {'name': 'id',
-                               'pattern': '^(UO:\\d{7}|UCUM:\\S+|QUDT:\\S+)$'}}})
+                               'pattern': '^(UO:\\d{7}|UCUM:\\S+|QUDT:\\S+|STATO:\\d{7})$'}}})
 
     id: str = Field(default=..., description="""A unique identifier for the entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'Unit', 'NamedEntity']} })
     name: Optional[str] = Field(default=None, description="""A human-readable name for the entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['NamedThing', 'Unit', 'NamedEntity'], 'slot_uri': 'schema:name'} })
 
     @field_validator('id')
     def pattern_id(cls, v):
-        pattern=re.compile(r"^(UO:\d{7}|UCUM:\S+|QUDT:\S+)$")
+        pattern=re.compile(r"^(UO:\d{7}|UCUM:\S+|QUDT:\S+|STATO:\d{7})$")
         if isinstance(v, list):
             for element in v:
                 if isinstance(element, str) and not pattern.match(element):

@@ -123,6 +123,10 @@
     "PR": {
       "prefix_prefix": "PR",
       "prefix_reference": "http://purl.obolibrary.org/obo/PR_"
+    },
+    "STATO": {
+      "prefix_prefix": "STATO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/STATO_"
     }
   },
   "default_prefix": "soma",
@@ -8870,9 +8874,10 @@
       "id_prefixes": [
         "UO",
         "UCUM",
-        "QUDT"
+        "QUDT",
+        "STATO"
       ],
-      "description": "A unit of measurement from a standard ontology (UO, UCUM, QUDT).",
+      "description": "A unit of measurement from a standard ontology (UO, UCUM, QUDT, STATO).",
       "from_schema": "https://w3id.org/EHS-Data-Standards/soma",
       "slots": [
         "id",
@@ -8881,7 +8886,7 @@
       "slot_usage": {
         "id": {
           "name": "id",
-          "pattern": "^(UO:\\d{7}|UCUM:\\S+|QUDT:\\S+)$"
+          "pattern": "^(UO:\\d{7}|UCUM:\\S+|QUDT:\\S+|STATO:\\d{7})$"
         }
       },
       "attributes": {
@@ -8946,7 +8951,7 @@
           ],
           "range": "uriorcurie",
           "required": true,
-          "pattern": "^(UO:\\d{7}|UCUM:\\S+|QUDT:\\S+)$"
+          "pattern": "^(UO:\\d{7}|UCUM:\\S+|QUDT:\\S+|STATO:\\d{7})$"
         },
         "name": {
           "name": "name",

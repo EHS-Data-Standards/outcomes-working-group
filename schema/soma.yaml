@@ -3627,7 +3627,7 @@ slots:
     usage_slot_name: id
     range: uriorcurie
     required: true
-    pattern: ^(UO:\d{7}|UCUM:\S+|QUDT:\S+)$
+    pattern: ^(UO:\d{7}|UCUM:\S+|QUDT:\S+|STATO:\d{7})$
   CellTypeReference_id:
     name: CellTypeReference_id
     definition_uri: https://w3id.org/EHS-Data-Standards/aop_framework/id
@@ -4429,8 +4429,9 @@ classes:
     - UO
     - UCUM
     - QUDT
+    - STATO
     definition_uri: https://w3id.org/EHS-Data-Standards/assay_base/Unit
-    description: A unit of measurement from a standard ontology (UO, UCUM, QUDT).
+    description: A unit of measurement from a standard ontology (UO, UCUM, QUDT, STATO).
     from_schema: https://w3id.org/EHS-Data-Standards/assay_base
     slots:
     - Unit_id
@@ -4438,7 +4439,7 @@ classes:
     slot_usage:
       id:
         name: id
-        pattern: ^(UO:\d{7}|UCUM:\S+|QUDT:\S+)$
+        pattern: ^(UO:\d{7}|UCUM:\S+|QUDT:\S+|STATO:\d{7})$
     class_uri: assay_base:Unit
   NamedEntity:
     name: NamedEntity
@@ -5212,7 +5213,7 @@ classes:
     class_uri: assay_microschemas:GeneExpressionOutput
 metamodel_version: 1.7.0
 source_file: soma.yaml
-source_file_date: '2026-05-15T20:58:54'
+source_file_date: '2026-05-18T16:55:34'
 source_file_size: 6899
-generation_date: '2026-05-15T20:59:56'
+generation_date: '2026-05-18T16:56:31'
 

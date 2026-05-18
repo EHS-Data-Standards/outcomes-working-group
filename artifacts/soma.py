@@ -1,5 +1,5 @@
 # Auto generated from soma.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-05-15T20:59:22
+# Generation date: 2026-05-18T16:56:01
 # Schema: soma
 #
 # id: https://w3id.org/EHS-Data-Standards/soma
@@ -77,6 +77,7 @@ NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxo
 OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
 PATO = CurieNamespace('PATO', 'http://purl.obolibrary.org/obo/PATO_')
 QUDT = CurieNamespace('QUDT', 'http://qudt.org/vocab/unit/')
+STATO = CurieNamespace('STATO', 'http://purl.obolibrary.org/obo/STATO_')
 UBERON = CurieNamespace('UBERON', 'http://purl.obolibrary.org/obo/UBERON_')
 UCUM = CurieNamespace('UCUM', 'http://unitsofmeasure.org/')
 UO = CurieNamespace('UO', 'http://purl.obolibrary.org/obo/UO_')
@@ -1172,7 +1173,7 @@ class QuantityValue(YAMLRoot):
 @dataclass(repr=False)
 class Unit(YAMLRoot):
     """
-    A unit of measurement from a standard ontology (UO, UCUM, QUDT).
+    A unit of measurement from a standard ontology (UO, UCUM, QUDT, STATO).
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -3870,7 +3871,7 @@ slots.gene_expression_method = Slot(uri=ASSAY_MICROSCHEMAS.gene_expression_metho
 
 slots.Unit_id = Slot(uri=AOP_FRAMEWORK.id, name="Unit_id", curie=AOP_FRAMEWORK.curie('id'),
                    model_uri=SOMA.Unit_id, domain=Unit, range=Union[str, UnitId],
-                   pattern=re.compile(r'^(UO:\d{7}|UCUM:\S+|QUDT:\S+)$'))
+                   pattern=re.compile(r'^(UO:\d{7}|UCUM:\S+|QUDT:\S+|STATO:\d{7})$'))
 
 slots.CellTypeReference_id = Slot(uri=AOP_FRAMEWORK.id, name="CellTypeReference_id", curie=AOP_FRAMEWORK.curie('id'),
                    model_uri=SOMA.CellTypeReference_id, domain=CellTypeReference, range=Union[str, CellTypeReferenceId],

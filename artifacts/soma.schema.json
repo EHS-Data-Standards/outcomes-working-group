@@ -5430,11 +5430,11 @@
         },
         "Unit": {
             "additionalProperties": false,
-            "description": "A unit of measurement from a standard ontology (UO, UCUM, QUDT).",
+            "description": "A unit of measurement from a standard ontology (UO, UCUM, QUDT, STATO).",
             "properties": {
                 "id": {
                     "description": "A unique identifier for the entity.",
-                    "pattern": "^(UO:\\d{7}|UCUM:\\S+|QUDT:\\S+)$",
+                    "pattern": "^(UO:\\d{7}|UCUM:\\S+|QUDT:\\S+|STATO:\\d{7})$",
                     "type": "string"
                 },
                 "name": {
