@@ -47,6 +47,38 @@ The schema can be used to:
 2. **Generate code** - Create Python dataclasses, Pydantic models, JSON Schema
 3. **Transform data** - Convert between JSON, YAML, RDF, and other formats
 
+## Development Workflow
+
+For local development, use `uv` and `just` as the canonical entry points.
+The repository may contain underlying Python, npm, and LinkML commands, but contributors
+should treat the `just` recipes as the supported interface for routine setup, testing,
+and generation tasks.
+
+### Prerequisites
+
+- `uv` for Python environment and dependency management
+- `just` for repository task automation
+- `node` and `npm` for DataHarmonizer frontend builds
+
+### Setup
+
+Install the Python dependencies managed by the repo:
+
+```bash
+just install
+```
+
+### Common Commands
+
+- Run the full validation workflow: `just test`
+- Regenerate project artifacts: `just gen-project`
+- Regenerate schema documentation: `just gen-doc`
+- Build the DataHarmonizer assets: `just build-dh`
+- List all available recipes: `just --list`
+
+If you need to run a Python tool directly, prefer `uv run ...` so it executes inside the
+managed project environment.
+
 ## Repository Structure
 
 * [docs/](docs/) - mkdocs-managed documentation
