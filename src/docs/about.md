@@ -54,27 +54,38 @@ We welcome contributions from the community. To contribute:
 
 ## Development
 
+For local development, use [uv](https://docs.astral.sh/uv/) and
+[just](https://github.com/casey/just/) as the canonical entry points.
+The repository may contain underlying Python, npm, and LinkML commands, but
+contributors should treat the `just` recipes as the supported interface for
+routine setup, testing, and generation tasks.
+
 ### Prerequisites
 
 - Python 3.10+
-- [uv](https://docs.astral.sh/uv/) for package management
-- [just](https://github.com/casey/just/) for running commands
+- [uv](https://docs.astral.sh/uv/) for Python environment and dependency management
+- [just](https://github.com/casey/just/) for repository task automation
+- `node` and `npm` for DataHarmonizer frontend builds
 
-### Quick Start
+### Setup
+
+Install the Python dependencies managed by the repo:
 
 ```bash
-# Install dependencies
 just install
-
-# Generate documentation
-just gen-doc
-
-# Run local documentation server
-just testdoc
-
-# Run all tests
-just test
 ```
+
+### Common Commands
+
+- Run the full validation workflow: `just test`
+- Regenerate project artifacts: `just gen-project`
+- Regenerate schema documentation: `just gen-doc`
+- Build the DataHarmonizer assets: `just build-dh`
+- Run the local documentation server: `just testdoc`
+- List all available recipes: `just --list`
+
+If you need to run a Python tool directly, prefer `uv run ...` so it executes
+inside the managed project environment.
 
 ### Project Structure
 
