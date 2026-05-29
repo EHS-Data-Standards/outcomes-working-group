@@ -706,10 +706,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
+  <a href="#setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quick Start
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Commands
       
     </span>
   </a>
@@ -906,10 +917,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
+  <a href="#setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quick Start
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Commands
       
     </span>
   </a>
@@ -1050,25 +1072,33 @@ initiative, focused on developing standardized data models for environmental hea
 <li>Submit a pull request with your contributions</li>
 </ol>
 <h2 id="development">Development</h2>
+<p>For local development, use <a href="https://docs.astral.sh/uv/">uv</a> and
+<a href="https://github.com/casey/just/">just</a> as the canonical entry points.
+The repository may contain underlying Python, npm, and LinkML commands, but
+contributors should treat the <code>just</code> recipes as the supported interface for
+routine setup, testing, and generation tasks.</p>
 <h3 id="prerequisites">Prerequisites</h3>
 <ul>
 <li>Python 3.10+</li>
-<li><a href="https://docs.astral.sh/uv/">uv</a> for package management</li>
-<li><a href="https://github.com/casey/just/">just</a> for running commands</li>
+<li><a href="https://docs.astral.sh/uv/">uv</a> for Python environment and dependency management</li>
+<li><a href="https://github.com/casey/just/">just</a> for repository task automation</li>
+<li><code>node</code> and <code>npm</code> for DataHarmonizer frontend builds</li>
 </ul>
-<h3 id="quick-start">Quick Start</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Install dependencies</span>
-just<span class="w"> </span>install
-
-<span class="c1"># Generate documentation</span>
-just<span class="w"> </span>gen-doc
-
-<span class="c1"># Run local documentation server</span>
-just<span class="w"> </span>testdoc
-
-<span class="c1"># Run all tests</span>
-just<span class="w"> </span><span class="nb">test</span>
+<h3 id="setup">Setup</h3>
+<p>Install the Python dependencies managed by the repo:</p>
+<div class="highlight"><pre><span></span><code>just<span class="w"> </span>install
 </code></pre></div>
+<h3 id="common-commands">Common Commands</h3>
+<ul>
+<li>Run the full validation workflow: <code>just test</code></li>
+<li>Regenerate project artifacts: <code>just gen-project</code></li>
+<li>Regenerate schema documentation: <code>just gen-doc</code></li>
+<li>Build the DataHarmonizer assets: <code>just build-dh</code></li>
+<li>Run the local documentation server: <code>just testdoc</code></li>
+<li>List all available recipes: <code>just --list</code></li>
+</ul>
+<p>If you need to run a Python tool directly, prefer <code>uv run ...</code> so it executes
+inside the managed project environment.</p>
 <h3 id="project-structure">Project Structure</h3>
 <div class="highlight"><pre><span></span><code>soma/
 ├── src/
