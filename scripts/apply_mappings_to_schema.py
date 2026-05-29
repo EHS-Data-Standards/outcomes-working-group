@@ -4,8 +4,14 @@ Apply ontology mappings from CSV to the LinkML schema.
 """
 
 import csv
-import yaml
 from collections import defaultdict
+from pathlib import Path
+
+import yaml
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+SCHEMA_PATH = PROJECT_ROOT / "src" / "soma" / "schema" / "soma.yaml"
+CSV_PATH = PROJECT_ROOT / "examples" / "ontology_mappings" / "slot_mappings_improved.csv"
 
 def load_mappings_from_csv(csv_path: str) -> tuple:
     """Load mappings from CSV into a structured dictionary with labels."""
@@ -87,15 +93,15 @@ def apply_mappings_to_schema(schema_path: str, mappings: dict, labels: dict, out
     print(f"\n✓ Schema saved to: {output_path}")
 
 def main():
-    csv_path = "examples/ontology_mappings/slot_mappings_improved.csv"
-    schema_path = "src/outcomes_working_group/schema/v2.yaml"
+    csv_path = CSV_PATH
+    schema_path = SCHEMA_PATH
     output_path = schema_path
 
     print("Applying ontology mappings to schema...")
     print("=" * 70)
 
     print(f"\nLoading mappings from: {csv_path}")
-    mappings, labels = load_mappings_from_csv(csv_path)
+    mappings, labels = load_mappings_from_csv(str(csv_path))
     print(f"✓ Loaded mappings for {len(mappings)} slots")
     print(f"✓ Loaded labels for {len(labels)} terms")
 
@@ -113,7 +119,7 @@ def main():
     print(f"  Total: {total_terms}")
 
     print(f"\nApplying to schema: {schema_path}")
-    apply_mappings_to_schema(schema_path, mappings, labels, output_path)
+    apply_mappings_to_schema(str(schema_path), mappings, labels, str(output_path))
 
     print("\n" + "=" * 70)
     print("Done!")
