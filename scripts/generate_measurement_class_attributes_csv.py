@@ -63,7 +63,7 @@ def get_class_attributes(schema_view, class_name):
 
 def main():
     # Path to the LinkML schema
-    schema_path = project_root / "src" / "outcomes_working_group" / "schema" / "v2.yaml"
+    schema_path = project_root / "src" / "soma" / "schema" / "soma.yaml"
 
     if not schema_path.exists():
         print(f"Error: Schema file not found at {schema_path}")
