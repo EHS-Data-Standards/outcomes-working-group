@@ -118,7 +118,7 @@ build-dh:
   npm run build
   cp -r dist/assets docs/
   cp dist/index.html docs/harmonizer.html
-  sed -i '' 's|"/assets/|"assets/|g' docs/harmonizer.html
+  sed -i.bak 's|"/assets/|"assets/|g' docs/harmonizer.html && rm docs/harmonizer.html.bak
   mkdir -p docs/schemas
   uv run gen-linkml --materialize-patterns --materialize-attributes {{source_schema_path}} > docs/schemas/soma.json
   cp menu.json docs/
