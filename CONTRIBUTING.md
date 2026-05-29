@@ -1,9 +1,9 @@
-# Contributing to outcomes-working-group
+# Contributing to soma
 
 :+1: First of all: Thank you for taking the time to contribute!
 
 The following is a set of guidelines for contributing to
-outcomes-working-group. These guidelines are not strict rules.
+soma. These guidelines are not strict rules.
 Use your best judgment, and feel free to propose changes to this document
 in a pull request.
 
@@ -22,7 +22,7 @@ in a pull request.
 
 ## Code of Conduct
 
-The outcomes-working-group team strives to create a
+The soma team strives to create a
 welcoming environment for editors, users and other contributors.
 Please carefully read our [Code of Conduct](CODE_OF_CONDUCT.md).
 
@@ -51,6 +51,17 @@ Please use our [Discussions forum][discussions] to ask general questions or cont
 
 Please submit a [Pull Request][pulls] to submit a new term for consideration.
 
+### Local development workflow
+
+Use [uv](https://docs.astral.sh/uv/) and [just](https://github.com/casey/just/)
+as the canonical entry points for local development.
+
+- Install project dependencies with `just install`
+- Run the full validation workflow with `just test`
+- Regenerate docs with `just gen-doc`
+- Build DataHarmonizer assets with `just build-dh` when frontend assets change
+- If you need to run a Python tool directly, prefer `uv run ...`
+
 <a id="best-practices"></a>
 
 ## Best Practices
@@ -60,7 +71,7 @@ Please submit a [Pull Request][pulls] to submit a new term for consideration.
 ### GitHub Best Practice
 
 - Creating and curating issues
-    - Read ["About Issues"][[about-issues]]
+    - Read ["About Issues"][about-issues]
     - Issues should be focused and actionable
     - Complex issues should be broken down into simpler issues where possible
 - Pull Requests
@@ -73,7 +84,7 @@ Please submit a [Pull Request][pulls] to submit a new term for consideration.
     - Never work on the main branch, always work on an issue/feature branch
     - Core developers can work on branches off origin rather than forks
     - Always create a PR on a branch to maximize transparency of what you are doing
-    - PRs should be reviewed and merged in a timely fashion by the outcomes-working-group technical leads
+    - PRs should be reviewed and merged in a timely fashion by the soma technical leads
     - PRs that do not pass GitHub actions should never be merged
     - In the case of git conflicts, the contributor should try and resolve the conflict
     - If a PR fails a GitHub action check, the contributor should try and resolve the issue in a timely fashion
@@ -102,7 +113,7 @@ Core developers should read the material on the [LinkML site](https://linkml.io/
 - Include examples and counter-examples (intentionally invalid examples)
     - Rationale: these serve as documentation and unit tests
     - These will be used by the automated test suite
-    - All elements of the schema must be illustrated with valid and invalid data examples in src/data. New schema elements will not be merged into the main branch until examples are provided
+    - All elements of the schema should be illustrated with valid and invalid data examples in tests/data. New schema elements will not be merged into the main branch until examples are provided
     - Invalid example data files should be invalid for one single reason, which should be reflected in the filename. It should be possible to render the invalid example files valid by addressing that single fault.
 - Use enums for categorical values
     - Rationale: Open-ended string ranges encourage multiple values to represent the same entity, like “water”, “H2O” and “HOH”
@@ -115,7 +126,8 @@ Core developers should read the material on the [LinkML site](https://linkml.io/
 [about-branches]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches
 [about-issues]: https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues
 [about-pulls]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests
-[issues]: https://github.com/EHS-Data-Standards/outcomes-working-group/issues/
-[pulls]: https://github.com/EHS-Data-Standards/outcomes-working-group/pulls/
+[issues]: https://github.com/EHS-Data-Standards/soma/issues/
+[pulls]: https://github.com/EHS-Data-Standards/soma/pulls/
+[discussions]: https://github.com/EHS-Data-Standards/soma/discussions
 
 We recommend also reading [GitHub Pull Requests: 10 Tips to Know](https://blog.mergify.com/github-pull-requests-10-tips-to-know/)
