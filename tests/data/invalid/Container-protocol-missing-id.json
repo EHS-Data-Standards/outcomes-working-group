@@ -1,0 +1,9 @@
+{
+  "protocols": [
+    {
+      "name": "Protocol missing id",
+      "description": "This example is intentionally invalid because Protocol.id is required.",
+      "protocol_version": "1.0"
+    }
+  ]
+}
